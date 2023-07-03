@@ -1,15 +1,11 @@
+import PageHoc from '../../hoc/PageHoc/PageHoc'
 import MainScreen from '../../screens/MainScreen/MainScreen'
-import cn from 'classnames'
 
-interface MainPageI {
-	className?: string
-}
-
-const MainPage = ({ className = '' }: MainPageI) => {
+const MainPage = () => {
 	return (
-		<div className={cn(className)}>
+		<PageHoc>
 			<MainScreen />
-		</div>
+		</PageHoc>
 	)
 }
 

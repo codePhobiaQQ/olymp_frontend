@@ -30,7 +30,7 @@ import MainPage from './components/pages/MainPage/MainPage'
 function App() {
 	return (
 		<Routes>
-			<Route path='/' element={<MainPage />} /> {/* 👈 Renders at /app/ */}
+			<Route path='/' element={<MainPage />} />
 		</Routes>
 	)
 }

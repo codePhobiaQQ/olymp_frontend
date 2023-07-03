@@ -58,6 +58,7 @@
 
 	/* Sections padding */
 	--sections-padding: var(--px40);
+	--sections-inner-paddings: var(--px30);
 }
 
 /* -------- Adaptation ------ */
