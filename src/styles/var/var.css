@@ -1,12 +1,5 @@
 :root {
-	--sticky-offset: min(calc(var(--index) * 3), 60px);
-
-	/* ---- NavigationWidth --- */
-	--navigationLeftColWidth: min(15%, 200px);
-
-	/* ---- Content --- */
-	--contentPadding: var(--px20);
-	--previewWidth: 25%;
+	--main-bg: #efefef;
 
 	/* ---- darkMode --- */
 	--accent1: #151515;

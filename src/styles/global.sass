@@ -1,40 +1,25 @@
-@import "~reset-css"
-
-@import "~slick-carousel/slick/slick.css"
-@import "~slick-carousel/slick/slick-theme.css"
+@import "reset-css"
+// @import "~slick-carousel/slick/slick.css"
+// @import "~slick-carousel/slick/slick-theme.css"
 
 @font-face 
-  font-family: "pop"
-  src: url("./../public/fonts/Popins/Poppins-Regular.woff2") format("woff2")
+  font-family: "mm"
+  src: url("./../assets/fonts/Montserrat-Medium.woff2") format("woff2")
   
 @font-face
-  font-family: "pop-l"
-  src: url("./../public/fonts/Popins/Poppins-Light.woff2") format("woff2")
+  font-family: "mr"
+  src: url("./../assets/fonts/Montserrat-Regular.woff2") format("woff2")
 
 @font-face
-  font-family: "pop-thin"
-  src: url("./../public/fonts/Popins/Poppins-Thin.woff2") format("woff2")
-
-@font-face
-  font-family: "pop-med"
-  src: url("./../public/fonts/Popins/Poppins-Medium.woff2") format("woff2")
-
-  
-@font-face
-  font-family: "pop-bold"
-  src: url("./../public/fonts/Popins/Poppins-Bold.woff2") format("woff2")
-
+  font-family: "msb"
+  src: url("./../assets/fonts/Montserrat-SemiBold.woff2") format("woff2")
   
 .ff-r
-  font-family: "pop", sans-serif
-.ff-l
-  font-family: "pop-l", sans-serif
-.ff-thin
-  font-family: "pop-thin", sans-serif
-.ff-med
-  font-family: "pop-med", sans-serif
-.ff-bold
-  font-family: "pop-bold", sans-serif
+  font-family: "mr", sans-serif
+.ff-m
+  font-family: "mm", sans-serif
+.ff-sb
+  font-family: "mdb", sans-serif
   
 *::-webkit-scrollbar
   // width: 4px
@@ -46,19 +31,12 @@
   // border-radius: var(--px8)
 
 body
-  font-family: "pop", sans-serif
-  //background-color: #151515
-  color: #fff
+  font-family: "mr", sans-serif
+  color: #000
   overflow-x: hidden !important
   font-size: var(--px16)
-  background: var(--accent1)
+  background: var(--main-bg)
   position: relative
-  // &::-webkit-scrollbar
-  //   width: 4px
-  //   height: 1px
-  // &::-webkit-scrollbar-thumb
-  //   background-color: lighten(#282828, 10) 
-  //   border-radius: var(--px8)
   
 html
   overflow-x: hidden !important
@@ -81,9 +59,6 @@ a
   &:hover
     color: #8b99ff
     
-.pop-l
-  font-family: "pop-l", sans-serif
-  
 .centerMix
   position: absolute
   left: 50%
