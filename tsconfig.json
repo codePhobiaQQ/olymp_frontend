@@ -24,7 +24,8 @@
 	"paths": {
 		"@/*": ["src/*"],
 		"@components/*": ["src/components/*"],
-		"@assets/*": ["src/assets/*"]
+		"@assets/*": ["src/assets/*"],
+		"@shared/*": ["src/components/shared/*"]
 	},
 
 	"include": ["src", "src/core/global.d.ts"],
