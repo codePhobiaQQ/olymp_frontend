@@ -1,0 +1,84 @@
+/* ---- Page ---- */
+.darkTemplate {
+  background-color: var(--accent1);
+  color: var(--white);
+}
+.lightTemplate {
+
+}
+
+/* ---- ColorMode ---- */
+.darkColorMode {
+  background-color: var(--accent3);
+  color: var(--white);
+}
+.darkColorModeButton {
+  background-color: var(--accent4);
+}
+.lightColorMode {
+
+}
+
+/* ---- Dropdown ---- */
+background-color .ActiveElement {
+  background-color: transparent;
+}
+.darkDropdown.open .ActiveElement {
+  background-color: var(--accent3);
+}
+.darkDropdown:hover .ActiveElement {
+  background-color: var(--accent3);
+}
+
+.lightDropdown {
+
+}
+
+/* ------ Search Line ------ */
+.darkSearchLine {
+  background-color: var(--accent3);
+  color: var(--white);
+}
+.darkSearchLine::placeholder {
+  color: var(--accent5);
+}
+
+.lightSearchLine {
+
+}
+
+/* ------ Input ------ */
+.darkInput {
+
+}
+.lightInput {
+
+}
+
+/* ---- Mixins ---- */
+
+.horizontalCenter {
+  display: flex;
+  justify-content: center;
+}
+.absoluteCenter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+.absoluteVerticalCenter {
+  position: absolute !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+}
+.absoluteHorizontalCenter {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.centerNormalMix {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

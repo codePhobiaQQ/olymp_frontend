@@ -1,0 +1,34 @@
+.m_b_5 {
+	margin-bottom: var(--px5);
+}
+.m_b_10 {
+	margin-bottom: var(--px10) !important;
+}
+.m_b_15 {
+	margin-bottom: var(--px15);
+}
+.m_b_16 {
+	margin-bottom: var(--px16);
+}
+.m_b_20 {
+	margin-bottom: var(--px20);
+}
+.m_b_25 {
+	margin-bottom: var(--px25);
+}
+.m_b_30 {
+	margin-bottom: var(--px30);
+}
+.m_b_32 {
+	margin-bottom: var(--px32);
+}
+.m_b_40 {
+	margin-bottom: var(--px40);
+}
+.m_b_50 {
+	margin-bottom: var(--px50);
+}
+
+.m_b_gapNFTs {
+	margin-bottom: var(--gapNFTs);
+}

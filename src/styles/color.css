@@ -1,0 +1,15 @@
+.color_red {
+	color: var(--red);
+}
+.color_black {
+	color: #000;
+}
+.color_white {
+	color: var(--white);
+}
+.color_orange {
+	color: var(--orange) !important;
+}
+.color_green {
+	color: var(--green) !important;
+}

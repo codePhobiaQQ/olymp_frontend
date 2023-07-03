@@ -1,0 +1,15 @@
+.p_t_5 {
+  padding-top: var(--px5);
+}
+.p_t_8 {
+  padding-top: var(--px8) !important;
+}
+.p_t_10 {
+  padding-top: var(--px10) !important;
+}
+.p_t_11 {
+  padding-top: var(--px11) !important;
+}
+.p_t_12 {
+  padding-top: var(--px12) !important;
+}

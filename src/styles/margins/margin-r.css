@@ -1,0 +1,28 @@
+.m_r_5 {
+  margin-right: var(--px5);
+}
+.m_r_7 {
+  margin-right: var(--px7);
+}
+.m_r_10 {
+  margin-right: var(--px10);
+}
+.m_r_15 {
+  margin-right: var(--px15);
+}
+.m_r_20 {
+  margin-right: var(--px20);
+}
+.m_r_40 {
+  margin-right: var(--px40);
+}
+
+.m_r_3_pr {
+  margin-right: 3%;
+}
+.m_r_5_pr {
+  margin-right: 5%;
+}
+.m_r_auto {
+  margin-right: auto;
+}

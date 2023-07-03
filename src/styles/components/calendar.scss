@@ -1,0 +1,56 @@
+.ant-picker-calendar {
+	border-radius: var(--px8);
+	border: 1px solid var(--accent2) !important;
+	background-color: var(--accent1) !important;
+
+	.ant-picker-panel {
+		background-color: var(--accent1) !important;
+	}
+
+	.ant-picker-calendar-date-value {
+		color: var(--white);
+	}
+	.ant-picker-cell-inner::before {
+		border-color: var(--white) !important;
+	}
+	.ant-picker-cell-in-view.ant-picker-cell-selected .ant-picker-cell-inner {
+		border-color: var(--white) !important;
+		background-color: var(--white) !important;
+		.ant-picker-calendar-date-value {
+			color: var(--accent1) !important;
+		}
+	}
+
+	.ant-picker-content th {
+		color: var(--white) !important;
+		font-family: 'pop-bold', sans-serif;
+		text-decoration: underline;
+	}
+
+	.ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled) {
+		border-color: var(--accent2) !important;
+		background-color: var(--accent2) !important;;
+		color: var(--white) !important;
+	}
+
+	// 	button {
+	// 		border-radius: var(--px8);
+	// 		&:hover, &:focus {
+	// 			background-color: var(--white);
+	// 			color: var(--accent1);
+	// 			transition: var(--transition-all);
+	// 			span, abbr {
+	// 				color: var(--accent1);
+	// 			}
+	// 		}
+	// 	}
+
+	// 	.react-calendar__tile--active {
+	// 		border-radius: var(--px8);
+	// 		background: var(--white) !important;
+	// 		color: var(--accent1);
+	// 		abbr, span {
+	// 			color: var(--accent1);
+	// 		}
+	// 	}
+}
