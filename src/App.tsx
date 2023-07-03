@@ -22,8 +22,17 @@ import './styles/order.css'
 // ---- Components ----
 import './styles/components/index.scss'
 
+// ----
+
+import { Route, Routes } from 'react-router-dom'
+import MainPage from './components/pages/MainPage/MainPage'
+
 function App() {
-	return <>app</>
+	return (
+		<Routes>
+			<Route path='/' element={<MainPage />} /> {/* 👈 Renders at /app/ */}
+		</Routes>
+	)
 }
 
 export default App

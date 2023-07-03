@@ -1,26 +1,9 @@
 :root {
 	--main-bg: #efefef;
+	--main-text-color: #000;
 
 	/* ---- darkMode --- */
 	--accent1: #151515;
-	/* --accent2: #282828; */
-	--accent2: #333333;
-	--accent3: #272727;
-	--accent4: #222021;
-	--accent5: #858585;
-	--accent6: #e1e1e1;
-	--accent7: #e6e6e6;
-	--accent8: #e4e4e4;
-	--accent9: #141414;
-	--accent10: #f4f4f4;
-	--accent11: #cdcdcd;
-	--white: #f7f7f7;
-	--clearWhite: #fff;
-	--green: #009418;
-	--yellow: #ffd703;
-	--red: #c40b0b;
-	--orange: #ff8700;
-	--blue: #465f8d;
 
 	--transition-all: all 0.6s cubic-bezier(0.2, 0.6, 0, 1);
 	--transition-max-height: max-height 0.6s cubic-bezier(0.2, 0.6, 0, 1);
@@ -73,81 +56,14 @@
 	--px150: min(calc(var(--index) * 7.14), 150px);
 	--px180: min(calc(var(--index) * 8.57), 180px);
 
-	/* ---- NFTs --- */
-	--gapNFTs: var(--px20);
-}
-
-/* -------- Grid --------*/
-
-:root {
-	--template-columns: 4;
-	--template-column-gutters: var(--px30);
-	--template-reduced-columns-multiplier: 1;
-	--template-reduced-columns: 1;
-}
-@media screen and (min-width: 10rem) {
-	:root {
-		--template-columns: 2;
-	}
-}
-@media screen and (min-width: 20rem) {
-	:root {
-		--template-columns: 3;
-	}
-}
-@media screen and (min-width: 50rem) {
-	:root {
-		--template-columns: 4;
-	}
-}
-@media screen and (min-width: 80rem) {
-	:root {
-		--template-columns: 5;
-	}
-}
-@media screen and (min-width: 100rem) {
-	:root {
-		--template-columns: 6;
-	}
-}
-@media screen and (min-width: 120rem) {
-	:root {
-		--template-columns: 7;
-	}
-}
-
-/* ----------- News --------- */
-
-:root {
-	--news-columns: 5;
-	--news-column-gutters: var(--px30);
-	--news-reduced-columns-multiplier: 2;
-	--news-reduced-columns: 1;
-}
-@media screen and (max-width: 1700px) {
-	:root {
-		--news-columns: 4;
-	}
-}
-@media screen and (max-width: 768px) {
-	:root {
-		--news-columns: 1;
-	}
+	/* Sections padding */
+	--sections-padding: var(--px40);
 }
 
 /* -------- Adaptation ------ */
 
-@media screen and (max-width: 1024px) {
-	:root {
-		--navigationLeftColWidth: min(20%, 200px);
-		--contentPadding: var(--px16);
-	}
+@media screen and (max-width: 1919px) {
 }
 
 @media screen and (max-width: 968px) {
-	:root {
-		--navigationLeftColWidth: calc(var(--px64) + var(--px10));
-		--navigationLeftColWidthOpen: min(calc(var(--index) * 7.5), 150px);
-		--sticky-offset: min(calc(var(--index) * 6), 120px);
-	}
 }
