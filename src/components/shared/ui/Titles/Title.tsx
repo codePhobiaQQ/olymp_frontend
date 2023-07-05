@@ -8,6 +8,7 @@ export enum TitleTheme {
 	H2 = 'h2',
 	H3 = 'h3',
 	H4 = 'h4',
+	H4_THIN = 'h4_thin',
 	H5 = 'h5',
 	H6 = 'h6',
 }
@@ -56,6 +57,14 @@ const Title = (props: TitleI) => {
 	if (theme == TitleTheme.H4) {
 		return (
 			<h4 className={cn(className, styles.Title, styles[TitleTheme.H4])} {...otherProps}>
+				{text}
+			</h4>
+		)
+	}
+
+	if (theme == TitleTheme.H4_THIN) {
+		return (
+			<h4 className={cn(className, styles.Title, styles[TitleTheme.H4_THIN])} {...otherProps}>
 				{text}
 			</h4>
 		)

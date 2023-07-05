@@ -15,6 +15,13 @@
 .h3 {
 }
 .h4 {
+	font-size: var(--px20);
+	line-height: 140%;
+}
+.h4_thin {
+	font-size: var(--px20);
+	font-family: 'mr', sans-serif;
+	line-height: 140%;
 }
 .h5 {
 }

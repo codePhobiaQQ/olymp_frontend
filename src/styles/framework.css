@@ -140,9 +140,11 @@
 
 /* ---- Fill color ---- */
 
-.fill_white {
+.fill_white,
+.fill_white path {
 	fill: var(--white);
 }
+
 .stroke_white {
 	stroke: var(--white);
 }
@@ -196,4 +198,8 @@
 .hide {
 	opacity: 0;
 	pointer-events: none;
+}
+
+.ttu {
+	text-transform: uppercase;
 }

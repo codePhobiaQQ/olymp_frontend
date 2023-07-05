@@ -4,6 +4,7 @@
 
 	/* ---- darkMode --- */
 	--accent1: #151515;
+	--white: #fff;
 
 	--transition-all: all 0.6s cubic-bezier(0.2, 0.6, 0, 1);
 	--transition-max-height: max-height 0.6s cubic-bezier(0.2, 0.6, 0, 1);

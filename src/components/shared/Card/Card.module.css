@@ -1,2 +1,24 @@
 .Card {
+	border-radius: var(--often-border-radius);
+	color: #fff;
+	box-sizing: border-box;
+	padding: var(--sections-inner-paddings);
+}
+
+.blur_theme {
+	-webkit-backdrop-filter: blur(65px);
+	backdrop-filter: blur(65px);
+	background: rgba(255, 255, 255, 0.1);
+}
+
+.blur_theme h4 {
+	margin-bottom: var(--px40);
+}
+
+.blur_theme ul li {
+	display: block;
+	margin-bottom: var(--px20);
+}
+.blur_theme ul li:last-child {
+	margin-bottom: 0;
 }

@@ -22,5 +22,20 @@
 	position: relative;
 	z-index: 1;
 	top: 0;
+	display: flex;
+	flex-direction: column;
+}
+
+.Title {
 	max-width: 85%;
+}
+
+.CardsWrapper {
+	display: flex;
+	justify-content: space-between;
+	margin-top: auto;
+}
+
+.Card {
+	width: calc(33.3% - var(--px17) * 2 / 3);
 }
