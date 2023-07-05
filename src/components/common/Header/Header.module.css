@@ -7,9 +7,14 @@
 .HeaderInnner {
 	color: #fff;
 	background-color: #2e2727;
-	border-radius: var(--px24);
-	padding: var(--px20) var(--sections-inner-paddings);
+	border-radius: var(--often-border-radius);
+	padding: var(--px8);
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+}
+
+.Logo {
+	height: var(--px40);
+	margin-left: var(--sections-inner-paddings);
 }

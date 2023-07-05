@@ -1,0 +1,12 @@
+.Button {
+	border: 2px solid #fff;
+	color: #fff;
+}
+
+.outline_transparent {
+	background-color: transparent;
+	padding: var(--px15) var(--px30);
+	font-family: 'mm', sans-serif;
+	font-size: var(--px20);
+	border-radius: 200px;
+}
