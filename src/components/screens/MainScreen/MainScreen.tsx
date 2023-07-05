@@ -7,6 +7,9 @@ import Button, { ButtonTheme } from '../../shared/ui/Button/Button'
 import Title, { TitleTheme } from '../../shared/ui/Titles/Title'
 import Card, { CardTheme } from '../../shared/Card/Card'
 import { cardsList } from './data'
+import { NavLink } from 'react-router-dom'
+import Typography, { TypographyTheme } from '../../shared/ui/Typography/Typography'
+import AppLink, { AppLinkTheme } from '../../shared/ui/AppLink/AppLink'
 
 interface MainScreenI {
 	className?: string
@@ -14,27 +17,50 @@ interface MainScreenI {
 
 const MainScreen = ({ className = '' }: MainScreenI) => {
 	return (
-		<div className={cn(className, styles.MainScreen)}>
-			<div className={cn(styles.bg)}>
-				<AppImage src={bgImage} />
-			</div>
+		<>
+			<div className={cn(className, styles.MainScreen)}>
+				<div className={cn(styles.bg)}>
+					<AppImage src={bgImage} />
+				</div>
 
-			<div className={cn(styles.Content)}>
-				<Button theme={ButtonTheme.OUTLINE_TRANSPARENT}>Олимпиады</Button>
-				<Title
-					style={{ color: '#fff' }}
-					theme={TitleTheme.H1_UPPERCASE}
-					className={cn('m_t_30', styles.Title)}
-					text='Система поддержки проведения интеллектуальных соревнований школьников'
-				/>
+				<div className={cn(styles.Content)}>
+					<Button theme={ButtonTheme.OUTLINE_TRANSPARENT}>Олимпиады</Button>
+					<Title
+						style={{ color: '#fff' }}
+						theme={TitleTheme.H1_UPPERCASE}
+						className={cn('m_t_30', styles.Title)}
+						text='Система поддержки проведения интеллектуальных соревнований школьников'
+					/>
 
-				<div className={cn(styles.CardsWrapper)}>
-					{cardsList.map((card, index) => (
-						<Card data={card} key={index + 'title' + card.title} theme={CardTheme.BLUR_THEME} className={styles.Card} />
-					))}
+					<div className={cn(styles.CardsWrapper)}>
+						{cardsList.map((card, index) => (
+							<Card
+								data={card}
+								key={index + 'title' + card.title}
+								theme={CardTheme.BLUR_THEME}
+								className={styles.Card}
+							/>
+						))}
+					</div>
 				</div>
 			</div>
-		</div>
+
+			<div className={cn(styles.MoreBtn)}>
+				<AppLink
+					to={'/about'}
+					theme={AppLinkTheme.LINK_WITH_ARROW_XXL}
+					style={{ color: '#fff' }}
+					text='Подробнее об олимпиадах'
+					className={cn('fz_40')}
+				/>
+			</div>
+
+			{/* <NavLink to='/about'>
+				<div className={cn(styles.MoreBtn)}>
+					<Typography theme={TypographyTheme.PARAGRAPH_THEME} text='Подробнее об олимпиадах' />
+				</div>
+			</NavLink> */}
+		</>
 	)
 }
 

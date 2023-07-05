@@ -3,8 +3,9 @@
 	width: calc(100% - var(--sections-padding) * 2);
 	padding: var(--sections-inner-paddings);
 	margin: auto;
-	height: 80vh;
+	/* height: 80vh; */
 	box-sizing: border-box;
+	margin-bottom: var(--px15);
 }
 
 .bg {
@@ -38,4 +39,14 @@
 
 .Card {
 	width: calc(33.3% - var(--px17) * 2 / 3);
+}
+
+.MoreBtn {
+	background-color: #000;
+	width: calc(100% - var(--sections-padding) * 2);
+	padding: var(--sections-inner-paddings);
+	margin: auto;
+	box-sizing: border-box;
+	border-radius: var(--often-border-radius);
+	overflow: hidden;
 }

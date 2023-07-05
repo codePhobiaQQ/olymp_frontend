@@ -6,6 +6,7 @@ import Typography from '../Typography/Typography'
 
 export enum AppLinkTheme {
 	LINK_WITH_ARROW = 'link_with_arrow',
+	LINK_WITH_ARROW_XXL = 'link_with_arrow_xxl',
 }
 
 interface AppLinkI extends NavLinkProps {
@@ -17,11 +18,19 @@ interface AppLinkI extends NavLinkProps {
 const AppLink = (props: AppLinkI) => {
 	const { className = '', to, theme = AppLinkTheme.LINK_WITH_ARROW, text, ...otherProps } = props
 
-	if (theme)
+	if (theme == AppLinkTheme.LINK_WITH_ARROW)
 		return (
 			<NavLink to={to} className={cn(className, styles.AppLink, styles[theme])} {...otherProps}>
 				<Typography style={{ borderBottom: '2px solid #fff' }} className='fz_18 ttu' text={text} />
 				<ArrowSvg className={cn('h_15', 'w_15', 'fill_white')} />
+			</NavLink>
+		)
+
+	if (theme == AppLinkTheme.LINK_WITH_ARROW_XXL)
+		return (
+			<NavLink to={to} className={cn(className, styles.AppLink, styles[theme])} {...otherProps}>
+				<Typography className='fz_40 ttu' text={text} />
+				<ArrowSvg className={cn('h_30', 'w_35', 'fill_white')} />
 			</NavLink>
 		)
 }

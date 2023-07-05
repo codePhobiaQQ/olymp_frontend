@@ -6,3 +6,10 @@
 	align-items: center;
 	justify-content: space-between;
 }
+
+.link_with_arrow_xxl {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	font-family: 'msb', sans-serif;
+}
