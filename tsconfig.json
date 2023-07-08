@@ -18,14 +18,15 @@
 		"strict": true,
 		"noUnusedLocals": true,
 		"noUnusedParameters": true,
-		"noFallthroughCasesInSwitch": true
-	},
-	"baseUrl": ".",
-	"paths": {
-		"@/*": ["src/*"],
-		"@components/*": ["src/components/*"],
-		"@assets/*": ["src/assets/*"],
-		"@shared/*": ["src/components/shared/*"]
+		"noFallthroughCasesInSwitch": true,
+
+		"baseUrl": ".",
+		"paths": {
+			"@/*": ["src/*"],
+			"@components/*": ["src/components/*"],
+			"@assets/*": ["src/assets/*"],
+			"@shared/*": ["src/components/shared/*"]
+		}
 	},
 
 	"include": ["src", "src/core/global.d.ts"],

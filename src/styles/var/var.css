@@ -53,6 +53,7 @@
 	--px64: min(calc(var(--index) * 3.05), 64px);
 	--px73: min(calc(var(--index) * 3.47), 73px);
 	--px80: min(calc(var(--index) * 3.8), 80px);
+	--px100: min(calc(var(--index) * 4.76), 100px);
 	--px120: min(calc(var(--index) * 5.71), 120px);
 	--px150: min(calc(var(--index) * 7.14), 150px);
 	--px180: min(calc(var(--index) * 8.57), 180px);
