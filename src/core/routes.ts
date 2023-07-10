@@ -1,3 +1,5 @@
+import actionCard1 from './../assets/images/actions/actionCard1.jpg'
+
 // -------------------------
 // ------ Core routes ------
 // -------------------------
@@ -34,15 +36,15 @@ export const routes: RoutesType = {
 		path: 'online-study',
 	},
 	[RoutePages.FAQ]: {
-		path: '',
+		path: 'faq',
 		label: undefined,
 	},
 	[RoutePages.UNIVERSITY_REGISTRATION]: {
-		path: '',
+		path: 'university-registration',
 		label: undefined,
 	},
 	[RoutePages.LK]: {
-		path: '',
+		path: 'lk',
 		label: undefined,
 	},
 }
@@ -51,10 +53,11 @@ export const routes: RoutesType = {
 // ----- Action screen -----
 // -------------------------
 
-interface RouteActionScreenAttributes extends RouteAttributes {
+export interface RouteActionScreenAttributes extends RouteAttributes {
 	id: number
 	title?: string
 	description?: string
+	image?: string
 }
 
 export type RoutesActionScreenType = Partial<Record<RoutePages, RouteActionScreenAttributes>>
@@ -65,6 +68,7 @@ export const routesActionScreen: RoutesActionScreenType = {
 		id: 1,
 		title: 'Новости',
 		description: 'Самая актуальная информация о мероприятиях, проводимых порталом v-olymp.ru',
+		image: actionCard1,
 	},
 	[RoutePages.OnlineStudy]: {
 		...routes[RoutePages.OnlineStudy],
@@ -72,18 +76,21 @@ export const routesActionScreen: RoutesActionScreenType = {
 		title: 'Онлайн-обучение',
 		description:
 			'В данном разделе представлены материалы для подготовки к олимпиаде,  а также сдачи вступительных испытаний',
+		image: actionCard1,
 	},
 	[RoutePages.OlympSchedule]: {
 		...routes[RoutePages.OlympSchedule],
 		id: 3,
 		title: 'РАСПИСАНИЕ ОЛИМПИАД',
 		description: 'Следите за обновлениями данного раздела, чтобы не пропустить важные мероприятия',
+		image: actionCard1,
 	},
 	[RoutePages.FAQ]: {
 		...routes[RoutePages.FAQ],
 		id: 4,
 		title: 'частозадаваемые вопросы',
 		description: 'Самая актуальная информация о мероприятиях, проводимых порталом v-olymp.ru',
+		image: actionCard1,
 	},
 	[RoutePages.UNIVERSITY_REGISTRATION]: {
 		...routes[RoutePages.UNIVERSITY_REGISTRATION],
@@ -91,11 +98,13 @@ export const routesActionScreen: RoutesActionScreenType = {
 		title: 'регистрация для вузов',
 		description:
 			'Если вы являетесь представителем ВУЗа и у Вас есть желание проводить олимпиады на базе Вашего учебного заведения',
+		image: actionCard1,
 	},
 	[RoutePages.LK]: {
 		...routes[RoutePages.LK],
 		id: 6,
 		title: 'личный кабинет',
 		description: 'В этом разделе будут представлена',
+		image: actionCard1,
 	},
 }

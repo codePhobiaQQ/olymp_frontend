@@ -21,9 +21,10 @@ const MainScreen = ({ className = '' }: MainScreenI) => {
 				</div>
 
 				<div className={cn(styles.Content)}>
-					<Button theme={ButtonTheme.OUTLINE_TRANSPARENT} colorTheme={ButtonColorTheme.LIGHT}>
+					<Button className='p_e_n' theme={ButtonTheme.OUTLINE_TRANSPARENT} colorTheme={ButtonColorTheme.LIGHT}>
 						Олимпиады
 					</Button>
+
 					<Title
 						style={{ color: '#fff' }}
 						theme={TitleTheme.H1_UPPERCASE}

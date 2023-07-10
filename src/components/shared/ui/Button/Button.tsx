@@ -25,7 +25,7 @@ interface ButtonI extends ButtonHTMLAttributes<HTMLButtonElement> {
 	theme?: ButtonTheme
 	wrapperClassName?: string
 	borderRadius?: ButtonBorderRadiusTheme
-	colorTheme?: ButtonBorderRadiusTheme
+	colorTheme?: ButtonColorTheme
 }
 
 const Button = (props: ButtonI) => {

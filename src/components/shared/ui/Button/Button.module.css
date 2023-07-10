@@ -2,6 +2,7 @@
 	border: 2px solid #fff;
 	color: #fff;
 	cursor: pointer;
+	transition: var(--transition-all);
 }
 
 .outline_transparent {
@@ -18,10 +19,18 @@
 	color: #000;
 	border-color: #000;
 }
+.dark:hover {
+	color: #fff;
+	background-color: #000;
+}
 
 .light {
 	color: #fff;
 	border-color: #fff;
+}
+.light:hover {
+	color: #000;
+	border-color: #000;
 }
 
 /* Border Radius */

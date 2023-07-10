@@ -1,7 +1,8 @@
-import Card from '@/components/shared/Card/Card'
+import Card, { CardTheme } from '@/components/shared/Card/Card'
 import { DataTypes, isRoutesActionScreenType } from '../../model/types/DataTypes'
 import cls from './CardsScreen.module.css'
 import cn from 'classnames'
+import AppLink from '@/components/shared/ui/AppLink/AppLink'
 
 export enum CardsScreenTheme {
 	LINK_CARDS = 'link_cards',
@@ -62,12 +63,12 @@ interface ShowCardsComponentI {
 
 const ShowCardsComponent = ({ data }: ShowCardsComponentI) => {
 	if (isRoutesActionScreenType(data)) {
-		console.log(data)
-
 		return (
 			<>
 				{Object.values(data).map(card => (
-					<Card key={card.id} />
+					<AppLink to={card.path} key={card.id}>
+						{Card<CardTheme.DEFAULT_THEME>({ data: card, theme: CardTheme.DEFAULT_THEME })}
+					</AppLink>
 				))}
 			</>
 		)
