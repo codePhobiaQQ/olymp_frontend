@@ -1,6 +1,6 @@
 import Card, { CardTheme } from '@components/shared/Card/Card'
 import Title, { TitleTheme } from '../../../../shared/ui/Titles/Title'
-import { advantageData } from '../../data'
+import { advantageData } from '../../model/data'
 import styles from './AdvantagesCard.module.css'
 import cn from 'classnames'
 import Typography from '@components/shared/ui/Typography/Typography'

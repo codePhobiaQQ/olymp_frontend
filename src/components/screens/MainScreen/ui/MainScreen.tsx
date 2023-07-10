@@ -1,16 +1,11 @@
 import cn from 'classnames'
 import styles from './MainScreen.module.css'
 import AppImage from './../../../shared/ui/AppImage/AppImage'
-
-import bgImage from './../../../assets/images/olymps/bg/OlympsBgDesctop.jpg'
+import bgImage from './../../../../assets/images/olymps/bg/OlympsBgDesctop.jpg'
 import Button, { ButtonTheme } from '../../../shared/ui/Button/Button'
 import Title, { TitleTheme } from '@shared/ui/Titles/Title'
 import Card, { CardTheme } from '../../../shared/Card/Card'
-import { cardsList } from './../data'
-
-import { NavLink } from 'react-router-dom'
-import Typography, { TypographyTheme } from './../../../shared/ui/Typography/Typography'
-
+import { cardsList } from '../model/data'
 import AppLink, { AppLinkTheme } from './../../../shared/ui/AppLink/AppLink'
 
 interface MainScreenI {
@@ -21,7 +16,9 @@ const MainScreen = ({ className = '' }: MainScreenI) => {
 	return (
 		<>
 			<div className={cn(className, styles.MainScreen)}>
-				<div className={cn(styles.bg)}>{/* <AppImage src={bgImage} /> */}</div>
+				<div className={cn(styles.bg)}>
+					<AppImage src={bgImage} />
+				</div>
 
 				<div className={cn(styles.Content)}>
 					<Button theme={ButtonTheme.OUTLINE_TRANSPARENT}>Олимпиады</Button>
@@ -54,12 +51,6 @@ const MainScreen = ({ className = '' }: MainScreenI) => {
 					className={cn('fz_40')}
 				/>
 			</div>
-
-			{/* <NavLink to='/about'>
-				<div className={cn(styles.MoreBtn)}>
-					<Typography theme={TypographyTheme.PARAGRAPH_THEME} text='Подробнее об олимпиадах' />
-				</div>
-			</NavLink> */}
 		</>
 	)
 }

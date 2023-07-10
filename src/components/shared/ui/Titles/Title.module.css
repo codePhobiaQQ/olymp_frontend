@@ -12,6 +12,10 @@
 }
 .h2 {
 }
+h2.title_with_text {
+	font-size: var(--px64);
+	font-family: 'msb', sans-serif;
+}
 .h3 {
 }
 .h4 {

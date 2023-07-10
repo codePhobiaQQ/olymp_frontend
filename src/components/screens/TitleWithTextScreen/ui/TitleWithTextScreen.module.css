@@ -1,0 +1,29 @@
+.TitleWithTextScreen {
+	padding: var(--px100) var(--sections-padding);
+}
+
+.TitleWrapper {
+	width: 48%;
+	margin-bottom: var(--px40);
+}
+
+.TextWrapper {
+	width: 48%;
+	margin-left: auto;
+}
+
+.AuthorWrapper {
+	font-family: 'msb', sans-serif;
+	display: flex;
+	align-items: center;
+	margin-top: var(--px20);
+}
+.AuthorWrapper::before {
+	content: '';
+	display: block;
+	position: relative;
+	height: 2px;
+	width: var(--px80);
+	background-color: #000;
+	margin-right: var(--px8);
+}

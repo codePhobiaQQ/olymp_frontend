@@ -1,4 +1,4 @@
-import { CardItem } from '../../screens/MainScreen/data'
+import { CardItem } from '../../screens/MainScreen/model/data'
 import AppLink, { AppLinkTheme } from '../ui/AppLink/AppLink'
 import Title, { TitleTheme } from '../ui/Titles/Title'
 import styles from './Card.module.css'

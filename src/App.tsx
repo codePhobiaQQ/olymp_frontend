@@ -25,7 +25,7 @@ import './styles/components/index.scss'
 // ----
 
 import { Route, Routes } from 'react-router-dom'
-import MainPage from './components/pages/MainPage/MainPage'
+import MainPage from './components/pages/ui/MainPage/MainPage'
 
 function App() {
 	return (

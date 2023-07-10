@@ -1,4 +1,4 @@
-import { advantagesData } from '../../data'
+import { advantagesData } from '../../model/data'
 import AdvantagesCard from '../AdvantagesCard/AdvantagesCard'
 import styles from './AdvantagesScreen.module.css'
 import cn from 'classnames'
