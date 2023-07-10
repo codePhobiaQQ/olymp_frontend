@@ -1,11 +1,10 @@
-import { useState, useCallback } from 'React'
+import { useState, useCallback } from 'react'
 import AppImage from '@/components/shared/ui/AppImage/AppImage'
 import cls from './SubscribeScreen.module.css'
 import cn from 'classnames'
 import bg from './../../../../../assets/images/subscribe/subscribeBg.jpg'
 import Title, { TitleTheme } from '@/components/shared/ui/Titles/Title'
 import Typography, { TypographyTheme } from '@/components/shared/ui/Typography/Typography'
-import SubscribeInputField from '../SubscribeInputField/SubscribeInputField'
 
 interface SubscribeScreenI {
 	className?: string
