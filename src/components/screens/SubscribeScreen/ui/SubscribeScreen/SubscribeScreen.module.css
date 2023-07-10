@@ -1,9 +1,11 @@
 .SubscribeScreen {
 	padding: 0 var(--sections-padding);
+	color: #fff;
 }
 
 .SubscribeScreenInner {
 	position: relative;
+	padding: var(--px120) var(--px80);
 }
 
 .bg {
