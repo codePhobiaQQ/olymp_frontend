@@ -3,10 +3,12 @@ type linkType = {
 	text: string
 }
 
-export type CardItem = {
+type blureCardItem = {
 	title?: string
 	links?: linkType[]
 }
+
+export type CardItem = blureCardItem
 
 export const cardsList: CardItem[] = [
 	{

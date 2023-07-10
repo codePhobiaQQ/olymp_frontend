@@ -6,15 +6,16 @@ import cn from 'classnames'
 
 export enum CardTheme {
 	BLUR_THEME = 'blur_theme',
+	DEFAULT_THEME = 'default_theme',
 }
 
-interface CardI {
+interface CardI<T extends CardTheme> {
 	className?: string
-	theme?: CardTheme
+	theme?: T
 	data?: CardItem
 }
 
-const Card = ({ className = '', theme = CardTheme.BLUR_THEME, data }: CardI) => {
+const Card = <T extends CardTheme = CardTheme.DEFAULT_THEME>({ className = '', theme, data }: CardI<T>) => {
 	if (theme == CardTheme.BLUR_THEME) {
 		return (
 			<div className={cn(className, styles.Card, styles[theme])}>
@@ -27,6 +28,14 @@ const Card = ({ className = '', theme = CardTheme.BLUR_THEME, data }: CardI) => 
 						</li>
 					))}
 				</ul>
+			</div>
+		)
+	}
+
+	if (theme == CardTheme.DEFAULT_THEME) {
+		return (
+			<div className={cn(className, styles.Card, styles[theme])}>
+				<Title theme={TitleTheme.H4_THIN} className={cn(styles.CardTitle, 'ttu')} text={data?.title} />
 			</div>
 		)
 	}

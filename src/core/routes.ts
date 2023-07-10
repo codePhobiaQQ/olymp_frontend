@@ -52,42 +52,49 @@ export const routes: RoutesType = {
 // -------------------------
 
 interface RouteActionScreenAttributes extends RouteAttributes {
+	id: number
 	title?: string
 	description?: string
 }
 
-type RoutesActionScreenType = Partial<Record<RoutePages, RouteActionScreenAttributes>>
+export type RoutesActionScreenType = Partial<Record<RoutePages, RouteActionScreenAttributes>>
 
 export const routesActionScreen: RoutesActionScreenType = {
 	[RoutePages.News]: {
 		...routes[RoutePages.News],
+		id: 1,
 		title: 'Новости',
 		description: 'Самая актуальная информация о мероприятиях, проводимых порталом v-olymp.ru',
 	},
 	[RoutePages.OnlineStudy]: {
 		...routes[RoutePages.OnlineStudy],
+		id: 2,
 		title: 'Онлайн-обучение',
 		description:
 			'В данном разделе представлены материалы для подготовки к олимпиаде,  а также сдачи вступительных испытаний',
 	},
 	[RoutePages.OlympSchedule]: {
 		...routes[RoutePages.OlympSchedule],
+		id: 3,
 		title: 'РАСПИСАНИЕ ОЛИМПИАД',
 		description: 'Следите за обновлениями данного раздела, чтобы не пропустить важные мероприятия',
 	},
 	[RoutePages.FAQ]: {
 		...routes[RoutePages.FAQ],
+		id: 4,
 		title: 'частозадаваемые вопросы',
 		description: 'Самая актуальная информация о мероприятиях, проводимых порталом v-olymp.ru',
 	},
 	[RoutePages.UNIVERSITY_REGISTRATION]: {
 		...routes[RoutePages.UNIVERSITY_REGISTRATION],
+		id: 5,
 		title: 'регистрация для вузов',
 		description:
 			'Если вы являетесь представителем ВУЗа и у Вас есть желание проводить олимпиады на базе Вашего учебного заведения',
 	},
 	[RoutePages.LK]: {
 		...routes[RoutePages.LK],
+		id: 6,
 		title: 'личный кабинет',
 		description: 'В этом разделе будут представлена',
 	},
