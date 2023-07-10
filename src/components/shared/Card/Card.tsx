@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 import { RouteActionScreenAttributes } from '@/core/routes'
 import { CardItem } from '../../screens/MainScreen/model/data'
-import AppImage from '../ui/AppImage/AppImage'
+// import AppImage from '../ui/AppImage/AppImage'
 import AppLink, { AppLinkTheme } from '../ui/AppLink/AppLink'
 import Title, { TitleTheme } from '../ui/Titles/Title'
 import cls from './Card.module.css'
@@ -48,8 +48,8 @@ const Card = <T extends CardTheme = CardTheme.DEFAULT_THEME>(props: CardI<T>) =>
 	if (theme == CardTheme.DEFAULT_THEME) {
 		return (
 			<div className={cn(className, cls.Card, cls[theme])}>
-				<div className={cls.bg}>{data?.image && <AppImage src={data.image} />}</div>
-				<Title theme={TitleTheme.H4_THIN} className={cn(cls.CardTitle, 'ttu')} text={data?.title} />
+				{/* <div className={cls.bg}>{data?.image && <AppImage src={data.image} />}</div>
+				<Title theme={TitleTheme.H4_THIN} className={cn(cls.CardTitle, 'ttu')} text={data?.title} /> */}
 			</div>
 		)
 	}

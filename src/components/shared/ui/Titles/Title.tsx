@@ -1,4 +1,4 @@
-import { HTMLAttributes, ReactNode } from 'react'
+import { HTMLAttributes } from 'react'
 import styles from './Title.module.css'
 import cn from 'classnames'
 

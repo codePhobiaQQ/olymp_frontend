@@ -3,8 +3,8 @@ import PageHoc from '../../../hoc/PageHoc/PageHoc'
 import { AdvantagesScreen } from '@components/screens/AdvantagesScreen'
 import { MainScreen } from '@components/screens/MainScreen'
 import { TitleTextData } from '../../model/data'
-import { CardsScreen, CardsScreenTheme } from '@components/screens/CardsScreen'
-import { routesActionScreen } from '@/core/routes'
+// import { CardsScreen, CardsScreenTheme } from '@components/screens/CardsScreen'
+// import { routesActionScreen } from '@/core/routes'
 import SubscribeScreen from '@components/screens/SubscribeScreen/ui/SubscribeScreen/SubscribeScreen'
 
 const MainPage = () => {
