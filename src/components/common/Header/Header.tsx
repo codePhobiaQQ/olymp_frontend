@@ -2,8 +2,8 @@ import styles from './Header.module.css'
 // import Logo from '@assets/svg/Logo.svg'
 import cn from 'classnames'
 import TopNavigation from '../TopNavigation/TopNavigation'
-import HeaderButton from '../../shared/ui/HeaderButton/HeaderButton'
 import LogoSvg from '../../../assets/svg/LogoSvg'
+import Button, { ButtonBorderRadiusTheme, ButtonColorTheme } from '@components/shared/ui/Button/Button'
 
 interface HeaderI {
 	className?: string
@@ -15,7 +15,9 @@ const Header = ({ className = '' }: HeaderI) => {
 			<div className={cn(styles.HeaderInnner)}>
 				<LogoSvg className={cn(styles.Logo)} />
 				<TopNavigation />
-				<HeaderButton text={'Войти'} />
+				<Button borderRadius={ButtonBorderRadiusTheme.S} colorTheme={ButtonColorTheme.DARK}>
+					Войти
+				</Button>
 			</div>
 		</div>
 	)

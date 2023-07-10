@@ -2,7 +2,7 @@ import cn from 'classnames'
 import styles from './MainScreen.module.css'
 import AppImage from './../../../shared/ui/AppImage/AppImage'
 import bgImage from './../../../../assets/images/olymps/bg/OlympsBgDesctop.jpg'
-import Button, { ButtonTheme } from '../../../shared/ui/Button/Button'
+import Button, { ButtonColorTheme, ButtonTheme } from '../../../shared/ui/Button/Button'
 import Title, { TitleTheme } from '@shared/ui/Titles/Title'
 import Card, { CardTheme } from '../../../shared/Card/Card'
 import { cardsList } from '../model/data'
@@ -21,7 +21,9 @@ const MainScreen = ({ className = '' }: MainScreenI) => {
 				</div>
 
 				<div className={cn(styles.Content)}>
-					<Button theme={ButtonTheme.OUTLINE_TRANSPARENT}>Олимпиады</Button>
+					<Button theme={ButtonTheme.OUTLINE_TRANSPARENT} colorTheme={ButtonColorTheme.LIGHT}>
+						Олимпиады
+					</Button>
 					<Title
 						style={{ color: '#fff' }}
 						theme={TitleTheme.H1_UPPERCASE}

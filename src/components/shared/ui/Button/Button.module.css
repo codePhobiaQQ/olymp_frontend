@@ -1,12 +1,43 @@
 .Button {
 	border: 2px solid #fff;
 	color: #fff;
+	cursor: pointer;
 }
 
 .outline_transparent {
 	background-color: transparent;
-	padding: var(--px15) var(--px30);
+	padding: var(--px10) var(--px30);
 	font-family: 'mm', sans-serif;
 	font-size: var(--px20);
 	border-radius: 200px;
+}
+
+/* ColorTheme */
+
+.dark {
+	color: #000;
+	border-color: #000;
+}
+
+.light {
+	color: #fff;
+	border-color: #fff;
+}
+
+/* Border Radius */
+
+.s {
+	border-radius: var(--px15);
+}
+
+.m {
+}
+
+.l {
+}
+
+.xl {
+}
+
+.xxl {
 }

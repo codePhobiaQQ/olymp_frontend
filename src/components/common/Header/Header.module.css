@@ -5,8 +5,8 @@
 }
 
 .HeaderInnner {
-	color: #fff;
-	background-color: #2e2727;
+	color: #000;
+	/* background-color: #2e2727; */
 	border-radius: var(--often-border-radius);
 	padding: var(--px8);
 	display: flex;
