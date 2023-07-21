@@ -25,12 +25,21 @@ import './styles/components/index.scss'
 // ----
 
 import { Route, Routes } from 'react-router-dom'
-import MainPage from './components/pages/ui/MainPage/MainPage'
+import { MainPage } from './components/pages'
+import { FullPage } from './components/hoc'
 
 function App() {
 	return (
 		<Routes>
-			<Route path='/' element={<MainPage />} />
+			<Route
+				path='/'
+				element={
+					<FullPage>
+						<></>
+					</FullPage>
+					// <MainPage />
+				}
+			/>
 		</Routes>
 	)
 }

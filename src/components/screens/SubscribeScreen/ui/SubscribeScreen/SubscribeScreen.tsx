@@ -5,6 +5,7 @@ import cn from 'classnames'
 import bg from './../../../../../assets/images/subscribe/subscribeBg.jpg'
 import Title, { TitleTheme } from '@/components/shared/ui/Titles/Title'
 import Typography, { TypographyTheme } from '@/components/shared/ui/Typography/Typography'
+import SubscribeInputField from '../SubscribeInputField/SubscribeInputField'
 
 interface SubscribeScreenI {
 	className?: string
@@ -38,9 +39,11 @@ const SubscribeScreen = ({ className = '' }: SubscribeScreenI) => {
 							theme={TypographyTheme.PARAGRAPH_THEME}
 							text='Нажимая подписаться вы принимаете условия Пользовательского соглашения и Политики конфиденциальности '
 						/>
-						<SubscribeInputField value={email} onChange={changeHandler} />
+
+						{/* <SubscribeInputField value={email} onChange={changeHandler} /> */}
 					</div>
 				</div>
+				
 			</div>
 		</div>
 	)
