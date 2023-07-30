@@ -1,4 +1,4 @@
-import Card, { CardTheme } from '@/components/shared/Card/Card'
+import MainScreenCard, { CardTheme } from '@/components/shared/Card/Card'
 import { DataTypes, isRoutesActionScreenType } from '../../model/types/DataTypes'
 import cls from './CardsScreen.module.css'
 import cn from 'classnames'
@@ -67,7 +67,7 @@ const ShowCardsComponent = ({ data }: ShowCardsComponentI) => {
 			<>
 				{Object.values(data).map(card => (
 					<AppLink to={card.path} key={card.id}>
-						{Card<CardTheme.DEFAULT_THEME>({ data: card, theme: CardTheme.DEFAULT_THEME })}
+						{MainScreenCard<CardTheme.DEFAULT_THEME>({ data: card, theme: CardTheme.DEFAULT_THEME })}
 					</AppLink>
 				))}
 			</>

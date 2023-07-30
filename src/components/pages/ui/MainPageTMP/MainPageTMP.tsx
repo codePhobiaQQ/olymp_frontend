@@ -1,5 +1,6 @@
 import Header from '@/components/common/Header/Header'
 import { FullPage } from '@/components/hoc/FullPage'
+import { MainScreen } from '@/components/screens/MainScreen'
 
 const MainPageTMP = () => {
 	return (
@@ -9,7 +10,7 @@ const MainPageTMP = () => {
 					component: (
 						<>
 							<Header />
-							123
+							<MainScreen />
 						</>
 					),
 					sectionId: 'MainSection',

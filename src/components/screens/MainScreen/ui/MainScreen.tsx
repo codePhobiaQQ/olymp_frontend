@@ -1,12 +1,9 @@
 import cn from 'classnames'
-import styles from './MainScreen.module.css'
-import AppImage from '@components/shared/ui/AppImage/AppImage'
-import bgImage from '@components/shared/assets/images/olymps/bg/OlympsBgDesctop.jpg'
-import Button, { ButtonColorTheme, ButtonTheme } from '../../../shared/ui/Button/Button'
+import cls from './MainScreen.module.css'
 import Title, { TitleTheme } from '@shared/ui/Titles/Title'
-import Card, { CardTheme } from '../../../shared/Card/Card'
+import MainScreenCard from '../../../shared/Card/Card'
 import { cardsList } from '../model/data'
-import AppLink, { AppLinkTheme } from './../../../shared/ui/AppLink/AppLink'
+import LogoSvg from '@/components/shared/assets/svg/LogoSvg'
 
 interface MainScreenI {
 	className?: string
@@ -15,37 +12,26 @@ interface MainScreenI {
 const MainScreen = ({ className = '' }: MainScreenI) => {
 	return (
 		<>
-			<div className={cn(className, styles.MainScreen)}>
-				<div className={cn(styles.bg)}>
-					<AppImage src={bgImage} />
-				</div>
-
-				<div className={cn(styles.Content)}>
-					<Button className='p_e_n' theme={ButtonTheme.OUTLINE_TRANSPARENT} colorTheme={ButtonColorTheme.LIGHT}>
-						Олимпиады
-					</Button>
+			<div className={cn(className, cls.MainScreen)}>
+				<div className={cn(cls.Content)}>
+					<LogoSvg className={cn(cls.LogoTitle)} />
 
 					<Title
 						style={{ color: '#fff' }}
 						theme={TitleTheme.H1_UPPERCASE}
-						className={cn('m_t_30', styles.Title)}
+						className={cn('m_t_30', cls.Title)}
 						text='Система поддержки проведения интеллектуальных соревнований школьников'
 					/>
 
-					<div className={cn(styles.CardsWrapper)}>
+					<div className={cn(cls.CardsWrapper)}>
 						{cardsList.map((card, index) => (
-							<Card
-								data={card}
-								key={index + 'title' + card.title}
-								theme={CardTheme.BLUR_THEME}
-								className={styles.Card}
-							/>
+							<MainScreenCard data={card} key={index + 'title' + card.title} className={cls.Card} />
 						))}
 					</div>
 				</div>
 			</div>
 
-			<div className={cn(styles.MoreBtn)}>
+			{/* <div className={cn(cls.MoreBtn)}>
 				<AppLink
 					to={'/about'}
 					theme={AppLinkTheme.LINK_WITH_ARROW_XXL}
@@ -53,7 +39,7 @@ const MainScreen = ({ className = '' }: MainScreenI) => {
 					text='Подробнее об олимпиадах'
 					className={cn('fz_40')}
 				/>
-			</div>
+			</div> */}
 		</>
 	)
 }

@@ -4,55 +4,38 @@ import { CardItem } from '../../screens/MainScreen/model/data'
 // import AppImage from '../ui/AppImage/AppImage'
 import AppLink, { AppLinkTheme } from '../ui/AppLink/AppLink'
 import Title, { TitleTheme } from '../ui/Titles/Title'
-import cls from './Card.module.css'
+import cls from './Card.module.scss'
 import cn from 'classnames'
 
-export enum CardTheme {
-	BLUR_THEME = 'blur_theme',
-	DEFAULT_THEME = 'default_theme',
+export enum CardSizeTheme {
+	S = 'S',
+	M = 'M',
+	X = 'X',
 }
 
-type dataType<T extends CardTheme> = T extends CardTheme.BLUR_THEME
-	? CardItem
-	: T extends CardTheme.DEFAULT_THEME
-	? RouteActionScreenAttributes
-	: any
-
-interface CardI<T extends CardTheme> {
+interface CardI {
 	className?: string
-	theme?: T
-	data?: dataType<T>
+	data: CardItem
+	sizeTheme?: CardSizeTheme
 }
 
-const Card = <T extends CardTheme = CardTheme.DEFAULT_THEME>(props: CardI<T>) => {
-	const { className = '', theme, data } = props
+const MainScreenCard = (props: CardI) => {
+	const { className = '', data, sizeTheme = CardSizeTheme.M } = props
 
-	if (theme == CardTheme.BLUR_THEME) {
-		console.log(data)
+	return (
+		<div className={cn(className, cls.MainScreenCard, cls.Card, cls[sizeTheme])}>
+			<Title theme={TitleTheme.H4} className={cn(cls.CardTitle, 'ttu')} text={data?.title} />
 
-		return (
-			<div className={cn(className, cls.Card, cls[theme])}>
-				<Title theme={TitleTheme.H4_THIN} className={cn(cls.CardTitle, 'ttu')} text={data?.title} />
-				<ul>
-					{/* @ts-ignore */}
-					{data?.links?.map((link, index) => (
-						<li key={index + 'link' + link.path}>
-							<AppLink text={link.text} to={link.path} theme={AppLinkTheme.LINK_WITH_ARROW} />
-						</li>
-					))}
-				</ul>
-			</div>
-		)
-	}
-
-	if (theme == CardTheme.DEFAULT_THEME) {
-		return (
-			<div className={cn(className, cls.Card, cls[theme])}>
-				{/* <div className={cls.bg}>{data?.image && <AppImage src={data.image} />}</div>
-				<Title theme={TitleTheme.H4_THIN} className={cn(cls.CardTitle, 'ttu')} text={data?.title} /> */}
-			</div>
-		)
-	}
+			<ul>
+				{/* @ts-ignore */}
+				{data?.links?.map((link, index) => (
+					<li key={index + 'link' + link.path}>
+						<AppLink text={link.text} to={link.path} theme={AppLinkTheme.LINK_WITH_ARROW} />
+					</li>
+				))}
+			</ul>
+		</div>
+	)
 }
 
-export default Card
+export default MainScreenCard

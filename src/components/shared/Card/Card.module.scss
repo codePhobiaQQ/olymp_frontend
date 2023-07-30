@@ -2,9 +2,24 @@
 	border-radius: var(--often-border-radius);
 	color: #fff;
 	box-sizing: border-box;
-	padding: var(--sections-inner-paddings);
+	padding: calc(var(--sections-inner-paddings));
 	overflow: hidden;
 	position: relative;
+
+	&.MainScreenCard {
+		background-color: rgba(255, 255, 255, 0.05);
+	}
+
+	&.S {
+	}
+	&.M {
+		.CardTitle {
+			font-size: var(--px18) !important;
+			font-family: 'msb', sans-serif;
+		}
+	}
+	&.X {
+	}
 }
 
 .bg {

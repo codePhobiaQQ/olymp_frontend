@@ -1,7 +1,7 @@
 .MainScreen {
 	position: relative;
-	width: calc(100% - var(--sections-padding) * 2);
-	padding: var(--sections-inner-paddings);
+	/* width: calc(100% - var(--sections-padding) * 2); */
+	padding: 0 calc(var(--sections-inner-paddings) + var(--px15));
 	margin: auto;
 	/* height: 80vh; */
 	box-sizing: border-box;
@@ -27,8 +27,21 @@
 	flex-direction: column;
 }
 
+.LogoTitle {
+	height: var(--px80);
+	width: 70%;
+	fill: #fff;
+	margin: auto;
+}
+
 .Title {
+	display: block;
 	max-width: 85%;
+	font-size: var(--px32);
+	text-transform: none;
+	font-family: 'mth', sans-serif;
+	text-align: center;
+	margin: auto;
 }
 
 .CardsWrapper {
