@@ -1,3 +1,5 @@
-import { FullPage } from './FullPage/FullPage'
+import PageHoc from './PageHoc/PageHoc'
+import { FullPage } from './FullPage/ui/FullPage'
+import FullPageSectionWrapper from './FullPage/ui/FullPageSectionWrapper'
 
-export { FullPage }
+export { PageHoc, FullPage, FullPageSectionWrapper }

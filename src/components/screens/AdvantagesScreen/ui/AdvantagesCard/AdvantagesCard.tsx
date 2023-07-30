@@ -1,4 +1,3 @@
-// import Card, { CardTheme } from '@components/shared/Card/Card'
 import Title, { TitleTheme } from '../../../../shared/ui/Titles/Title'
 import { advantageData } from '../../model/data'
 import styles from './AdvantagesCard.module.css'

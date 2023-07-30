@@ -1,4 +1,5 @@
 import actionCard1 from './../assets/images/actions/actionCard1.jpg'
+import { MainPageTMP } from '@/components/pages'
 
 // -------------------------
 // ------ Core routes ------
@@ -14,7 +15,7 @@ export enum RoutePages {
 	LK = 'lk',
 }
 
-type RouteAttributes = { path: string; label?: string }
+export type RouteAttributes = { path: string; label?: string; element?: React.ReactNode }
 
 type RoutesType = Record<RoutePages, RouteAttributes>
 
@@ -22,6 +23,7 @@ export const routes: RoutesType = {
 	[RoutePages.Main]: {
 		label: 'Главная',
 		path: '/',
+		element: MainPageTMP(),
 	},
 	[RoutePages.News]: {
 		label: 'Новости',

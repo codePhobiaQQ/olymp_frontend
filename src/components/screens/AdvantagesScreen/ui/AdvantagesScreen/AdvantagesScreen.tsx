@@ -11,8 +11,8 @@ const AdvantagesScreen = ({ className = '' }: AdvantagesScreenI) => {
 	return (
 		<div className={cn(className, styles.AdvantagesScreen)}>
 			<div className={cn(styles.AdvantagesWrapper)}>
-				{advantagesData.map(advantageItem => (
-					<AdvantagesCard data={advantageItem} />
+				{advantagesData.map((advantageItem, index) => (
+					<AdvantagesCard key={index + advantageItem.text} data={advantageItem} />
 				))}
 			</div>
 		</div>
