@@ -1,9 +1,11 @@
-import styles from './Header.module.css'
-// import Logo from '@assets/svg/Logo.svg'
+import cls from './Header.module.css'
 import cn from 'classnames'
 import TopNavigation from '../TopNavigation/TopNavigation'
-import LogoSvg from '../../shared/assets/svg/LogoSvg'
-import Button, { ButtonBorderRadiusTheme, ButtonColorTheme } from '@components/shared/ui/Button/Button'
+import LogoMini from './../../shared/assets/images/header/LogoMini.png'
+import CalendarIconSvg from '@/components/shared/assets/svg/CalendarIconSvg'
+import SearchIconSvg from '@/components/shared/assets/svg/SearchIconSvg'
+import LkIconSvg from '@/components/shared/assets/svg/LkIconSvg'
+import AppImage from '@/components/shared/ui/AppImage/AppImage'
 
 interface HeaderI {
 	className?: string
@@ -11,13 +13,15 @@ interface HeaderI {
 
 const Header = ({ className = '' }: HeaderI) => {
 	return (
-		<div className={cn(className, styles.Header)}>
-			<div className={cn(styles.HeaderInnner)}>
-				<LogoSvg className={cn(styles.Logo)} />
+		<div className={cn(className, cls.Header)}>
+			<div className={cn(cls.HeaderInnner)}>
+				<AppImage src={LogoMini} className={cn(cls.Logo)} />
 				<TopNavigation />
-				<Button borderRadius={ButtonBorderRadiusTheme.S} colorTheme={ButtonColorTheme.DARK}>
-					Войти
-				</Button>
+				<div className={cn(cls.HeaderActionsWrapper)}>
+					<SearchIconSvg className={cls.HeaderActionsWrapperIcon} />
+					<CalendarIconSvg className={cls.HeaderActionsWrapperIcon} />
+					<LkIconSvg className={cls.HeaderActionsWrapperIcon} />
+				</div>
 			</div>
 		</div>
 	)

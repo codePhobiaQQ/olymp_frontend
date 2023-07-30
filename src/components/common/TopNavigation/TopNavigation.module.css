@@ -5,10 +5,29 @@
 
 .TopNavigation li {
 	margin-right: var(--px50);
+	font-size: var(--px18);
 	position: relative;
+	font-family: 'mm', sans-serif;
+}
+.TopNavigation li:last-child {
+	margin-right: 0;
+}
+.TopNavigation li:before {
+	content: '';
+	display: block;
+	transform: scaleX(0) translateY(calc(-1 * var(--px5)));
+	transition: var(--transition-transform);
+	height: 2px;
+	background-color: #d9d9d9;
+}
+.TopNavigation li a {
+	color: inherit;
+}
+.TopNavigation li:hover:before {
+	transform: scaleX(1) translateY(calc(-1 * var(--px5)));
 }
 
-.TopNavigation li:after {
+/* .TopNavigation li:after {
 	content: '';
 	position: absolute;
 	display: block;
@@ -26,4 +45,4 @@
 
 .TopNavigation li:last-child:after {
 	display: none;
-}
+} */

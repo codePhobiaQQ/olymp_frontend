@@ -1,3 +1,4 @@
+import Header from '@/components/common/Header/Header'
 import { FullPage } from '@/components/hoc/FullPage'
 
 const MainPageTMP = () => {
@@ -5,7 +6,12 @@ const MainPageTMP = () => {
 		<FullPage
 			sections={[
 				{
-					component: <>123</>,
+					component: (
+						<>
+							<Header />
+							123
+						</>
+					),
 					sectionId: 'MainSection',
 					backgroundColor: '#05131C',
 				},

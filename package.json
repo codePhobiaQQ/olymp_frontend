@@ -20,6 +20,7 @@
 		"sass": "^1.63.6"
 	},
 	"devDependencies": {
+		"@svgr/rollup": "^8.0.1",
 		"@types/react": "^18.0.37",
 		"@types/react-dom": "^18.0.11",
 		"@types/react-redux": "^7.1.25",
@@ -34,6 +35,7 @@
 		"redux-devtools-extension": "^2.13.9",
 		"reset-css": "^5.0.1",
 		"typescript": "^5.0.2",
-		"vite": "^4.3.9"
+		"vite": "^4.3.9",
+		"vite-plugin-svgr": "^3.2.0"
 	}
 }

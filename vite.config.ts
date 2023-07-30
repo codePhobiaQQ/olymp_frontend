@@ -4,6 +4,7 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import path from 'path'
+import svgr from '@svgr/rollup'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -16,5 +17,5 @@ export default defineConfig({
 			'@store': path.resolve(__dirname, './src/store'),
 		},
 	},
-	plugins: [react()],
+	plugins: [react(), svgr()],
 })

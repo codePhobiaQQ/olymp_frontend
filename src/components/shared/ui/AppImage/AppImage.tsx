@@ -9,7 +9,11 @@ interface AppImageI extends ImgHTMLAttributes<HTMLImageElement> {
 const AppImage = (props: AppImageI) => {
 	const { className = '', src, ...otherProps } = props
 
-	return <img className={cn(className, styles.AppImage)} src={src} {...otherProps} />
+	return (
+		<div className={cn(className)}>
+			<img className={cn(styles.AppImage)} src={src} {...otherProps} />
+		</div>
+	)
 }
 
 export default AppImage

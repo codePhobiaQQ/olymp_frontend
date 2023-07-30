@@ -1,20 +1,41 @@
 .Header {
 	width: 100%;
 	box-sizing: border-box;
-	padding: var(--sections-padding);
+	padding: var(--px20) var(--sections-padding) 0 var(--sections-padding);
 }
 
 .HeaderInnner {
-	color: #000;
+	color: #fff;
 	/* background-color: #2e2727; */
 	border-radius: var(--often-border-radius);
-	padding: var(--px8);
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 }
 
 .Logo {
-	height: var(--px40);
-	margin-left: var(--sections-inner-paddings);
+	height: var(--px60);
+	/* width: var(--px40); */
+}
+
+/* HeaderActionsWrapper */
+.HeaderActionsWrapper {
+	display: flex;
+	align-items: center;
+}
+
+.HeaderActionsWrapperIcon {
+	height: var(--px28);
+	width: var(--px28);
+	stroke: var(--header-icons);
+	margin-right: var(--px22);
+	cursor: pointer;
+	padding: var(--px10);
+	transition: var(--transition-background-color);
+}
+.HeaderActionsWrapperIcon:hover {
+	background-color: var(--header-icons-bg);
+}
+.HeaderActionsWrapperIcon:last-child {
+	margin-right: 0;
 }
