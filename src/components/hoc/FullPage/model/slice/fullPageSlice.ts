@@ -10,7 +10,6 @@ export const fullpageSlice = createSlice({
 	initialState,
 	reducers: {
 		setFullpageApi: (state, action: PayloadAction<fullpageType>) => {
-			console.log('action.payload', action.payload)
 			state.fullpageApi = action.payload
 		},
 	},

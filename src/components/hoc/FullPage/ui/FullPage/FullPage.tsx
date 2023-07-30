@@ -1,10 +1,9 @@
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-nocheck
-
 import ReactFullpage from '@fullpage/react-fullpage'
 import FullPageSectionWrapper from '../FullPageSectionWrapper/FullPageSectionWrapper'
 import { useAppDispatch } from '@/core/hooks/useAppDispatch/useAppDispatch'
 import { fullpageActions } from '../../model/slice/fullPageSlice'
+import { sectionType } from '../../model/types/fullPage'
+import { fullPageProps } from '../../model/vars/fullPageProps'
 
 interface FullPageProps {
 	sections?: sectionType[]
@@ -15,11 +14,13 @@ export const FullPage = (props: FullPageProps) => {
 	const { sections } = props
 
 	return (
+		// @ts-ignore
 		<ReactFullpage
+			{...fullPageProps}
+			// afterRender={()}
+			// afterLoad={dispatch(fullpageActions.setFullpageApi(fullpageApi))}
 			render={({ state, fullpageApi }) => {
-				if (fullpageApi) {
-					dispatch(fullpageActions.setFullpageApi(fullpageApi))
-				}
+				console.log(state)
 
 				return (
 					<ReactFullpage.Wrapper>
