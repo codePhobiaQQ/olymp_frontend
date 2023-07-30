@@ -17,11 +17,10 @@ export const FullPage = (props: FullPageProps) => {
 		// @ts-ignore
 		<ReactFullpage
 			{...fullPageProps}
-			// afterRender={()}
-			// afterLoad={dispatch(fullpageActions.setFullpageApi(fullpageApi))}
-			render={({ state, fullpageApi }) => {
-				console.log(state)
-
+			onLeave={(origin, destination, direction, trigger) => {
+				dispatch(fullpageActions.setFullpageActiveSection(destination.item?.id))
+			}}
+			render={() => {
 				return (
 					<ReactFullpage.Wrapper>
 						{sections?.map(section => (

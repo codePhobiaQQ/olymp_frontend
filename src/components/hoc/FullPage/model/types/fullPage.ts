@@ -6,8 +6,14 @@ export interface sectionType {
 	backgroundColor?: string
 }
 
-export type fullpageType = fullpageApi
+export interface fullpageType {
+	origin: any
+	destination: any
+	direction: any
+	trigger: any
+}
 
 export interface FullPageSchema {
 	fullpageApi?: fullpageType
+	sectionId: string
 }

@@ -7,7 +7,7 @@ const MainPageTMP = () => {
 				{
 					component: <>123</>,
 					sectionId: 'MainSection',
-					backgroundColor: '#000',
+					backgroundColor: '#05131C',
 				},
 				{
 					component: <>12345</>,
@@ -17,7 +17,7 @@ const MainPageTMP = () => {
 				{
 					component: <>12367</>,
 					sectionId: 'MineSection',
-					backgroundColor: 'red',
+					backgroundColor: '#fff',
 				},
 			]}
 		/>

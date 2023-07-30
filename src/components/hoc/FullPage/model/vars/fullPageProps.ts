@@ -1,13 +1,14 @@
 export const fullPageProps = {
 	// Scrolling
 	css3: true,
-	scrollingSpeed: 700,
+	scrollingSpeed: 600,
 	autoScrolling: true,
 	fitToSection: true,
 	fitToSectionDelay: 600,
 	scrollBar: false,
-	easing: 'easeInOutCubic',
-	easingcss3: 'ease',
+
+	// easing: 'easeInOutCubic',
+	// easingcss3: 'ease',
 	loopBottom: false,
 	loopTop: false,
 	loopHorizontal: true,
@@ -19,7 +20,7 @@ export const fullPageProps = {
 	offsetSections: false,
 	resetSliders: false,
 	fadingEffect: false,
-	normalScrollElements: '#element1, .element2',
+	// normalScrollElements: '#element1, .element2',
 	scrollOverflow: true,
 	scrollOverflowMacStyle: false,
 	scrollOverflowReset: false,

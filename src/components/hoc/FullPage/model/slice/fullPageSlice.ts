@@ -3,6 +3,7 @@ import { FullPageSchema, fullpageType } from '../types/fullPage'
 
 const initialState: FullPageSchema = {
 	fullpageApi: undefined,
+	sectionId: '',
 }
 
 export const fullpageSlice = createSlice({
@@ -11,6 +12,9 @@ export const fullpageSlice = createSlice({
 	reducers: {
 		setFullpageApi: (state, action: PayloadAction<fullpageType>) => {
 			state.fullpageApi = action.payload
+		},
+		setFullpageActiveSection: (state, action: PayloadAction<string>) => {
+			state.sectionId = action.payload
 		},
 	},
 })
