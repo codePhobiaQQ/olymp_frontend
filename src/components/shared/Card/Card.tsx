@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
-import { RouteActionScreenAttributes } from '@/core/routes'
+import { RouteActionScreenAttributes } from '@/core/routes/routes'
 import { CardItem } from '../../screens/MainScreen/model/data'
 // import AppImage from '../ui/AppImage/AppImage'
 import AppLink, { AppLinkTheme } from '../ui/AppLink/AppLink'

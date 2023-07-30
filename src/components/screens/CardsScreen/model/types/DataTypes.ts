@@ -1,4 +1,4 @@
-import { RoutesActionScreenType } from '@/core/routes'
+import { RoutesActionScreenType } from '@/core/routes/routes'
 
 export type DataTypes = RoutesActionScreenType
 
