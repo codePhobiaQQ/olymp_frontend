@@ -14,8 +14,23 @@
 	}
 	&.M {
 		.CardTitle {
-			font-size: var(--px18) !important;
+			font-size: var(--px16) !important;
 			font-family: 'msb', sans-serif;
+			line-height: 140%;
+		}
+		.CardList {
+			margin-top: var(--sections-padding);
+			li {
+				margin-bottom: var(--px10);
+				a {
+					font-size: var(--px14);
+					font-family: 'mm', sans-serif;
+					text-transform: uppercase;
+				}
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
 		}
 	}
 	&.X {

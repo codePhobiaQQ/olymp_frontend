@@ -21,7 +21,7 @@ const AppLink = (props: AppLinkI) => {
 	if (theme == AppLinkTheme.LINK_WITH_ARROW)
 		return (
 			<NavLink to={to} className={cn(className, styles.AppLink, styles[theme])} {...otherProps}>
-				<Typography style={{ borderBottom: '2px solid #fff' }} className='fz_18 ttu' text={text} />
+				<Typography style={{ borderBottom: '2px solid rgba(255, 255, 255, 0.3)' }} text={text} />
 				<ArrowSvg className={cn('h_15', 'w_15', 'fill_white')} />
 			</NavLink>
 		)
@@ -29,7 +29,7 @@ const AppLink = (props: AppLinkI) => {
 	if (theme == AppLinkTheme.LINK_WITH_ARROW_XXL)
 		return (
 			<NavLink to={to} className={cn(className, styles.AppLink, styles[theme])} {...otherProps}>
-				<Typography className='fz_40 ttu' text={text} />
+				<Typography text={text} />
 				<ArrowSvg className={cn('h_30', 'w_35', 'fill_white')} />
 			</NavLink>
 		)

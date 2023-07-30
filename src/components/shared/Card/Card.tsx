@@ -26,7 +26,7 @@ const MainScreenCard = (props: CardI) => {
 		<div className={cn(className, cls.MainScreenCard, cls.Card, cls[sizeTheme])}>
 			<Title theme={TitleTheme.H4} className={cn(cls.CardTitle, 'ttu')} text={data?.title} />
 
-			<ul>
+			<ul className={cn(cls.CardList)}>
 				{/* @ts-ignore */}
 				{data?.links?.map((link, index) => (
 					<li key={index + 'link' + link.path}>
