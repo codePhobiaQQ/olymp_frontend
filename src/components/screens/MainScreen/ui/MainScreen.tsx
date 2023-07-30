@@ -1,7 +1,7 @@
 import cn from 'classnames'
 import styles from './MainScreen.module.css'
 import AppImage from '@components/shared/ui/AppImage/AppImage'
-import bgImage from '@components/shared/ui/assets/images/olymps/bg/OlympsBgDesctop.jpg'
+import bgImage from '@components/shared/assets/images/olymps/bg/OlympsBgDesctop.jpg'
 import Button, { ButtonColorTheme, ButtonTheme } from '../../../shared/ui/Button/Button'
 import Title, { TitleTheme } from '@shared/ui/Titles/Title'
 import Card, { CardTheme } from '../../../shared/Card/Card'

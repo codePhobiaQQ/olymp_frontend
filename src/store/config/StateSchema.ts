@@ -1,29 +1,11 @@
-// import { CounterSchema } from 'entities/Counter';
-// import { UserSchema } from 'entities/User';
-// import { LoginSchema } from 'features/AuthByUsername';
 import { AnyAction, EnhancedStore, Reducer, ReducersMapObject } from '@reduxjs/toolkit'
 import { CombinedState } from 'redux'
-// import { ProfileSchema } from 'entities/Profile';
 import { AxiosInstance } from 'axios'
-// import { To } from 'history'
 import { NavigateOptions } from 'react-router'
-// import { ArticleDetailsSchema } from 'entities/Article';
-// import { ArticleDetailsCommentsSchema } from 'pages/ArticleDetailsPage';
-// import { AddCommentFormSchema } from 'features/addCommentForm';
-// import { ArticlesPageSchema } from 'pages/ArticlesPage';
+import { FullPageSchema } from '@/components/hoc/FullPage/model/types/fullPage'
 
 export interface StateSchema {
-	fullPageAPI?: any
-
-	// counter: CounterSchema;
-	// user: UserSchema;
-	// Асинхронные редюсеры
-	// loginForm?: LoginSchema;
-	// profile?: ProfileSchema;
-	// articleDetails?: ArticleDetailsSchema;
-	// articleDetailsComments?: ArticleDetailsCommentsSchema;
-	// addCommentForm?: AddCommentFormSchema;
-	// articlesPage?: ArticlesPageSchema;
+	fullPage: FullPageSchema
 }
 
 export type StateSchemaKey = keyof StateSchema

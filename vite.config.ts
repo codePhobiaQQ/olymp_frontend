@@ -13,6 +13,7 @@ export default defineConfig({
 			'@assets': path.resolve(__dirname, './src/assets'),
 			'@components': path.resolve(__dirname, './src/components'),
 			'@shared': path.resolve(__dirname, './src/components/shared'),
+			'@store': path.resolve(__dirname, './src/store'),
 		},
 	},
 	plugins: [react()],

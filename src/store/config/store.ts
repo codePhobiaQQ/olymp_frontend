@@ -1,12 +1,11 @@
 import { configureStore, ReducersMapObject } from '@reduxjs/toolkit'
-// import { counterReducer } from 'entities/Counter'
-// import { userReducer } from 'entities/User'
-// import { To } from 'history'
-import { NavigateOptions } from 'react-router'
+// import { NavigateOptions } from 'react-router'
 import { CombinedState, Reducer } from 'redux'
 import { StateSchema, ThunkExtraArg } from './StateSchema'
 import { createReducerManager } from './reducerManager'
-import { $api } from '@/core/api/api'
+// import { $api } from '@/core/api/api'
+import { fullpageReducer } from '@/components/hoc/FullPage/model/slice/fullPageSlice'
+import { NavigateOptions } from 'react-router-dom'
 
 export function createReduxStore(
 	initialState?: StateSchema,
@@ -14,28 +13,27 @@ export function createReduxStore(
 	navigate?: (to: any, options?: NavigateOptions) => void
 ) {
 	const rootReducers: ReducersMapObject<StateSchema> = {
-		...asyncReducers,
-		// counter: counterReducer,
-		// user: userReducer,
-		// fullPageAPI: {},
+		// ...asyncReducers,
+		fullPage: fullpageReducer,
 	}
 
 	const reducerManager = createReducerManager(rootReducers)
 
-	const extraArg: ThunkExtraArg = {
-		api: $api,
-		navigate,
-	}
+	// const extraArg: ThunkExtraArg = {
+	// 	api: $api,
+	// 	navigate,
+	// }
 
 	const store = configureStore({
 		reducer: reducerManager.reduce as Reducer<CombinedState<StateSchema>>,
-		// devTools: __IS_DEV__,
+		devTools: true,
 		preloadedState: initialState,
 		middleware: getDefaultMiddleware =>
 			getDefaultMiddleware({
-				thunk: {
-					extraArgument: extraArg,
-				},
+				serializableCheck: false,
+				// thunk: {
+				// 	extraArgument: extraArg,
+				// },
 			}),
 	})
 

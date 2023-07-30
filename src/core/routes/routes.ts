@@ -1,4 +1,4 @@
-import actionCard1 from './../components/shared/assets/images/actions/actionCard1.jpg'
+import actionCard1 from '@components/shared/assets/images/actions/actionCard1.jpg'
 import { MainPageTMP } from '@/components/pages'
 import { RouteProps } from 'react-router-dom'
 

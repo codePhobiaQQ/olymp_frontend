@@ -1,4 +1,4 @@
-import { FullPage } from '@/components/hoc'
+import { FullPage } from '@/components/hoc/FullPage'
 
 const MainPageTMP = () => {
 	return (

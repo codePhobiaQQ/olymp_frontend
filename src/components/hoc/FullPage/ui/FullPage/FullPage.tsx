@@ -3,30 +3,22 @@
 
 import ReactFullpage from '@fullpage/react-fullpage'
 import FullPageSectionWrapper from '../FullPageSectionWrapper/FullPageSectionWrapper'
+import { useAppDispatch } from '@/core/hooks/useAppDispatch/useAppDispatch'
+import { fullpageActions } from '../../model/slice/fullPageSlice'
 
 interface FullPageProps {
 	sections?: sectionType[]
 }
 
 export const FullPage = (props: FullPageProps) => {
+	const dispatch = useAppDispatch()
 	const { sections } = props
 
 	return (
 		<ReactFullpage
-			afterLoad={function (origin, destination, direction, trigger) {
-				//using index
-				if (origin.index == 2) {
-					alert('Section 3 ended loading')
-				}
-
-				//using anchorLink
-				if (origin.anchor == 'secondSlide') {
-					alert('Section 2 ended loading')
-				}
-			}}
 			render={({ state, fullpageApi }) => {
 				if (fullpageApi) {
-					console.log('fullpageApi', fullpageApi)
+					dispatch(fullpageActions.setFullpageApi(fullpageApi))
 				}
 
 				return (

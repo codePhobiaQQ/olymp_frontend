@@ -1,6 +1,6 @@
 import cn from 'classnames'
 import cls from './FullPageSectionWrapper.module.scss'
-import { sectionType } from '../../model/types/FullPageTypes'
+import { sectionType } from '../../model/types/fullPage'
 import { Item } from '@fullpage/react-fullpage'
 import { useState } from 'react'
 
@@ -11,21 +11,7 @@ interface FullPageSectionWrapperI {
 
 const FullPageSectionWrapper = (props: FullPageSectionWrapperI) => {
 	const { className = '', section } = props
-
-	// ----- Is init fullPage --------
-
-	// const isFullPageApiInit: boolean = useMemo(() => {
-	// 	if (!fullpageApi) return false
-	// 	return true
-	// }, [fullpageApi])
-
-	// --------------------------------
-
-	const [activeSection, setActiveSectino] = useState<Item>()
-
-	// useEffect(() => {
-	// 	if (!isFullPageApiInit) return
-	// }, [isFullPageApiInit])
+	const [activeSection, setActiveSection] = useState<Item>()
 
 	return (
 		<div
