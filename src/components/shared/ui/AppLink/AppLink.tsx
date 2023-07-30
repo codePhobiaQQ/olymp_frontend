@@ -1,7 +1,7 @@
 import { NavLink, NavLinkProps } from 'react-router-dom'
 import styles from './AppLink.module.css'
 import cn from 'classnames'
-import ArrowSvg from '../../../../assets/svg/ArrowSvg'
+import ArrowSvg from '../../assets/svg/ArrowSvg'
 import Typography from '../Typography/Typography'
 
 export enum AppLinkTheme {
