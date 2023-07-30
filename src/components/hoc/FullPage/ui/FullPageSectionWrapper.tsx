@@ -1,14 +1,24 @@
 import cn from 'classnames'
+import { sectionType } from './../model/types/FullPageTypes'
 
 interface FullPageSectionWrapperI {
 	className?: string
-	children?: React.ReactNode
+	section: sectionType
+	fullpageApi: any
 }
 
 const FullPageSectionWrapper = (props: FullPageSectionWrapperI) => {
-	const { className = '', children } = props
+	const { className = '', section, fullpageApi } = props
 
-	return <div className={cn(className)}>{children}</div>
+	console.log('fullpageApi', fullpageApi)
+
+	return (
+		<div className={cn('section', className)}>
+			<p>Section 1 (welcome to fullpage.js)</p>
+			<button onClick={() => fullpageApi.moveSectionDown()}>Click me to move down</button>
+			{section.component}
+		</div>
+	)
 }
 
 export default FullPageSectionWrapper

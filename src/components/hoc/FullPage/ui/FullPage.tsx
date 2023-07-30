@@ -2,13 +2,14 @@
 // @ts-nocheck
 
 import ReactFullpage from '@fullpage/react-fullpage'
+import FullPageSectionWrapper from './FullPageSectionWrapper'
 
 interface FullPageProps {
-	children?: React.ReactNoe
+	sections?: sectionType[]
 }
 
 export const FullPage = (props: FullPageProps) => {
-	const { children } = props
+	const { sections } = props
 
 	return (
 		<ReactFullpage
@@ -17,15 +18,9 @@ export const FullPage = (props: FullPageProps) => {
 			render={({ state, fullpageApi }) => {
 				return (
 					<ReactFullpage.Wrapper>
-						{children}
-						{/* <div className='section'>
-							<p>Section 1 (welcome to fullpage.js)</p>
-							<button onClick={() => fullpageApi.moveSectionDown()}>Click me to move down</button>
-						</div>
-
-						<div className='section'>
-							<p>Section 2</p>
-						</div> */}
+						{sections?.map(section => (
+							<FullPageSectionWrapper fullpageApi={fullpageApi} key={section.sectionId} section={section} />
+						))}
 					</ReactFullpage.Wrapper>
 				)
 			}}
