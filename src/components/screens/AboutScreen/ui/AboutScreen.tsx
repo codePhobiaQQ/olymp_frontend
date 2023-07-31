@@ -6,6 +6,7 @@ import Button from '@/components/shared/ui/Button/Button'
 import LightArrowSvg from '@/components/shared/assets/svg/LightArrowSvg'
 import CardRoutesLayout from '@/components/shared/CardsLayout/CardsLayout'
 import { routesActionScreen } from '@/core/routes/routes'
+import ButtonWithArrow from '@/components/shared/ui/Button/ButtonWithArrow'
 
 interface AboutScreenI {
 	className?: string
@@ -25,12 +26,7 @@ const AboutScreen = (props: AboutScreenI) => {
 				titleClassname={cls.TitleClassName}
 				textClassname={cls.TextClassName}
 				authorClassname={cls.AuthorClassnme}
-				button={
-					<Button className={cls.BtnClassname}>
-						<Typography text='Подробнее о льготах' />
-						<LightArrowSvg className={cls.BtnArrowSvg} />
-					</Button>
-				}
+				button={<ButtonWithArrow text='Подробнее о льготах' />}
 			/>
 
 			<CardRoutesLayout routes={Object.values(routesActionScreen).splice(0, 2)} className={cls.CardsWrapper} />

@@ -5,6 +5,7 @@ import ArrowSvg from '../../assets/svg/ArrowSvg'
 import Typography from '../Typography/Typography'
 
 export enum AppLinkTheme {
+	DEFAULT_LINK = 'default_link',
 	LINK_WITH_ARROW = 'link_with_arrow',
 	LINK_WITH_ARROW_XXL = 'link_with_arrow_xxl',
 }
@@ -17,6 +18,13 @@ interface AppLinkI extends NavLinkProps {
 
 const AppLink = (props: AppLinkI) => {
 	const { className = '', to, theme = AppLinkTheme.LINK_WITH_ARROW, text, ...otherProps } = props
+
+	if (theme == AppLinkTheme.DEFAULT_LINK)
+		return (
+			<NavLink to={to} className={cn(className, styles.AppLink, styles[theme])} {...otherProps}>
+				<Typography text={text} />
+			</NavLink>
+		)
 
 	if (theme == AppLinkTheme.LINK_WITH_ARROW)
 		return (

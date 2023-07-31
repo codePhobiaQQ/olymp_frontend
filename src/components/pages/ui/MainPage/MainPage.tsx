@@ -3,6 +3,7 @@ import { FullPage } from '@/components/hoc/FullPage'
 import { MainScreen } from '@/components/screens/MainScreen'
 import AboutScreen from '@/components/screens/AboutScreen/ui/AboutScreen'
 import RoutingCardsScreen from '@/components/screens/RoutingCardsScreen/RoutingCardsScreen'
+import OrganisatorsAndPartners from '@/components/screens/OrganisatorsAndPartners/OrganisatorsAndPartners'
 
 const MainPage = () => {
 	return (
@@ -27,6 +28,11 @@ const MainPage = () => {
 					component: <RoutingCardsScreen />,
 					sectionId: 'RoutingCardsScreen',
 					backgroundColor: '#fff',
+				},
+				{
+					component: <OrganisatorsAndPartners />,
+					sectionId: 'OrganisatorsAndPartners',
+					backgroundColor: '#EFEFEF',
 				},
 			]}
 		/>

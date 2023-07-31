@@ -1,0 +1,48 @@
+.OrganisatorsAndPartners {
+	padding: var(--sections-padding);
+}
+
+.SectionTitle {
+	font-size: var(--px60);
+	text-transform: uppercase;
+	width: 50%;
+}
+
+.ContentWrapper {
+	display: flex;
+	justify-content: space-between;
+	margin-top: var(--px40);
+}
+
+.Contacts {
+	width: 40%;
+}
+
+.Where {
+	margin-bottom: var(--px40);
+}
+
+.UnivList {
+	display: flex;
+	flex-direction: column;
+	width: 40%;
+}
+.UnivListItem {
+	padding-bottom: var(--px12);
+	border-bottom: 2px solid #303030;
+	margin-bottom: var(--px12);
+	line-height: 140%;
+	cursor: pointer;
+}
+.UnivListItem:first-child {
+	font-family: 'msb', sans-serif;
+}
+.UnivListItem:last-child {
+	margin-bottom: 0;
+}
+
+.InfoLink {
+	font-size: var(--px16);
+	margin-bottom: var(--px8);
+	display: block;
+}

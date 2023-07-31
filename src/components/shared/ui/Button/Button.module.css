@@ -50,3 +50,24 @@
 
 .xxl {
 }
+/* // ---------- */
+
+.BtnClassname {
+	margin-top: var(--px30);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.BtnArrowSvg {
+	width: var(--px16);
+	height: var(--px16);
+	margin-left: var(--px10);
+}
+.BtnClassname:hover .BtnArrowSvg {
+	transition: var(--transition-fill);
+	fill: #fff;
+}
+.BtnArrowSvg {
+	fill: #000;
+}
