@@ -1,0 +1,17 @@
+.RoutingCardsScreen {
+	height: 90%;
+	margin: auto;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	padding: 0 var(--sections-padding);
+	justify-content: space-between;
+}
+
+.CardsWrapper {
+	height: 50%;
+	width: 100%;
+}
+.CardsWrapper:first-child {
+	margin-bottom: var(--px20);
+}

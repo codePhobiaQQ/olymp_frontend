@@ -18,7 +18,8 @@
 	/* width: var(--px40); */
 }
 .LogoWrapper {
-	height: var(--px60);
+	height: var(--px60) !important;
+	width: var(--px80) !important;
 }
 
 /* HeaderActionsWrapper */

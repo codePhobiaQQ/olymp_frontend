@@ -2,6 +2,7 @@ import Header from '@/components/common/Header/Header'
 import { FullPage } from '@/components/hoc/FullPage'
 import { MainScreen } from '@/components/screens/MainScreen'
 import AboutScreen from '@/components/screens/AboutScreen/ui/AboutScreen'
+import RoutingCardsScreen from '@/components/screens/RoutingCardsScreen/RoutingCardsScreen'
 
 const MainPage = () => {
 	return (
@@ -23,8 +24,8 @@ const MainPage = () => {
 					backgroundColor: '#fff',
 				},
 				{
-					component: <>12367</>,
-					sectionId: 'MineSection',
+					component: <RoutingCardsScreen />,
+					sectionId: 'RoutingCardsScreen',
 					backgroundColor: '#fff',
 				},
 			]}

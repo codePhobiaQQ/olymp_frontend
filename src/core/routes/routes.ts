@@ -1,4 +1,10 @@
 import actionCard1 from '@components/shared/assets/images/actions/actionCard1.jpg'
+import actionCard2 from '@components/shared/assets/images/actions/2.jpg'
+import actionCard3 from '@components/shared/assets/images/actions/3.jpg'
+import actionCard4 from '@components/shared/assets/images/actions/4.jpg'
+import actionCard5 from '@components/shared/assets/images/actions/5.jpg'
+import actionCard6 from '@components/shared/assets/images/actions/6.jpg'
+
 import { MainPageTMP } from '@/components/pages'
 import { RouteProps } from 'react-router-dom'
 
@@ -92,21 +98,21 @@ export const routesActionScreen: RoutesActionScreenType = {
 		title: 'Онлайн-обучение',
 		description:
 			'В данном разделе представлены материалы для подготовки к олимпиаде,  а также сдачи вступительных испытаний',
-		image: actionCard1,
+		image: actionCard2,
 	},
 	[AppRoutes.OlympSchedule]: {
 		...routeConfig[AppRoutes.OlympSchedule],
 		id: '3',
 		title: 'РАСПИСАНИЕ ОЛИМПИАД',
 		description: 'Следите за обновлениями данного раздела, чтобы не пропустить важные мероприятия',
-		image: actionCard1,
+		image: actionCard3,
 	},
 	[AppRoutes.FAQ]: {
 		...routeConfig[AppRoutes.FAQ],
 		id: '4',
 		title: 'частозадаваемые вопросы',
 		description: 'Самая актуальная информация о мероприятиях, проводимых порталом v-olymp.ru',
-		image: actionCard1,
+		image: actionCard4,
 	},
 	[AppRoutes.UNIVERSITY_REGISTRATION]: {
 		...routeConfig[AppRoutes.UNIVERSITY_REGISTRATION],
@@ -114,13 +120,13 @@ export const routesActionScreen: RoutesActionScreenType = {
 		title: 'регистрация для вузов',
 		description:
 			'Если вы являетесь представителем ВУЗа и у Вас есть желание проводить олимпиады на базе Вашего учебного заведения',
-		image: actionCard1,
+		image: actionCard5,
 	},
 	[AppRoutes.LK]: {
 		...routeConfig[AppRoutes.LK],
 		id: '6',
 		title: 'личный кабинет',
 		description: 'В этом разделе будут представлена',
-		image: actionCard1,
+		image: actionCard6,
 	},
 }

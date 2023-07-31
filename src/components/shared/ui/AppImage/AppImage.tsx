@@ -11,7 +11,7 @@ const AppImage = (props: AppImageI) => {
 	const { className = '', wrapperClassName = '', src, ...otherProps } = props
 
 	return (
-		<div className={cn(wrapperClassName)}>
+		<div className={cn(cls.AppImageWrapper, wrapperClassName)}>
 			<img className={cn(cls.AppImage, className)} src={src} {...otherProps} />
 		</div>
 	)
