@@ -3,11 +3,16 @@ import cn from 'classnames'
 import Typography from '@components/shared/ui/Typography/Typography'
 import TitleWithText from '@/components/common/TitleWithText/TitleWithText'
 import Button from '@/components/shared/ui/Button/Button'
-import ArrowSvg from '@/components/shared/assets/svg/ArrowSvg'
 import LightArrowSvg from '@/components/shared/assets/svg/LightArrowSvg'
+import { RouteActionScreenAttributes, RoutesActionScreenType, routesActionScreen } from '@/core/routes/routes'
+import { CardRouting } from '@/components/shared/Card/Card'
 
 interface AboutScreenI {
 	className?: string
+}
+
+const renderRoutesCards = (routes: RouteActionScreenAttributes[]) => {
+	return routes.map(route => <CardRouting className={cn(cls.CardCls)} data={route} key={route.path} />)
 }
 
 const AboutScreen = (props: AboutScreenI) => {
@@ -31,6 +36,9 @@ const AboutScreen = (props: AboutScreenI) => {
 					</Button>
 				}
 			/>
+			<div className={cls.CardsWrapper}>
+				<div className={cls.CardsWrapperInner}>{renderRoutesCards(Object.values(routesActionScreen).splice(0, 2))}</div>
+			</div>
 		</section>
 	)
 }

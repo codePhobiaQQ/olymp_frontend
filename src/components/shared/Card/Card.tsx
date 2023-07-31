@@ -6,6 +6,7 @@ import AppLink, { AppLinkTheme } from '../ui/AppLink/AppLink'
 import Title, { TitleTheme } from '../ui/Titles/Title'
 import cls from './Card.module.scss'
 import cn from 'classnames'
+import AppImage from '../ui/AppImage/AppImage'
 
 export enum CardSizeTheme {
 	S = 'S',
@@ -34,6 +35,27 @@ const MainScreenCard = (props: CardI) => {
 					</li>
 				))}
 			</ul>
+		</div>
+	)
+}
+
+interface RoutingCardI {
+	className?: string
+	data: RouteActionScreenAttributes
+	sizeTheme?: CardSizeTheme
+}
+
+export const CardRouting = (props: RoutingCardI) => {
+	const { className = '', data, sizeTheme = CardSizeTheme.M } = props
+
+	return (
+		<div className={cn(className, cls.CardRouting, cls.Card, cls[sizeTheme])}>
+			{data?.image && (
+				<div className={cn(cls.bg)}>
+					<AppImage src={data?.image} />
+				</div>
+			)}
+			<Title theme={TitleTheme.H4} className={cn(cls.CardTitle, 'ttu')} text={data?.title} />
 		</div>
 	)
 }

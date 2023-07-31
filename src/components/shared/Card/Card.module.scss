@@ -10,6 +10,12 @@
 		background-color: rgba(255, 255, 255, 0.05);
 	}
 
+	&.CardRouting {
+		width: 48%;
+		height: 100%;
+		max-height: 450px;
+	}
+
 	&.S {
 	}
 	&.M {

@@ -15,7 +15,7 @@ const Header = ({ className = '' }: HeaderI) => {
 	return (
 		<div className={cn(className, cls.Header)}>
 			<div className={cn(cls.HeaderInnner)}>
-				<AppImage src={LogoMini} className={cn(cls.Logo)} />
+				<AppImage src={LogoMini} className={cn(cls.Logo)} wrapperClassName={cls.Logo} />
 				<TopNavigation />
 				<div className={cn(cls.HeaderActionsWrapper)}>
 					<SearchIconSvg className={cls.HeaderActionsWrapperIcon} />

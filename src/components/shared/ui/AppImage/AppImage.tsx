@@ -1,17 +1,18 @@
 import { ImgHTMLAttributes } from 'react'
-import styles from './AppImage.module.css'
+import cls from './AppImage.module.css'
 import cn from 'classnames'
 
 interface AppImageI extends ImgHTMLAttributes<HTMLImageElement> {
+	wrapperClassName?: string
 	className?: string
 }
 
 const AppImage = (props: AppImageI) => {
-	const { className = '', src, ...otherProps } = props
+	const { className = '', wrapperClassName = '', src, ...otherProps } = props
 
 	return (
-		<div className={cn(className)}>
-			<img className={cn(styles.AppImage)} src={src} {...otherProps} />
+		<div className={cn(wrapperClassName)}>
+			<img className={cn(cls.AppImage, className)} src={src} {...otherProps} />
 		</div>
 	)
 }
