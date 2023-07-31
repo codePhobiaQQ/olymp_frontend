@@ -1,12 +1,15 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 import { RouteActionScreenAttributes } from '@/core/routes/routes'
 import { CardItem } from '../../screens/MainScreen/model/data'
+import { useNavigate } from 'react-router-dom'
 // import AppImage from '../ui/AppImage/AppImage'
 import AppLink, { AppLinkTheme } from '../ui/AppLink/AppLink'
 import Title, { TitleTheme } from '../ui/Titles/Title'
 import cls from './Card.module.scss'
 import cn from 'classnames'
 import AppImage from '../ui/AppImage/AppImage'
+import Typography from '../ui/Typography/Typography'
+import ArrowSvg from '../assets/svg/ArrowSvg'
 
 export enum CardSizeTheme {
 	S = 'S',
@@ -46,16 +49,32 @@ interface RoutingCardI {
 }
 
 export const CardRouting = (props: RoutingCardI) => {
+	const navigate = useNavigate()
 	const { className = '', data, sizeTheme = CardSizeTheme.M } = props
 
+	const clickHandler = () => {
+		navigate(data?.path || '/')
+	}
+
 	return (
-		<div className={cn(className, cls.CardRouting, cls.Card, cls[sizeTheme])}>
+		<div onClick={clickHandler} className={cn(className, cls.CardRouting, cls.Card, cls[sizeTheme])}>
 			{data?.image && (
 				<div className={cn(cls.bg)}>
 					<AppImage src={data?.image} />
 				</div>
 			)}
-			<Title theme={TitleTheme.H4} className={cn(cls.CardTitle, 'ttu')} text={data?.title} />
+			<div className={cn(cls.CardRoutingContentWrapper)}>
+				<div className={cn(cls.CardRoutingContentWrapperInner)}>
+					<Title theme={TitleTheme.H4} className={cn(cls.CardTitle, 'ttu')} text={data?.title} />
+					<div className={cn(cls.DescriptionWrapper)}>
+						<Typography className={cn(cls.Description)} text={data?.description} />
+
+						<div className={cn(cls.ArrowWrapper)}>
+							<ArrowSvg className={cn(cls.Arrow)} />
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	)
 }

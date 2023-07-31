@@ -17,6 +17,9 @@
 	height: var(--px60);
 	/* width: var(--px40); */
 }
+.LogoWrapper {
+	height: var(--px60);
+}
 
 /* HeaderActionsWrapper */
 .HeaderActionsWrapper {
