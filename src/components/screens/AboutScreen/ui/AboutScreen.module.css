@@ -1,0 +1,47 @@
+.AboutScreen {
+	padding: 0 var(--sections-padding);
+	height: 100%;
+}
+
+.TextSectionClassName {
+	height: 50%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+/* ------------------ */
+
+.TitleClassName {
+	text-transform: uppercase;
+	font-family: 'msb', sans-serif;
+	font-size: var(--px50);
+}
+.TextClassName {
+	font-size: var(--px20);
+}
+.AuthorClassnme {
+	font-size: var(--px20);
+	font-family: 'mm', sans-serif;
+	text-align: right;
+	justify-content: flex-end;
+}
+.BtnClassname {
+	margin-top: var(--px30);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.BtnArrowSvg {
+	width: var(--px16);
+	height: var(--px16);
+	margin-left: var(--px10);
+}
+.BtnClassname:hover .BtnArrowSvg {
+	transition: var(--transition-fill);
+	fill: #fff;
+}
+.BtnArrowSvg {
+	fill: #000;
+}

@@ -1,5 +1,5 @@
 .Button {
-	border: 2px solid #fff;
+	border: 1px solid #fff;
 	color: #fff;
 	cursor: pointer;
 	transition: var(--transition-all);
@@ -7,7 +7,7 @@
 
 .outline_transparent {
 	background-color: transparent;
-	padding: var(--px10) var(--px30);
+	padding: var(--px6) var(--px30);
 	font-family: 'mm', sans-serif;
 	font-size: var(--px20);
 	border-radius: 200px;

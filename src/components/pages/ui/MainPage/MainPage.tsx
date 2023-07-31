@@ -1,8 +1,9 @@
 import Header from '@/components/common/Header/Header'
 import { FullPage } from '@/components/hoc/FullPage'
 import { MainScreen } from '@/components/screens/MainScreen'
+import AboutScreen from '@/components/screens/AboutScreen/ui/AboutScreen'
 
-const MainPageTMP = () => {
+const MainPage = () => {
 	return (
 		<FullPage
 			sections={[
@@ -17,7 +18,7 @@ const MainPageTMP = () => {
 					backgroundColor: '#05131C',
 				},
 				{
-					component: <>12345</>,
+					component: <AboutScreen />,
 					sectionId: 'NewsSection',
 					backgroundColor: '#fff',
 				},
@@ -31,4 +32,4 @@ const MainPageTMP = () => {
 	)
 }
 
-export default MainPageTMP
+export default MainPage
