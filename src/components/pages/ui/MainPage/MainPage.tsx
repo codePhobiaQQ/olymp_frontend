@@ -1,10 +1,12 @@
-import Header from '@/components/common/Header/Header'
+import Header from '@/components/shared/Header/Header'
 import { FullPage } from '@/components/hoc/FullPage'
 import { MainScreen } from '@/components/screens/MainScreen'
 import AboutScreen from '@/components/screens/AboutScreen/ui/AboutScreen'
 import RoutingCardsScreen from '@/components/screens/RoutingCardsScreen/RoutingCardsScreen'
 import OrganisatorsAndPartners from '@/components/screens/OrganisatorsAndPartners/OrganisatorsAndPartners'
 import SubscribeScreen from '@/components/screens/SubscribeScreen/ui/SubscribeScreen/SubscribeScreen'
+import PhraseScreen from '@/components/screens/PhraseScreen/PhraseScreen'
+import Footer from '@/components/shared/Footer/Footer'
 
 const MainPage = () => {
 	return (
@@ -38,6 +40,16 @@ const MainPage = () => {
 				{
 					component: <SubscribeScreen />,
 					sectionId: 'SubscribeScreen',
+					backgroundColor: '#FFF',
+				},
+				{
+					component: (
+						<>
+							<PhraseScreen />
+							<Footer />
+						</>
+					),
+					sectionId: 'PhraseScreen',
 					backgroundColor: '#FFF',
 				},
 			]}

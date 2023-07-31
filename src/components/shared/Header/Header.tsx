@@ -1,6 +1,6 @@
 import cls from './Header.module.css'
 import cn from 'classnames'
-import TopNavigation from '../TopNavigation/TopNavigation'
+import TopNavigation from './ui/TopNavigation/TopNavigation'
 import LogoMini from './../../shared/assets/images/header/LogoMini.png'
 import CalendarIconSvg from '@/components/shared/assets/svg/CalendarIconSvg'
 import SearchIconSvg from '@/components/shared/assets/svg/SearchIconSvg'

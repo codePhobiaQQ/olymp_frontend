@@ -1,0 +1,13 @@
+.PhraseScreen {
+	height: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #efefef;
+}
+
+.MotivationPhrase {
+	font-size: var(--px60);
+	text-align: center;
+	width: 80%;
+}

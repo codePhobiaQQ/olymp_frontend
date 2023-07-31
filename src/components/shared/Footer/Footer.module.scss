@@ -1,0 +1,88 @@
+.Footer {
+	padding: var(--sections-padding);
+}
+
+.FooterTopPart {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: var(--sections-padding);
+	border-bottom: 2px solid #000;
+	padding-bottom: var(--px60);
+	.FooterCol {
+		width: 33%;
+		display: flex;
+		justify-content: center;
+		&.ContactsPart {
+			.FooterLogo {
+				width: min(calc(var(--index) * 10), 200px);
+				height: min(calc(var(--index) * 10), 200px);
+			}
+			.MessengersWrapper {
+				margin-top: var(--px15);
+
+				.MessengerItem {
+					width: var(--px40);
+					height: var(--px40);
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					border: 1px solid #000;
+					border-radius: var(--px8);
+					cursor: pointer;
+
+					&:nth-child(2) {
+						margin: 0 var(--px25);
+					}
+
+					.MessengerItemImage {
+						width: var(--px27);
+						height: var(--px27);
+						display: block;
+					}
+				}
+			}
+
+			.ContactsLinks {
+				margin-top: var(--px20);
+				.ContactLink {
+					font-size: var(--px15);
+					margin-top: var(--px5);
+					display: block;
+				}
+			}
+
+			.MessengersWrapper {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+		}
+		&.Olymps,
+		&.Other {
+			.FooterColTitle {
+				font-family: 'msb', sans-serif;
+				font-size: var(--px18);
+				text-transform: uppercase;
+			}
+			.FooterList {
+				display: flex;
+				flex-direction: column;
+				margin-top: var(--px30);
+				.FooterListItemWrapper {
+					margin-top: var(--px10);
+					&:first-child {
+						margin-top: 0;
+					}
+					.FooterListItem {
+						font-size: var(--px16);
+					}
+				}
+			}
+		}
+	}
+}
+
+.FooterBottomPart {
+	display: flex;
+	justify-content: center;
+}

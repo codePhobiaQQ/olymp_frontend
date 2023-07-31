@@ -1,4 +1,4 @@
-import Header from '../../common/Header/Header'
+import Header from '../../shared/Header/Header'
 
 interface PageHocI {
 	children?: React.ReactNode
