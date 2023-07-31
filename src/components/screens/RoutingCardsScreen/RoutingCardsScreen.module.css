@@ -13,5 +13,5 @@
 	width: 100%;
 }
 .CardsWrapper:first-child {
-	margin-bottom: var(--px20);
+	margin-bottom: var(--sections-padding);
 }
