@@ -5,8 +5,10 @@ import actionCard4 from '@components/shared/assets/images/actions/4.jpg'
 import actionCard5 from '@components/shared/assets/images/actions/5.jpg'
 import actionCard6 from '@components/shared/assets/images/actions/6.jpg'
 
-import { MainPageTMP } from '@/components/pages'
+import { MainPage, OlympsPage } from '@/components/pages'
 import { RouteProps } from 'react-router-dom'
+import NewsPage from '@/components/pages/ui/NewsPage/NewsPage'
+import { HeaderTheme } from '@/components/shared/Header/ui/Header/Header'
 
 // -------------------------
 // ------ Core routes ------
@@ -14,6 +16,7 @@ import { RouteProps } from 'react-router-dom'
 
 export enum AppRoutes {
 	Main = 'main',
+	Olymps = 'olymps',
 	News = 'news',
 	OnlineStudy = 'online',
 	OlympSchedule = 'olymp-schedule',
@@ -30,12 +33,13 @@ export const routePath: Record<AppRoutes, string> = {
 	[AppRoutes.FAQ]: '/faq',
 	[AppRoutes.UNIVERSITY_REGISTRATION]: '/university-registration',
 	[AppRoutes.LK]: '/lk',
+	[AppRoutes.Olymps]: '/olymps',
 }
 
 export type AppRoutesProps = RouteProps & {
 	authOnly?: boolean
-} & {
 	label?: string
+	headerTheme?: HeaderTheme
 }
 
 type RoutesType = Record<AppRoutes, AppRoutesProps>
@@ -44,31 +48,45 @@ export const routeConfig: RoutesType = {
 	[AppRoutes.Main]: {
 		label: 'Главная',
 		path: routePath[AppRoutes.Main],
-		element: MainPageTMP(),
+		element: MainPage(),
+		headerTheme: HeaderTheme.LIGHT,
+	},
+	[AppRoutes.Olymps]: {
+		label: 'Олимпиады',
+		path: routePath[AppRoutes.Olymps],
+		element: OlympsPage(),
+		headerTheme: HeaderTheme.DARK,
 	},
 	[AppRoutes.News]: {
 		label: 'Новости',
 		path: routePath[AppRoutes.News],
+		element: NewsPage(),
+		headerTheme: HeaderTheme.DARK,
 	},
 	[AppRoutes.OnlineStudy]: {
 		label: 'Онлайн обучение',
 		path: routePath[AppRoutes.OnlineStudy],
+		headerTheme: HeaderTheme.DARK,
 	},
 	[AppRoutes.OlympSchedule]: {
 		label: 'Онлайн обучение',
 		path: routePath[AppRoutes.OlympSchedule],
+		headerTheme: HeaderTheme.DARK,
 	},
 	[AppRoutes.FAQ]: {
 		path: routePath[AppRoutes.FAQ],
 		label: undefined,
+		headerTheme: HeaderTheme.DARK,
 	},
 	[AppRoutes.UNIVERSITY_REGISTRATION]: {
 		path: routePath[AppRoutes.UNIVERSITY_REGISTRATION],
 		label: undefined,
+		headerTheme: HeaderTheme.DARK,
 	},
 	[AppRoutes.LK]: {
 		path: routePath[AppRoutes.LK],
 		label: undefined,
+		headerTheme: HeaderTheme.DARK,
 	},
 }
 

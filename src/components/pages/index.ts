@@ -1,4 +1,4 @@
-import MainPage from './ui/_MainPage/MainPage'
 import MainPage from './ui/MainPage/MainPage'
+import OlympsPage from './ui/OlympsPage/OlympsPage'
 
-export { MainPage, MainPage as MainPageTMP }
+export { MainPage, OlympsPage }

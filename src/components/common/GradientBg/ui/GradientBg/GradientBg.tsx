@@ -1,8 +1,7 @@
 import cn from 'classnames'
 import cls from './GradientBg.module.css'
-import { useEffect, useState } from 'react'
-import { Helmet } from 'react-helmet'
-
+import { useEffect } from 'react'
+// @ts-ignore
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 import { Gradient } from './../../model/script/gradient.js'
 
@@ -11,28 +10,10 @@ interface GradientBgI {
 }
 
 const GradientBg = ({ className = '' }: GradientBgI) => {
-	const [isLoad, setIsLoad] = useState<boolean>(false)
-
 	useEffect(() => {
-		console.log('herer')
 		const gradient = new Gradient()
-		console.log(gradient)
 		gradient.initGradient(`#${cls.gradientCanvas}`)
 	}, [])
-
-	// useEffect(() => {
-	// 	const script = document.createElement('script')
-	// 	script.src = 'https://google.com'
-	// 	onload = script.onload = () => {
-	// 		// @ts-ignore
-	// 		// const gradient = new scriptGradient.Gradient()
-
-	// 		console.log('ehre')
-
-	// 		// gradient.initGradient(`#${cls.gradientCanvas}`)
-	// 		setIsLoad(true)
-	// 	}
-	// }, [])
 
 	return (
 		<>
@@ -46,15 +27,6 @@ const GradientBg = ({ className = '' }: GradientBgI) => {
 				}}
 				className={cn(className)}
 			>
-				<div
-					// style={{
-					// 	background: `url('${bg.src}') repeat center center`,
-					// }}
-					className={cls.shum}
-				></div>
-
-				{/* <div className={`${cls.bg} ${isLoad ? cls.hide : ''}`}></div> */}
-
 				<canvas
 					style={{
 						width: '100%',
@@ -63,15 +35,6 @@ const GradientBg = ({ className = '' }: GradientBgI) => {
 					}}
 					id={cls.gradientCanvas}
 				/>
-
-				{/* <Script
-				src='https://google.com'
-				onLoad={() => {
-					const gradient = new script.Gradient()
-					gradient.initGradient(`#${cls.gradientCanvas}`)
-					setIsLoad(true)
-				}}
-			/> */}
 			</div>
 		</>
 	)

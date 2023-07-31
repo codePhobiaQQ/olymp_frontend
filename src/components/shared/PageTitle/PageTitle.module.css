@@ -1,0 +1,5 @@
+.PageTitle {
+	font-family: 'msb', sans-serif;
+	font-size: var(--px73);
+	text-transform: uppercase;
+}

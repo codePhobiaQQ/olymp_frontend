@@ -1,0 +1,12 @@
+.PageDescription {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	font-family: 'mr', sans-serif;
+}
+
+.DescriptionSide {
+	width: 48%;
+	font-size: var(--px18);
+	line-height: 140%;
+}

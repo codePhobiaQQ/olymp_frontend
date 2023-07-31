@@ -8,6 +8,7 @@ import Typography from '@/components/shared/ui/Typography/Typography'
 import CircleArrowSvg from '@/components/shared/assets/svg/CircleArrowSvg'
 import GradientBg from '@/components/common/GradientBg/ui/GradientBg/GradientBg'
 import { Header } from '@/components/shared/Header'
+import { HeaderTheme } from '@/components/shared/Header/ui/Header/Header'
 
 interface MainScreenI {
 	className?: string
@@ -16,7 +17,7 @@ interface MainScreenI {
 const MainScreen = ({ className = '' }: MainScreenI) => {
 	return (
 		<div className={cn(className, cls.MainScreen)}>
-			<Header className={cls.Header} />
+			<Header theme={HeaderTheme.LIGHT} className={cls.Header} />
 			<div className={cls.bg}>
 				<GradientBg />
 			</div>

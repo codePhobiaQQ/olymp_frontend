@@ -3,6 +3,18 @@
 	box-sizing: border-box;
 	padding: var(--px20) var(--sections-padding) 0 var(--sections-padding);
 	z-index: 2;
+
+	&.light {
+	}
+	&.dark {
+		.HeaderActionsWrapperIcon,
+		.HeaderActionsWrapperCalendarIcon {
+			stroke: #000;
+		}
+		.TopNavigation {
+			color: #000;
+		}
+	}
 }
 
 .HeaderInnner {
