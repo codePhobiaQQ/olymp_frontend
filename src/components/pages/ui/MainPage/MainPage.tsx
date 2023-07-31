@@ -13,12 +13,7 @@ const MainPage = () => {
 		<FullPage
 			sections={[
 				{
-					component: (
-						<>
-							<Header />
-							<MainScreen />
-						</>
-					),
+					component: <MainScreen />,
 					sectionId: 'MainSection',
 					backgroundColor: '#05131C',
 				},

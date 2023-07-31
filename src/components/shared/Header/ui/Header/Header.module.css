@@ -2,11 +2,11 @@
 	width: 100%;
 	box-sizing: border-box;
 	padding: var(--px20) var(--sections-padding) 0 var(--sections-padding);
+	z-index: 2;
 }
 
 .HeaderInnner {
 	color: #fff;
-	/* background-color: #2e2727; */
 	border-radius: var(--often-border-radius);
 	display: flex;
 	align-items: center;

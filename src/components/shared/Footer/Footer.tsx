@@ -22,7 +22,7 @@ const Footer = ({ className = '' }: FooterI) => {
 						<LogoFooter className={cn(cls.FooterLogo)} />
 						<div className={cn(cls.MessengersWrapper)}>
 							{Object.values(messengersData).map(messenger => (
-								<div className={cls.MessengerItem}>
+								<div key={messenger.name} className={cls.MessengerItem}>
 									<AppImage wrapperClassName={cls.MessengerItemImage} src={messenger.image} />
 								</div>
 							))}

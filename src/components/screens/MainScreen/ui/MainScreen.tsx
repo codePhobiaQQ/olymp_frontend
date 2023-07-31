@@ -6,6 +6,8 @@ import { cardsList } from '../model/data'
 import LogoSvg from '@/components/shared/assets/svg/LogoSvg'
 import Typography from '@/components/shared/ui/Typography/Typography'
 import CircleArrowSvg from '@/components/shared/assets/svg/CircleArrowSvg'
+import GradientBg from '@/components/common/GradientBg/ui/GradientBg/GradientBg'
+import { Header } from '@/components/shared/Header'
 
 interface MainScreenI {
 	className?: string
@@ -14,6 +16,11 @@ interface MainScreenI {
 const MainScreen = ({ className = '' }: MainScreenI) => {
 	return (
 		<div className={cn(className, cls.MainScreen)}>
+			<Header className={cls.Header} />
+			<div className={cls.bg}>
+				<GradientBg />
+			</div>
+
 			<div className={cn(cls.Content)}>
 				<div className={cn(cls.TitleWrapper)}>
 					<LogoSvg className={cn(cls.LogoTitle)} />
@@ -40,13 +47,6 @@ const MainScreen = ({ className = '' }: MainScreenI) => {
 				<div className={cn(cls.MoreBtn)}>
 					<Typography text='Узнать больше' />
 					<CircleArrowSvg className={cn(cls.MoreBtnIcon)} />
-					{/* <AppLink
-					to={'/about'}
-					theme={AppLinkTheme.LINK_WITH_ARROW_XXL}
-					style={{ color: '#fff' }}
-					text='Подробнее об олимпиадах'
-					className={cn('fz_40')} */}
-					{/* /> */}
 				</div>
 			</div>
 		</div>
