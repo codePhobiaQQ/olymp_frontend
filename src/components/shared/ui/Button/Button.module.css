@@ -3,6 +3,8 @@
 	color: #fff;
 	cursor: pointer;
 	transition: var(--transition-all);
+	height: 100%;
+	width: 100%;
 }
 
 .outline_transparent {
@@ -70,4 +72,14 @@
 }
 .BtnArrowSvg {
 	fill: #000;
+}
+
+/* Subscribe theme */
+.subscribe_theme {
+	padding: var(--px10) var(--px50);
+	border-radius: var(--px15);
+	background-color: #3b66bb;
+	color: #fff;
+	font-size: var(--px20);
+	border: none;
 }

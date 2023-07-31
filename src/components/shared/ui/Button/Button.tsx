@@ -17,6 +17,7 @@ export enum ButtonColorTheme {
 
 export enum ButtonTheme {
 	OUTLINE_TRANSPARENT = 'outline_transparent',
+	SUBSCRIBE_THEME = 'subscribe_theme',
 }
 
 interface ButtonI extends ButtonHTMLAttributes<HTMLButtonElement> {

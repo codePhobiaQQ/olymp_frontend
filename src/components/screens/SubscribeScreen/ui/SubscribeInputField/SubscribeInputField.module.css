@@ -1,2 +1,14 @@
 .SubscribeInputField {
+	display: flex;
+	align-items: center;
+	height: var(--px50);
+}
+
+.SubscribeInputField .Input {
+	height: 100%;
+	width: 35%;
+}
+.SubscribeInputField .Btn {
+	height: 100%;
+	transform: translateX(calc(-1 * var(--px20)));
 }

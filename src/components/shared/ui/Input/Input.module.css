@@ -1,0 +1,8 @@
+.Input input {
+	background-color: #fff;
+	border-radius: var(--px15);
+	padding: var(--px10) var(--px10) var(--px10) var(--px15);
+	font-size: var(--px20);
+	height: 100%;
+	width: 100%;
+}

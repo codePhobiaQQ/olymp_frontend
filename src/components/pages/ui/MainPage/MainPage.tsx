@@ -4,6 +4,7 @@ import { MainScreen } from '@/components/screens/MainScreen'
 import AboutScreen from '@/components/screens/AboutScreen/ui/AboutScreen'
 import RoutingCardsScreen from '@/components/screens/RoutingCardsScreen/RoutingCardsScreen'
 import OrganisatorsAndPartners from '@/components/screens/OrganisatorsAndPartners/OrganisatorsAndPartners'
+import SubscribeScreen from '@/components/screens/SubscribeScreen/ui/SubscribeScreen/SubscribeScreen'
 
 const MainPage = () => {
 	return (
@@ -35,8 +36,8 @@ const MainPage = () => {
 					backgroundColor: '#EFEFEF',
 				},
 				{
-					component: <OrganisatorsAndPartners />,
-					sectionId: 'OrganisatorsAndPartners',
+					component: <SubscribeScreen />,
+					sectionId: 'SubscribeScreen',
 					backgroundColor: '#FFF',
 				},
 			]}

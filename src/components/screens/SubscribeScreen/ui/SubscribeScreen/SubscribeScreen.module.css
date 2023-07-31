@@ -1,11 +1,14 @@
 .SubscribeScreen {
-	padding: 0 var(--sections-padding);
+	padding: var(--sections-padding);
 	color: #fff;
+	height: 100%;
 }
 
 .SubscribeScreenInner {
 	position: relative;
 	padding: var(--px120) var(--px80);
+	height: 100%;
+	box-sizing: border-box;
 }
 
 .bg {
@@ -14,10 +17,51 @@
 	border-radius: var(--often-border-radius);
 	overflow: hidden;
 	position: absolute;
+	object-fit: contain;
 	top: 0;
 	left: 0;
 	z-index: 0;
 }
 
+.SectionTitle {
+	font-size: var(--px40);
+	width: 60%;
+	margin-bottom: var(--px20);
+}
+
+.UserAccess {
+	font-size: var(--px20);
+	width: 60%;
+	font-family: 'mr', sans-serif;
+	margin-bottom: var(--px40);
+}
+
 .ContentWrapper {
+	position: relative;
+	z-index: 1;
+}
+
+.SubscribeFilters {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	width: 70%;
+	margin-bottom: var(--px40);
+}
+
+.SubscribeFilterItem {
+	margin-right: var(--px15);
+	margin-bottom: var(--px15);
+	font-size: var(--px15);
+	text-transform: uppercase;
+	border: 1px solid #fff;
+	padding: var(--px5) var(--px20);
+	border-radius: var(--px30);
+	cursor: pointer;
+	transition: var(--transition-background-color);
+}
+
+.SubscribeFilterItem.activeFilter {
+	background-color: #fff;
+	color: #000;
 }
