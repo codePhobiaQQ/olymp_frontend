@@ -1,0 +1,20 @@
+.OlympCalendar {
+	position: relative;
+	.HeaderActionsWrapperIcon {
+		height: var(--px28);
+		width: var(--px28);
+		stroke: var(--header-icons);
+		cursor: pointer;
+		padding: var(--px10);
+		transition: var(--transition-background-color);
+	}
+	.HeaderActionsWrapperIcon:hover {
+		background-color: var(--header-icons-bg);
+	}
+
+	.CalendarWrapper {
+		z-index: 1;
+		position: absolute;
+		right: 0;
+	}
+}

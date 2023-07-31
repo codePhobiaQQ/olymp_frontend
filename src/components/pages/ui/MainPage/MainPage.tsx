@@ -1,4 +1,4 @@
-import Header from '@/components/shared/Header/Header'
+import { Header } from '@/components/shared/Header'
 import { FullPage } from '@/components/hoc/FullPage'
 import { MainScreen } from '@/components/screens/MainScreen'
 import AboutScreen from '@/components/screens/AboutScreen/ui/AboutScreen'

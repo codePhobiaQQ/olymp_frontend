@@ -1,12 +1,20 @@
 import cn from 'classnames'
 
-interface CalendarIconSvgI {
+interface CalendarIconSvgI extends React.SVGProps<SVGSVGElement> {
 	className?: string
 }
 
-const CalendarIconSvg = ({ className = '' }: CalendarIconSvgI) => {
+const CalendarIconSvg = (props: CalendarIconSvgI) => {
+	const { className = '', onClick, ...otherProps } = props
 	return (
-		<svg className={cn(className)} viewBox='0 0 28 28' fill='none' xmlns='http://www.w3.org/2000/svg'>
+		<svg
+			className={cn(className)}
+			onClick={onClick}
+			{...otherProps}
+			viewBox='0 0 28 28'
+			fill='none'
+			xmlns='http://www.w3.org/2000/svg'
+		>
 			<rect
 				x='2.69141'
 				y='3.38281'
