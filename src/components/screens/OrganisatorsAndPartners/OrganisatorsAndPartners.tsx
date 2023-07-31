@@ -1,10 +1,12 @@
 import Title from '@/components/shared/ui/Titles/Title'
 import cls from './OrganisatorsAndPartners.module.css'
 import cn from 'classnames'
+import acadosBg from '@/components/shared/assets/univ/acados.jpg'
 import Typography, { TypographyTheme } from '@/components/shared/ui/Typography/Typography'
 import AppLink, { AppLinkTheme } from '@/components/shared/ui/AppLink/AppLink'
 import { organisatorsData } from '@/core/data/organisatorsData'
 import ButtonWithArrow from '@/components/shared/ui/Button/ButtonWithArrow'
+import AppImage from '@/components/shared/ui/AppImage/AppImage'
 
 interface OrganisatorsAndPartnersI {
 	className?: string
@@ -12,8 +14,8 @@ interface OrganisatorsAndPartnersI {
 
 const OrganisatorsAndPartners = ({ className = '' }: OrganisatorsAndPartnersI) => {
 	return (
-		<>
-			<section className={cn(className, cls.OrganisatorsAndPartners)}>
+		<section className={cn(className, cls.OrganisatorsAndPartners)}>
+			<div className={cn(cls.OrganisatorsAndPartnersInner)}>
 				<Title className={cn(cls.SectionTitle)} text='организаторы и партнеры' />
 
 				<div className={cn(className, cls.ContentWrapper)}>
@@ -44,8 +46,12 @@ const OrganisatorsAndPartners = ({ className = '' }: OrganisatorsAndPartnersI) =
 						<ButtonWithArrow text='Полный список ВУЗов' />
 					</div>
 				</div>
-			</section>
-		</>
+			</div>
+
+			<div className={cn(cls.UniversityImageWrapper)}>
+				<AppImage className={cn(cls.UniversityImage)} src={acadosBg} />
+			</div>
+		</section>
 	)
 }
 

@@ -1,9 +1,14 @@
 .OrganisatorsAndPartners {
+	height: 100%;
+	overflow-y: hidden;
+}
+
+.OrganisatorsAndPartnersInner {
 	padding: var(--sections-padding);
 }
 
 .SectionTitle {
-	font-size: var(--px60);
+	font-size: var(--px50);
 	text-transform: uppercase;
 	width: 50%;
 }
@@ -11,7 +16,7 @@
 .ContentWrapper {
 	display: flex;
 	justify-content: space-between;
-	margin-top: var(--px40);
+	margin: var(--px40) 0 var(--px20) 0;
 }
 
 .Contacts {
@@ -45,4 +50,11 @@
 	font-size: var(--px16);
 	margin-bottom: var(--px8);
 	display: block;
+}
+
+.UniversityImageWrapper {
+	flex-grow: 1;
+}
+.UniversityImage {
+	object-fit: cover;
 }

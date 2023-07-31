@@ -34,6 +34,11 @@ const MainPage = () => {
 					sectionId: 'OrganisatorsAndPartners',
 					backgroundColor: '#EFEFEF',
 				},
+				{
+					component: <OrganisatorsAndPartners />,
+					sectionId: 'OrganisatorsAndPartners',
+					backgroundColor: '#FFF',
+				},
 			]}
 		/>
 	)
