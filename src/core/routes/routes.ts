@@ -5,10 +5,11 @@ import actionCard4 from '@components/shared/assets/images/actions/4.jpg'
 import actionCard5 from '@components/shared/assets/images/actions/5.jpg'
 import actionCard6 from '@components/shared/assets/images/actions/6.jpg'
 
-import { MainPage, OlympsPage } from '@/components/pages'
 import { RouteProps } from 'react-router-dom'
-import NewsPage from '@/components/pages/ui/NewsPage/NewsPage'
 import { HeaderTheme } from '@/components/shared/Header/ui/Header/Header'
+import { MainPage } from '@/pages/MainPage'
+import { OlympsPage } from '@/pages/OlympsPage'
+import { NewsPage } from '@/pages/NewsPage'
 
 // -------------------------
 // ------ Core routes ------

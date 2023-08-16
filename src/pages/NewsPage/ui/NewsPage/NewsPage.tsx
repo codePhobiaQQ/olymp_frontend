@@ -1,5 +1,3 @@
-import { useEffect } from 'react'
-import PageHoc from '@/components/hoc/PageHoc/PageHoc'
 import cls from './NewsPage.module.css'
 import cn from 'classnames'
 import PageTitle from '@/components/shared/PageTitle/PageTitle'
@@ -7,7 +5,7 @@ import PageDescription from '@/components/shared/PageDescription/PageDescription
 import { __API__ } from '@/core/vars/vars'
 import { Header } from '@/components/shared/Header'
 
-const NewsPage = () => {
+export const NewsPage = () => {
 	// useEffect(() => {
 	// 	console.log('here')
 	// }, [])

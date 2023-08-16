@@ -1,0 +1,1 @@
+export { OlympsPage } from './ui/OlympsPage/OlympsPage'

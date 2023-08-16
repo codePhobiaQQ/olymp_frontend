@@ -3,10 +3,10 @@
 	height: 100%;
 	/* Adjust the colors below to get a different gradient */
 	/* You can use https://whatamesh.vercel.app/ to generate them */
-	--gradient-color-1: #03010e;
-	--gradient-color-2: #010c3d;
-	--gradient-color-3: #0802ff;
-	--gradient-color-4: #e4e4e4;
+	--gradient-color-1: #000000;
+	--gradient-color-2: #070722;
+	--gradient-color-3: #4294a9;
+	--gradient-color-4:#000000;
 }
 
 .shum {

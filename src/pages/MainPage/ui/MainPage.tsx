@@ -8,7 +8,7 @@ import SubscribeScreen from '@/components/screens/SubscribeScreen/ui/SubscribeSc
 import PhraseScreen from '@/components/screens/PhraseScreen/PhraseScreen'
 import Footer from '@/components/shared/Footer/Footer'
 
-const MainPage = () => {
+export const MainPage = () => {
 	return (
 		<FullPage
 			sections={[
@@ -51,5 +51,3 @@ const MainPage = () => {
 		/>
 	)
 }
-
-export default MainPage
