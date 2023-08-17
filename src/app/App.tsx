@@ -1,7 +1,7 @@
 import { Route, Routes } from 'react-router-dom'
 import { AppRoutesProps, routeConfig } from '../shared/routes/routes'
 import cn from 'classnames'
-import '../styles'
+import '../shared/assets/styles'
 
 const renderRoutes = (route: AppRoutesProps) => {
   return <Route key={route.path} path={route.path} element={route.element} />

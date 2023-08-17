@@ -8,14 +8,15 @@ import svgr from '@svgr/rollup'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-	resolve: {
-		alias: {
-			'@': path.resolve(__dirname, './src'),
-			'@assets': path.resolve(__dirname, './src/assets'),
-			'@components': path.resolve(__dirname, './src/components'),
-			'@shared': path.resolve(__dirname, './src/components/shared'),
-			'@store': path.resolve(__dirname, './src/store'),
-		},
-	},
-	plugins: [react(), svgr()],
+  resolve: {
+    alias: {
+      '@app': path.resolve(__dirname, './src/app'),
+      '@pages': path.resolve(__dirname, './src/pages'),
+      '@widgets': path.resolve(__dirname, './src/widgets'),
+      '@features': path.resolve(__dirname, './src/features'),
+      '@entities': path.resolve(__dirname, './src/entities'),
+      '@shared': path.resolve(__dirname, './src/shared'),
+    },
+  },
+  plugins: [react(), svgr()],
 })

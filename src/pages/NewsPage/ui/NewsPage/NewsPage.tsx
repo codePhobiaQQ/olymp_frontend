@@ -3,24 +3,9 @@ import cn from 'classnames'
 import PageTitle from '@/components/shared/PageTitle/PageTitle'
 import PageDescription from '@/components/shared/PageDescription/PageDescription'
 import { __API__ } from '@/shared/vars/vars'
-import { Header } from '@/components/shared/Header'
+import { Header } from '@/widgets/Header'
 
 export const NewsPage = () => {
-  // useEffect(() => {
-  // 	console.log('here')
-  // }, [])
-  // const fetchNews = async () => {
-  // 	try {
-  // 		const data = await axios.get(__API__ + 'olymp/wp-json/wp/v2/news')
-  // 		console.log(data)
-  // 	} catch (e) {
-  // 		console.log(e)
-  // 	}
-  // }
-  // fetchNews()
-  // 	console.log('here')
-  // }, [])
-
   return (
     <>
       <Header />
