@@ -30,7 +30,6 @@ const Header = ({ className = '', theme = HeaderTheme.DARK }: HeaderI) => {
         <div className={cn(cls.HeaderActionsWrapper)}>
           <SearchIconSvg className={cls.HeaderActionsWrapperIcon} />
           <OlympCalendar className={cn(cls.HeaderActionsWrapperCalendarIcon, 'm_r_20')} />
-          {/* <CalendarIconSvg className={cls.HeaderActionsWrapperIcon} /> */}
           <LkIconSvg className={cls.HeaderActionsWrapperIcon} />
         </div>
       </div>
