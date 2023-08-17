@@ -1,4 +1,4 @@
-import { AppRoutesProps, routeConfig } from '@/shared/routes/routes'
+import { AppRoutesProps, routeConfig } from '@shared/routes/routes'
 import { Suspense, useCallback } from 'react'
 import { Route } from 'react-router-dom'
 

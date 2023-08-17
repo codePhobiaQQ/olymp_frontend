@@ -1,14 +1,14 @@
 import cn from 'classnames'
 import cls from './MainScreen.module.css'
 import Title, { TitleTheme } from '@shared/ui/Titles/Title'
-import MainScreenCard, { CardSizeTheme } from '../../../shared/Card/Card'
+import MainScreenCard, { CardSizeTheme } from '@shared/ui/Card/Card'
 import { cardsList } from '../model/data'
-import LogoSvg from '@/components/shared/assets/svg/LogoSvg'
-import Typography from '@/components/shared/ui/Typography/Typography'
-import CircleArrowSvg from '@/components/shared/assets/svg/CircleArrowSvg'
-import GradientBg from '@/components/common/GradientBg/ui/GradientBg/GradientBg'
-import { Header } from '@/widgets/Header'
-import { HeaderTheme } from '@/widgets/Header/ui/Header/Header'
+import LogoSvg from '@shared/assets/svg/LogoSvg'
+import Typography from '@shared/ui/Typography/Typography'
+import CircleArrowSvg from '@shared/assets/svg/CircleArrowSvg'
+import { GradientBg } from '@shared/ui/GradientBg'
+import { Header } from '@widgets/Header'
+import { HeaderTheme } from '@widgets/Header/ui/Header/Header'
 
 interface MainScreenI {
   className?: string

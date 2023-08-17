@@ -1,5 +1,5 @@
-import Footer from '@/widgets/Footer/Footer'
-import Header, { HeaderTheme } from '@/widgets/Header/ui/Header/Header'
+import Footer from '@widgets/Footer/Footer'
+import Header, { HeaderTheme } from '@widgets/Header/ui/Header/Header'
 
 interface PageHocI {
   children?: React.ReactNode

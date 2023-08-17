@@ -1,12 +1,9 @@
 import cls from './AboutScreen.module.css'
 import cn from 'classnames'
-import Typography from '@components/shared/ui/Typography/Typography'
-import TitleWithText from '@/components/common/TitleWithText/TitleWithText'
-import Button from '@/components/shared/ui/Button/Button'
-import LightArrowSvg from '@/components/shared/assets/svg/LightArrowSvg'
+import TitleWithText from '@shared/ui/TitleWithText/TitleWithText'
 import CardRoutesLayout from '@shared/layouts/CardsLayout/CardsLayout'
-import { routesActionScreen } from '@/shared/routes/routes'
-import ButtonWithArrow from '@/components/shared/ui/Button/ButtonWithArrow'
+import { routesActionScreen } from '@shared/routes/routes'
+import ButtonWithArrow from '@shared/ui/Button/ButtonWithArrow'
 
 interface AboutScreenI {
   className?: string

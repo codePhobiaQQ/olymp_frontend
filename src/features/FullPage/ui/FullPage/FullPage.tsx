@@ -1,16 +1,16 @@
 import ReactFullpage from '@fullpage/react-fullpage'
 import FullPageSectionWrapper from '../FullPageSectionWrapper/FullPageSectionWrapper'
-import { useAppDispatch } from '@/shared/hooks/useAppDispatch/useAppDispatch'
 import { fullpageActions } from '../../model/slice/fullPageSlice'
 import { sectionType } from '../../model/types/fullPage'
 import { fullPageProps } from '../../model/vars/fullPageProps'
+import { useDispatch } from 'react-redux'
 
 interface FullPageProps {
   sections?: sectionType[]
 }
 
 export const FullPage = (props: FullPageProps) => {
-  const dispatch = useAppDispatch()
+  const dispatch = useDispatch()
   const { sections } = props
 
   return (

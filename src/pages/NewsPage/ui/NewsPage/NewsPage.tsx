@@ -1,9 +1,9 @@
 import cls from './NewsPage.module.css'
 import cn from 'classnames'
-import PageTitle from '@/components/shared/PageTitle/PageTitle'
-import PageDescription from '@/components/shared/PageDescription/PageDescription'
-import { __API__ } from '@/shared/vars/vars'
-import { Header } from '@/widgets/Header'
+import PageTitle from '@shared/ui/PageTitle/PageTitle'
+import PageDescription from '@shared/ui/PageDescription/PageDescription'
+import { __API__ } from '@shared/vars/vars'
+import { Header } from '@widgets/Header'
 
 export const NewsPage = () => {
   return (

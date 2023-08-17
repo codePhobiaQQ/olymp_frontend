@@ -2,11 +2,11 @@ import { useState, useCallback } from 'react'
 import AppImage from '@shared/ui/AppImage/AppImage'
 import cls from './SubscribeScreen.module.css'
 import cn from 'classnames'
-import bg from '@components/shared/assets/images/subscribe/subscribeBg.jpg'
-import Title, { TitleTheme } from '@/components/shared/ui/Titles/Title'
-import Typography, { TypographyTheme } from '@/components/shared/ui/Typography/Typography'
+import bg from '@shared/assets/images/subscribe/subscribeBg.jpg'
+import Title, { TitleTheme } from '@shared/ui/Titles/Title'
+import Typography, { TypographyTheme } from '@shared/ui/Typography/Typography'
 import SubscribeInputField from '../SubscribeInputField/SubscribeInputField'
-import { olympData, olympNames } from '@/shared/data/olympData'
+import { olympData, olympNames } from '@shared/data/olympData'
 
 interface SubscribeScreenI {
   className?: string

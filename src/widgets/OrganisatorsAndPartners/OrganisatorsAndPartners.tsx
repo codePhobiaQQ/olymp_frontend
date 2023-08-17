@@ -1,11 +1,11 @@
-import Title from '@/components/shared/ui/Titles/Title'
+import Title from '@shared/ui/Titles/Title'
 import cls from './OrganisatorsAndPartners.module.css'
 import cn from 'classnames'
-import acadosBg from '@/components/shared/assets/univ/acados.jpg'
-import Typography, { TypographyTheme } from '@/components/shared/ui/Typography/Typography'
-import AppLink, { AppLinkTheme } from '@/components/shared/ui/AppLink/AppLink'
-import { organisatorsData } from '@/shared/data/organisatorsData'
-import ButtonWithArrow from '@/components/shared/ui/Button/ButtonWithArrow'
+import acadosBg from '@shared/assets/univ/acados.jpg'
+import Typography, { TypographyTheme } from '@shared/ui/Typography/Typography'
+import AppLink, { AppLinkTheme } from '@shared/ui/AppLink/AppLink'
+import { organisatorsData } from '@shared/data/organisatorsData'
+import ButtonWithArrow from '@shared/ui/Button/ButtonWithArrow'
 import AppImage from '@shared/ui/AppImage/AppImage'
 
 interface OrganisatorsAndPartnersI {

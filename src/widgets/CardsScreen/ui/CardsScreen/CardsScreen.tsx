@@ -2,7 +2,7 @@ import MainScreenCard, { CardTheme } from '@shared/ui/Card/Card'
 import { DataTypes, isRoutesActionScreenType } from '../../model/types/DataTypes'
 import cls from './CardsScreen.module.css'
 import cn from 'classnames'
-import AppLink from '@/components/shared/ui/AppLink/AppLink'
+import AppLink from '@shared/ui/AppLink/AppLink'
 
 export enum CardsScreenTheme {
   LINK_CARDS = 'link_cards',

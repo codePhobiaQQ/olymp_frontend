@@ -1,7 +1,7 @@
 import CardRoutesLayout from '@shared/layouts/CardsLayout/CardsLayout'
 import cls from './RoutingCardsScreen.module.css'
 import cn from 'classnames'
-import { routesActionScreen } from '@/shared/routes/routes'
+import { routesActionScreen } from '@shared/routes/routes'
 import { useMemo } from 'react'
 
 interface RoutingCardsScreenI {

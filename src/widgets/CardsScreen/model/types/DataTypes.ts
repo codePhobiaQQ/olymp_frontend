@@ -1,4 +1,4 @@
-import { RoutesActionScreenType } from '@/shared/routes/routes'
+import { RoutesActionScreenType } from '@shared/routes/routes'
 
 export type DataTypes = RoutesActionScreenType
 

@@ -1,1 +1,1 @@
-// import Gra
+export { GradientBg } from './ui/GradientBg/GradientBg'

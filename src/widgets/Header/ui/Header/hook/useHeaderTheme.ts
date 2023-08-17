@@ -1,4 +1,4 @@
-import { routeConfig } from '@/shared/routes/routes'
+import { routeConfig } from '@shared/routes/routes'
 import { useLocation } from 'react-router-dom'
 import { HeaderTheme } from '../Header'
 
