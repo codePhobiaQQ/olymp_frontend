@@ -7,7 +7,7 @@ import SubscribeScreen from '@widgets/SubscribeScreen/ui/SubscribeScreen/Subscri
 import PhraseScreen from '@widgets/PhraseScreen/PhraseScreen'
 import Footer from '@widgets/Footer/Footer'
 
-export const MainPage = () => {
+const MainPage = () => {
   return (
     <FullPage
       sections={[
@@ -50,3 +50,5 @@ export const MainPage = () => {
     />
   )
 }
+
+export default MainPage

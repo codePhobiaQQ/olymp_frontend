@@ -3,15 +3,22 @@ import { CombinedState } from 'redux'
 import { AxiosInstance } from 'axios'
 import { NavigateOptions } from 'react-router'
 import { FullPageSchema } from '@features/FullPage/model/types/fullPage'
+import { NewsPageSchema } from '@pages/NewsPage'
 
 export interface StateSchema {
   fullPage: FullPageSchema
+  
+  // Асинхронные редюсеры
+  newsPage?: NewsPageSchema
 }
 
 export type StateSchemaKey = keyof StateSchema
 
+export type MountedReducers = PartialRecord<StateSchemaKey, boolean>;
+
 export interface ReducerManager {
   getReducerMap: () => ReducersMapObject<StateSchema>
+  getMountedReducers: () => MountedReducers
   reduce: (state: StateSchema, action: AnyAction) => CombinedState<StateSchema>
   add: (key: StateSchemaKey, reducer: Reducer) => void
   remove: (key: StateSchemaKey) => void

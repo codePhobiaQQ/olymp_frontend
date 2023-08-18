@@ -10,6 +10,7 @@ import { MainPage } from '@pages/MainPage'
 import { OlympsPage } from '@pages/OlympsPage'
 import { NewsPage } from '@pages/NewsPage'
 import { HeaderTheme } from '@widgets/Header'
+import { Component } from 'react'
 
 // -------------------------
 // ------ Core routes ------
@@ -45,23 +46,23 @@ export type AppRoutesProps = RouteProps & {
 
 type RoutesType = Record<AppRoutes, AppRoutesProps>
 
-export const routeConfig: RoutesType = {
+export const routeConfig: Omit<RoutesType, Component> = {
   [AppRoutes.Main]: {
     label: 'Главная',
     path: routePath[AppRoutes.Main],
-    element: MainPage(),
+    element: <MainPage />,
     headerTheme: HeaderTheme.LIGHT,
   },
   [AppRoutes.Olymps]: {
     label: 'Олимпиады',
     path: routePath[AppRoutes.Olymps],
-    element: OlympsPage(),
+    element: <OlympsPage />,
     headerTheme: HeaderTheme.DARK,
   },
   [AppRoutes.News]: {
     label: 'Новости',
     path: routePath[AppRoutes.News],
-    element: NewsPage(),
+    element: <NewsPage />,
     headerTheme: HeaderTheme.DARK,
   },
   [AppRoutes.OnlineStudy]: {
@@ -101,7 +102,7 @@ export type RouteActionScreenAttributes = AppRoutesProps & {
   image?: string
 }
 
-export type RoutesActionScreenType = Partial<Record<AppRoutes, RouteActionScreenAttributes>>
+export type RoutesActionScreenType = PartialRecord<AppRoutes, RouteActionScreenAttributes>
 
 export const routesActionScreen: RoutesActionScreenType = {
   [AppRoutes.News]: {
@@ -147,5 +148,5 @@ export const routesActionScreen: RoutesActionScreenType = {
     title: 'личный кабинет',
     description: 'В этом разделе будут представлена',
     image: actionCard6,
-  },
+  }
 }

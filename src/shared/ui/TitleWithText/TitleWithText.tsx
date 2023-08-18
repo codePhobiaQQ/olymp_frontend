@@ -1,14 +1,16 @@
 import Title, { TitleTheme } from '@shared/ui/Title/Title'
-import cls from './Title.module.scss'
+import cls from './TitleWithText.module.scss'
 import cn from 'classnames'
 import Text from '@shared/ui/Text/Text'
+import { ReactNode } from 'react'
 
 interface TitleWithTextI {
   className?: string
   title?: string
-  text?: React.ReactNode | string
-  button?: React.ReactNode
+  text?: ReactNode | string
+  button?: ReactNode
   author?: string
+
   // Classes
   titleClassname?: string
   authorClassname?: string

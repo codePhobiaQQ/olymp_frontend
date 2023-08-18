@@ -21,10 +21,10 @@ export function createReduxStore(initialState?: StateSchema, asyncReducers?: Red
     middleware: (getDefaultMiddleware) =>
       getDefaultMiddleware({
         serializableCheck: false,
-        thunk: {
-          extraArgument: {},
-        },
-      }).concat(rtkApi.middleware),
+        // thunk: {
+        //   extraArgument: {},
+        // },
+      }),
   })
 
   // @ts-ignore

@@ -1,16 +1,11 @@
-import { Route, Routes } from 'react-router-dom'
-import { AppRoutesProps, routeConfig } from '@shared/routes/routes'
 import cn from 'classnames'
 import '@shared/assets/styles'
-
-const renderRoutes = (route: AppRoutesProps) => {
-  return <Route key={route.path} path={route.path} element={route.element} />
-}
+import { AppRouter } from '@app/providers/router'
 
 function App() {
   return (
     <div className={cn('app')}>
-      <Routes>{Object.values(routeConfig).map((route) => renderRoutes(route))}</Routes>
+      <AppRouter />
     </div>
   )
 }

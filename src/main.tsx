@@ -6,7 +6,7 @@ import { StoreProvider } from '@app/providers/storeProvider'
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-    <BrowserRouter basename="/">
+    <BrowserRouter>
       <StoreProvider>
         <App />
       </StoreProvider>
