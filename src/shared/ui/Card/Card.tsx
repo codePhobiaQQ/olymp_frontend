@@ -4,11 +4,11 @@ import { CardItem } from '@widgets/MainScreen/model/data'
 import { useNavigate } from 'react-router-dom'
 // import AppImage from '../ui/AppImage/AppImage'
 import AppLink, { AppLinkTheme } from '@shared/ui/AppLink/AppLink'
-import Title, { TitleTheme } from '@shared/ui/Titles/Title'
+import Title, { TitleTheme } from '@shared/ui/Title/Title'
 import cls from './Card.module.scss'
 import cn from 'classnames'
 import AppImage from '../AppImage/AppImage'
-import Typography from '@shared/ui/Typography/Typography'
+import Text from '@shared/ui/Text/Text'
 import ArrowSvg from '@shared/assets/svg/ArrowSvg'
 
 export enum CardSizeTheme {
@@ -67,7 +67,7 @@ export const CardRouting = (props: RoutingCardI) => {
         <div className={cn(cls.CardRoutingContentWrapperInner)}>
           <Title theme={TitleTheme.H4} className={cn(cls.CardTitle, 'ttu')} text={data?.title} />
           <div className={cn(cls.DescriptionWrapper)}>
-            <Typography className={cn(cls.Description)} text={data?.description} />
+            <Text className={cn(cls.Description)} text={data?.description} />
 
             <div className={cn(cls.ArrowWrapper)}>
               <ArrowSvg className={cn(cls.Arrow)} />

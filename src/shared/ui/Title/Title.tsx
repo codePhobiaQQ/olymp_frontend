@@ -1,5 +1,5 @@
 import { HTMLAttributes } from 'react'
-import styles from './Title.module.css'
+import cls from './Title.module.scss'
 import cn from 'classnames'
 
 export enum TitleTheme {
@@ -25,7 +25,7 @@ const Title = (props: TitleI) => {
 
 	if (theme == TitleTheme.H1) {
 		return (
-			<h1 className={cn(className, styles.Title, styles[TitleTheme.H1])} {...otherProps}>
+			<h1 className={cn(className, cls.Title, cls[TitleTheme.H1])} {...otherProps}>
 				{text}
 			</h1>
 		)
@@ -33,7 +33,7 @@ const Title = (props: TitleI) => {
 
 	if (theme == TitleTheme.H1_UPPERCASE) {
 		return (
-			<h1 className={cn(className, styles.Title, styles[TitleTheme.H1_UPPERCASE])} {...otherProps}>
+			<h1 className={cn(className, cls.Title, cls[TitleTheme.H1_UPPERCASE])} {...otherProps}>
 				{text}
 			</h1>
 		)
@@ -41,7 +41,7 @@ const Title = (props: TitleI) => {
 
 	if (theme == TitleTheme.H2) {
 		return (
-			<h2 className={cn(className, styles.Title, styles[TitleTheme.H2])} {...otherProps}>
+			<h2 className={cn(className, cls.Title, cls[TitleTheme.H2])} {...otherProps}>
 				{text}
 			</h2>
 		)
@@ -49,7 +49,7 @@ const Title = (props: TitleI) => {
 
 	if (theme == TitleTheme.TITLE_WITH_TEXT) {
 		return (
-			<h2 className={cn(className, styles.Title, styles[TitleTheme.TITLE_WITH_TEXT])} {...otherProps}>
+			<h2 className={cn(className, cls.Title, cls[TitleTheme.TITLE_WITH_TEXT])} {...otherProps}>
 				{text}
 			</h2>
 		)
@@ -57,7 +57,7 @@ const Title = (props: TitleI) => {
 
 	if (theme == TitleTheme.H3) {
 		return (
-			<h3 className={cn(className, styles.Title, styles[TitleTheme.H3])} {...otherProps}>
+			<h3 className={cn(className, cls.Title, cls[TitleTheme.H3])} {...otherProps}>
 				{text}
 			</h3>
 		)
@@ -65,7 +65,7 @@ const Title = (props: TitleI) => {
 
 	if (theme == TitleTheme.H4) {
 		return (
-			<h4 className={cn(className, styles.Title, styles[TitleTheme.H4])} {...otherProps}>
+			<h4 className={cn(className, cls.Title, cls[TitleTheme.H4])} {...otherProps}>
 				{text}
 			</h4>
 		)
@@ -73,7 +73,7 @@ const Title = (props: TitleI) => {
 
 	if (theme == TitleTheme.H4_THIN) {
 		return (
-			<h4 className={cn(className, styles.Title, styles[TitleTheme.H4_THIN])} {...otherProps}>
+			<h4 className={cn(className, cls.Title, cls[TitleTheme.H4_THIN])} {...otherProps}>
 				{text}
 			</h4>
 		)
@@ -81,7 +81,7 @@ const Title = (props: TitleI) => {
 
 	if (theme == TitleTheme.H5) {
 		return (
-			<h5 className={cn(className, styles.Title, styles[TitleTheme.H5])} {...otherProps}>
+			<h5 className={cn(className, cls.Title, cls[TitleTheme.H5])} {...otherProps}>
 				{text}
 			</h5>
 		)
@@ -89,7 +89,7 @@ const Title = (props: TitleI) => {
 
 	if (theme == TitleTheme.H6) {
 		return (
-			<h6 className={cn(className, styles.Title, styles[TitleTheme.H6])} {...otherProps}>
+			<h6 className={cn(className, cls.Title, cls[TitleTheme.H6])} {...otherProps}>
 				{text}
 			</h6>
 		)

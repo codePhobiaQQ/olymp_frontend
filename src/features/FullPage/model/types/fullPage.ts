@@ -1,4 +1,4 @@
-import { fullpageApi } from '@fullpage/react-fullpage'
+// import { fullpageApi } from '@fullpage/react-fullpage'
 
 export interface sectionType {
 	component: React.ReactNode

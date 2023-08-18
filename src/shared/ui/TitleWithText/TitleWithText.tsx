@@ -1,8 +1,7 @@
-import Title, { TitleTheme } from '@shared/ui/Titles/Title'
-import cls from './TitleWithText.module.css'
+import Title, { TitleTheme } from '@shared/ui/Title/Title'
+import cls from './Title.module.scss'
 import cn from 'classnames'
-import Typography from '@shared/ui/Typography/Typography'
-import Button from '@shared/ui/Button/Button'
+import Text from '@shared/ui/Text/Text'
 
 interface TitleWithTextI {
   className?: string
@@ -21,7 +20,7 @@ const TitleWithText = (props: TitleWithTextI) => {
 
   let textContent
   if (typeof text == 'string') {
-    textContent = <Typography className={cn(textClassname)} text={text} />
+    textContent = <Text className={cn(textClassname)} text={text} />
   } else {
     textContent = text
   }
@@ -31,7 +30,7 @@ const TitleWithText = (props: TitleWithTextI) => {
       <div className={cn(cls.TitleWithTextWrapperInner)}>
         <div className={cls.TitleWrapper}>
           <Title className={cn(cls.Title, titleClassname)} theme={TitleTheme.H3} text={title} />
-          {author && <Typography text={author} className={cn(cls['AuthorWrapper'], authorClassname)} />}
+          {author && <Text text={author} className={cn(cls['AuthorWrapper'], authorClassname)} />}
         </div>
 
         <div className={cn(cls.TextWrapper)}>

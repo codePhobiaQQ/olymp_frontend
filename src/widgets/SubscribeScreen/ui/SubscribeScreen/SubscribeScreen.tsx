@@ -1,10 +1,10 @@
 import { useState, useCallback } from 'react'
 import AppImage from '@shared/ui/AppImage/AppImage'
-import cls from './SubscribeScreen.module.css'
+import cls from './SubscribeScreen.module.scss'
 import cn from 'classnames'
 import bg from '@shared/assets/images/subscribe/subscribeBg.jpg'
-import Title, { TitleTheme } from '@shared/ui/Titles/Title'
-import Typography, { TypographyTheme } from '@shared/ui/Typography/Typography'
+import Title, { TitleTheme } from '@shared/ui/Title/Title'
+import Text, { TextTheme } from '@shared/ui/Text/Text'
 import SubscribeInputField from '../SubscribeInputField/SubscribeInputField'
 import { olympData, olympNames } from '@shared/data/olympData'
 
@@ -45,9 +45,9 @@ const SubscribeScreen = ({ className = '' }: SubscribeScreenI) => {
               text={'подпишитесь на рассылку о новостях и событиях портала v-olymp.ru'}
             />
 
-            <Typography
+            <Text
               className={cn(cls.UserAccess)}
-              theme={TypographyTheme.PARAGRAPH_THEME}
+              theme={TextTheme.PARAGRAPH_THEME}
               text="Нажимая подписаться вы принимаете условия Пользовательского соглашения и Политики конфиденциальности "
             />
 

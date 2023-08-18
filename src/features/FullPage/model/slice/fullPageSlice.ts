@@ -2,21 +2,23 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { FullPageSchema, fullpageType } from '../types/fullPage'
 
 const initialState: FullPageSchema = {
-	fullpageApi: undefined,
-	sectionId: '',
+  fullpageApi: undefined,
+  sectionId: '',
 }
 
 export const fullpageSlice = createSlice({
-	name: 'fullpage',
-	initialState,
-	reducers: {
-		setFullpageApi: (state, action: PayloadAction<fullpageType>) => {
-			state.fullpageApi = action.payload
-		},
-		setFullpageActiveSection: (state, action: PayloadAction<string>) => {
-			state.sectionId = action.payload
-		},
-	},
+  name: 'fullpage',
+  initialState,
+  reducers: {
+    setFullpageApi: (state, action: PayloadAction<fullpageType>) => {
+      // @ts-ignore
+      state.fullpageApi = action.payload
+    },
+    setFullpageActiveSection: (state, action: PayloadAction<string>) => {
+      // @ts-ignore
+      state.sectionId = action.payload
+    },
+  },
 })
 
 // Action creators are generated for each case reducer function

@@ -1,10 +1,10 @@
 import cn from 'classnames'
 import cls from './MainScreen.module.css'
-import Title, { TitleTheme } from '@shared/ui/Titles/Title'
+import Title, { TitleTheme } from '@shared/ui/Title/Title'
 import MainScreenCard, { CardSizeTheme } from '@shared/ui/Card/Card'
 import { cardsList } from '../model/data'
 import LogoSvg from '@shared/assets/svg/LogoSvg'
-import Typography from '@shared/ui/Typography/Typography'
+import Text from '@shared/ui/Text/Text'
 import CircleArrowSvg from '@shared/assets/svg/CircleArrowSvg'
 import { GradientBg } from '@shared/ui/GradientBg'
 import { Header } from '@widgets/Header'
@@ -46,7 +46,7 @@ const MainScreen = ({ className = '' }: MainScreenI) => {
         </div>
 
         <div className={cn(cls.MoreBtn)}>
-          <Typography text="Узнать больше" />
+          <Text text="Узнать больше" />
           <CircleArrowSvg className={cn(cls.MoreBtnIcon)} />
         </div>
       </div>

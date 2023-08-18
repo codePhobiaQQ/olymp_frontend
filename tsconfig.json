@@ -30,7 +30,8 @@
       "@entities/*": ["src/entities/*"],
       "@shared/*": ["src/shared/*"],
       "@/*": ["src/*"]
-    }
+    },
+    "allowSyntheticDefaultImports": true
   },
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]

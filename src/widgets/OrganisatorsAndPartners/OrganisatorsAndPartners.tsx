@@ -1,8 +1,8 @@
-import Title from '@shared/ui/Titles/Title'
+import Title from '@shared/ui/Title/Title'
 import cls from './OrganisatorsAndPartners.module.css'
 import cn from 'classnames'
 import acadosBg from '@shared/assets/univ/acados.jpg'
-import Typography, { TypographyTheme } from '@shared/ui/Typography/Typography'
+import Text, { TextTheme } from '@shared/ui/Text/Text'
 import AppLink, { AppLinkTheme } from '@shared/ui/AppLink/AppLink'
 import { organisatorsData } from '@shared/data/organisatorsData'
 import ButtonWithArrow from '@shared/ui/Button/ButtonWithArrow'
@@ -16,24 +16,24 @@ const OrganisatorsAndPartners = ({ className = '' }: OrganisatorsAndPartnersI) =
   return (
     <section className={cn(className, cls.OrganisatorsAndPartners)}>
       <div className={cn(cls.OrganisatorsAndPartnersInner)}>
-        <Title className={cn(cls.SectionTitle)} text="организаторы и партнеры" />
+        <Title className={cn(cls.SectionTitle)} text='организаторы и партнеры' />
 
         <div className={cn(className, cls.ContentWrapper)}>
           <div className={cn(className, cls.Contacts)}>
-            <Typography
+            <Text
               className={cn(cls.Where)}
-              text="Межрегиональная олимпиада школьников имени И.Я. Верченко по математике и криптографии проводится в Институте криптографии, связи 
-и информатики Академии ФСБ России"
-              theme={TypographyTheme.PARAGRAPH_THEME}
+              text='Межрегиональная олимпиада школьников имени И.Я. Верченко по математике и криптографии проводится в Институте криптографии, связи
+и информатики Академии ФСБ России'
+              theme={TextTheme.PARAGRAPH_THEME}
             />
             <AppLink
               className={cn(cls.InfoLink)}
               theme={AppLinkTheme.DEFAULT_LINK}
-              to="/"
-              text="119602, г Москва, Мичуринский проспект, д.70"
+              to='/'
+              text='119602, г Москва, Мичуринский проспект, д.70'
             />
-            <AppLink className={cn(cls.InfoLink)} theme={AppLinkTheme.DEFAULT_LINK} to="/" text="8(495) 989-31-31" />
-            <AppLink className={cn(cls.InfoLink)} theme={AppLinkTheme.DEFAULT_LINK} to="/" text="academy.fsb.ru" />
+            <AppLink className={cn(cls.InfoLink)} theme={AppLinkTheme.DEFAULT_LINK} to='/' text='8(495) 989-31-31' />
+            <AppLink className={cn(cls.InfoLink)} theme={AppLinkTheme.DEFAULT_LINK} to='/' text='academy.fsb.ru' />
           </div>
           <div className={cn(className, cls.UnivList)}>
             <ul>
@@ -43,7 +43,7 @@ const OrganisatorsAndPartners = ({ className = '' }: OrganisatorsAndPartnersI) =
                 </li>
               ))}
             </ul>
-            <ButtonWithArrow text="Полный список ВУЗов" />
+            <ButtonWithArrow text='Полный список ВУЗов' />
           </div>
         </div>
       </div>

@@ -7,6 +7,9 @@
 	width: 100%;
 }
 
+.ButtonWithArrow {}
+
+
 .outline_transparent {
 	background-color: transparent;
 	padding: var(--px6) var(--px30);

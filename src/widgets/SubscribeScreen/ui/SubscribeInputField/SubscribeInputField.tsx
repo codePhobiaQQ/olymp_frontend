@@ -3,7 +3,7 @@ import { Dispatch, SetStateAction } from 'react'
 import cn from 'classnames'
 import Input from '@shared/ui/Input/Input'
 import Button, { ButtonTheme } from '@shared/ui/Button/Button'
-import Typography from '@shared/ui/Typography/Typography'
+import Text from '@shared/ui/Text/Text'
 
 interface SubscribeInputFieldI {
   className?: string
@@ -16,7 +16,7 @@ const SubscribeInputField = ({ className = '', value, onChange }: SubscribeInput
     <div className={cn(className, cls.SubscribeInputField)}>
       <Input className={cn(cls.Input)} placeholder="Ваш E-mail" />
       <Button wrapperClassName={cn(cls.Btn)} theme={ButtonTheme.SUBSCRIBE_THEME}>
-        <Typography text="ПОДПИСАТЬСЯ" />
+        <Text text="ПОДПИСАТЬСЯ" />
       </Button>
     </div>
   )

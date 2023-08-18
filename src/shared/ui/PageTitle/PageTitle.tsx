@@ -1,4 +1,4 @@
-import Title, { TitleTheme } from '@shared/ui/Titles/Title'
+import Title, { TitleTheme } from '@shared/ui/Title/Title'
 import cls from './PageTitle.module.css'
 import cn from 'classnames'
 

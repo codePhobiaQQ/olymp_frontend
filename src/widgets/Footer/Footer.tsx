@@ -4,7 +4,7 @@ import cls from './Footer.module.scss'
 import cn from 'classnames'
 import AppImage from '@shared/ui/AppImage/AppImage'
 import AppLink, { AppLinkTheme } from '@shared/ui/AppLink/AppLink'
-import Typography from '@shared/ui/Typography/Typography'
+import Text from '@shared/ui/Text/Text'
 import { olympData } from '@shared/data/olympData'
 import { otherEventsData } from '@shared/data/otherEventsData'
 import TopNavigation from '../Header/ui/TopNavigation/TopNavigation'
@@ -32,20 +32,20 @@ const Footer = ({ className = '' }: FooterI) => {
                 theme={AppLinkTheme.DEFAULT_LINK}
                 className={cls.ContactLink}
                 to={'support@v-olymp.ru'}
-                text="support@v-olymp.ru"
+                text='support@v-olymp.ru'
               />
               <AppLink
                 theme={AppLinkTheme.DEFAULT_LINK}
                 className={cls.ContactLink}
                 to={'8 (495) 989 37 89'}
-                text="8 (495) 989 37 89"
+                text='8 (495) 989 37 89'
               />
             </div>
           </div>
         </div>
         <div className={cn(cls.Olymps, cls.FooterCol)}>
           <div className={cn(cls.FooterColInner)}>
-            <Typography className={cls.FooterColTitle} text={'олимпиады, входящие в перерчень'} />
+            <Text className={cls.FooterColTitle} text={'олимпиады, входящие в перерчень'} />
             <ul className={cls.FooterList}>
               {Object.values(olympData).map((olymp) => (
                 <li className={cls.FooterListItemWrapper} key={olymp.name}>
@@ -62,7 +62,7 @@ const Footer = ({ className = '' }: FooterI) => {
         </div>
         <div className={cn(cls.Other, cls.FooterCol)}>
           <div className={cn(cls.FooterColInner)}>
-            <Typography className={cls.FooterColTitle} text={'другие мероприятия'} />
+            <Text className={cls.FooterColTitle} text={'другие мероприятия'} />
             <ul className={cls.FooterList}>
               {Object.values(otherEventsData).map((event) => (
                 <li className={cls.FooterListItemWrapper} key={event.name}>
@@ -78,6 +78,7 @@ const Footer = ({ className = '' }: FooterI) => {
           </div>
         </div>
       </div>
+
       <div className={cn(cls.FooterBottomPart)}>
         <TopNavigation className={cls.FooterNavigation} />
       </div>

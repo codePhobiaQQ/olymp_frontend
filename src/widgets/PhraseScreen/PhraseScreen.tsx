@@ -1,4 +1,4 @@
-import Typography from '@shared/ui/Typography/Typography'
+import Text from '@shared/ui/Text/Text'
 import cls from './PhraseScreen.module.css'
 import cn from 'classnames'
 
@@ -9,7 +9,7 @@ interface PhraseScreenI {
 const PhraseScreen = ({ className = '' }: PhraseScreenI) => {
   return (
     <div className={cn(className, cls.PhraseScreen)}>
-      <Typography className={cn(cls.MotivationPhrase)} text="КАКАЯ-ТО МОТИВИРУЮЩАЯ ФРАЗА" />
+      <Text className={cn(cls.MotivationPhrase)} text="КАКАЯ-ТО МОТИВИРУЮЩАЯ ФРАЗА" />
     </div>
   )
 }

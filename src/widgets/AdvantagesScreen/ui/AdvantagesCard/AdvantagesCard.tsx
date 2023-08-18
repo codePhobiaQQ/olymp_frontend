@@ -1,8 +1,8 @@
-import Title, { TitleTheme } from '@shared/ui/Titles/Title'
+import Title, { TitleTheme } from '@shared/ui/Title/Title'
 import { advantageData } from '../../model/data'
 import styles from './AdvantagesCard.module.css'
 import cn from 'classnames'
-import Typography from '@shared/ui/Typography/Typography'
+import Text from '@shared/ui/Text/Text'
 
 interface AdvantagesCardI {
   className?: string
@@ -16,7 +16,7 @@ const AdvantagesCard = ({ className = '', data }: AdvantagesCardI) => {
         theme={TitleTheme.H4}
         text={`${data?.prevSymbol ? data.prevSymbol : ''} ${data?.number} ${data?.afterSymbol ? data.afterSymbol : ''}`}
       />
-      <Typography className="ff-r fz_16" text={data?.text} />
+      <Text className="ff-r fz_16" text={data?.text} />
     </div>
   )
 }
