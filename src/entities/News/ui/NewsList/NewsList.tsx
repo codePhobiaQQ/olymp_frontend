@@ -21,19 +21,19 @@ const getSkeletons = (view: NewsView) => {
 export const NewsList = (props: NewsListProps) => {
   const { className, news, view = NewsView.SMALL, isLoading = false } = props
 
-  if (!isLoading || news.length == 0) {
+  if (!isLoading && news.length === 0) {
     return <div className={cn(cls.NewsList, cls[view], className)}>
       <Text text='Новости пока отсутствуют...' />
     </div>
   }
 
   return (
-    <div className={cn(className, cls.NewsList)}>
+    <div className={cn(className, cls.NewsList, cls[view])}>
       {news.map((newsItem, index) => (
-        <>
-          <NewsListItem key={newsItem.id} />
+        <div key={newsItem.id}>
+          <NewsListItem view={view} news={newsItem} key={newsItem.id} />
           {isLoading && getSkeletons(view)}
-        </>
+        </div>
       ))}
     </div>
   )

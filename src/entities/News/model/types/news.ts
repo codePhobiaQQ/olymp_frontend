@@ -2,8 +2,11 @@ import { NewsType } from './../consts/newsConsts'
 
 export interface News {
   id: string;
-  title: string;
-  subtitle: string;
-  createdAt: string;
-  type: NewsType[]
+  news_title?: string;
+  news_description?: string;
+  news_preview_image?: string;
+  post_date: string;
+  post_modified: string;
+  post_author: string;
+  type?: NewsType[]
 }

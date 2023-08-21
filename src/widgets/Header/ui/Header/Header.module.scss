@@ -1,8 +1,12 @@
 .Header {
 	width: 100%;
 	box-sizing: border-box;
-	padding: var(--px20) var(--sections-padding) 0 var(--sections-padding);
+	padding: var(--px10) var(--sections-padding) var(--px10) var(--sections-padding);
+	background-color: var(--main-bg);
 	z-index: 2;
+	position: fixed;
+	top: 0;
+	left: 0;
 
 	&.light {
 	}

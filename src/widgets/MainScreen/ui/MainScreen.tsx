@@ -1,5 +1,5 @@
 import cn from 'classnames'
-import cls from './MainScreen.module.css'
+import cls from './MainScreen.module.scss'
 import Title, { TitleTheme } from '@shared/ui/Title/Title'
 import MainScreenCard, { CardSizeTheme } from '@shared/ui/Card/Card'
 import { cardsList } from '../model/data'
@@ -7,8 +7,6 @@ import LogoSvg from '@shared/assets/svg/LogoSvg'
 import Text from '@shared/ui/Text/Text'
 import CircleArrowSvg from '@shared/assets/svg/CircleArrowSvg'
 import { GradientBg } from '@shared/ui/GradientBg'
-import { Header } from '@widgets/Header'
-import { HeaderTheme } from '@widgets/Header/ui/Header/Header'
 
 interface MainScreenI {
   className?: string
@@ -17,7 +15,6 @@ interface MainScreenI {
 const MainScreen = ({ className = '' }: MainScreenI) => {
   return (
     <div className={cn(className, cls.MainScreen)}>
-      <Header theme={HeaderTheme.LIGHT} className={cls.Header} />
       <div className={cls.bg}>
         <GradientBg />
       </div>
@@ -26,12 +23,15 @@ const MainScreen = ({ className = '' }: MainScreenI) => {
         <div className={cn(cls.TitleWrapper)}>
           <LogoSvg className={cn(cls.LogoTitle)} />
 
-          <Title
-            style={{ color: '#fff' }}
-            theme={TitleTheme.H1_UPPERCASE}
-            className={cn('m_t_30', cls.Title)}
-            text="Система поддержки проведения интеллектуальных соревнований школьников"
-          />
+          <div className={cn('m_t_30')}>
+            <Title
+              style={{ color: '#fff' }}
+              theme={TitleTheme.H1_UPPERCASE}
+              className={cn(cls.Title, 'm_auto')}
+              text="Система поддержки проведения интеллектуальных соревнований школьников"
+            />
+          </div>
+
         </div>
 
         <div className={cn(cls.CardsWrapper)}>

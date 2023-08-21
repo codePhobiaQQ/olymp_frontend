@@ -1,3 +1,17 @@
 .NewsListItem {
+  padding: var(--px60);
+  background-color: #fff;
+  border-radius: var(--px24);
+  width: 100%;
+  box-sizing: border-box;
 
+  .Header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .Content {
+
+  }
 }

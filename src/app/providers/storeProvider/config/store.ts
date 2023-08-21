@@ -1,9 +1,10 @@
 import { configureStore, ReducersMapObject } from '@reduxjs/toolkit'
 import { CombinedState, Reducer } from 'redux'
-import { StateSchema } from './StateSchema'
+import { StateSchema, ThunkExtraArg } from './StateSchema'
 import { createReducerManager } from './reducerManager'
 import { fullpageReducer } from '@features/FullPage/model/slice/fullPageSlice'
 import { rtkApi } from '@shared/api/rtkApi'
+import { $api } from '@shared/api/api'
 
 export function createReduxStore(initialState?: StateSchema, asyncReducers?: ReducersMapObject<StateSchema>) {
   const rootReducers: ReducersMapObject<StateSchema> = {
@@ -14,6 +15,10 @@ export function createReduxStore(initialState?: StateSchema, asyncReducers?: Red
 
   const reducerManager = createReducerManager(rootReducers)
 
+  const extraArg: ThunkExtraArg = {
+    api: $api,
+  };
+
   const store = configureStore({
     reducer: reducerManager.reduce as Reducer<CombinedState<StateSchema>>,
     devTools: true,
@@ -21,9 +26,9 @@ export function createReduxStore(initialState?: StateSchema, asyncReducers?: Red
     middleware: (getDefaultMiddleware) =>
       getDefaultMiddleware({
         serializableCheck: false,
-        // thunk: {
-        //   extraArgument: {},
-        // },
+        thunk: {
+          extraArgument: extraArg,
+        },
       }),
   })
 

@@ -1,0 +1,16 @@
+.NewsPage {
+	padding: var(--sections-padding);
+
+	.Content {
+		margin-top: var(--px60);
+		display: flex;
+		justify-content: space-between;
+
+		.Filters {
+			min-width: 30%;
+		}
+		.ContentListItems {
+			flex-grow: 1;
+		}
+	}
+}

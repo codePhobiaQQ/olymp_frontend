@@ -1,0 +1,17 @@
+.Text {
+	line-height: 1.4em;
+
+	/*Font weight*/
+	&.regular {
+		font-family: 'mr', sans-serif;
+	}
+	&.light {
+		font-family: 'mth', sans-serif;
+	}
+	&.semi-bold {
+		font-family: 'msb', sans-serif;
+	}
+}
+
+.paragraph_theme {
+}
