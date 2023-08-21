@@ -20,7 +20,7 @@ const newsPageSlice = createSlice({
     ids: [],
     entities: {},
     view: NewsView.SMALL,
-    page: 1,
+    page: 0,
     hasMore: true,
     _inited: false,
     limit: 5,

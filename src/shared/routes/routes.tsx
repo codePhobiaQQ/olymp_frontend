@@ -11,6 +11,7 @@ import { OlympsPage } from '@pages/OlympsPage'
 import { NewsPage } from '@pages/NewsPage'
 import { HeaderTheme } from '@widgets/Header'
 import { Component } from 'react'
+import { NewsDetailsPage } from '@pages/NewsDetailsPage'
 
 // -------------------------
 // ------ Core routes ------
@@ -20,6 +21,7 @@ export enum AppRoutes {
   Main = 'main',
   Olymps = 'olymps',
   News = 'news',
+  NewsDetails = 'news_details',
   OnlineStudy = 'online',
   OlympSchedule = 'olymp-schedule',
   FAQ = 'faq',
@@ -30,6 +32,7 @@ export enum AppRoutes {
 export const routePath: Record<AppRoutes, string> = {
   [AppRoutes.Main]: '/',
   [AppRoutes.News]: '/news',
+  [AppRoutes.NewsDetails]: '/news' + '/:id',
   [AppRoutes.OnlineStudy]: '/online-study',
   [AppRoutes.OlympSchedule]: '/online-study',
   [AppRoutes.FAQ]: '/faq',
@@ -63,6 +66,12 @@ export const routeConfig: Omit<RoutesType, Component> = {
     label: 'Новости',
     path: routePath[AppRoutes.News],
     element: <NewsPage />,
+    headerTheme: HeaderTheme.DARK,
+  },
+  [AppRoutes.NewsDetails]: {
+    label: 'Новости',
+    path: routePath[AppRoutes.News],
+    element: <NewsDetailsPage />,
     headerTheme: HeaderTheme.DARK,
   },
   [AppRoutes.OnlineStudy]: {

@@ -8,5 +8,11 @@ export interface News {
   post_date: string;
   post_modified: string;
   post_author: string;
-  type?: NewsType[]
+  type?: number[]
+}
+
+export interface NewsCategories {
+  id: number;
+  name: string;
+  parent: string;
 }

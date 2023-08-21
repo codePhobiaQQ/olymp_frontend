@@ -2,15 +2,15 @@ import cls from './NewsPage.module.scss'
 import cn from 'classnames'
 import PageTitle from '@shared/ui/PageTitle/PageTitle'
 import PageDescription from '@shared/ui/PageDescription/PageDescription'
-import { Header } from '@widgets/Header'
 import { DynamicModuleLoader, ReducersList } from '@shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 import { newsPageReducer } from '@pages/NewsPage/model/slice/newsPageSlice/newsPageSlice'
-import { memo, useCallback, useEffect } from 'react'
+import { memo, useCallback } from 'react'
 import { useAppDispatch } from '@shared/lib/hooks/useAppDispatch/useAppDispatch'
 import { fetchNextNewsPage } from '@pages/NewsPage/model/services/fetchNextNewsPage/fetchNextNewsPage'
 import { Page } from '@widgets/Page/ui/Page/Page'
 import { NewsInfiniteList } from '@pages/NewsPage/ui/NewsInfiniteList/NewsInfiniteList'
-import Footer from '@widgets/Footer/Footer'
+import { NewsFilters } from '@pages/NewsPage/ui/NewsFilters/NewsFilters'
+import { NewsPageCategories } from '@features/fetchNewsCategories'
 
 const reducers: ReducersList = {
   newsPage: newsPageReducer,
@@ -36,7 +36,7 @@ const NewsPage = memo(() => {
 
       <div className={cn(cls.Content)}>
         <div className={cn(cls.Filters)}>
-          filters
+          <NewsPageCategories />
         </div>
         <div className={cn(cls.ContentListItems)}>
           <NewsInfiniteList />
@@ -46,7 +46,7 @@ const NewsPage = memo(() => {
   )
 
   return (
-    <DynamicModuleLoader reducers={reducers}>
+    <DynamicModuleLoader removeAfterUnmount={false} reducers={reducers}>
       <Page onScrollEnd={onLoadNextPart}>
         {content}
       </Page>

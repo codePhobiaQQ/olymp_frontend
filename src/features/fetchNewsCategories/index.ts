@@ -1,0 +1,1 @@
+export { NewsPageCategories } from './ui/NewsPageCategories/NewsPageCategories'

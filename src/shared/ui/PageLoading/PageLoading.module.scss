@@ -1,0 +1,12 @@
+.PageLoading {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60vh;
+  .Logo {
+    width: var(--px100);
+    height: var(--px100);
+    margin: auto;
+  }
+}

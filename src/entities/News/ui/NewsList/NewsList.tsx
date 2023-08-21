@@ -4,6 +4,7 @@ import { NewsView } from './../../model/consts/newsConsts'
 import { News } from './../../model/types/news'
 import { NewsListItem, NewsListItemSkeleton } from './../../ui/NewsListItem/NewsListItem'
 import Text from '@shared/ui/Text/Text'
+import { Skeleton } from '@shared/ui/Skeleton'
 
 type NewsListProps = {
   className?: string;
@@ -13,9 +14,11 @@ type NewsListProps = {
 };
 
 const getSkeletons = (view: NewsView) => {
-  new Array(view === NewsView.SMALL ? 9 : 3).fill(null).map((_, index) =>
-    <NewsListItemSkeleton key={index} view={view} />,
-  )
+  return <>
+    {new Array(view === NewsView.SMALL ? 4 : 2).fill(null).map((_, index) =>
+      <Skeleton key={index} height={150} width={'100%'} />
+    )}
+  </>
 }
 
 export const NewsList = (props: NewsListProps) => {
@@ -30,11 +33,10 @@ export const NewsList = (props: NewsListProps) => {
   return (
     <div className={cn(className, cls.NewsList, cls[view])}>
       {news.map((newsItem, index) => (
-        <div key={newsItem.id}>
-          <NewsListItem view={view} news={newsItem} key={newsItem.id} />
-          {isLoading && getSkeletons(view)}
-        </div>
+        <NewsListItem view={view} news={newsItem} key={newsItem.id} />
       ))}
+      {isLoading && getSkeletons(view)}
+      {/*{isLoading && 'Loading'}*/}
     </div>
   )
 }
