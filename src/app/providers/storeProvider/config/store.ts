@@ -2,14 +2,12 @@ import { configureStore, ReducersMapObject } from '@reduxjs/toolkit'
 import { CombinedState, Reducer } from 'redux'
 import { StateSchema, ThunkExtraArg } from './StateSchema'
 import { createReducerManager } from './reducerManager'
-import { fullpageReducer } from '@features/FullPage/model/slice/fullPageSlice'
 import { rtkApi } from '@shared/api/rtkApi'
 import { $api } from '@shared/api/api'
 
 export function createReduxStore(initialState?: StateSchema, asyncReducers?: ReducersMapObject<StateSchema>) {
   const rootReducers: ReducersMapObject<StateSchema> = {
     ...asyncReducers,
-    fullPage: fullpageReducer,
     [rtkApi.reducerPath]: rtkApi.reducer,
   }
 

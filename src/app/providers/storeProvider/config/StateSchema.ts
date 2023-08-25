@@ -2,13 +2,10 @@ import { AnyAction, EnhancedStore, Reducer, ReducersMapObject } from '@reduxjs/t
 import { CombinedState } from 'redux'
 import { AxiosInstance } from 'axios'
 import { NavigateOptions } from 'react-router'
-import { FullPageSchema } from '@features/FullPage/model/types/fullPage'
 import { NewsPageSchema } from '@pages/NewsPage'
 import { NewsCategoriesSchema } from '@features/fetchNewsCategories/model/types/newsCategoriesSchema'
 
 export interface StateSchema {
-  fullPage: FullPageSchema
-
   // Асинхронные редюсеры
   newsPage?: NewsPageSchema
   newsCategories?: NewsCategoriesSchema
