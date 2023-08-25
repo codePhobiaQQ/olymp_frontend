@@ -6,9 +6,12 @@ import { NewsPageSchema } from '@pages/NewsPage'
 import { NewsCategoriesSchema } from '@features/fetchNewsCategories/model/types/newsCategoriesSchema'
 
 export interface StateSchema {
-  // Асинхронные редюсеры
+
+  // News
   newsPage?: NewsPageSchema
   newsCategories?: NewsCategoriesSchema
+
+  // Асинхронные редюсеры
 }
 
 export type StateSchemaKey = keyof StateSchema

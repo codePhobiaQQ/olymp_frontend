@@ -4,6 +4,7 @@ import { News, NewsType, NewsView } from '@entities/News'
 import { fetchNewsList } from '@pages/NewsPage/model/services/fetchNewsList/fetchNewsList'
 import { NEWS_VIEW_LOCALSTORAGE_KEY } from '@shared/vars/localstorage/localstorage'
 import { StateSchema } from '@app/providers/storeProvider'
+import { fetchNewsCategories } from '@features/fetchNewsCategories/model/services/fetchNewsCategories'
 
 const newsAdapter = createEntityAdapter<News>({
   selectId: (news) => news.id,
@@ -17,8 +18,10 @@ const newsPageSlice = createSlice({
   initialState: newsAdapter.getInitialState<NewsPageSchema>({
     isLoading: false,
     error: undefined,
+
     ids: [],
     entities: {},
+
     view: NewsView.SMALL,
     page: 0,
     hasMore: true,
@@ -53,6 +56,9 @@ const newsPageSlice = createSlice({
 
   extraReducers: (builder) => {
     builder
+      // ---------------------
+      // Fetch news list
+      // ---------------------
       .addCase(fetchNewsList.pending, (state: NewsPageSchema, action) => {
         state.error = undefined
         state.isLoading = true
@@ -75,6 +81,7 @@ const newsPageSlice = createSlice({
         state.isLoading = false
         state.error = action.payload
       })
+
   },
 })
 

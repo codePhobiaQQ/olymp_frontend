@@ -12,6 +12,9 @@
 	--skeleton-color: #fff;
 	--skeleton-shadow: rgba(0 0 0, 0.2);
 
+	/*news-categories*/
+	--news-categories-color: #D8540A;
+
 	--transition-all: all 0.6s cubic-bezier(0.2, 0.6, 0, 1);
 	--transition-max-height: max-height 0.6s cubic-bezier(0.2, 0.6, 0, 1);
 	--transition-border-color: border-color 0.6s cubic-bezier(0.2, 0.6, 0, 1);

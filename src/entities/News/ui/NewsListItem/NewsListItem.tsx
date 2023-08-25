@@ -1,11 +1,15 @@
 import cn from 'classnames'
 import cls from './NewsListItem.module.scss'
-import { News } from '@entities/News'
+import { News, NewsCategory } from '@entities/News'
 import Text, { TextTheme } from '@shared/ui/Text/Text'
 import { normalizeDate } from '@shared/lib/utils/normalizeDate/normalizeDate'
 import Title, { TitleTheme } from '@shared/ui/Title/Title'
 import { limitText } from '@shared/lib/utils/limitText/limitText'
 import AppImage from '@shared/ui/AppImage/AppImage'
+
+import { getCategories } from '@features/fetchNewsCategories/model/selector/newsCategoriesSelectors'
+import { useSelector } from 'react-redux'
+import { useMemo } from 'react'
 
 type NewsListItemProps = {
   className?: string;
@@ -14,6 +18,18 @@ type NewsListItemProps = {
 
 export const NewsListItem = (props: NewsListItemProps) => {
   const { className, news } = props
+  const categories = useSelector(getCategories)
+
+  const newsCategories: NewsCategory[] = useMemo(() => {
+    const result: NewsCategory[] = []
+    for (const newsCategoryId of news.categories) {
+      const matchCategory = categories.filter(fetchedCategory => fetchedCategory.id === newsCategoryId)[0]
+      if (matchCategory) {
+        result.push(matchCategory)
+      }
+    }
+    return result
+  }, [categories, news])
 
   return (
     <div className={cn(className, cls.NewsListItem, { [cls.NewsLittle]: !news?.news_preview_image })}>
@@ -21,6 +37,7 @@ export const NewsListItem = (props: NewsListItemProps) => {
 
       <div className={cn(cls.Header)}>
         <Text className={cls.Date} text={normalizeDate(news.post_date)} />
+        <Text className={cls.Categories} text={newsCategories?.map(category => category.name)?.join('\n')} />
       </div>
       <div className={cn(cls.Content)}>
         <Title theme={TitleTheme.H3} className={cls.Title} text={news.news_title} />

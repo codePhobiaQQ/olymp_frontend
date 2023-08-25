@@ -1,8 +1,6 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { createSlice } from '@reduxjs/toolkit'
 import { NewsCategoriesSchema } from '@features/fetchNewsCategories/model/types/newsCategoriesSchema'
 import { fetchNewsCategories } from '@features/fetchNewsCategories/model/services/fetchNewsCategories'
-import { NewsCategories } from '@entities/News'
-import { StateSchema } from '@app/providers/storeProvider'
 
 const initialState: NewsCategoriesSchema = {
   isLoading: false,
@@ -19,14 +17,20 @@ const NewsCategoriesSlice = createSlice({
     },
   },
   extraReducers: (builder) => {
-    // builder.addCase(fetchNewsCategories.fulfilled, (state: NewsCategoriesSchema, { payload }: PayloadAction<NewsCategories[]>) => {
-    //   state.categories = payload;
-    // }).addCase(fetchNewsCategories.pending, (state: NewsCategoriesSchema) => {
-    //   state.isLoading = true;
-    // }).addCase(fetchNewsCategories.pending, (state: NewsCategoriesSchema, { payload }: PayloadAction) => {
-    //   state.error = payload;
-    //   state.isLoading = false
-    // })
+    builder
+      .addCase(fetchNewsCategories.pending, (state: NewsCategoriesSchema, action) => {
+        state.error = undefined
+        state.isLoading = true
+      })
+      .addCase(fetchNewsCategories.fulfilled, (state: NewsCategoriesSchema, action) => {
+        console.log(fetch)
+        state.isLoading = false
+        state.categories = action.payload
+      })
+      .addCase(fetchNewsCategories.rejected, (state: NewsCategoriesSchema, action) => {
+        state.isLoading = false
+        state.error = action.payload
+      })
   },
 })
 

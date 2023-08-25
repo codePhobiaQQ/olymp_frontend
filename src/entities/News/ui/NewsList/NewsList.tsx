@@ -22,6 +22,7 @@ const getSkeletons = (view: NewsView) => {
 }
 
 export const NewsList = (props: NewsListProps) => {
+
   const { className, news, view = NewsView.SMALL, isLoading = false } = props
 
   if (!isLoading && news.length === 0) {

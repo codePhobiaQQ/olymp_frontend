@@ -1,5 +1,3 @@
-import { NewsType } from './../consts/newsConsts'
-
 export interface News {
   id: string;
   news_title?: string;
@@ -8,10 +6,10 @@ export interface News {
   post_date: string;
   post_modified: string;
   post_author: string;
-  type?: number[]
+  categories?: number[];
 }
 
-export interface NewsCategories {
+export interface NewsCategory {
   id: number;
   name: string;
   parent: string;

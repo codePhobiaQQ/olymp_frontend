@@ -1,5 +1,5 @@
 import { EntityState } from '@reduxjs/toolkit'
-import { News, NewsType, NewsView } from '@entities/News'
+import { News, NewsCategory, NewsType, NewsView } from '@entities/News'
 
 export interface NewsPageSchema extends EntityState<News> {
   isLoading?: boolean;

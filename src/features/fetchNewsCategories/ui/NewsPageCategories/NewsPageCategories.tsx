@@ -22,7 +22,7 @@ export const NewsPageCategories = (props: NewsPageCategoriesProps) => {
   const { className } = props
 
   useEffect(() => {
-    // dispatch(fetchNewsCategories())
+    dispatch(fetchNewsCategories())
   }, [])
 
   const categories = useSelector(getCategories)
