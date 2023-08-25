@@ -37,11 +37,15 @@ export const NewsListItem = (props: NewsListItemProps) => {
 
       <div className={cn(cls.Header)}>
         <Text className={cls.Date} text={normalizeDate(news.post_date)} />
-        <Text className={cls.Categories} text={newsCategories?.map(category => category.name)?.join('\n')} />
+        <div className={cls.Categories}>
+          {newsCategories?.map(category => <Text className={cls.CategoryItem} key={category.id} text={category.name} />)}
+        </div>
+
       </div>
       <div className={cn(cls.Content)}>
         <Title theme={TitleTheme.H3} className={cls.Title} text={news.news_title} />
-        <Text className={cls.ContentText} text={limitText(news?.news_description, 150)} theme={TextTheme.PARAGRAPH_THEME} />
+        <Text className={cls.ContentText} text={limitText(news?.news_description, 150)}
+              theme={TextTheme.PARAGRAPH_THEME} />
       </div>
     </div>
   )

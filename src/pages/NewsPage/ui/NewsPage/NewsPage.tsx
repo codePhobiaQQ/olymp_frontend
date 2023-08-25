@@ -9,11 +9,12 @@ import { useAppDispatch } from '@shared/lib/hooks/useAppDispatch/useAppDispatch'
 import { fetchNextNewsPage } from '@pages/NewsPage/model/services/fetchNextNewsPage/fetchNextNewsPage'
 import { Page } from '@widgets/Page/ui/Page/Page'
 import { NewsInfiniteList } from '@pages/NewsPage/ui/NewsInfiniteList/NewsInfiniteList'
-import { NewsFilters } from '@pages/NewsPage/ui/NewsFilters/NewsFilters'
 import { NewsPageCategories } from '@features/fetchNewsCategories'
+import { NewsCategoriesReducer } from '@features/fetchNewsCategories/model/slice/newsCategoriesSlice'
 
 const reducers: ReducersList = {
   newsPage: newsPageReducer,
+  newsCategories: NewsCategoriesReducer,
 }
 
 const NewsPage = memo(() => {

@@ -1,7 +1,5 @@
 import cn from 'classnames'
 import cls from './NewsPageCategories.module.scss'
-import { DynamicModuleLoader } from '@shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
-import { NewsCategoriesReducer } from './../../model/slice/newsCategoriesSlice'
 import { getCategories, getError, getIsLoading } from './../../model/selector/newsCategoriesSelectors'
 import { useSelector } from 'react-redux'
 import Text from '@shared/ui/Text/Text'
@@ -12,10 +10,6 @@ import { fetchNewsCategories } from '@features/fetchNewsCategories/model/service
 type NewsPageCategoriesProps = {
   className?: string;
 };
-
-const reducerList = {
-  newsCategories: NewsCategoriesReducer,
-}
 
 export const NewsPageCategories = (props: NewsPageCategoriesProps) => {
   const dispatch = useAppDispatch()
@@ -34,20 +28,19 @@ export const NewsPageCategories = (props: NewsPageCategoriesProps) => {
   }
 
   if (isLoading) {
-    return 'Loading...'
+    return <Text text={'Загрузка...'} />
   }
 
   return (
-    <DynamicModuleLoader removeAfterUnmount={false} reducers={reducerList}>
-      {categories?.length > 0
-        ? <div className={cn(className, cls.NewsPageCategories)}>
-          {categories.map(category =>
-            <div className={cls.NewsPageCategoryItem}
-                 key={category.id}>{category.name}
-            </div>,
-          )}
-        </div>
-        : <Text text={'Категории пока не добавлены'} />}
-    </DynamicModuleLoader>
+    <div className={cn(className, cls.NewsPageCategories)}>
+      {categories?.length > 0 ? categories?.map(category =>
+        <div
+          className={cls.NewsPageCategoryItem}
+          key={category.id}
+        >
+          {category.name}
+        </div>,
+      ) :  <Text className={cls.NewsPageCategoryItem} text={'Категории пока не добавлены'} />}
+    </div>
   )
 }

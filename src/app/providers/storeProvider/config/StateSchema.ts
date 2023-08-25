@@ -3,9 +3,12 @@ import { CombinedState } from 'redux'
 import { AxiosInstance } from 'axios'
 import { NavigateOptions } from 'react-router'
 import { NewsPageSchema } from '@pages/NewsPage'
+import { MainPageSchema } from '@pages/MainPage'
 import { NewsCategoriesSchema } from '@features/fetchNewsCategories/model/types/newsCategoriesSchema'
 
 export interface StateSchema {
+  // MainPage
+  mainPage?: MainPageSchema
 
   // News
   newsPage?: NewsPageSchema

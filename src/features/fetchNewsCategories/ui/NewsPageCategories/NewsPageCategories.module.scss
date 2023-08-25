@@ -1,5 +1,11 @@
 .NewsPageCategories {
   .NewsPageCategoryItem {
-
+    margin-bottom: var(--px15);
+    font-size: var(--px16);
+    font-family: 'mr', sans-serif;
+    line-height: 1.2em;
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 }

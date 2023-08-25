@@ -2,17 +2,19 @@ import cn from 'classnames'
 import cls from './MainScreen.module.scss'
 import Title, { TitleTheme } from '@shared/ui/Title/Title'
 import MainScreenCard, { CardSizeTheme } from '@shared/ui/Card/Card'
-import { cardsList } from '../model/data'
 import LogoSvg from '@shared/assets/svg/LogoSvg'
 import Text from '@shared/ui/Text/Text'
 import CircleArrowSvg from '@shared/assets/svg/CircleArrowSvg'
 import { GradientBg } from '@shared/ui/GradientBg'
+import { useGetMainScreenData } from '@widgets/MainScreen/hooks/useGetMainScreenData'
 
 interface MainScreenI {
   className?: string
 }
 
 const MainScreen = ({ className = '' }: MainScreenI) => {
+  const { subTitle, cardsData } = useGetMainScreenData()
+
   return (
     <div className={cn(className, cls.MainScreen)}>
       <div className={cls.bg}>
@@ -28,14 +30,14 @@ const MainScreen = ({ className = '' }: MainScreenI) => {
               style={{ color: '#fff' }}
               theme={TitleTheme.H1_UPPERCASE}
               className={cn(cls.Title, 'm_auto')}
-              text="Система поддержки проведения интеллектуальных соревнований школьников"
+              text={subTitle}
             />
           </div>
 
         </div>
 
         <div className={cn(cls.CardsWrapper)}>
-          {cardsList.map((card, index) => (
+          {cardsData.map((card, index) => (
             <MainScreenCard
               data={card}
               key={index + 'title' + card.title}
