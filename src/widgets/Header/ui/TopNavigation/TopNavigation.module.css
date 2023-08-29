@@ -21,7 +21,7 @@
 	background-color: #d9d9d9;
 }
 .TopNavigation li a {
-	color: inherit;
+	color: var(--header-color);
 }
 .TopNavigation li:hover:before {
 	transform: scaleX(1) translateY(calc(-1 * var(--px5)));

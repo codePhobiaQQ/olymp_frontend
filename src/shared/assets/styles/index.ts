@@ -1,4 +1,7 @@
 // ---- Styles ----
+//Theme
+import './var/theme/index.scss'
+
 //Global------------
 import './framework.css'
 import './global.sass'

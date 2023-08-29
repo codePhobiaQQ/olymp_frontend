@@ -2,18 +2,26 @@
 	width: 100%;
 	box-sizing: border-box;
 	padding: var(--px10) var(--sections-padding) var(--px10) var(--sections-padding);
-	background-color: var(--main-bg);
+
+	background-color: var(--header-bg);
+	color: var(--header-color);
+
 	z-index: 2;
 	position: fixed;
 	top: 0;
 	left: 0;
 
 	&.light {
+
 	}
 	&.dark {
 		.HeaderActionsWrapperIcon,
 		.HeaderActionsWrapperCalendarIcon {
-			stroke: #000;
+			stroke: var(--header-color);
+			&:hover {
+				background-color: var(--header-icons-bg);
+				stroke: var(--inverted-header-color);
+			}
 		}
 		.TopNavigation {
 			color: #000;
@@ -21,7 +29,7 @@
 	}
 }
 
-.HeaderInnner {
+.HeaderInner {
 	color: #fff;
 	border-radius: var(--often-border-radius);
 	display: flex;
@@ -29,13 +37,17 @@
 	justify-content: space-between;
 }
 
-.Logo {
-	height: var(--px60);
-	/* width: var(--px40); */
-}
+
 .LogoWrapper {
-	height: var(--px60) !important;
-	width: var(--px80) !important;
+	height: var(--px32);
+	width: min(calc(var(--index) * 8.5), 192px);
+	img {
+		object-fit: contain;
+	}
+	.Logo {
+		height: 100%;
+		width: 100%;
+	}
 }
 
 /* HeaderActionsWrapper */
@@ -43,18 +55,14 @@
 	display: flex;
 	align-items: center;
 }
-
 .HeaderActionsWrapperIcon {
 	height: var(--px28);
 	width: var(--px28);
-	stroke: var(--header-icons);
+	stroke: var(--header-color);
 	margin-right: var(--px22);
 	cursor: pointer;
 	padding: var(--px10);
 	transition: var(--transition-background-color);
-}
-.HeaderActionsWrapperIcon:hover {
-	background-color: var(--header-icons-bg);
 }
 .HeaderActionsWrapperIcon:last-child {
 	margin-right: 0;
