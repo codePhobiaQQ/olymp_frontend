@@ -21,7 +21,6 @@ const reducers: ReducersList = {
 
 const MainPage = () => {
   const dispatch = useAppDispatch()
-
   const isLoading = useSelector(getIsLoading)
   const error = useSelector(getError)
 

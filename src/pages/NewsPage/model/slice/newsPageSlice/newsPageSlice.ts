@@ -1,10 +1,9 @@
 import { createSlice, createEntityAdapter, PayloadAction } from '@reduxjs/toolkit'
-import { NewsPageSchema } from './../../types/newsPageSchema'
-import { News, NewsType, NewsView } from '@entities/News'
+import { NewsPageSchema, OrderFilterType } from './../../types/newsPageSchema'
+import { News, NewsView } from '@entities/News'
 import { fetchNewsList } from '@pages/NewsPage/model/services/fetchNewsList/fetchNewsList'
 import { NEWS_VIEW_LOCALSTORAGE_KEY } from '@shared/vars/localstorage/localstorage'
 import { StateSchema } from '@app/providers/storeProvider'
-import { fetchNewsCategories } from '@features/fetchNewsCategories/model/services/fetchNewsCategories'
 
 const newsAdapter = createEntityAdapter<News>({
   selectId: (news) => news.id,
@@ -18,16 +17,22 @@ const newsPageSlice = createSlice({
   initialState: newsAdapter.getInitialState<NewsPageSchema>({
     isLoading: false,
     error: undefined,
-
     ids: [],
     entities: {},
 
     view: NewsView.SMALL,
+
     page: 0,
     hasMore: true,
-    _inited: false,
+
     limit: 5,
-    type: NewsType.ALL
+
+    // Filters
+    categories: [],
+    order: 'ASC',
+    // -------
+
+    _inited: false
   }),
 
   reducers: {
@@ -41,9 +46,15 @@ const newsPageSlice = createSlice({
     setPage: (state: NewsPageSchema, action: PayloadAction<number>) => {
       state.page = action.payload;
     },
-    setType: (state: NewsPageSchema, action: PayloadAction<NewsType>) => {
-      state.type = action.payload;
+
+    setTypeFilter: (state: NewsPageSchema, action: PayloadAction<number[]>) => {
+      state.categories = action.payload;
     },
+
+    setOrderFilter: (state: NewsPageSchema, action: PayloadAction<OrderFilterType>) => {
+      state.order = action.payload
+    },
+
     initState: (state: NewsPageSchema) => {
       const view = localStorage.getItem(
         NEWS_VIEW_LOCALSTORAGE_KEY,
@@ -56,9 +67,9 @@ const newsPageSlice = createSlice({
 
   extraReducers: (builder) => {
     builder
-      // ---------------------
-      // Fetch news list
-      // ---------------------
+      // -----------------------
+      // --- Fetch news list ---
+      // -----------------------
       .addCase(fetchNewsList.pending, (state: NewsPageSchema, action) => {
         state.error = undefined
         state.isLoading = true

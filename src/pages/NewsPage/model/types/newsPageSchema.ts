@@ -1,5 +1,8 @@
 import { EntityState } from '@reduxjs/toolkit'
-import { News, NewsCategory, NewsType, NewsView } from '@entities/News'
+import { News, NewsView } from '@entities/News'
+
+export type OrderFilterType = 'ASC' | 'DESC'
+export type CategoriesFilterType = number[]
 
 export interface NewsPageSchema extends EntityState<News> {
   isLoading?: boolean;
@@ -12,7 +15,10 @@ export interface NewsPageSchema extends EntityState<News> {
 
   // filters
   view: NewsView;
-  type: NewsType;
+
+  categories: CategoriesFilterType;
+  order?: OrderFilterType
 
   _inited: boolean;
 }
+

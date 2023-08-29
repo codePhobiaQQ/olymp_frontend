@@ -4,7 +4,7 @@ import { News, NewsType } from '@entities/News';
 import { addQueryParams } from '@shared/lib/url/addQueryParams'
 import {
   getNewsPageLimit,
-  getNewsPageNum, getNewsPageType,
+  getNewsPageNum, getNewsPageType, getNewsPageSortOrder,
 } from './../../selectors/newsPageSelectors'
 
 interface FetchNewsListProps {
@@ -20,16 +20,19 @@ export const fetchNewsList = createAsyncThunk<
   const { extra, rejectWithValue, getState } = thunkApi;
   const limit = getNewsPageLimit(getState());
   const page = getNewsPageNum(getState());
+
   const type = getNewsPageType(getState());
+  const sortOrder = getNewsPageSortOrder(getState());
 
   try {
     addQueryParams({
-      type: type,
+      type: type.toString(),
     });
 
     const response = await extra.api.get<News[]>('/custom/v2/news', {
       params: {
         // _expand: 'user',
+        _order: sortOrder,
         _limit: limit,
         _page: page,
         // type: type === NewsType.ALL ? undefined : type,

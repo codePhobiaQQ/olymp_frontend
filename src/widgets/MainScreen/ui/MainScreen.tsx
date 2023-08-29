@@ -6,7 +6,7 @@ import LogoSvg from '@shared/assets/svg/LogoSvg'
 import Text from '@shared/ui/Text/Text'
 import CircleArrowSvg from '@shared/assets/svg/CircleArrowSvg'
 import { GradientBg } from '@shared/ui/GradientBg'
-import { useGetMainScreenData } from '@widgets/MainScreen/hooks/useGetMainScreenData'
+import { useGetMainScreenData } from '@widgets/MainScreen/lib/hooks/useGetMainScreenData'
 
 interface MainScreenI {
   className?: string

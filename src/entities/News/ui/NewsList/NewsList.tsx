@@ -2,7 +2,7 @@ import cls from './NewsList.module.scss'
 import cn from 'classnames'
 import { NewsView } from './../../model/consts/newsConsts'
 import { News } from './../../model/types/news'
-import { NewsListItem, NewsListItemSkeleton } from './../../ui/NewsListItem/NewsListItem'
+import { NewsListItem } from './../../ui/NewsListItem/NewsListItem'
 import Text from '@shared/ui/Text/Text'
 import { Skeleton } from '@shared/ui/Skeleton'
 
@@ -37,7 +37,6 @@ export const NewsList = (props: NewsListProps) => {
         <NewsListItem view={view} news={newsItem} key={newsItem.id} />
       ))}
       {isLoading && getSkeletons(view)}
-      {/*{isLoading && 'Loading'}*/}
     </div>
   )
 }
