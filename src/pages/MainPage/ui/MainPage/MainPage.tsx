@@ -1,9 +1,9 @@
-import { MainScreen } from '@widgets/MainScreen'
-import AboutScreen from '@widgets/AboutScreen/ui/AboutScreen'
-import RoutingCardsScreen from '@widgets/RoutingCardsScreen/RoutingCardsScreen'
-import OrganisatorsAndPartners from '@widgets/OrganisatorsAndPartners/OrganisatorsAndPartners'
-import SubscribeScreen from '@widgets/SubscribeScreen/ui/SubscribeScreen/SubscribeScreen'
-import PhraseScreen from '@widgets/PhraseScreen/PhraseScreen'
+import { MainScreen } from './../MainScreen'
+import AboutScreen from './../AboutScreen/ui/AboutScreen'
+import RoutingCardsScreen from './../RoutingCardsScreen/RoutingCardsScreen'
+import OrganisatorsAndPartners from './../OrganisatorsAndPartners/OrganisatorsAndPartners'
+import SubscribeScreen from './../SubscribeScreen/ui/SubscribeScreen/SubscribeScreen'
+import PhraseScreen from './../PhraseScreen/PhraseScreen'
 import Footer from '@widgets/Footer/Footer'
 import { DynamicModuleLoader, ReducersList } from '@shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 import { MainPageReducer } from '@pages/MainPage/model/slice/mainPageSlice'
@@ -44,7 +44,6 @@ const MainPage = () => {
       <OrganisatorsAndPartners />
       <SubscribeScreen />
       <PhraseScreen />
-      <Footer />
     </DynamicModuleLoader>
   )
 }

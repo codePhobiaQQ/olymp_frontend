@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 import { RouteActionScreenAttributes } from '@shared/routes/routes'
-import { CardItem } from '@widgets/MainScreen/model/data/data'
+import { CardItem } from '@widgets/../../../pages/MainPage/ui/MainScreen/model/data/data'
 import { useNavigate } from 'react-router-dom'
 // import AppImage from '../ui/AppImage/AppImage'
 import AppLink, { AppLinkTheme } from '@shared/ui/AppLink/AppLink'

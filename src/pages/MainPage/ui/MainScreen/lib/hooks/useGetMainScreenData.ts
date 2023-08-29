@@ -5,7 +5,7 @@ import {
   getMainPageCard1Title,
   getMainPageSubtitle,
 } from '@pages/MainPage/model/selectors/mainPageSelectors'
-import { CardItem } from '@widgets/MainScreen/model/data/data'
+import { CardItem } from '@pages/MainPage/ui/MainScreen/model/data/data'
 
 interface useGetMainScreenDataReturn {
   subTitle: string;
