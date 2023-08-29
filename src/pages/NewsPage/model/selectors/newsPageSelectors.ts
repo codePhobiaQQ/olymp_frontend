@@ -1,12 +1,12 @@
 import { StateSchema } from '@app/providers/storeProvider'
-import { NewsType, NewsView } from '@entities/News'
+import { NewsView } from '@entities/News'
 import { buildSelector } from '@shared/store'
 
 export const getNewsPageIsLoading = (state: StateSchema) => state.newsPage?.isLoading || false
 export const getNewsPageIsError = (state: StateSchema) => state.newsPage?.error
 
 export const getNewsPageType = (state: StateSchema) => state.newsPage?.categories || []
-export const getNewsPageIsView = (state: StateSchema) => state.newsPage?.view || NewsView.SMALL
+export const getNewsPageView = (state: StateSchema) => state.newsPage?.view || NewsView.SMALL
 
 export const getNewsPageNum = (state: StateSchema) => state.newsPage?.page || 0
 export const getNewsPageLimit = (state: StateSchema) => state.newsPage?.limit || 5

@@ -1,3 +1,18 @@
 .NewsFilters {
   margin-bottom: var(--px30);
+
+  .ViewFilterWrapper {
+    display: flex;
+    align-items: center;
+    margin-bottom: var(--px20);
+    .ViewFilterItem {
+      &.Small {
+
+      }
+      &.Big {
+        margin-left: var(--px20);
+      }
+    }
+  }
 }
+

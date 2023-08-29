@@ -1,4 +1,4 @@
-import { createSlice, createEntityAdapter, PayloadAction } from '@reduxjs/toolkit'
+import { createEntityAdapter, createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { NewsPageSchema, OrderFilterType } from './../../types/newsPageSchema'
 import { News, NewsView } from '@entities/News'
 import { fetchNewsList } from '@pages/NewsPage/model/services/fetchNewsList/fetchNewsList'
@@ -20,17 +20,17 @@ const newsPageSlice = createSlice({
     ids: [],
     entities: {},
 
-    view: NewsView.SMALL,
+    view: localStorage.getItem(NEWS_VIEW_LOCALSTORAGE_KEY) as NewsView || NewsView.SMALL,
 
     page: 0,
     hasMore: true,
 
     limit: 5,
 
-    // Filters
+    // --- Filters ---
     categories: [],
     order: 'ASC',
-    // -------
+    // ---------------
 
     _inited: false
   }),

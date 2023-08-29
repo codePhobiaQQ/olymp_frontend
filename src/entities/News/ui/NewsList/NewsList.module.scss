@@ -1,17 +1,6 @@
 .NewsList {
   width: 100%;
-
-  &.BIG {
-
-  }
-  &.SMALL {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--px30);
-
-    .row {
-      display: flex;
-      gap: 30px;
-    }
-  }
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--px30);
 }

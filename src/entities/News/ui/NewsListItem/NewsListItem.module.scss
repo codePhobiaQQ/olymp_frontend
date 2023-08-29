@@ -8,8 +8,14 @@
   overflow: hidden;
   z-index: 1;
 
-  &.NewsLittle {
+  &.BIG {
+    width: 100%;
+  }
+  &.SMALL {
     width: 48%;
+  }
+  &.NewsBig {
+    width: 100%;
   }
 
   .NewsPreviewImage {
@@ -24,6 +30,7 @@
       content: '';
       display: block;
       position: absolute;
+      pointer-events: none;
       width: 829px;
       height: 1048px;
       left: -165px;

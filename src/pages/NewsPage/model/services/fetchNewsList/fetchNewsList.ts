@@ -1,6 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { ThunkConfig } from '@app/providers/storeProvider';
-import { News, NewsType } from '@entities/News';
+import { News } from '@entities/News';
 import { addQueryParams } from '@shared/lib/url/addQueryParams'
 import {
   getNewsPageLimit,
@@ -38,8 +38,6 @@ export const fetchNewsList = createAsyncThunk<
         // type: type === NewsType.ALL ? undefined : type,
       },
     });
-
-    console.log("response", response)
 
     if (!response.data) {
       throw new Error();

@@ -2,6 +2,7 @@
 	padding: var(--sections-padding);
 
 	.Content {
+		position: relative;
 		margin-top: var(--px60);
 		display: flex;
 		justify-content: space-between;

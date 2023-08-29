@@ -6,7 +6,7 @@ import { getNews } from '@pages/NewsPage/model/slice/newsPageSlice/newsPageSlice
 import {
   getNewsPageIsError,
   getNewsPageIsLoading,
-  getNewsPageIsView,
+  getNewsPageView,
 } from '@pages/NewsPage/model/selectors/newsPageSelectors'
 import Text from '@shared/ui/Text/Text'
 
@@ -17,7 +17,7 @@ type NewsPageInfiniteListProps = {
 export const NewsInfiniteList = (props: NewsPageInfiniteListProps) => {
   const { className } = props
   const news = useSelector(getNews.selectAll)
-  const view = useSelector(getNewsPageIsView)
+  const view = useSelector(getNewsPageView)
   const isLoading = useSelector(getNewsPageIsLoading)
   const error = useSelector(getNewsPageIsError)
 
