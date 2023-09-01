@@ -1,10 +1,8 @@
 import { MainScreen } from './../MainScreen'
-import AboutScreen from './../AboutScreen/ui/AboutScreen'
 import RoutingCardsScreen from './../RoutingCardsScreen/RoutingCardsScreen'
 import OrganisatorsAndPartners from './../OrganisatorsAndPartners/OrganisatorsAndPartners'
 import SubscribeScreen from './../SubscribeScreen/ui/SubscribeScreen/SubscribeScreen'
 import PhraseScreen from './../PhraseScreen/PhraseScreen'
-import Footer from '@widgets/Footer/Footer'
 import { DynamicModuleLoader, ReducersList } from '@shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 import { MainPageReducer } from '@pages/MainPage/model/slice/mainPageSlice'
 import { useEffect } from 'react'
@@ -13,6 +11,7 @@ import { useAppDispatch } from '@shared/lib/hooks/useAppDispatch/useAppDispatch'
 import { useSelector } from 'react-redux'
 import { getError, getIsLoading } from './../../model/selectors/mainPageSelectors'
 import { PageLoading } from '@shared/ui/PageLoading/PageLoading'
+import { AboutScreen } from './../AboutScreen/AboutScreen'
 import Text from '@shared/ui/Text/Text'
 
 const reducers: ReducersList = {

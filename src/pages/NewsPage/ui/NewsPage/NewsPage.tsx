@@ -3,17 +3,17 @@ import cn from 'classnames'
 import PageTitle from '@shared/ui/PageTitle/PageTitle'
 import PageDescription from '@shared/ui/PageDescription/PageDescription'
 import { DynamicModuleLoader, ReducersList } from '@shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
-import { newsPageReducer } from '@pages/NewsPage/model/slice/newsPageSlice/newsPageSlice'
+import { newsPageReducer } from './../../model/slice/newsPageSlice/newsPageSlice'
 import { memo, useCallback, useEffect } from 'react'
 import { useAppDispatch } from '@shared/lib/hooks/useAppDispatch/useAppDispatch'
 import { useSearchParams } from 'react-router-dom';
-import { fetchNextNewsPage } from '@pages/NewsPage/model/services/fetchNextNewsPage/fetchNextNewsPage'
+import { fetchNextNewsPage } from './../../model/services/fetchNextNewsPage/fetchNextNewsPage'
 import { Page } from '@widgets/Page/ui/Page/Page'
-import { NewsInfiniteList } from '@pages/NewsPage/ui/NewsInfiniteList/NewsInfiniteList'
+import { NewsInfiniteList } from './../../ui/NewsInfiniteList/NewsInfiniteList'
 import { NewsPageCategories } from '@features/fetchNewsCategories'
 import { NewsCategoriesReducer } from '@features/fetchNewsCategories/model/slice/newsCategoriesSlice'
-import { NewsFilters } from '@pages/NewsPage/ui/NewsFilters/NewsFilters'
-import { initNewsPage } from '@pages/NewsPage/model/services/initNewsPage/initNewsPage'
+import { NewsFilters } from './../../ui/NewsFilters/NewsFilters'
+import { initNewsPage } from './../../model/services/initNewsPage/initNewsPage'
 
 const reducers: ReducersList = {
   newsPage: newsPageReducer,

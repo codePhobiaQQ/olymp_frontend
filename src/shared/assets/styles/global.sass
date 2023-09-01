@@ -1,4 +1,4 @@
-// @import 'react-calendar/dist/Calendar.css'
+//@import 'react-calendar/dist/Calendar.css'
 // @import "~slick-carousel/slick/slick.css"
 // @import "~slick-carousel/slick/slick-theme.css"
 
@@ -17,7 +17,11 @@
 @font-face
   font-family: "msb"
   src: url("./../../../shared/assets/fonts/Montserrat-SemiBold.woff2") format("woff2")
-  
+
+@font-face
+  font-family: "masb"
+  src: url("./../../../shared/assets/fonts/MontserratAlternates-SemiBold.woff2") format("woff2")
+
 .ff-th
   font-family: "mth", sans-serif
 .ff-r
@@ -26,6 +30,8 @@
   font-family: "mm", sans-serif
 .ff-sb
   font-family: "mdb", sans-serif
+.ffa-sb
+  font-family: "masb", sans-serif
   
 *::-webkit-scrollbar
   // width: 4px
@@ -78,8 +84,7 @@ a
   position: absolute
   left: 50%
   top: 50%
-  transformX: -50%
-  transformY: -50%
+  transform: -50% -50%
 
 div.imgWrapper
   img
