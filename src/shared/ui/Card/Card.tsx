@@ -1,15 +1,13 @@
-/* eslint-disable @typescript-eslint/ban-ts-comment */
 import { RouteActionScreenAttributes } from '@shared/routes/routes'
 import { CardItem } from '@widgets/../../../pages/MainPage/ui/MainScreen/model/data/data'
 import { useNavigate } from 'react-router-dom'
-// import AppImage from '../ui/AppImage/AppImage'
 import AppLink, { AppLinkTheme } from '@shared/ui/AppLink/AppLink'
 import Title, { TitleTheme } from '@shared/ui/Title/Title'
 import cls from './Card.module.scss'
 import cn from 'classnames'
 import AppImage from '../AppImage/AppImage'
 import Text from '@shared/ui/Text/Text'
-import ArrowSvg from '@shared/assets/svg/ArrowSvg'
+import { ReactComponent as ArrowSvg } from '@shared/assets/images/svg/arrow.svg'
 
 export enum CardSizeTheme {
   S = 'S',

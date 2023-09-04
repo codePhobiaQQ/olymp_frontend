@@ -9,9 +9,11 @@ import { getError, getIsLoading } from './../../model/selectors/mainPageSelector
 import { PageLoading } from '@shared/ui/PageLoading/PageLoading'
 import { AboutScreen } from './../AboutScreen/AboutScreen'
 import Text from '@shared/ui/Text/Text'
-import { PresentationScreen } from './..//PresentationScreen/PresentationScreen'
-import { BannerScreen } from './..//BannerScreen/BannerScreen'
-import { StagesScreen } from './..//StagesScreen/StagesScreen'
+import { PresentationScreen } from './../PresentationScreen/PresentationScreen'
+import { BannerScreen } from './../BannerScreen/BannerScreen'
+import { StagesScreen } from './../StagesScreen/StagesScreen'
+import { TableScreen } from './../TableScreen/TableScreen'
+import RoutingCardsScreen from './../RoutingCardsScreen/RoutingCardsScreen'
 
 const reducers: ReducersList = {
   mainPage: MainPageReducer,
@@ -41,7 +43,8 @@ const MainPage = () => {
       <PresentationScreen />
       <BannerScreen />
       <StagesScreen />
-      {/*<RoutingCardsScreen />*/}
+      <TableScreen />
+      <RoutingCardsScreen />
       {/*<OrganisatorsAndPartners />*/}
       {/*<SubscribeScreen />*/}
       {/*<PhraseScreen />*/}

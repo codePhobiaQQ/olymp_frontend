@@ -1,0 +1,3 @@
+.TableScreen {
+  padding: min(calc(var(--index) * 7.5), 150px) var(--sections-big-padding) min(calc(var(--index) * 10), 200px)  var(--sections-big-padding);
+}
