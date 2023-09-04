@@ -25,15 +25,6 @@ export const fetchNewsList = createAsyncThunk<News[], FetchNewsListProps, ThunkC
     const sortOrder = getNewsPageSortOrder(getState())
     const selectedCategories = getSelectedCategories(getState())
 
-    console.log('config!!!', {
-      params: {
-        _order: sortOrder,
-        _limit: limit,
-        _page: page,
-        categories: [...selectedCategories],
-      },
-    })
-
     try {
       addQueryParams({
         type: type.toString(),

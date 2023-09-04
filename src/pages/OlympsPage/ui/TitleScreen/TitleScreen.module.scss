@@ -1,0 +1,33 @@
+.TitleScreen {
+  padding: 0 var(--sections-padding);
+
+  .TitleScreenInner {
+    border-radius: var(--px24);
+    box-sizing: border-box;
+    overflow: hidden;
+    height: 80vh;
+    width: 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: calc(var(--sections-big-padding) - var(--sections-padding));
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    justify-content: flex-end;
+
+    .OlympName {
+      text-transform: uppercase;
+      font-family: 'msb', sans-serif;
+    }
+
+    .OlympLevel {
+      position: absolute;
+      top: calc(var(--sections-big-padding) - var(--sections-padding));
+      right: calc(var(--sections-big-padding) - var(--sections-padding));
+      font-family: 'mr', sans-serif;
+      font-size: var(--px20);
+    }
+  }
+}

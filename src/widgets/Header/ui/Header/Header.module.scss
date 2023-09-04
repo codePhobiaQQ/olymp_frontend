@@ -41,13 +41,7 @@
 .LogoWrapper {
 	height: var(--px32);
 	width: min(calc(var(--index) * 8.5), 192px);
-	img {
-		object-fit: contain;
-	}
-	.Logo {
-		height: 100%;
-		width: 100%;
-	}
+	fill: #767676;
 }
 
 /* HeaderActionsWrapper */

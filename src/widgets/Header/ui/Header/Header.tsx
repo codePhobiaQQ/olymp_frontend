@@ -1,9 +1,8 @@
 import cls from './Header.module.scss'
 import cn from 'classnames'
 import TopNavigation from './../TopNavigation/TopNavigation'
-import LogoRaw from '@shared/assets/images/header/LogoRaw.png'
 import SearchIconSvg from '@shared/assets/svg/SearchIconSvg'
-import AppImage from '@shared/ui/AppImage/AppImage'
+import { ReactComponent as VOlymlLogo } from '@shared/assets/images/svg/v-olymp.svg'
 import { OlympCalendar } from '@shared/ui/OlympCalendar'
 import AppLink, { AppLinkTheme } from '@shared/ui/AppLink/AppLink'
 
@@ -22,7 +21,7 @@ const Header = ({ className = '', theme = HeaderTheme.DARK }: HeaderI) => {
     <div className={cn(className, cls.Header, cls[theme])}>
       <div className={cn(cls.HeaderInner)}>
         <AppLink theme={AppLinkTheme.DEFAULT_LINK} to={'/'}>
-          <AppImage src={LogoRaw} wrapperClassName={cn(cls.LogoWrapper)} className={cn(cls.Logo)} />
+          <VOlymlLogo className={cn(cls.LogoWrapper)} />
         </AppLink>
 
         <TopNavigation className={cls.TopNavigation} />
