@@ -1,3 +1,34 @@
 .TableScreen {
   padding: min(calc(var(--index) * 7.5), 150px) var(--sections-big-padding) min(calc(var(--index) * 10), 200px)  var(--sections-big-padding);
+  .Table {
+    div {
+      font-family: 'mm', sans-serif;
+    }
+
+    .TableRow {
+      display: flex;
+      justify-content: space-between;
+      padding: var(--px35) 0;
+      border-bottom: 1px solid #C9C9C9;
+
+      &.TableRowHeader {
+        background-color: #C9C9C9;
+        color: rgba(#000, 0.8);
+      }
+
+      .TableRowSide {
+        width: 33.3%;
+        text-align: center;
+      }
+      .TableRowLeft {
+
+      }
+      .TableRowMiddle {
+
+      }
+      .TableRowRight {
+
+      }
+    }
+  }
 }
