@@ -10,5 +10,10 @@
 }
 .SubscribeInputField .Btn {
 	height: 100%;
-	transform: translateX(calc(-1 * var(--px20)));
+	background-color: #1F5CD1;
+	--translate: calc(var(--px20) * -1);
+	transform: translateX(var(--translate));
+	color: #fff;
+	border: none;
+	font-family: 'msb', sans-serif;
 }

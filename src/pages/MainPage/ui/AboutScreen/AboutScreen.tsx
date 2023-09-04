@@ -8,12 +8,13 @@ import { getAboutScreenDescription, getAboutScreenTitle } from '@pages/MainPage/
 import { WpTextFormatter } from '@shared/ui/WpTextFormatter/WpTextFormatter'
 
 type AboutScreenProps = {
-  className?: string;
-};
+  className?: string
+}
 
 export const AboutScreen = (props: AboutScreenProps) => {
   const { className } = props
   const title = useSelector(getAboutScreenTitle)
+  console.log(title)
   const description = useSelector(getAboutScreenDescription)
 
   return (
@@ -22,6 +23,7 @@ export const AboutScreen = (props: AboutScreenProps) => {
         <Title theme={TitleTheme.H2} text={title} />
         <WpTextFormatter content={description} />
       </div>
+
       <AppImage className={cls.WaveWrapper} src={waveImage} />
     </section>
   )

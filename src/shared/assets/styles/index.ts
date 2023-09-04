@@ -23,4 +23,5 @@ import './opacity.css'
 import './order.css'
 
 // ---- Components ----
+import './slider.scss'
 import './components/index.scss'

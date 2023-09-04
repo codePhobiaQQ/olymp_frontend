@@ -3,6 +3,8 @@ import cls from './OrganisatorsAndPartnersScreen.module.scss'
 import cn from 'classnames'
 import Text from '@shared/ui/Text/Text.tsx'
 import AppLink, { AppLinkTheme } from '@shared/ui/AppLink/AppLink.tsx'
+import Button from '@shared/ui/Button/Button.tsx'
+import { SliderOrganisators } from '@pages/MainPage/ui/OrganisatorsAndPartnersScreen/SliderOrganisators.tsx'
 
 interface OrganisatorsAndPartnersI {
   className?: string
@@ -45,6 +47,18 @@ const OrganisatorsAndPartnersScreen = ({ className = '' }: OrganisatorsAndPartne
             />
           </div>
         </div>
+      </div>
+
+      <div className={cls.container}>
+        <div className={cn(cls.OrganisatorsList)}>
+          <SliderOrganisators />
+        </div>
+      </div>
+
+      <div className={cls.container}>
+        <Button className={cn(cls.BtnMore)} variant={'outline_transparent_arrow'}>
+          Полный список ВУЗов
+        </Button>
       </div>
     </section>
   )

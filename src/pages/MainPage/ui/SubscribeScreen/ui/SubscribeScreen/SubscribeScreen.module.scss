@@ -6,7 +6,7 @@
 
 .SubscribeScreenInner {
 	position: relative;
-	padding: var(--px120) var(--px80);
+	padding: var(--px80) calc(var(--sections-big-padding) - var(--sections-padding));
 	height: 100%;
 	box-sizing: border-box;
 }
@@ -30,10 +30,10 @@
 }
 
 .UserAccess {
-	font-size: var(--px20);
+	font-size: var(--px18);
 	width: 60%;
 	font-family: 'mr', sans-serif;
-	margin-bottom: var(--px40);
+	margin-top: var(--px50);
 }
 
 .ContentWrapper {
@@ -59,9 +59,10 @@
 	text-transform: uppercase;
 	border: 1px solid #fff;
 	padding: var(--px5) var(--px20);
-	border-radius: var(--px30);
+	border-radius: var(--px10);
 	cursor: pointer;
 	transition: var(--transition-background-color);
+	font-family: 'mr', sans-serif;
 }
 
 .SubscribeFilterItem.activeFilter {

@@ -9,7 +9,7 @@ interface PhraseScreenI {
 const PhraseScreen = ({ className = '' }: PhraseScreenI) => {
   return (
     <div className={cn(className, cls.PhraseScreen)}>
-      <Text className={cn(cls.MotivationPhrase)} text="КАКАЯ-ТО МОТИВИРУЮЩАЯ ФРАЗА" />
+      <Text className={cn(cls.MotivationPhrase)} text="”   Всё ближайшее время  определит образование   ”" />
     </div>
   )
 }

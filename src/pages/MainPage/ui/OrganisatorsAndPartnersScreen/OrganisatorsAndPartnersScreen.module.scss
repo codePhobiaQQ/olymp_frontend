@@ -8,6 +8,7 @@
 		padding: 0 var(--sections-big-padding);
 		display: flex;
 		justify-content: space-between;
+		overflow: hidden;
 
 		.TopSideInfo {
 			display: flex;
@@ -31,6 +32,14 @@
 					margin-top: var(--px8);
 				}
 			}
+		}
+
+		.OrganisatorsList {
+
+		}
+
+		.BtnMore {
+			margin: var(--px50) auto 0 auto;
 		}
 	}
 }

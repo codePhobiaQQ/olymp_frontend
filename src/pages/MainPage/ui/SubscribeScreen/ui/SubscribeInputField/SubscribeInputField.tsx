@@ -14,9 +14,9 @@ interface SubscribeInputFieldI {
 const SubscribeInputField = ({ className = '', value, onChange }: SubscribeInputFieldI) => {
   return (
     <div className={cn(className, cls.SubscribeInputField)}>
-      <Input className={cn(cls.Input)} placeholder="Ваш E-mail" />
-      <Button wrapperClassName={cn(cls.Btn)}>
-        <Text text="ПОДПИСАТЬСЯ" />
+      <Input value={value} className={cn(cls.Input)} placeholder="Ваш E-mail" />
+      <Button variant={'default'} className={cn(cls.Btn)}>
+        ПОДПИСАТЬСЯ
       </Button>
     </div>
   )

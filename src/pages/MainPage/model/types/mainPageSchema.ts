@@ -1,6 +1,6 @@
 export interface MainPageSchema {
   pageData?: FetchMainPageDataI
-  error?: string;
+  error?: string
   isLoading: boolean
 }
 
@@ -16,6 +16,7 @@ export interface FetchMainPageDataI {
     aboutscreen_title: string
     aboutscreen_description: string
   }
+
   // ---------- Секция представления ---------
   presentation_screen: {
     presentation_screen_number1: string

@@ -1,13 +1,14 @@
 .PhraseScreen {
-	height: 50%;
+	height: 50vh;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	background-color: #efefef;
+	background-color: #f9f9f9;
 }
 
 .MotivationPhrase {
-	font-size: var(--px60);
+	font-size: var(--px64);
 	text-align: center;
-	width: 80%;
+	width: 90%;
+	font-family: 'msb', sans-serif !important;
 }

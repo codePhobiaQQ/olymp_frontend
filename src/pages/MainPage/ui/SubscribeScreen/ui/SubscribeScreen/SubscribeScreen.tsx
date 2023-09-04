@@ -6,7 +6,7 @@ import bg from '@shared/assets/images/subscribe/subscribeBg.jpg'
 import Title, { TitleTheme } from '@shared/ui/Title/Title'
 import Text, { TextTheme } from '@shared/ui/Text/Text'
 import SubscribeInputField from '../SubscribeInputField/SubscribeInputField'
-import { olympData, olympNames } from '@shared/data/olympData'
+import { olympData } from '@shared/data/olympData'
 
 interface SubscribeScreenI {
   className?: string
@@ -45,12 +45,6 @@ const SubscribeScreen = ({ className = '' }: SubscribeScreenI) => {
               text={'подпишитесь на рассылку о новостях и событиях портала v-olymp.ru'}
             />
 
-            <Text
-              className={cn(cls.UserAccess)}
-              theme={TextTheme.PARAGRAPH_THEME}
-              text="Нажимая подписаться вы принимаете условия Пользовательского соглашения и Политики конфиденциальности "
-            />
-
             <ul className={cn(cls.SubscribeFilters)}>
               <li
                 onClick={changeActiveFilterHandler('Все')}
@@ -71,6 +65,12 @@ const SubscribeScreen = ({ className = '' }: SubscribeScreenI) => {
             </ul>
 
             <SubscribeInputField value={email} onChange={changeHandler} />
+
+            <Text
+              className={cn(cls.UserAccess)}
+              theme={TextTheme.PARAGRAPH_THEME}
+              text="Нажимая подписаться вы принимаете условия Пользовательского соглашения и Политики конфиденциальности "
+            />
           </div>
         </div>
       </div>
