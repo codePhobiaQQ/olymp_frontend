@@ -19,6 +19,7 @@ export const fetchMainPageData = createAsyncThunk<
     if (!response.data) {
       throw new Error()
     }
+    console.log(response.data.acf)
 
     return response.data.acf
   } catch (e) {

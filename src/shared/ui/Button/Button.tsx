@@ -1,52 +1,28 @@
 import { ButtonHTMLAttributes, ReactNode, memo } from 'react'
-import cls from './Button.module.css'
+import { ReactComponent as Arrow } from '@shared/assets/images/svg/arrow.svg'
+import cls from './Button.module.scss'
 import cn from 'classnames'
 
-export enum ButtonBorderRadiusTheme {
-	S = 's',
-	M = 'm',
-	L = 'l',
-	XL = 'xl',
-	XXL = 'xxl',
-}
-
-export enum ButtonColorTheme {
-	DARK = 'dark',
-	LIGHT = 'light',
-}
-
-export enum ButtonTheme {
-	OUTLINE_TRANSPARENT = 'outline_transparent',
-	SUBSCRIBE_THEME = 'subscribe_theme',
-}
+type variantType = 'outline_transparent_arrow'
 
 interface ButtonI extends ButtonHTMLAttributes<HTMLButtonElement> {
 	children?: ReactNode
 	className?: string
-	theme?: ButtonTheme
-	wrapperClassName?: string
-	borderRadius?: ButtonBorderRadiusTheme
-	colorTheme?: ButtonColorTheme
+	variant?: variantType
 }
 
 const Button = (props: ButtonI) => {
 	const {
-		className = '',
-		wrapperClassName,
-		theme = ButtonTheme.OUTLINE_TRANSPARENT,
-		borderRadius = ButtonBorderRadiusTheme.M,
-		colorTheme = ButtonColorTheme.DARK,
+		variant = 'outline_transparent_arrow',
 		children,
+		className,
 		...otherProps
 	} = props
 
-	return (
-		<div className={cn(wrapperClassName)}>
-			<button className={cn(className, cls.Button, cls[theme], cls[borderRadius], cls[colorTheme])} {...otherProps}>
-				{children}
-			</button>
-		</div>
-	)
+	return <button className={cn(className, cls[variant])} {...otherProps}>
+			{children}
+			<Arrow />
+		</button>
 }
 
 export default memo(Button)

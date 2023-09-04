@@ -9,7 +9,6 @@
 
 .ButtonWithArrow {}
 
-
 .outline_transparent {
 	background-color: transparent;
 	padding: var(--px6) var(--px30);
@@ -37,6 +36,41 @@
 	color: #000;
 	border-color: #000;
 }
+
+/* -------------------- */
+/* ------ Theme ------- */
+/* -------------------- */
+
+.outline_transparent_arrow {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-family: 'mr', sans-serif;
+	font-size: var(--px15);
+	padding: var(--px5) var(--px30);
+	border-radius: var(--px8);
+	border: 1px solid #000;
+	cursor: pointer;
+	transition: var(--transition-all);
+	svg {
+		width: var(--px15);
+		height: var(--px15);
+		margin-left: var(--px15);
+		transition: var(--transition-fill);
+	}
+
+	&:hover {
+		background: #000;
+		color: #fff;
+		svg {
+			fill: #fff;
+		}
+	}
+}
+
+/* -------------------- */
+/* -------------------- */
+/* -------------------- */
 
 /* Border Radius */
 

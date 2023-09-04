@@ -22,6 +22,10 @@
   font-family: "masb"
   src: url("./../../../shared/assets/fonts/MontserratAlternates-SemiBold.woff2") format("woff2")
 
+@font-face
+  font-family: "masbi"
+  src: url("./../../../shared/assets/fonts/MontserratAlternates-SemiBoldItalic.woff2") format("woff2")
+
 .ff-th
   font-family: "mth", sans-serif
 .ff-r
@@ -31,6 +35,8 @@
 .ff-sb
   font-family: "mdb", sans-serif
 .ffa-sb
+  font-family: "masb", sans-serif
+.ffa-sbi
   font-family: "masb", sans-serif
   
 *::-webkit-scrollbar
@@ -44,11 +50,12 @@
 
 body
   font-family: "mr", sans-serif
-  // overflow-x: hidden !important
+  overflow-x: hidden !important
   font-size: var(--px20)
   background: var(--main-bg)
   color: var(--main-text-color)
   position: relative
+
   
 .section 
   height: 100vh
@@ -71,7 +78,7 @@ section
   -webkit-box-sizing: border-box
   -moz-box-sizing: border-box
   box-sizing: border-box
-  
+
 a
   cursor: pointer
   color: inherit

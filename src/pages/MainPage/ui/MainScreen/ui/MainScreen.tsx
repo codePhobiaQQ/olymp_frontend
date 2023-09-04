@@ -16,7 +16,7 @@ const MainScreen = ({ className = '' }: MainScreenI) => {
   const { subTitle, cardsData } = useGetMainScreenData()
 
   return (
-    <div className={cn(className, cls.MainScreen)}>
+    <section className={cn(className, cls.MainScreen)}>
       <div className={cls.bg}>
         <GradientBg />
       </div>
@@ -52,7 +52,7 @@ const MainScreen = ({ className = '' }: MainScreenI) => {
           <CircleArrowSvg className={cn(cls.MoreBtnIcon)} />
         </div>
       </div>
-    </div>
+    </section>
   )
 }
 

@@ -1,0 +1,24 @@
+<svg viewBox="0 0 644 259" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect x="0.5" y="258.5" width="255" height="255" rx="127.5" transform="rotate(-90 0.5 258.5)" stroke="url(#paint0_linear_311_12)"/>
+    <rect x="132.5" y="258.5" width="255" height="255" rx="127.5" transform="rotate(-90 132.5 258.5)" stroke="url(#paint1_linear_311_12)"/>
+    <rect x="256.5" y="258.5" width="255" height="255" rx="127.5" transform="rotate(-90 256.5 258.5)" stroke="url(#paint2_linear_311_12)"/>
+    <rect x="388.5" y="255.5" width="255" height="255" rx="127.5" transform="rotate(-90 388.5 255.5)" stroke="url(#paint3_linear_311_12)"/>
+    <defs>
+        <linearGradient id="paint0_linear_311_12" x1="128" y1="259" x2="128" y2="515" gradientUnits="userSpaceOnUse">
+            <stop/>
+            <stop offset="1" stop-opacity="0"/>
+        </linearGradient>
+        <linearGradient id="paint1_linear_311_12" x1="260" y1="259" x2="260" y2="515" gradientUnits="userSpaceOnUse">
+            <stop/>
+            <stop offset="1" stop-opacity="0"/>
+        </linearGradient>
+        <linearGradient id="paint2_linear_311_12" x1="384" y1="259" x2="384" y2="515" gradientUnits="userSpaceOnUse">
+            <stop/>
+            <stop offset="1" stop-opacity="0"/>
+        </linearGradient>
+        <linearGradient id="paint3_linear_311_12" x1="516" y1="256" x2="516" y2="512" gradientUnits="userSpaceOnUse">
+            <stop/>
+            <stop offset="1" stop-opacity="0"/>
+        </linearGradient>
+    </defs>
+</svg>

@@ -1,0 +1,25 @@
+.PresentationScreen {
+  .DecorLine {
+    width: calc(100% - var(--sections-big-padding) / 3 * 2);
+    margin: auto;
+    background-color: #D9D9D9;
+    height: 1px;
+  }
+
+  .NumberSide {
+    font-size: min(calc(var(--index) * 10), 200px);
+    font-family: 'msb', sans-serif;
+  }
+  .RightSide {
+    width: var(--content-width);
+    .RightSideInner {
+      width: var(--ofter-right-side-width);
+      font-family: 'mr', sans-serif;
+      line-height: 140%;
+
+      button {
+        margin-top: var(--px20);
+      }
+    }
+  }
+}

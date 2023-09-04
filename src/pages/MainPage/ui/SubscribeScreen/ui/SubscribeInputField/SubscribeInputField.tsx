@@ -2,7 +2,7 @@ import cls from './SubscribeInputField.module.css'
 import { Dispatch, SetStateAction } from 'react'
 import cn from 'classnames'
 import Input from '@shared/ui/Input/Input'
-import Button, { ButtonTheme } from '@shared/ui/Button/Button'
+import Button from '@shared/ui/Button/Button'
 import Text from '@shared/ui/Text/Text'
 
 interface SubscribeInputFieldI {
@@ -15,7 +15,7 @@ const SubscribeInputField = ({ className = '', value, onChange }: SubscribeInput
   return (
     <div className={cn(className, cls.SubscribeInputField)}>
       <Input className={cn(cls.Input)} placeholder="Ваш E-mail" />
-      <Button wrapperClassName={cn(cls.Btn)} theme={ButtonTheme.SUBSCRIBE_THEME}>
+      <Button wrapperClassName={cn(cls.Btn)}>
         <Text text="ПОДПИСАТЬСЯ" />
       </Button>
     </div>

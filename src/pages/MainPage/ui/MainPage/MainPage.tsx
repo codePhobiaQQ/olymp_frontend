@@ -1,18 +1,17 @@
 import { MainScreen } from './../MainScreen'
-import RoutingCardsScreen from './../RoutingCardsScreen/RoutingCardsScreen'
-import OrganisatorsAndPartners from './../OrganisatorsAndPartners/OrganisatorsAndPartners'
-import SubscribeScreen from './../SubscribeScreen/ui/SubscribeScreen/SubscribeScreen'
-import PhraseScreen from './../PhraseScreen/PhraseScreen'
 import { DynamicModuleLoader, ReducersList } from '@shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
-import { MainPageReducer } from '@pages/MainPage/model/slice/mainPageSlice'
-import { useEffect } from 'react'
-import { fetchMainPageData } from '@pages/MainPage/model/services/fetchMainPageData'
+import { MainPageReducer } from './../../model/slice/mainPageSlice'
+import { useLayoutEffect } from 'react'
+import { fetchMainPageData } from './../../model/services/fetchMainPageData'
 import { useAppDispatch } from '@shared/lib/hooks/useAppDispatch/useAppDispatch'
 import { useSelector } from 'react-redux'
 import { getError, getIsLoading } from './../../model/selectors/mainPageSelectors'
 import { PageLoading } from '@shared/ui/PageLoading/PageLoading'
 import { AboutScreen } from './../AboutScreen/AboutScreen'
 import Text from '@shared/ui/Text/Text'
+import { PresentationScreen } from './..//PresentationScreen/PresentationScreen'
+import { BannerScreen } from './..//BannerScreen/BannerScreen'
+import { StagesScreen } from './..//StagesScreen/StagesScreen'
 
 const reducers: ReducersList = {
   mainPage: MainPageReducer,
@@ -23,7 +22,7 @@ const MainPage = () => {
   const isLoading = useSelector(getIsLoading)
   const error = useSelector(getError)
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     dispatch(fetchMainPageData())
   }, [])
 
@@ -39,10 +38,13 @@ const MainPage = () => {
     <DynamicModuleLoader removeAfterUnmount={false} reducers={reducers}>
       <MainScreen />
       <AboutScreen />
-      <RoutingCardsScreen />
-      <OrganisatorsAndPartners />
-      <SubscribeScreen />
-      <PhraseScreen />
+      <PresentationScreen />
+      <BannerScreen />
+      <StagesScreen />
+      {/*<RoutingCardsScreen />*/}
+      {/*<OrganisatorsAndPartners />*/}
+      {/*<SubscribeScreen />*/}
+      {/*<PhraseScreen />*/}
     </DynamicModuleLoader>
   )
 }

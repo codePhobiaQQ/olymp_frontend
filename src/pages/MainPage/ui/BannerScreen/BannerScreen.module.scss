@@ -1,0 +1,46 @@
+.BannerScreen {
+  padding: min(calc(var(--index) * 10), 200px) 0;
+
+  .BannerWrapper {
+    border-top: 1px solid #101010;
+    border-bottom: 1px solid #101010;
+    padding: var(--px12) 0;
+
+    .Banner {
+      display: flex;
+      align-items: center;
+      will-change: transform;
+      animation: marquee 15s linear infinite;
+
+      .LogoWrapper {
+        position: relative;
+        display: flex;
+        align-items: center;
+
+        .Logo {
+          height: var(--px25);
+        }
+
+        &:before {
+          content: '';
+          position: relative;
+          display: block;
+          width: var(--px16);
+          height: var(--px16);
+          border-radius: 50%;
+          background-color: #101010;
+          margin: 0 var(--px40);
+        }
+      }
+    }
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}

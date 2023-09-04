@@ -17,14 +17,12 @@ export const AboutScreen = (props: AboutScreenProps) => {
   const description = useSelector(getAboutScreenDescription)
 
   return (
-    <div className={cn(className, cls.AboutScreen)}>
+    <section className={cn(className, cls.AboutScreen)}>
       <div className={cn(cls.LeftSide)}>
         <Title theme={TitleTheme.H2} text={title} />
         <WpTextFormatter content={description} />
       </div>
-      <div className={cn(cls.RightSide)}>
-        <AppImage src={waveImage} />
-      </div>
-    </div>
+      <AppImage className={cls.WaveWrapper} src={waveImage} />
+    </section>
   )
 }

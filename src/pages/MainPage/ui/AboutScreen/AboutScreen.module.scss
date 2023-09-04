@@ -1,11 +1,27 @@
 .AboutScreen {
-  padding: 0 var(--sections-padding);
+  padding: min(calc(var(--index) * 8), 180px) var(--sections-big-padding) min(calc(var(--index) * 6), 116px) var(--sections-big-padding);
   display: flex;
+  position: relative;
 
   .LeftSide {
-    width: 50%;
-  }
-  .RightSide {
+    width: var(--content-width-second);
 
+    h2 {
+      margin-bottom: var(--px20);
+      font-size: var(--px64);
+    }
+    p {
+      line-height: 1.4em;
+      font-family: 'mr', sans-serif;
+      font-size: var(--px20);
+    }
+  }
+
+  .WaveWrapper {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    pointer-events: none;
   }
 }

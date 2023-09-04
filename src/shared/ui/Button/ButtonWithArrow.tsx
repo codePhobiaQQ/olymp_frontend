@@ -1,7 +1,7 @@
 import LightArrowSvg from '../../assets/svg/LightArrowSvg'
 import Text from '../Text/Text'
 import Button from './Button'
-import cls from './Button.module.css'
+import cls from './Button.module.scss'
 import cn from 'classnames'
 
 interface ButtonWithArrowI {
