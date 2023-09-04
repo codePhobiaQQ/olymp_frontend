@@ -1,18 +1,28 @@
 import cls from './Input.module.css'
 import cn from 'classnames'
+import { ChangeEvent, InputHTMLAttributes } from 'react'
 
-interface InputI extends React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement> {
-	className?: string
+type HtmlInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange' | 'className' | 'placeholder'>
+
+interface InputI extends HtmlInputProps {
+  value?: string | number
+  onChange?: (value: string) => void
+  className?: string
+  placeholder?: string
 }
 
 const Input = (props: InputI) => {
-	const { className = '', value, onChange, placeholder, ...otherProps } = props
+  const { className = '', value, onChange, placeholder, ...otherProps } = props
 
-	return (
-		<div className={cn(className, cls.Input)}>
-			<input value={value} onChange={onChange} placeholder={placeholder} {...otherProps} />
-		</div>
-	)
+  const changeHandler = (e: ChangeEvent<HTMLInputElement>) => {
+    onChange?.(e.target.value)
+  }
+
+  return (
+    <div className={cn(className, cls.Input)}>
+      <input value={value} onChange={changeHandler} placeholder={placeholder} {...otherProps} />
+    </div>
+  )
 }
 
 export default Input

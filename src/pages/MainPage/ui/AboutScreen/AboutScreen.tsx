@@ -18,7 +18,7 @@ export const AboutScreen = (props: AboutScreenProps) => {
   const description = useSelector(getAboutScreenDescription)
 
   return (
-    <section className={cn(className, cls.AboutScreen)}>
+    <section id="AboutScreen" className={cn(className, cls.AboutScreen)}>
       <div className={cn(cls.LeftSide)}>
         <Title theme={TitleTheme.H2} text={title} />
         <WpTextFormatter content={description} />

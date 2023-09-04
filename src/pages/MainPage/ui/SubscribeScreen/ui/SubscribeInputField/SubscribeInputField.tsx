@@ -1,20 +1,18 @@
 import cls from './SubscribeInputField.module.css'
-import { Dispatch, SetStateAction } from 'react'
 import cn from 'classnames'
 import Input from '@shared/ui/Input/Input'
 import Button from '@shared/ui/Button/Button'
-import Text from '@shared/ui/Text/Text'
 
 interface SubscribeInputFieldI {
   className?: string
   value: string
-  onChange: (e: HTMLInputElement) => void
+  onChange: (e: string) => void
 }
 
 const SubscribeInputField = ({ className = '', value, onChange }: SubscribeInputFieldI) => {
   return (
     <div className={cn(className, cls.SubscribeInputField)}>
-      <Input value={value} className={cn(cls.Input)} placeholder="Ваш E-mail" />
+      <Input onChange={onChange} value={value} className={cn(cls.Input)} placeholder="Ваш E-mail" />
       <Button variant={'default'} className={cn(cls.Btn)}>
         ПОДПИСАТЬСЯ
       </Button>

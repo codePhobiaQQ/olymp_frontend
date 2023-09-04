@@ -10,7 +10,6 @@ import { MainPage } from '@pages/MainPage'
 import { OlympsPage } from '@pages/OlympsPage'
 import { NewsPage } from '@pages/NewsPage'
 import { HeaderTheme } from '@widgets/Header'
-import { Component } from 'react'
 import { NewsDetailsPage } from '@pages/NewsDetailsPage'
 
 // -------------------------
@@ -49,55 +48,46 @@ export type AppRoutesProps = RouteProps & {
 
 type RoutesType = Record<AppRoutes, AppRoutesProps>
 
-export const routeConfig: Omit<RoutesType, Component> = {
+export const routeConfig: Omit<RoutesType, 'Component'> = {
   [AppRoutes.Main]: {
     label: 'Главная',
     path: routePath[AppRoutes.Main],
     element: <MainPage />,
-    headerTheme: HeaderTheme.LIGHT,
   },
   [AppRoutes.Olymps]: {
     label: 'Олимпиады',
     path: routePath[AppRoutes.Olymps],
     element: <OlympsPage />,
-    headerTheme: HeaderTheme.DARK,
   },
   [AppRoutes.News]: {
     label: 'Новости',
     path: routePath[AppRoutes.News],
     element: <NewsPage />,
-    headerTheme: HeaderTheme.DARK,
   },
   [AppRoutes.NewsDetails]: {
     label: 'Новости',
     path: routePath[AppRoutes.News],
     element: <NewsDetailsPage />,
-    headerTheme: HeaderTheme.DARK,
   },
   [AppRoutes.OnlineStudy]: {
     label: 'Онлайн обучение',
     path: routePath[AppRoutes.OnlineStudy],
-    headerTheme: HeaderTheme.DARK,
   },
   [AppRoutes.OlympSchedule]: {
     label: 'Онлайн обучение',
     path: routePath[AppRoutes.OlympSchedule],
-    headerTheme: HeaderTheme.DARK,
   },
   [AppRoutes.FAQ]: {
     path: routePath[AppRoutes.FAQ],
     label: undefined,
-    headerTheme: HeaderTheme.DARK,
   },
   [AppRoutes.UNIVERSITY_REGISTRATION]: {
     path: routePath[AppRoutes.UNIVERSITY_REGISTRATION],
     label: undefined,
-    headerTheme: HeaderTheme.DARK,
   },
   [AppRoutes.LK]: {
     path: routePath[AppRoutes.LK],
     label: undefined,
-    headerTheme: HeaderTheme.DARK,
   },
 }
 
@@ -157,5 +147,5 @@ export const routesActionScreen: RoutesActionScreenType = {
     title: 'личный кабинет',
     description: 'В этом разделе будут представлена',
     image: actionCard6,
-  }
+  },
 }
