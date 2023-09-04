@@ -7,10 +7,11 @@ import actionCard6 from '@shared/assets/images/actions/6.jpg'
 
 import { RouteProps } from 'react-router-dom'
 import { MainPage } from '@pages/MainPage'
-import { OlympsPage } from '@pages/OlympsPage'
+import { OlympPage } from '@pages/OlympsPage'
 import { NewsPage } from '@pages/NewsPage'
 import { HeaderTheme } from '@widgets/Header'
 import { NewsDetailsPage } from '@pages/NewsDetailsPage'
+import { OlympDetailPage } from '@pages/OlympDetailsPage'
 
 // -------------------------
 // ------ Core routes ------
@@ -19,6 +20,7 @@ import { NewsDetailsPage } from '@pages/NewsDetailsPage'
 export enum AppRoutes {
   Main = 'main',
   Olymps = 'olymps',
+  OlympDetails = 'olymp_detail',
   News = 'news',
   NewsDetails = 'news_details',
   OnlineStudy = 'online',
@@ -31,13 +33,14 @@ export enum AppRoutes {
 export const routePath: Record<AppRoutes, string> = {
   [AppRoutes.Main]: '/',
   [AppRoutes.News]: '/news',
+  [AppRoutes.Olymps]: '/olymps',
+  [AppRoutes.OlympDetails]: '/olymps' + '/:id',
   [AppRoutes.NewsDetails]: '/news' + '/:id',
   [AppRoutes.OnlineStudy]: '/online-study',
   [AppRoutes.OlympSchedule]: '/online-study',
   [AppRoutes.FAQ]: '/faq',
   [AppRoutes.UNIVERSITY_REGISTRATION]: '/university-registration',
   [AppRoutes.LK]: '/lk',
-  [AppRoutes.Olymps]: '/olymps',
 }
 
 export type AppRoutesProps = RouteProps & {
@@ -57,7 +60,12 @@ export const routeConfig: Omit<RoutesType, 'Component'> = {
   [AppRoutes.Olymps]: {
     label: 'Олимпиады',
     path: routePath[AppRoutes.Olymps],
-    element: <OlympsPage />,
+    element: <OlympPage />,
+  },
+  [AppRoutes.OlympDetails]: {
+    label: 'Олимпиады',
+    path: routePath[AppRoutes.OlympDetails],
+    element: <OlympDetailPage />,
   },
   [AppRoutes.News]: {
     label: 'Новости',

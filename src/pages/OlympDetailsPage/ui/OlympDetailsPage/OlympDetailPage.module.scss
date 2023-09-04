@@ -1,0 +1,9 @@
+.OlympDetailPage {
+    padding: var(--px100) 0;
+
+    .OlympDetailPageContent {
+        margin-top: var(--px100);
+        display: flex;
+        padding: 0 var(--sections-padding);
+    }
+}

@@ -5,16 +5,13 @@ import { FetchMainPageDataI, MainPageSchema } from '@pages/MainPage/model/types/
 const initialState: MainPageSchema = {
   pageData: undefined,
   isLoading: false,
-  error: undefined
+  error: undefined,
 }
 
 const MainPageSlice = createSlice({
   name: 'MainPageSlice',
   initialState,
-  reducers: {
-    increment: (state) => {
-    },
-  },
+  reducers: {},
   extraReducers: (builder) => {
     builder
       .addCase(fetchMainPageData.pending, (state: MainPageSchema) => {

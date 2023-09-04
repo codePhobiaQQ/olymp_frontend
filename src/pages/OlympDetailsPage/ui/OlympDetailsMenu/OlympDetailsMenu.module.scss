@@ -1,0 +1,11 @@
+.OlympDetailsMenu {
+
+  .OlympDetailsMenuItem {
+    font-family: 'mr', sans-serif;
+    margin-bottom: var(--px10);
+    font-size: var(--px18);
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

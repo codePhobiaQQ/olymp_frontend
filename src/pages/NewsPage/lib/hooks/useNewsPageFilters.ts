@@ -10,6 +10,7 @@ export function useNewsPageFilters() {
   const { toggleCategory } = newsPageActions
 
   const fetchData = useCallback(() => {
+    // @ts-ignore
     dispatch(fetchNewsList({ replace: true }))
   }, [])
 

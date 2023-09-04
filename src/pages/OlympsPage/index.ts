@@ -1,1 +1,1 @@
-export { OlympsPage } from './ui/OlympsPage/OlympsPage'
+export { OlympPage } from './ui/OlympPage/OlympPage.tsx'
