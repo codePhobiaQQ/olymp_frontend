@@ -23,7 +23,7 @@ const AppLink = (props: AppLinkI) => {
   if (theme == AppLinkTheme.DEFAULT_LINK) {
     let content
     if (text) {
-      content = <Text text={text} />
+      content = text
     } else if (children) {
       content = children
     }

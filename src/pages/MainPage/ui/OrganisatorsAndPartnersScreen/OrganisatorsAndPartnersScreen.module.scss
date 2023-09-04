@@ -1,0 +1,36 @@
+.OrganisatorsAndPartnersScreen {
+	padding: var(--px100) 0;
+	height: 100%;
+	overflow-y: hidden;
+	background-color: #F9F9F9;
+
+	.container {
+		padding: 0 var(--sections-big-padding);
+		display: flex;
+		justify-content: space-between;
+
+		.TopSideInfo {
+			display: flex;
+
+			.TopSideInfoLeft {
+
+			}
+			.TopSideInfoRight {
+				width: 40%;
+
+				.AddressLink {
+					display: block;
+					margin-top: var(--px38);
+				}
+				.TelLink {
+					margin-top: var(--px8);
+				}
+				.MailLink {
+					color: #133094;
+					font-family: 'mm', sans-serif;
+					margin-top: var(--px8);
+				}
+			}
+		}
+	}
+}

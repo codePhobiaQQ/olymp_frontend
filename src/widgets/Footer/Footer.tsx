@@ -1,9 +1,9 @@
 import { messengersData } from '@shared/data/messengersData'
-import LogoFooter from '@shared/assets/svg/LogoFooter'
 import cls from './Footer.module.scss'
 import cn from 'classnames'
 import AppImage from '@shared/ui/AppImage/AppImage'
 import AppLink, { AppLinkTheme } from '@shared/ui/AppLink/AppLink'
+import { ReactComponent as LogoFooter } from '@shared/assets/images/svg/logo-footer.svg'
 import Text from '@shared/ui/Text/Text'
 import { olympData } from '@shared/data/olympData'
 import { otherEventsData } from '@shared/data/otherEventsData'
@@ -19,7 +19,8 @@ const Footer = ({ className = '' }: FooterI) => {
       <div className={cn(cls.FooterTopPart)}>
         <div className={cn(cls.ContactsPart, cls.FooterCol)}>
           <div className={cn(cls.FooterColInner)}>
-            <LogoFooter className={cn(cls.FooterLogo)} />
+            <LogoFooter />
+
             <div className={cn(cls.MessengersWrapper)}>
               {Object.values(messengersData).map((messenger) => (
                 <div key={messenger.name} className={cls.MessengerItem}>
@@ -27,22 +28,24 @@ const Footer = ({ className = '' }: FooterI) => {
                 </div>
               ))}
             </div>
+
             <div className={cls.ContactsLinks}>
               <AppLink
                 theme={AppLinkTheme.DEFAULT_LINK}
                 className={cls.ContactLink}
-                to={'support@v-olymp.ru'}
-                text='support@v-olymp.ru'
+                to={'mailto:support@v-olymp.ru'}
+                text="support@v-olymp.ru"
               />
               <AppLink
                 theme={AppLinkTheme.DEFAULT_LINK}
                 className={cls.ContactLink}
-                to={'8 (495) 989 37 89'}
-                text='8 (495) 989 37 89'
+                to={'tel:84959893789'}
+                text="8 (495) 989 37 89"
               />
             </div>
           </div>
         </div>
+
         <div className={cn(cls.Olymps, cls.FooterCol)}>
           <div className={cn(cls.FooterColInner)}>
             <Text className={cls.FooterColTitle} text={'олимпиады, входящие в перерчень'} />
@@ -60,6 +63,7 @@ const Footer = ({ className = '' }: FooterI) => {
             </ul>
           </div>
         </div>
+
         <div className={cn(cls.Other, cls.FooterCol)}>
           <div className={cn(cls.FooterColInner)}>
             <Text className={cls.FooterColTitle} text={'другие мероприятия'} />
