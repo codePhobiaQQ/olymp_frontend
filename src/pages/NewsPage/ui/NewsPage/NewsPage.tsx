@@ -6,7 +6,7 @@ import { DynamicModuleLoader, ReducersList } from '@shared/lib/components/Dynami
 import { newsPageReducer } from './../../model/slice/newsPageSlice/newsPageSlice'
 import { memo, useCallback, useEffect } from 'react'
 import { useAppDispatch } from '@shared/lib/hooks/useAppDispatch/useAppDispatch'
-import { useSearchParams } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom'
 import { fetchNextNewsPage } from './../../model/services/fetchNextNewsPage/fetchNextNewsPage'
 import { Page } from '@widgets/Page/ui/Page/Page'
 import { NewsInfiniteList } from './../../ui/NewsInfiniteList/NewsInfiniteList'
@@ -14,6 +14,9 @@ import { NewsPageCategories } from '@features/fetchNewsCategories'
 import { NewsCategoriesReducer } from '@features/fetchNewsCategories/model/slice/newsCategoriesSlice'
 import { NewsFilters } from './../../ui/NewsFilters/NewsFilters'
 import { initNewsPage } from './../../model/services/initNewsPage/initNewsPage'
+import { useNewsPageFilters } from '@pages/NewsPage/lib/hooks/useNewsPageFilters.ts'
+import { useSelector } from 'react-redux'
+import { getSelectedCategories } from '@pages/NewsPage/model/selectors/newsPageSelectors.ts'
 
 const reducers: ReducersList = {
   newsPage: newsPageReducer,
@@ -22,7 +25,9 @@ const reducers: ReducersList = {
 
 const NewsPage = memo(() => {
   const dispatch = useAppDispatch()
-  const [searchParams] = useSearchParams();
+  const [searchParams] = useSearchParams()
+  const selectedCategories = useSelector(getSelectedCategories)
+  const { onChangeCategory } = useNewsPageFilters()
 
   const onLoadNextPart = useCallback(() => {
     dispatch(fetchNextNewsPage())
@@ -46,7 +51,7 @@ const NewsPage = memo(() => {
       <div className={cn(cls.Content)}>
         <div className={cn(cls.Filters)}>
           <NewsFilters />
-          <NewsPageCategories />
+          <NewsPageCategories selectedCategories={selectedCategories} onClickCategory={onChangeCategory} />
         </div>
         <div className={cn(cls.ContentListItems)}>
           <NewsInfiniteList />
@@ -57,9 +62,7 @@ const NewsPage = memo(() => {
 
   return (
     <DynamicModuleLoader removeAfterUnmount={false} reducers={reducers}>
-      <Page onScrollEnd={onLoadNextPart}>
-        {content}
-      </Page>
+      <Page onScrollEnd={onLoadNextPart}>{content}</Page>
     </DynamicModuleLoader>
   )
 })

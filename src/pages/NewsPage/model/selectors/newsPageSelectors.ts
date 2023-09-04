@@ -5,7 +5,9 @@ import { buildSelector } from '@shared/store'
 export const getNewsPageIsLoading = (state: StateSchema) => state.newsPage?.isLoading || false
 export const getNewsPageIsError = (state: StateSchema) => state.newsPage?.error
 
-export const getNewsPageType = (state: StateSchema) => state.newsPage?.categories || []
+export const getSelectedCategories = (state: StateSchema) => state.newsPage?.selectedCategories || []
+
+export const getNewsPageType = (state: StateSchema) => state.newsPage?.selectedCategories || []
 export const getNewsPageView = (state: StateSchema) => state.newsPage?.view || NewsView.SMALL
 
 export const getNewsPageNum = (state: StateSchema) => state.newsPage?.page || 0

@@ -3,19 +3,19 @@ import cls from './Select.module.scss'
 import { Listbox } from '@headlessui/react'
 import { useState } from 'react'
 
-interface OptionProps {
-  id: number | string
+interface OptionProps<T = string | number> {
+  id: T
   name: string
   unavailable?: boolean
 }
 
-interface SelectProps {
-  options?: OptionProps[]
-  initOption?: OptionProps
-  onChange?: (props: string) => void
+interface SelectProps<T = string> {
+  options?: OptionProps<T>[]
+  initOption?: OptionProps<T>
+  onChange?: (props: T) => void
 }
 
-export const Select = (props: SelectProps) => {
+export const Select = <T = string,>(props: SelectProps<T>) => {
   const { options, initOption, onChange } = props
 
   let _initOption
@@ -27,19 +27,20 @@ export const Select = (props: SelectProps) => {
 
   const [selectedPerson, setSelectedPerson] = useState(_initOption)
 
-  const _onChange = (value: OptionProps) => {
+  const _onChange = (value: OptionProps<T>) => {
     setSelectedPerson(value)
-    onChange?.(value.id.toString())
+    onChange?.(value.id)
   }
 
   return (
     <Listbox by="id" value={selectedPerson} onChange={_onChange}>
-      <Listbox.Button>{selectedPerson?.name}</Listbox.Button>
-      <Listbox.Options as='ul'>
-        {options?.map((option) => (
+      <Listbox.Button className={cn(cls.SelectBtn)}>{selectedPerson?.name}</Listbox.Button>
+      <Listbox.Options as="ul" className={cn(cls.SelectOptions)}>
+        {options?.map((option, index) => (
           <Listbox.Option
-            as='li'
-            key={option.id}
+            className={cn(cls.SelectOptionsItem)}
+            as="li"
+            key={option?.id?.toString() || index}
             value={option}
             disabled={option?.unavailable}
           >

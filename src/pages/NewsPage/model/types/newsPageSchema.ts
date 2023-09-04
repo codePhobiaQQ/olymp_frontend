@@ -5,20 +5,19 @@ export type OrderFilterType = 'ASC' | 'DESC'
 export type CategoriesFilterType = number[]
 
 export interface NewsPageSchema extends EntityState<News> {
-  isLoading?: boolean;
-  error?: string;
+  isLoading?: boolean
+  error?: string
 
   // pagination
-  page: number;
-  limit: number;
-  hasMore: boolean;
+  page: number
+  limit: number
+  hasMore: boolean
 
   // filters
-  view: NewsView;
+  view: NewsView
 
-  categories: CategoriesFilterType;
+  selectedCategories: CategoriesFilterType
   order?: OrderFilterType
 
-  _inited: boolean;
+  _inited: boolean
 }
-

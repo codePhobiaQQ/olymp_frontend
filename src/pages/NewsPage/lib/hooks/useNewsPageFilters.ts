@@ -1,31 +1,46 @@
-import { useDispatch, useSelector } from 'react-redux'
-import { getNewsPageSortOrder } from './../../model/selectors/newsPageSelectors'
+import { useDispatch } from 'react-redux'
 import { useCallback } from 'react'
 import { OrderFilterType } from './../../model/types/newsPageSchema'
 import { newsPageActions } from './../../model/slice/newsPageSlice/newsPageSlice'
 import { fetchNewsList } from '@pages/NewsPage/model/services/fetchNewsList/fetchNewsList'
-import { NewsView } from '@entities/News'
+import { NewsCategory, NewsView } from '@entities/News'
 
 export function useNewsPageFilters() {
-  const order = useSelector(getNewsPageSortOrder)
   const dispatch = useDispatch()
+  const { toggleCategory } = newsPageActions
 
   const fetchData = useCallback(() => {
-    dispatch(fetchNewsList({ replace: true }));
+    dispatch(fetchNewsList({ replace: true }))
   }, [])
 
-  const onChangeView = useCallback((newView: NewsView) => {
-    dispatch(newsPageActions.setView(newView))
-  }, [dispatch])
+  const onChangeView = useCallback(
+    (newView: NewsView) => {
+      dispatch(newsPageActions.setView(newView))
+    },
+    [dispatch]
+  )
 
-  const onChangeOrder = useCallback((newOrder: OrderFilterType) => {
-    dispatch(newsPageActions.setOrderFilter(newOrder))
-    dispatch(newsPageActions.setPage(1))
-    fetchData()
-  }, [dispatch, fetchData])
+  const onChangeOrder = useCallback(
+    (newOrder: OrderFilterType) => {
+      dispatch(newsPageActions.setOrderFilter(newOrder))
+      dispatch(newsPageActions.setPage(1))
+      fetchData()
+    },
+    [dispatch, fetchData]
+  )
+
+  const onChangeCategory = useCallback(
+    (categoryId: NewsCategory['id']) => {
+      dispatch(newsPageActions.setPage(1))
+      dispatch(toggleCategory(categoryId))
+      fetchData()
+    },
+    [dispatch]
+  )
 
   return {
     onChangeOrder,
-    onChangeView
+    onChangeView,
+    onChangeCategory,
   }
 }

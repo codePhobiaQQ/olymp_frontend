@@ -6,24 +6,20 @@ const initialState: NewsCategoriesSchema = {
   isLoading: false,
   error: '',
   categories: [],
+  selectedCategories: [],
 }
 
 const NewsCategoriesSlice = createSlice({
   name: 'NewsCategoriesSlice',
   initialState,
-
-  reducers: {
-    increment: (state) => {
-    },
-  },
+  reducers: {},
   extraReducers: (builder) => {
     builder
-      .addCase(fetchNewsCategories.pending, (state: NewsCategoriesSchema, action) => {
+      .addCase(fetchNewsCategories.pending, (state: NewsCategoriesSchema, _) => {
         state.error = undefined
         state.isLoading = true
       })
       .addCase(fetchNewsCategories.fulfilled, (state: NewsCategoriesSchema, action) => {
-        console.log(fetch)
         state.isLoading = false
         state.categories = action.payload
       })
