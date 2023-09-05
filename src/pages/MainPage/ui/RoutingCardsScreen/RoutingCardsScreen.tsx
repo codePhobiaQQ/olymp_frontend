@@ -12,6 +12,7 @@ const RoutingCardsScreen = ({ className = '' }: RoutingCardsScreenI) => {
   const firstCards = useMemo(() => {
     return Object.values(routesActionScreen).splice(2, 2)
   }, [])
+
   const secodnCards = useMemo(() => {
     return Object.values(routesActionScreen).splice(4, 2)
   }, [])

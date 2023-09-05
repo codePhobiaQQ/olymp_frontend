@@ -11,7 +11,7 @@ import { OlympPage } from '@pages/OlympsPage'
 import { NewsPage } from '@pages/NewsPage'
 import { HeaderTheme } from '@widgets/Header'
 import { NewsDetailsPage } from '@pages/NewsDetailsPage'
-import { OlympDetailPage } from '@pages/OlympDetailsPage'
+import { OlympDetailsPage } from '@pages/OlympDetailsPage'
 
 // -------------------------
 // ------ Core routes ------
@@ -65,7 +65,7 @@ export const routeConfig: Omit<RoutesType, 'Component'> = {
   [AppRoutes.OlympDetails]: {
     label: 'Олимпиады',
     path: routePath[AppRoutes.OlympDetails],
-    element: <OlympDetailPage />,
+    element: <OlympDetailsPage />,
   },
   [AppRoutes.News]: {
     label: 'Новости',

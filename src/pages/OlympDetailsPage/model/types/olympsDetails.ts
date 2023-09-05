@@ -1,3 +1,5 @@
+import { OlympSchema } from '@entities/Olymp'
+
 export enum OlympDetailsMenuItems {
   NEWS = 'Новости',
   OF_INFO = 'Официальная информация',
@@ -8,4 +10,10 @@ export enum OlympDetailsMenuItems {
   RESULTS = 'Результаты',
   PARTNERS = 'Организаторы и партнеры',
   ABOUT = 'О олимпиаде',
+}
+
+export interface OlympDetailsSchema {
+  data?: OlympSchema
+  isLoading: boolean
+  error?: string
 }

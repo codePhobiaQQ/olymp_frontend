@@ -1,1 +1,2 @@
-export { OlympDetailPage } from './ui/OlympDetailsPage/OlympDetailPage.tsx'
+export { OlympDetailsPageAsync as OlympDetailsPage } from './ui/OlympDetailsPage/OlympDetailsPage.async.tsx'
+export type { OlympDetailsSchema } from './model/types/olympsDetails.ts'

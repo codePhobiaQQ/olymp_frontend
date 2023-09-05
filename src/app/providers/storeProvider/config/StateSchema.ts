@@ -5,21 +5,25 @@ import { NavigateOptions } from 'react-router'
 import { NewsPageSchema } from '@pages/NewsPage'
 import { MainPageSchema } from '@pages/MainPage'
 import { NewsCategoriesSchema } from '@features/fetchNewsCategories/model/types/newsCategoriesSchema'
+import { OlympsPageSchema } from '@pages/OlympsPage'
+import { OlympDetailsSchema } from '@pages/OlympDetailsPage'
 
 export interface StateSchema {
   // MainPage
   mainPage?: MainPageSchema
 
-  // News
+  // Асинхронные редюсеры
+  // --- News ---
   newsPage?: NewsPageSchema
   newsCategories?: NewsCategoriesSchema
-
-  // Асинхронные редюсеры
+  // --- Olymps ---
+  olympsPage?: OlympsPageSchema
+  olympDetailsPage?: OlympDetailsSchema
 }
 
 export type StateSchemaKey = keyof StateSchema
 
-export type MountedReducers = PartialRecord<StateSchemaKey, boolean>;
+export type MountedReducers = PartialRecord<StateSchemaKey, boolean>
 
 export interface ReducerManager {
   getReducerMap: () => ReducersMapObject<StateSchema>

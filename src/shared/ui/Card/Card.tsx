@@ -1,5 +1,4 @@
 import { RouteActionScreenAttributes } from '@shared/routes/routes'
-import { CardItem } from '@widgets/../../../pages/MainPage/ui/MainScreen/model/data/data'
 import { useNavigate } from 'react-router-dom'
 import AppLink, { AppLinkTheme } from '@shared/ui/AppLink/AppLink'
 import Title, { TitleTheme } from '@shared/ui/Title/Title'
@@ -8,6 +7,7 @@ import cn from 'classnames'
 import AppImage from '../AppImage/AppImage'
 import Text from '@shared/ui/Text/Text'
 import { ReactComponent as ArrowSvg } from '@shared/assets/images/svg/arrow.svg'
+import { CardItem } from '@pages/MainPage/ui/MainScreen/model/data/data.ts'
 
 export enum CardSizeTheme {
   S = 'S',

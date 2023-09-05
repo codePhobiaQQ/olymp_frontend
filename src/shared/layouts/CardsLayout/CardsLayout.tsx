@@ -1,6 +1,6 @@
 import cls from './CardsLayout.module.css'
 import cn from 'classnames'
-import { RouteActionScreenAttributes, RoutesActionScreenType, routesActionScreen } from '@shared/routes/routes'
+import { RouteActionScreenAttributes } from '@shared/routes/routes'
 import { CardRouting } from '@shared/ui/Card/Card'
 
 interface CardLayoutI {

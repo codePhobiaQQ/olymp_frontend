@@ -1,0 +1,12 @@
+.OlympList {
+  padding: 0 var(--sections-padding);
+
+  .OlympListInnerWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    height: 100%;
+    width: 100%;
+  }
+}
