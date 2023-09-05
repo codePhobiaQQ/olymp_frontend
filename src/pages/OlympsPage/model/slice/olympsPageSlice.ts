@@ -15,7 +15,7 @@ const OlympsPageSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(fetchOlympsPageData.pending, (state) => {
-        state.isLoading = false
+        state.isLoading = true
         state.error = undefined
       })
       .addCase(fetchOlympsPageData.fulfilled, (state, { payload }: PayloadAction<FetchOlympsPageData>) => {

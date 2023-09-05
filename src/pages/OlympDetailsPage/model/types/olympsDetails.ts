@@ -16,4 +16,5 @@ export interface OlympDetailsSchema {
   data?: OlympSchema
   isLoading: boolean
   error?: string
+  activeMenuItem: OlympDetailsMenuItems
 }

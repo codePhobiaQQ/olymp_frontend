@@ -4,8 +4,14 @@
     font-family: 'mr', sans-serif;
     margin-bottom: var(--px10);
     font-size: var(--px18);
+    cursor: pointer;
+
     &:last-child {
       margin-bottom: 0;
+    }
+
+    &.Active {
+      font-family: 'msb', sans-serif;
     }
   }
 }

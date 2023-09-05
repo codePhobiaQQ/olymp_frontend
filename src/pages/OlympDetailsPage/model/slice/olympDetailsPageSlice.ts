@@ -1,22 +1,27 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { fetchOlympsDetails } from '@pages/OlympDetailsPage/model/services/fetchOlympDetails.ts'
 import { OlympSchema } from '@entities/Olymp'
-import { OlympDetailsSchema } from './..//types/olympsDetails.ts'
+import { OlympDetailsMenuItems, OlympDetailsSchema } from './..//types/olympsDetails.ts'
 
 const initialState: OlympDetailsSchema = {
   data: undefined,
   isLoading: false,
   error: undefined,
+  activeMenuItem: OlympDetailsMenuItems.NEWS,
 }
 
 const OlympDetailsPageSlice = createSlice({
   name: 'OlympDetailsPageSlice',
   initialState,
-  reducers: {},
+  reducers: {
+    setActiveMenuItem: (state, action: PayloadAction<OlympDetailsMenuItems>) => {
+      state.activeMenuItem = action.payload
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchOlympsDetails.pending, (state) => {
-        state.isLoading = false
+        state.isLoading = true
         state.error = undefined
       })
       .addCase(fetchOlympsDetails.fulfilled, (state, { payload }: PayloadAction<OlympSchema>) => {

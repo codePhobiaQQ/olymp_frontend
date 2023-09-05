@@ -1,6 +1,5 @@
 import cn from 'classnames'
 import cls from './TitleScreen.module.scss'
-import bgImage from '@shared/assets/images/olymps/bg/OlympsBgDesctop.jpg'
 import Title, { TitleTheme } from '@shared/ui/Title/Title.tsx'
 import Text from '@shared/ui/Text/Text.tsx'
 import { useSelector } from 'react-redux'
