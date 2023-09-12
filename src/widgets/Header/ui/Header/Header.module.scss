@@ -2,9 +2,9 @@
   width: 100%;
   height: var(--px48);
   box-sizing: border-box;
-
   background-color: var(--header-bg);
   color: var(--header-color);
+  padding: 0 var(--header-paddign);
 
   z-index: 2;
   position: fixed;
@@ -16,52 +16,31 @@
   }
 
   &.dark {
-    .HeaderActionsWrapperIcon,
-    .HeaderActionsWrapperCalendarIcon {
+    .LogoWrapper {
+      height: var(--px32);
+      fill: #767676;
+    }
+
+    .HeaderActionsWrapperIcon {
       stroke: var(--header-color);
+      transition: var(--transition-stroke);
+      width: var(--px40);
+      height: var(--px40);
+      cursor: pointer;
 
       &:hover {
         background-color: var(--header-icons-bg);
-        stroke: var(--inverted-header-color);
+        //stroke: var(--inverted-header-color);
       }
     }
 
     .TopNavigation {
       color: #000;
     }
+
+    .EnterBtn {
+      font-size: var(--px16);
+    }
   }
 }
 
-.HeaderInner {
-  color: #fff;
-  border-radius: var(--often-border-radius);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.LogoWrapper {
-  height: var(--px32);
-  width: min(calc(var(--index) * 8.5), 192px);
-  fill: #767676;
-}
-
-/* HeaderActionsWrapper */
-.HeaderActionsWrapper {
-  display: flex;
-  align-items: center;
-}
-
-.HeaderActionsWrapperIcon {
-  height: var(--px28);
-  width: var(--px28);
-  stroke: var(--header-color);
-  margin-right: var(--px22);
-  cursor: pointer;
-  padding: var(--px10);
-  transition: var(--transition-background-color);
-}
-
-.HeaderActionsWrapperIcon:last-child {
-  margin-right: 0;
-}

@@ -10,7 +10,7 @@
 
 	/* ---- skeleton ---- */
 	--skeleton-color: #fff;
-	--skeleton-shadow: rgba(0 0 0, 0.2);
+	--skeleton-shadow: rgba(0, 0, 0, 0.2);
 
 	/* ---- news-categories ---- */
 	--news-categories-color: #D8540A;
@@ -27,6 +27,7 @@
 	--transition-color: color 0.6s cubic-bezier(0.2, 0.6, 0, 1);
 	--transition-opacity: opacity 0.6s cubic-bezier(0.2, 0.6, 0, 1);
 	--transition-fill: fill 0.6s cubic-bezier(0.2, 0.6, 0, 1);
+	--transition-stroke: stroke 0.6s cubic-bezier(0.2, 0.6, 0, 1);
 
 	--index: calc(1vh + 1vw);
 	--px2: min(calc(var(--index) * 0.095), 3px);
@@ -79,6 +80,8 @@
 	--often-border-radius: var(--px18);
 
 	--ofter-right-side-width: 78%;
+
+	--header-paddign: var(--px40);
 }
 
 /* -------- Adaptation ------ */

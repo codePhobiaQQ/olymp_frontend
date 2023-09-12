@@ -3,120 +3,55 @@
 	color: #fff;
 	cursor: pointer;
 	transition: var(--transition-all);
-	height: 100%;
 	width: 100%;
-}
-
-.ButtonWithArrow {}
-
-.outline_transparent {
-	background-color: transparent;
-	padding: var(--px6) var(--px30);
-	font-family: 'mm', sans-serif;
-	font-size: var(--px20);
-	border-radius: 200px;
-}
-
-/* ColorTheme */
-
-.dark {
-	color: #000;
-	border-color: #000;
-}
-.dark:hover {
-	color: #fff;
-	background-color: #000;
-}
-
-.light {
-	color: #fff;
-	border-color: #fff;
-}
-.light:hover {
-	color: #000;
-	border-color: #000;
-}
-
-/* -------------------- */
-/* ------ Theme ------- */
-/* -------------------- */
-
-.outline_transparent_arrow, .default {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	font-family: 'mr', sans-serif;
-	font-size: var(--px15);
-	padding: var(--px5) var(--px30);
-	border-radius: var(--px8);
-	border: 1px solid #000;
 	cursor: pointer;
-	transition: var(--transition-all);
-	svg {
-		width: var(--px15);
-		height: var(--px15);
-		margin-left: var(--px15);
-		transition: var(--transition-fill);
+	border-radius: var(--px15);
+
+	// Variant
+	&.outline_transparent {
+		background-color: transparent;
+		border: 1px solid;
+		padding: var(--px4) var(--px20);
+		font-family: 'mm', sans-serif;
+		font-size: var(--px20);
+		border-radius: 200px;
 	}
 
-	&:hover {
-		background: #000;
-		color: #fff;
+	&.outline_transparent_arrow,
+	&.default {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-family: 'mr', sans-serif;
+		font-size: var(--px15);
+		padding: var(--px5) var(--px30);
+		border-radius: var(--px8);
+		border: 1px solid #000;
+		cursor: pointer;
+		transition: var(--transition-all);
 		svg {
-			fill: #fff;
+			width: var(--px15);
+			height: var(--px15);
+			margin-left: var(--px15);
+			transition: var(--transition-fill);
+		}
+
+		&:hover {
+			background: #000;
+			color: #fff;
+			svg {
+				fill: #fff;
+			}
 		}
 	}
-}
 
-/* -------------------- */
-/* -------------------- */
-/* -------------------- */
-
-/* Border Radius */
-
-.s {
-	border-radius: var(--px15);
-}
-
-.m {
-}
-
-.l {
-}
-
-.xl {
-}
-
-.xxl {
-}
-/* // ---------- */
-
-.BtnClassname {
-	margin-top: var(--px30);
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-
-.BtnArrowSvg {
-	width: var(--px16);
-	height: var(--px16);
-	margin-left: var(--px10);
-}
-.BtnClassname:hover .BtnArrowSvg {
-	transition: var(--transition-fill);
-	fill: #fff;
-}
-.BtnArrowSvg {
-	fill: #000;
-}
-
-/* Subscribe theme */
-.subscribe_theme {
-	padding: var(--px10) var(--px50);
-	border-radius: var(--px15);
-	background-color: #3b66bb;
-	color: #fff;
-	font-size: var(--px20);
-	border: none;
+	// Color Theme
+	.dark {
+		color: var(--main-text-color);
+		border-color: var(--main-text-color);
+	}
+	.light {
+		color: var(--main-bg);
+		border-color: var(--main-bg);
+	}
 }

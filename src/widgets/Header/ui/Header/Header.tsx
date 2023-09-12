@@ -2,8 +2,11 @@ import cls from './Header.module.scss'
 import cn from 'classnames'
 import TopNavigation from './../TopNavigation/TopNavigation'
 import { ReactComponent as MagnifierSvg } from '@shared/assets/svg/header/magnifier.svg'
-import { ReactComponent as VOlymlLogo } from '@shared/assets/images/svg/v-olymp.svg'
+import { ReactComponent as Logo } from '@shared/assets/svg/header/logo.svg'
+import { ReactComponent as Calendar } from '@shared/assets/svg/header/calendar.svg'
 import AppLink, { AppLinkTheme } from '@shared/ui/AppLink/AppLink'
+import { HStack } from '@shared/ui/Stack'
+import Button from '@shared/ui/Button/Button.tsx'
 
 export enum HeaderTheme {
   LIGHT = 'light',
@@ -17,20 +20,22 @@ interface HeaderI {
 
 const Header = ({ className = '', theme = HeaderTheme.DARK }: HeaderI) => {
   return (
-    <div className={cn(className, cls.Header, cls[theme])}>
-      <div className={cn(cls.HeaderInner)}>
-        <AppLink theme={AppLinkTheme.DEFAULT_LINK} to={'/'}>
-          <VOlymlLogo className={cn(cls.LogoWrapper)} />
-        </AppLink>
+    <HStack max align="center" justify="between" className={cn(className, cls.Header, cls[theme])}>
+      <AppLink theme={AppLinkTheme.DEFAULT_LINK} to={'/'}>
+        <Logo className={cn(cls.LogoWrapper)} />
+      </AppLink>
 
-        <TopNavigation className={cls.TopNavigation} />
+      <TopNavigation className={cls.TopNavigation} />
 
-        <div className={cn(cls.HeaderActionsWrapper)}>
-          <MagnifierSvg className={cls.HeaderActionsWrapperIcon} />
-          {/*<OlympCalendar className={cn(cls.HeaderActionsWrapperCalendarIcon, 'm_r_20')} />*/}
-        </div>
-      </div>
-    </div>
+      <HStack align="center" gap="24">
+        <MagnifierSvg className={cls.HeaderActionsWrapperIcon} />
+        <Calendar className={cls.HeaderActionsWrapperIcon} />
+        <Button className={cn(cls.EnterBtn)} colorTheme="light" variant="outline_transparent">
+          ВХОД
+        </Button>
+        {/*<OlympCalendar className={cn(cls.HeaderActionsWrapperCalendarIcon, 'm_r_20')} />*/}
+      </HStack>
+    </HStack>
   )
 }
 
