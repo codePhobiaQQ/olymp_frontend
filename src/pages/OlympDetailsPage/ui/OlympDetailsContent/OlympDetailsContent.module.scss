@@ -1,3 +1,19 @@
 .OlympDetailsContent {
   display: flex;
+
+  .OffInfo {
+    .OffInfoItem {
+      height: 2px;
+      width: 100%;
+      background-color: #000;
+
+      .OffInfoItemTitle {
+        color: #757575;
+        text-transform: uppercase;
+        font-family: 'msb', sans-serif;
+        font-size: var(--px20);
+        line-height: 120%;
+      }
+    }
+  }
 }

@@ -1,25 +1,23 @@
-import { createAsyncThunk } from '@reduxjs/toolkit';
-import { ThunkConfig } from '@app/providers/storeProvider';
-import { NewsCategory } from '@entities/News';
+import { createAsyncThunk } from '@reduxjs/toolkit'
+import { ThunkConfig } from '@app/providers/storeProvider'
+import { NewsCategory } from '@entities/News'
 
-export const fetchNewsCategories = createAsyncThunk<
-  NewsCategory[],
-  undefined,
-  ThunkConfig<string>
-  >('newsPage/fetchNewsCategories', async (props, thunkApi) => {
+export const fetchNewsCategories = createAsyncThunk<NewsCategory[], undefined, ThunkConfig<string>>(
+  'newsPage/fetchNewsCategories',
+  async (_, thunkApi) => {
+    const { extra, rejectWithValue } = thunkApi
 
-  const { extra, rejectWithValue, getState } = thunkApi;
+    try {
+      const response = await extra.api.get<NewsCategory[]>('/custom/v2/news/categories')
+      if (!response.data) {
+        throw new Error()
+      }
 
-  try {
-    const response = await extra.api.get<NewsCategory[]>('/custom/v2/news/categories');
-    if (!response.data) {
-      throw new Error();
+      console.log(response)
+
+      return response.data
+    } catch (e) {
+      return rejectWithValue('error')
     }
-
-    console.log(response)
-
-    return response.data;
-  } catch (e) {
-    return rejectWithValue('error');
   }
-});
+)

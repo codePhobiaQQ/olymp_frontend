@@ -85,14 +85,13 @@ const newsPageSlice = createSlice({
         }
       })
       .addCase(fetchNewsList.fulfilled, (state: NewsPageSchema, action) => {
-        state.isLoading = false
         state.hasMore = action.payload.length >= state.limit
-
         if (action.meta.arg.replace) {
           newsAdapter.setAll(state, action.payload)
         } else {
           newsAdapter.addMany(state, action.payload)
         }
+        state.isLoading = false
       })
       .addCase(fetchNewsList.rejected, (state: NewsPageSchema, action) => {
         state.isLoading = false

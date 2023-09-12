@@ -1,9 +1,19 @@
 .OlympDetailPage {
     padding: var(--px100) 0;
 
-    .OlympDetailPageContent {
+    .OlympDetailPageContentWrapper {
         margin-top: var(--px100);
         display: flex;
         padding: 0 var(--sections-padding);
+        gap: 5%;
+
+        .OlympDetailPageMenu {
+            width: 30%;
+            min-width: 250px;
+        }
+
+        .OlympDetailPageContent {
+            flex-grow: 1;
+        }
     }
 }

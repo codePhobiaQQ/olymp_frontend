@@ -7,7 +7,7 @@ import { DynamicModuleLoader, ReducersList } from '@shared/lib/components/Dynami
 import { OlympDetailsPageReducer } from './../../model/slice/olympDetailsPageSlice.ts'
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { fetchOlympsDetails } from '@pages/OlympDetailsPage/model/services/fetchOlympDetails.ts'
+import { fetchOlympsDetails } from './../../model/services/fetchOlympDetails.ts'
 import { getIsLoading, getError } from './../../model/selectors/olympDetailsSelectors.ts'
 
 const reducers: ReducersList = {
@@ -34,9 +34,9 @@ const OlympDetailPage = () => {
     content = (
       <>
         <TitleScreen />
-        <div className={cn(cls.OlympDetailPageContent)}>
-          <OlympDetailsMenu />
-          <OlympDetailsContent />
+        <div className={cn(cls.OlympDetailPageContentWrapper)}>
+          <OlympDetailsMenu className={cn(cls.OlympDetailPageMenu)} />
+          <OlympDetailsContent className={cn(cls.OlympDetailPageContent)} />
         </div>
       </>
     )

@@ -1,0 +1,27 @@
+.OffInfo {
+  .OffInfoItem {
+    display: flex;
+    border-bottom: 2px solid #000;
+    padding-bottom: var(--px20);
+    margin-bottom: var(--px20);
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    .OffInfoItemTitle {
+      color: #757575;
+      font-family: 'mm', sans-serif;
+      width: 50%;
+      font-size: var(--px18);
+      line-height: 120%;
+      text-transform: uppercase;
+    }
+    .OffInfoItemContent {
+      color: #000;
+      font-family: 'mm', sans-serif;
+      width: 50%;
+      font-size: var(--px18);
+      line-height: 120%;
+    }
+  }
+}

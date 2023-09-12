@@ -5,9 +5,9 @@
 
 .TopNavigation li {
 	margin-right: var(--px50);
-	font-size: var(--px18);
+	font-size: var(--px14);
 	position: relative;
-	font-family: 'mm', sans-serif;
+	font-family: 'mr', sans-serif;
 }
 .TopNavigation li:last-child {
 	margin-right: 0;
@@ -15,9 +15,9 @@
 .TopNavigation li:before {
 	content: '';
 	display: block;
-	transform: scaleX(0) translateY(calc(-1 * var(--px5)));
+	transform: scaleX(0) translateY(-4px);
 	transition: var(--transition-transform);
-	height: 2px;
+	height: 1px;
 	background-color: #d9d9d9;
 }
 .TopNavigation li a {

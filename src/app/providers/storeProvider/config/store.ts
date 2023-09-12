@@ -23,7 +23,7 @@ export function createReduxStore(initialState?: StateSchema, asyncReducers?: Red
     preloadedState: initialState,
     middleware: (getDefaultMiddleware) =>
       getDefaultMiddleware({
-        serializableCheck: false,
+        // serializableCheck: false,
         thunk: {
           extraArgument: extraArg,
         },

@@ -3,6 +3,9 @@ import cls from './OlympDetailsContent.module.scss'
 import { useSelector } from 'react-redux'
 import { getActiveMenuItem } from './../../model/selectors/olympDetailsSelectors.ts'
 import { OlympDetailsMenuItems } from '@pages/OlympDetailsPage/model/types/olympsDetails.ts'
+import { OlympDetailsNewsContent } from '@pages/OlympDetailsPage/ui/tabs/OlympDetailsNewsContent/OlympDetailsNewsContent.tsx'
+import { OffInfo } from '@pages/OlympDetailsPage/ui/tabs/OffInfo/OffInfo.tsx'
+import { AboutOlymp } from '@pages/OlympDetailsPage/ui/tabs/AboutOlymp/AboutOlymp.tsx'
 
 type OlympDetailsContentProps = {
   className?: string
@@ -14,9 +17,9 @@ export const OlympDetailsContent = (props: OlympDetailsContentProps) => {
 
   let content
   if (activeMenuItem === OlympDetailsMenuItems.NEWS) {
-    content = 'NEWS'
+    content = <OlympDetailsNewsContent className={className} />
   } else if (activeMenuItem === OlympDetailsMenuItems.OF_INFO) {
-    content = 'OF_INFO'
+    content = <OffInfo className={className} />
   } else if (activeMenuItem === OlympDetailsMenuItems.TIME_PLACE) {
     content = 'TIME_PLACE'
   } else if (activeMenuItem === OlympDetailsMenuItems.ARCHIVE) {
@@ -30,7 +33,7 @@ export const OlympDetailsContent = (props: OlympDetailsContentProps) => {
   } else if (activeMenuItem === OlympDetailsMenuItems.PARTNERS) {
     content = 'PARTNERS'
   } else if (activeMenuItem === OlympDetailsMenuItems.ABOUT) {
-    content = 'ABOUT'
+    content = <AboutOlymp />
   }
 
   return <div className={cn(className, cls.OlympDetailsContent)}>{content}</div>

@@ -3,10 +3,6 @@ export interface OlympI {
   name: string
 }
 
-export enum OlympNames {
-  'NEWS' = 'Новости',
-}
-
 export interface OlympSchema {
   olymp_id: number
   olymp_preview_image?: string
@@ -23,9 +19,7 @@ export interface OlympSchema {
     olymp_dates_venues_final_stage?: string
   }
 
+  news?: number[]
+
   about_olymp?: string
 }
-
-// export enum OlympIdsList {
-//   '233' = OlympNames[''],
-// }

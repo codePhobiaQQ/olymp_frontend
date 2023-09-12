@@ -8,3 +8,6 @@ export const getIsLoading = (state: StateSchema) => state.olympDetailsPage?.isLo
 export const getError = (state: StateSchema) => state.olympDetailsPage?.error || ''
 export const getActiveMenuItem = (state: StateSchema) =>
   state.olympDetailsPage?.activeMenuItem || OlympDetailsMenuItems.NEWS
+export const getNewsCategories = (state: StateSchema) => state.olympDetailsPage?.data?.news || []
+
+export const getAboutOlymps = (state: StateSchema) => state.olympDetailsPage?.data?.about_olymp || ''

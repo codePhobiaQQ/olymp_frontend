@@ -1,63 +1,67 @@
 .Header {
-	width: 100%;
-	box-sizing: border-box;
-	padding: var(--px5) var(--sections-padding);
+  width: 100%;
+  height: var(--px48);
+  box-sizing: border-box;
 
-	background-color: var(--header-bg);
-	color: var(--header-color);
+  background-color: var(--header-bg);
+  color: var(--header-color);
 
-	z-index: 2;
-	position: fixed;
-	top: 0;
-	left: 0;
+  z-index: 2;
+  position: fixed;
+  top: 0;
+  left: 0;
 
-	&.light {
+  &.light {
 
-	}
-	&.dark {
-		.HeaderActionsWrapperIcon,
-		.HeaderActionsWrapperCalendarIcon {
-			stroke: var(--header-color);
-			&:hover {
-				background-color: var(--header-icons-bg);
-				stroke: var(--inverted-header-color);
-			}
-		}
-		.TopNavigation {
-			color: #000;
-		}
-	}
+  }
+
+  &.dark {
+    .HeaderActionsWrapperIcon,
+    .HeaderActionsWrapperCalendarIcon {
+      stroke: var(--header-color);
+
+      &:hover {
+        background-color: var(--header-icons-bg);
+        stroke: var(--inverted-header-color);
+      }
+    }
+
+    .TopNavigation {
+      color: #000;
+    }
+  }
 }
 
 .HeaderInner {
-	color: #fff;
-	border-radius: var(--often-border-radius);
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
+  color: #fff;
+  border-radius: var(--often-border-radius);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-
 .LogoWrapper {
-	height: var(--px32);
-	width: min(calc(var(--index) * 8.5), 192px);
-	fill: #767676;
+  height: var(--px32);
+  width: min(calc(var(--index) * 8.5), 192px);
+  fill: #767676;
 }
 
 /* HeaderActionsWrapper */
 .HeaderActionsWrapper {
-	display: flex;
-	align-items: center;
+  display: flex;
+  align-items: center;
 }
+
 .HeaderActionsWrapperIcon {
-	height: var(--px28);
-	width: var(--px28);
-	stroke: var(--header-color);
-	margin-right: var(--px22);
-	cursor: pointer;
-	padding: var(--px10);
-	transition: var(--transition-background-color);
+  height: var(--px28);
+  width: var(--px28);
+  stroke: var(--header-color);
+  margin-right: var(--px22);
+  cursor: pointer;
+  padding: var(--px10);
+  transition: var(--transition-background-color);
 }
+
 .HeaderActionsWrapperIcon:last-child {
-	margin-right: 0;
+  margin-right: 0;
 }
