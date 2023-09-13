@@ -1,6 +1,6 @@
 /* Слайдер */
 .slick-slider {
-  width: 100%;
+  //width: 100%;
 }
 /* Слайдер запущен */
 .slick-slider.slick-initialized{}
@@ -10,7 +10,8 @@
 .slick-list {}
 /* Лента слайдов */
 .slick-track{
-  width: 100%;
+  //width: 100%;
+  display: flex;
 }
 /* Слайд */
 .slick-slide{}
@@ -36,4 +37,6 @@
 /* Активная точка */
 .slick-dots li.slick-active{}
 /* Элемент точки */
-.slick-dots li button{}
+.slick-dots li button{
+  background-color: inherit;
+}

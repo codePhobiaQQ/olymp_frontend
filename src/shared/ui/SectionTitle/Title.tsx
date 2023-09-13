@@ -16,6 +16,5 @@ const variantsClassMapper: Record<variantType, string> = {
 
 export const Title = (props: TitleProps) => {
   const { className = '', variant = 'h2', children } = props
-
   return <div className={cn(className, cls.Title, variantsClassMapper[variant])}>{children}</div>
 }

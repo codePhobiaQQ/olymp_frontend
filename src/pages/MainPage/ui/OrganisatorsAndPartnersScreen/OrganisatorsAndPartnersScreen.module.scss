@@ -1,45 +1,69 @@
 .OrganisatorsAndPartnersScreen {
-	padding: var(--px100) 0;
-	height: 100%;
-	overflow-y: hidden;
-	background-color: #F9F9F9;
+  padding: var(--px100) 0;
+  height: 100%;
+  overflow-y: hidden;
+  background-color: #F9F9F9;
 
-	.container {
-		padding: 0 var(--sections-big-padding);
-		display: flex;
-		justify-content: space-between;
-		overflow: hidden;
+  .Arrow {
+    width: var(--px40);
+    height: var(--px40);
+    border-radius: 50%;
+    border: 1px solid #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
 
-		.TopSideInfo {
-			display: flex;
+    svg {
+      &.prev {
+        transform: scale(-1);
+      }
 
-			.TopSideInfoLeft {
+      path {
+        stroke: #000;
+      }
+    }
+  }
 
-			}
-			.TopSideInfoRight {
-				width: 40%;
+  .container {
+    padding: 0 var(--sections-big-padding);
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
 
-				.AddressLink {
-					display: block;
-					margin-top: var(--px38);
-				}
-				.TelLink {
-					margin-top: var(--px8);
-				}
-				.MailLink {
-					color: #133094;
-					font-family: 'mm', sans-serif;
-					margin-top: var(--px8);
-				}
-			}
-		}
+    .TopSideInfo {
+      display: flex;
 
-		.OrganisatorsList {
+      .TopSideInfoLeft {
 
-		}
+      }
 
-		.BtnMore {
-			margin: var(--px50) auto 0 auto;
-		}
-	}
+      .TopSideInfoRight {
+        width: 40%;
+
+        .AddressLink {
+          display: block;
+          margin-top: var(--px38);
+        }
+
+        .TelLink {
+          margin-top: var(--px8);
+        }
+
+        .MailLink {
+          color: #133094;
+          font-family: 'mm', sans-serif;
+          margin-top: var(--px8);
+        }
+      }
+    }
+
+    .OrganisatorsList {
+      width: 100%;
+    }
+
+    .BtnMore {
+      margin: var(--px50) auto 0 auto;
+    }
+  }
 }

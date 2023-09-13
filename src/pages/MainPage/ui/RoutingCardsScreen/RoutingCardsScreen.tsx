@@ -19,6 +19,7 @@ const RoutingCardsScreen = ({ className = '' }: RoutingCardsScreenI) => {
       <CardsLayout>
         {cardsData.map(cardData => (
           <CardRouting
+            key={cardData.path}
             data={{
             title: cardData.title,
             description: cardData.description,

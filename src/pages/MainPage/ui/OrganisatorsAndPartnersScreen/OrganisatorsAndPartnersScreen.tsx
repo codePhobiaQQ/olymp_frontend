@@ -1,57 +1,49 @@
 import cls from './OrganisatorsAndPartnersScreen.module.scss'
 import cn from 'classnames'
-import Text from '@shared/ui/Text/Text.tsx'
-import AppLink, { AppLinkTheme } from '@shared/ui/AppLink/AppLink.tsx'
 import Button from '@shared/ui/Button/Button.tsx'
-import { SliderOrganisators } from '@pages/MainPage/ui/OrganisatorsAndPartnersScreen/SliderOrganisators.tsx'
+import {SliderOrganisators} from '@pages/MainPage/ui/OrganisatorsAndPartnersScreen/SliderOrganisators.tsx'
 import {Title} from "@shared/ui/SectionTitle/Title.tsx";
+import {useCallback, useEffect, useMemo, useRef, useState} from "react";
+import {ReactComponent as Arrow} from '@shared/assets/svg/decor/arrow.svg'
+import Slider from "react-slick";
+import {HStack} from "@shared/ui/Stack";
 
 interface OrganisatorsAndPartnersI {
   className?: string
 }
 
-const OrganisatorsAndPartnersScreen = ({ className = '' }: OrganisatorsAndPartnersI) => {
+const organisators = [{id: 1}, {id: 2}, {id: 3}, {id: 4}, {id: 5}, {id: 6}, {id: 7}, {id: 8}, {id: 9}, {id: 10}, {id: 11}]
+
+const OrganisatorsAndPartnersScreen = ({className = ''}: OrganisatorsAndPartnersI) => {
+  const sliderRef = useRef<Slider>(null)
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const beforeChangeHandler = (_: number, nextSlide: number) => {
+    setCurrentIndex(nextSlide)
+  }
+
+  const clickNextHandler = useCallback(() => {
+    sliderRef.current?.slickNext()
+  }, [])
+  const clickPrevHandler = useCallback(() => {
+    sliderRef.current?.slickPrev()
+  }, [])
+
   return (
     <section className={cn(className, cls.OrganisatorsAndPartnersScreen)}>
-      <div className={cn(cls.container)}>
-        <div className={cn(cls.TopSideInfo)}>
-          <div className={cn(cls.TopSideInfoLeft)}>
-            <Title variant='h2'>организаторы и партнеры</Title>
-          </div>
-          <div className={cn(cls.TopSideInfoRight)}>
-            <Text
-              className={cls.Text}
-              text={
-                'Межрегиональная олимпиада школьников имени И.Я. Верченко по математике и криптографии проводится в Институте криптографии, связи \n' +
-                'и информатики Академии ФСБ России'
-              }
-            />
+      <div className={cls.container}>
+        <Title variant='h2'>организаторы и партнеры</Title>
 
-            <AppLink
-              className={cn(cls.AddressLink)}
-              theme={AppLinkTheme.DEFAULT_LINK}
-              to={''}
-              text={'119602, г Москва, Мичуринский проспект, д.70'}
-            />
-            <AppLink
-              className={cn(cls.TelLink)}
-              theme={AppLinkTheme.DEFAULT_LINK}
-              to={'tel:84959893131'}
-              text={'8(495) 989-31-31'}
-            />
-            <AppLink
-              className={cn(cls.MailLink)}
-              theme={AppLinkTheme.DEFAULT_LINK}
-              to={'mailto:academy.fsb.ru'}
-              text={'academy.fsb.ru'}
-            />
-          </div>
-        </div>
+        <HStack gap='32'>
+          <div onClick={clickPrevHandler} className={cn(cls.Arrow)}><Arrow className={cls.prev}/></div>
+          <div className={cn(cls.Page)}>{currentIndex + 1} из {organisators.length}</div>
+          <div onClick={clickNextHandler} className={cn(cls.Arrow)}><Arrow/></div>
+        </HStack>
       </div>
 
       <div className={cls.container}>
         <div className={cn(cls.OrganisatorsList)}>
-          <SliderOrganisators />
+          <SliderOrganisators beforeChangeHandler={beforeChangeHandler} ref={sliderRef}/>
         </div>
       </div>
 
