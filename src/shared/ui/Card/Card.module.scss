@@ -41,17 +41,19 @@
 		&.MainScreenCard {
 			.CardTitle {
 				font-size: var(--px16) !important;
-				font-family: 'msb', sans-serif;
+				font-family: 'mr', sans-serif;
 				line-height: 140%;
+				text-transform: capitalize;
 			}
 		}
 		.CardList {
 			margin-top: var(--sections-padding);
 			li {
-				margin-bottom: var(--px10);
+				margin-bottom: var(--px12);
 				a {
-					font-size: var(--px14);
-					font-family: 'mm', sans-serif;
+					font-size: var(--px18);
+					line-height: 120%;
+					font-family: 'msb', sans-serif !important;
 					text-transform: uppercase;
 				}
 				&:last-child {
@@ -59,6 +61,8 @@
 				}
 			}
 		}
+
+
 		.DescriptionWrapper {
 			display: flex;
 			justify-content: space-between;

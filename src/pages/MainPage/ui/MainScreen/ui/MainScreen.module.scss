@@ -41,7 +41,7 @@
 
 .LogoTitle {
 	/* height: var(--px80); */
-	width: 70%;
+	width: 85%;
 	fill: #fff;
 	display: block;
 	margin: auto;
@@ -49,12 +49,12 @@
 
 .Title {
 	display: block;
-	max-width: 85%;
-	font-size: var(--px32);
+	max-width: 55%;
+	font-size: var(--px24);
 	text-transform: none;
-	font-family: 'mth', sans-serif;
+	font-family: 'mr', sans-serif !important;
+	line-height: 140%;
 	text-align: center;
-	/*margin: auto;*/
 }
 
 .CardsWrapper {

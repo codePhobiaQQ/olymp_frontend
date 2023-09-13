@@ -1,0 +1,25 @@
+.AppLink {
+  display: block;
+  font-family: 'mr', sans-serif;
+
+  &.link_with_arrow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &.dark {
+      color: var(--main-text-color);
+      svg {
+        color: var(--main-text-color);
+      }
+    }
+    &.light {
+      color: var(--main-bg);
+      svg {
+        fill: var(--main-bg);
+      }
+    }
+  }
+}
+
+

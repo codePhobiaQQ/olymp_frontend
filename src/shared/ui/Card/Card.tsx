@@ -32,7 +32,7 @@ const MainScreenCard = (props: CardI) => {
         {/* @ts-ignore */}
         {data?.links?.map((link, index) => (
           <li key={index + 'link' + link.path}>
-            <AppLink text={link.text} to={link.path} theme={AppLinkTheme.LINK_WITH_ARROW} />
+            <AppLink color='light' text={link.text} to={link.path} theme={AppLinkTheme.LINK_WITH_ARROW} />
           </li>
         ))}
       </ul>

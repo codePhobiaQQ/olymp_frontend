@@ -25,13 +25,10 @@ export const useGetMainScreenData = (): useGetMainScreenDataReturn => {
         {
           path: card1Olymp1Link,
           text: card1Olymp1Name,
-        },
-      ],
-    },
-    {
-      title: card1Title,
-      links: [
-        {
+        },{
+          path: card1Olymp1Link,
+          text: card1Olymp1Name,
+        },{
           path: card1Olymp1Link,
           text: card1Olymp1Name,
         },
@@ -41,6 +38,27 @@ export const useGetMainScreenData = (): useGetMainScreenDataReturn => {
       title: card1Title,
       links: [
         {
+          path: card1Olymp1Link,
+          text: card1Olymp1Name,
+        },{
+          path: card1Olymp1Link,
+          text: card1Olymp1Name,
+        },{
+          path: card1Olymp1Link,
+          text: card1Olymp1Name,
+        },
+      ],
+    },
+    {
+      title: card1Title,
+      links: [
+        {
+          path: card1Olymp1Link,
+          text: card1Olymp1Name,
+        },{
+          path: card1Olymp1Link,
+          text: card1Olymp1Name,
+        }, {
           path: card1Olymp1Link,
           text: card1Olymp1Name,
         },
