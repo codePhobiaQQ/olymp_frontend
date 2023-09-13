@@ -15,8 +15,9 @@ import { StagesScreen } from './../StagesScreen/StagesScreen'
 import { TableScreen } from './../TableScreen/TableScreen'
 import RoutingCardsScreen from './../RoutingCardsScreen/RoutingCardsScreen'
 import OrganisatorsAndPartnersScreen from './../OrganisatorsAndPartnersScreen/OrganisatorsAndPartnersScreen.tsx'
-import PhraseScreen from '@pages/MainPage/ui/PhraseScreen/PhraseScreen.tsx'
-import SubscribeScreen from '@pages/MainPage/ui/SubscribeScreen/ui/SubscribeScreen/SubscribeScreen.tsx'
+import PhraseScreen from './../../ui/PhraseScreen/PhraseScreen.tsx'
+import SubscribeScreen from './../../ui/SubscribeScreen/ui/SubscribeScreen/SubscribeScreen.tsx'
+import { BenefitsScreen } from './../../ui/BenifitsScreen/BenefitsScreen.tsx'
 
 const reducers: ReducersList = {
   mainPage: MainPageReducer,
@@ -44,6 +45,7 @@ const MainPage = () => {
       <MainScreen />
       <AboutScreen />
       <PresentationScreen />
+      <BenefitsScreen />
       <BannerScreen />
       <StagesScreen />
       <TableScreen />

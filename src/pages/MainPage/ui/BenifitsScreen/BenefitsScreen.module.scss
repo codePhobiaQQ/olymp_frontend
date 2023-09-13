@@ -1,0 +1,20 @@
+.BenefitsScreen {
+  padding: var(--px80) var(--sections-big-padding) var(--px60);
+  position: relative;
+
+  .LeftSide {
+    flex: 1 0 0;
+    .Content {
+      font-size: var(--px24);
+    }
+  }
+
+  .RightSide {
+    width: var(--content-width);
+    .BenefitsImage {
+      width: 100%;
+      border-radius: var(--px8);
+      overflow: hidden;
+    }
+  }
+}

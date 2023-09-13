@@ -6,7 +6,7 @@ export type FlexJustify = 'start' | 'center' | 'end' | 'between'
 export type FlexAlign = 'start' | 'center' | 'end'
 export type FlexDirection = 'row' | 'column'
 export type FlexWrap = 'nowrap' | 'wrap'
-export type FlexGap = '4' | '8' | '16' | '24' | '32' | '48'
+export type FlexGap = '4' | '8' | '16' | '24' | '32' | '40' | '48' | '64'
 
 const justifyClasses: Record<FlexJustify, string> = {
   start: cls.justifyStart,
@@ -32,7 +32,9 @@ const gapClasses: Record<FlexGap, string> = {
   16: cls.gap16,
   24: cls.gap24,
   32: cls.gap32,
+  40: cls.gap40,
   48: cls.gap48,
+  64: cls.gap64
 }
 
 type DivProps = DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>
