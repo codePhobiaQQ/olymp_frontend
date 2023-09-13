@@ -1,11 +1,12 @@
 import cn from 'classnames'
 import cls from './AboutScreen.module.scss'
-import AppImage from '@shared/ui/AppImage/AppImage'
-import waveImage from '@shared/assets/svg/decor/wave.svg'
-import Title, { TitleTheme } from '@shared/ui/Title/Title'
+import WaveImage from '@shared/assets/images/decore/wave.png'
 import { useSelector } from 'react-redux'
 import { getAboutScreenDescription, getAboutScreenTitle } from '@pages/MainPage/model/selectors/mainPageSelectors'
 import { WpTextFormatter } from '@shared/ui/WpTextFormatter/WpTextFormatter'
+import AppImage from '@shared/ui/AppImage/AppImage.tsx'
+import { HStack, VStack } from '@shared/ui/Stack'
+import { Title } from '@shared/ui/SectionTitle/Title.tsx'
 
 type AboutScreenProps = {
   className?: string
@@ -14,17 +15,22 @@ type AboutScreenProps = {
 export const AboutScreen = (props: AboutScreenProps) => {
   const { className } = props
   const title = useSelector(getAboutScreenTitle)
-  console.log(title)
   const description = useSelector(getAboutScreenDescription)
 
   return (
     <section id="AboutScreen" className={cn(className, cls.AboutScreen)}>
-      <div className={cn(cls.LeftSide)}>
-        <Title theme={TitleTheme.H2} text={title} />
-        <WpTextFormatter content={description} />
-      </div>
+      <VStack gap="48">
+        <HStack max justify="center">
+          <Title variant="h2">{title}</Title>
+        </HStack>
 
-      <AppImage className={cls.WaveWrapper} src={waveImage} />
+        <HStack gap="32" max justify="between">
+          <WpTextFormatter className={cn(cls.AboutDescription)} content={description} />
+          <WpTextFormatter className={cn(cls.AboutDescription)} content={description} />
+        </HStack>
+      </VStack>
+
+      <AppImage className={cn(cls.Wave)} src={WaveImage} />
     </section>
   )
 }

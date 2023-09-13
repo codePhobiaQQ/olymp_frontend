@@ -13,15 +13,16 @@
 	box-sizing: border-box;
 	flex-grow: 1;
 	height: 100vh;
+	overflow: hidden;
 }
 
 .bg {
 	width: 100%;
-	height: 100%;
+	height: 120%;
 	border-radius: var(--often-border-radius);
 	overflow: hidden;
 	position: absolute;
-	top: 0;
+	top: -10%;
 	left: 0;
 	z-index: 0;
 }
