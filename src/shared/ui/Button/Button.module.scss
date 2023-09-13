@@ -3,7 +3,6 @@
 	color: #fff;
 	cursor: pointer;
 	transition: var(--transition-all);
-	width: 100%;
 	cursor: pointer;
 	border-radius: var(--px15);
 
@@ -46,11 +45,11 @@
 	}
 
 	// Color Theme
-	.dark {
+	&.dark {
 		color: var(--main-text-color);
 		border-color: var(--main-text-color);
 	}
-	.light {
+	&.light {
 		color: var(--main-bg);
 		border-color: var(--main-bg);
 	}

@@ -10,6 +10,7 @@
     font-size: min(calc(var(--index) * 10), 200px);
     font-family: 'msb', sans-serif;
   }
+
   .RightSide {
     width: var(--content-width);
     .RightSideInner {
@@ -17,8 +18,12 @@
       font-family: 'mr', sans-serif;
       line-height: 140%;
 
-      button {
-        margin-top: var(--px20);
+      .Content {
+        font-size: var(--px24);
+      }
+
+      .PresentationBtn {
+        width: min(calc(var(--index) * 12.5), 250px)
       }
     }
   }

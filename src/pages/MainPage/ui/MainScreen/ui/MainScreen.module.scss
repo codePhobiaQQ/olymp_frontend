@@ -6,10 +6,8 @@
 
 .MainScreen {
 	position: relative;
-	/* width: calc(100% - var(--sections-padding) * 2); */
 	padding: 0 calc(var(--sections-inner-paddings) + var(--px15));
 	margin: 0 auto 0 auto;
-	/* height: 80vh; */
 	box-sizing: border-box;
 	flex-grow: 1;
 	height: 100vh;
