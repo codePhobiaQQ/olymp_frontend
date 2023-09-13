@@ -5,7 +5,7 @@ import MainScreenCard, { CardSizeTheme } from '@shared/ui/Card/Card'
 import { ReactComponent as LogoSvg } from '@shared/assets/images/svg/olymp-main.svg'
 import { GradientBg } from '@shared/ui/GradientBg'
 import { useGetMainScreenData } from '@pages/MainPage/ui/MainScreen/lib/hooks/useGetMainScreenData'
-import {VStack} from "@shared/ui/Stack";
+import {HStack, VStack} from "@shared/ui/Stack";
 
 interface MainScreenI {
   className?: string
@@ -32,7 +32,7 @@ const MainScreen = ({ className = '' }: MainScreenI) => {
             />
         </VStack>
 
-        <div className={cn(cls.CardsWrapper)}>
+        <HStack max justify='between'>
           {cardsData.map((card, index) => (
             <MainScreenCard
               data={card}
@@ -41,7 +41,7 @@ const MainScreen = ({ className = '' }: MainScreenI) => {
               sizeTheme={CardSizeTheme.M}
             />
           ))}
-        </div>
+        </HStack>
       </VStack>
     </section>
   )

@@ -3,7 +3,7 @@ import cls from './PresentationScreen.module.scss'
 import { useSelector } from 'react-redux'
 import {
   getPresentationButtonText1,
-  getPresentationButtonText2,
+  // getPresentationButtonText2,
   getPresentationScreenNumb1,
   getPresentationScreenNumb2,
   getPresentationText1,
@@ -24,7 +24,7 @@ export const PresentationScreen = (props: PresentationScreenProps) => {
   const text1 = useSelector(getPresentationText1)
   const text2 = useSelector(getPresentationText2)
   const buttonText1 = useSelector(getPresentationButtonText1)
-  const buttonText2 = useSelector(getPresentationButtonText2)
+  // const buttonText2 = useSelector(getPresentationButtonText2)
 
   return (
     <section className={cn(className, cls.PresentationScreen)}>
@@ -52,7 +52,7 @@ export const PresentationScreen = (props: PresentationScreenProps) => {
           <VStack gap="16" className={cn(cls.RightSideInner)}>
             <WpTextFormatter className={cn(cls.Content)} content={text2} />
             <Button className={cn(cls.PresentationBtn)} variant="outline_transparent_arrow">
-              {buttonText2}
+              {buttonText1}
             </Button>
           </VStack>
         </VStack>

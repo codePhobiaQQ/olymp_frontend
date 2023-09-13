@@ -11,9 +11,8 @@
 	}
 
 	&.CardRouting {
-		width: calc(50% - var(--sections-padding) / 2);
-		height: 100%;
-		max-height: 450px;
+		width: 100%;
+		height: min(calc(var(--index) * 15), 300px);
 		cursor: pointer;
 
 		.CardRoutingContentWrapper {
@@ -26,18 +25,46 @@
 			.CardRoutingContentWrapperInner {
 			}
 		}
-	}
 
-	&.S {
-	}
-
-	&.M {
-		&.CardRoutingContentWrapper .CardTitle {
-			font-size: var(--px26) !important;
+		.CardTitle {
+			font-size: var(--px24);
+			width: 70%;
 			font-family: 'msb', sans-serif;
 			line-height: 140%;
+			text-transform: uppercase;
 		}
 
+		.DescriptionWrapper {
+			display: flex;
+			justify-content: space-between;
+			margin-top: var(--px10);
+
+			.Description {
+				width: 75%;
+				font-family: 'mr', sans-serif;
+				font-size: var(--px16);
+			}
+			.ArrowWrapper {
+				width: var(--px50);
+				height: var(--px50);
+				border-radius: 50%;
+				background-color: #fff;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				align-self: flex-end;
+
+				.Arrow {
+					width: var(--px25);
+					height: var(--px25);
+				}
+			}
+		}
+	}
+
+
+
+	&.M {
 		&.MainScreenCard {
 			.CardTitle {
 				font-size: var(--px16) !important;
@@ -61,35 +88,6 @@
 				}
 			}
 		}
-
-
-		.DescriptionWrapper {
-			display: flex;
-			justify-content: space-between;
-			margin-top: var(--px10);
-
-			.Description {
-				width: 75%;
-				font-size: var(--px16);
-			}
-			.ArrowWrapper {
-				width: var(--px50);
-				height: var(--px50);
-				border-radius: 50%;
-				background-color: #fff;
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				align-self: flex-end;
-
-				.Arrow {
-					width: var(--px25);
-					height: var(--px25);
-				}
-			}
-		}
-	}
-	&.X {
 	}
 }
 

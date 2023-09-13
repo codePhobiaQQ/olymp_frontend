@@ -57,11 +57,6 @@
 	text-align: center;
 }
 
-.CardsWrapper {
-	display: flex;
-	justify-content: space-between;
-}
-
 .Card {
 	width: calc(33.3% - var(--px17) * 2 / 3);
 }

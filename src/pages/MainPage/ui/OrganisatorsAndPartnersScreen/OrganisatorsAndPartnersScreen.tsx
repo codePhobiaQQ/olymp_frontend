@@ -1,10 +1,10 @@
-import Title, { TitleTheme } from '@shared/ui/Title/Title'
 import cls from './OrganisatorsAndPartnersScreen.module.scss'
 import cn from 'classnames'
 import Text from '@shared/ui/Text/Text.tsx'
 import AppLink, { AppLinkTheme } from '@shared/ui/AppLink/AppLink.tsx'
 import Button from '@shared/ui/Button/Button.tsx'
 import { SliderOrganisators } from '@pages/MainPage/ui/OrganisatorsAndPartnersScreen/SliderOrganisators.tsx'
+import {Title} from "@shared/ui/SectionTitle/Title.tsx";
 
 interface OrganisatorsAndPartnersI {
   className?: string
@@ -16,7 +16,7 @@ const OrganisatorsAndPartnersScreen = ({ className = '' }: OrganisatorsAndPartne
       <div className={cn(cls.container)}>
         <div className={cn(cls.TopSideInfo)}>
           <div className={cn(cls.TopSideInfoLeft)}>
-            <Title theme={TitleTheme.H2} className={cn(cls.SectionTitle)} text="организаторы и партнеры" />
+            <Title variant='h2'>организаторы и партнеры</Title>
           </div>
           <div className={cn(cls.TopSideInfoRight)}>
             <Text

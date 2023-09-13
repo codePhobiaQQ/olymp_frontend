@@ -1,0 +1,22 @@
+.CardLayout {
+
+	&.Full {
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		width: 100%;
+		gap: var(--px16);
+		& > div {
+			width: calc(50% - var(--px8));
+		}
+	 }
+}
+
+.CardsWrapperInner {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	height: 100%;
+	width: 100%;
+}
