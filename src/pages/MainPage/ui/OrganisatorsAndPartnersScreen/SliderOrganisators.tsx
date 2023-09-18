@@ -23,7 +23,7 @@ const settings = {
 
 export const SliderOrganisators = forwardRef((props: SliderProps, ref?: Ref<Slider>) => {
   const { beforeChangeHandler, organisators } = props
-
+  console.log("organisators", organisators)
   return (
     <AppSlider beforeChangeHandler={beforeChangeHandler} ref={ref} className={cn(cls.SliderOrganisators)} settings={settings}>
       <>{organisators?.map((el) => <OrganisatorSlideItem key={el.id} />)}</>
@@ -36,10 +36,9 @@ type OrganisatorSlideItemProps = {
   name?: string
 }
 export const OrganisatorSlideItem = (props: OrganisatorSlideItemProps) => {
-  const { image = '', name = 'Академия ФСБ России ' } = props
-
-  return <VStack gap='24' className={cn(cls.OrganisatorSlideItem)}>
-    <AppImage className={cn(cls.OrganisatorImage)} src={OrganisatorImage} />
+    const { image = '', name = 'Академия ФСБ России ' } = props
+    return <VStack gap='24' className={cn(cls.OrganisatorSlideItem)}>
+    <AppImage className={cn(cls.OrganisatorImage)} src={image || OrganisatorImage} />
     <Text className={cn(cls.OrganisatorName)} text={name} />
   </VStack>
 }

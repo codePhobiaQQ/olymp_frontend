@@ -3,7 +3,7 @@ import cn from 'classnames'
 import Button from '@shared/ui/Button/Button.tsx'
 import {SliderOrganisators} from '@pages/MainPage/ui/OrganisatorsAndPartnersScreen/SliderOrganisators.tsx'
 import {Title} from "@shared/ui/SectionTitle/Title.tsx";
-import {useCallback, useEffect, useMemo, useRef, useState} from "react";
+import {useCallback, useRef, useState} from "react";
 import {ReactComponent as Arrow} from '@shared/assets/svg/decor/arrow.svg'
 import Slider from "react-slick";
 import {HStack} from "@shared/ui/Stack";
@@ -43,7 +43,7 @@ const OrganisatorsAndPartnersScreen = ({className = ''}: OrganisatorsAndPartners
 
       <div className={cls.container}>
         <div className={cn(cls.OrganisatorsList)}>
-          <SliderOrganisators beforeChangeHandler={beforeChangeHandler} ref={sliderRef}/>
+          <SliderOrganisators organisators={organisators} beforeChangeHandler={beforeChangeHandler} ref={sliderRef}/>
         </div>
       </div>
 
