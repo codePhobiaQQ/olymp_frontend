@@ -1,0 +1,51 @@
+.Dialog {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  display: block;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 15;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .DialogInner {
+    display: flex;
+    justify-content: center;
+    position: relative;
+  }
+}
+
+.DialogWindow {
+  background-color: #fff;
+  max-width: 80%;
+  width: min(calc(var(--index) * 30), 600px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--px40) var(--px80);
+  box-sizing: border-box;
+  border-radius: var(--px16);
+  position: relative;
+
+  .Close {
+    border-radius: 50%;
+    background-color: var(--black-alpha-35, rgba(0, 0, 0, 0.35));
+    position: absolute;
+    right: var(--px10);
+    top: var(--px10);
+    cursor: pointer;
+
+    .CloseIcon {
+      padding: var(--px5);
+      width: var(--px15);
+      height: var(--px15);
+      path {
+        fill: #fff;
+      }
+    }
+  }
+}

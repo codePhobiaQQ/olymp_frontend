@@ -22,7 +22,7 @@ const links: LinkType[] = [
   },
   {
     text: 'Новости',
-    path: '/news',
+    path: '/new',
   },
   {
     text: 'Онлайн обучение',

@@ -74,7 +74,7 @@ const newsPageSlice = createSlice({
   extraReducers: (builder) => {
     builder
       // -----------------------
-      // --- Fetch news list ---
+      // --- Fetch new list ---
       // -----------------------
       .addCase(fetchNewsList.pending, (state: NewsPageSchema, action) => {
         state.error = undefined

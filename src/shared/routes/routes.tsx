@@ -32,10 +32,10 @@ export enum AppRoutes {
 
 export const routePath: Record<AppRoutes, string> = {
   [AppRoutes.Main]: '/',
-  [AppRoutes.News]: '/news',
+  [AppRoutes.News]: '/new',
   [AppRoutes.Olymps]: '/olymps',
   [AppRoutes.OlympDetails]: '/olymps' + '/:id',
-  [AppRoutes.NewsDetails]: '/news' + '/:id',
+  [AppRoutes.NewsDetails]: '/new' + '/:id',
   [AppRoutes.OnlineStudy]: '/online-study',
   [AppRoutes.OlympSchedule]: '/online-study',
   [AppRoutes.FAQ]: '/faq',

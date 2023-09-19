@@ -4,7 +4,7 @@ import { ChangeEvent, InputHTMLAttributes } from 'react'
 
 type HtmlInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange' | 'className' | 'placeholder'>
 
-interface InputI extends HtmlInputProps {
+export interface InputI extends HtmlInputProps {
   value?: string | number
   onChange?: (value: string) => void
   className?: string

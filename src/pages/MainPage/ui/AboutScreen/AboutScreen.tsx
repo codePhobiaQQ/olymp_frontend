@@ -7,30 +7,31 @@ import {WpTextFormatter} from '@shared/ui/WpTextFormatter/WpTextFormatter'
 import AppImage from '@shared/ui/AppImage/AppImage.tsx'
 import {HStack, VStack} from '@shared/ui/Stack'
 import {Title} from '@shared/ui/SectionTitle/Title.tsx'
-import {useAnimationLibs} from "@shared/lib/components/AnimationProvider/AnimationProvider.tsx";
+// import {useAnimationLibs} from "@shared/lib/components/AnimationProvider/AnimationProvider.tsx";
 
 type AboutScreenProps = {
     className?: string
 }
 
 export const AboutScreen = (props: AboutScreenProps) => {
-    const { Spring } = useAnimationLibs()
-    const [spring, api] = Spring.useSpring(() => ({
-        from: {
-            x: -100
-        }
-    }))
+    // const { Spring } = useAnimationLibs()
 
-    const handleClick = () => {
-        api.start({
-            from: {
-                x: -100,
-            },
-            to: {
-                x: 100,
-            },
-        })
-    }
+    // const [spring, api] = Spring.useSpring(() => ({
+    //     from: {
+    //         x: -100
+    //     }
+    // }))
+    //
+    // const handleClick = () => {
+    //     api.start({
+    //         from: {
+    //             x: -100,
+    //         },
+    //         to: {
+    //             x: 100,
+    //         },
+    //     })
+    // }
 
     const {className} = props
 
