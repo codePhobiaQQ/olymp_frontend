@@ -1,7 +1,7 @@
 import {MainScreen} from './../MainScreen'
 import {DynamicModuleLoader, ReducersList} from '@shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 import {MainPageReducer} from './../../model/slice/mainPageSlice'
-import {ReactNode, useLayoutEffect} from 'react'
+import { useLayoutEffect} from 'react'
 import {fetchMainPageData} from './../../model/services/fetchMainPageData'
 import {useAppDispatch} from '@shared/lib/hooks/useAppDispatch/useAppDispatch'
 import {useSelector} from 'react-redux'
@@ -19,6 +19,8 @@ import PhraseScreen from './../../ui/PhraseScreen/PhraseScreen.tsx'
 import SubscribeScreen from './../../ui/SubscribeScreen/ui/SubscribeScreen/SubscribeScreen.tsx'
 import {BenefitsScreen} from './../../ui/BenifitsScreen/BenefitsScreen.tsx'
 import {AnimationProvider, useAnimationLibs} from "@shared/lib/components/AnimationProvider/AnimationProvider.tsx";
+import {VStack} from "@shared/ui/Stack";
+import cn from "classnames";
 
 const reducers: ReducersList = {
     mainPage: MainPageReducer,
@@ -41,7 +43,9 @@ const MainPageAsync = () => {
     }
 
     if (error) {
-        return <Text text={error}/>
+        return <VStack align='center' className={cn('p_50')}>
+            <Text text={error}/>
+        </VStack>
     }
 
     return (

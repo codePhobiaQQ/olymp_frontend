@@ -7,3 +7,6 @@
 .p_10 {
 	padding: var(--px10);
 }
+.p_50 {
+	padding: var(--px50);
+}

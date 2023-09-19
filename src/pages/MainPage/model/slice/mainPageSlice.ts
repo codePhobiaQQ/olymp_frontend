@@ -15,7 +15,7 @@ const MainPageSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(fetchMainPageData.pending, (state: MainPageSchema) => {
-        state.isLoading = false
+        state.isLoading = true
         state.error = undefined
       })
       .addCase(fetchMainPageData.fulfilled, (state: MainPageSchema, { payload }: PayloadAction<FetchMainPageDataI>) => {

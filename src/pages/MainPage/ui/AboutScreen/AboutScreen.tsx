@@ -14,23 +14,23 @@ type AboutScreenProps = {
 }
 
 export const AboutScreen = (props: AboutScreenProps) => {
-    // const { Spring } = useAnimationLibs()
-    // const [spring, api] = Spring.useSpring(() => ({
-    //     from: {
-    //         x: -100
-    //     }
-    // }))
-    //
-    // const handleClick = () => {
-    //     api.start({
-    //         from: {
-    //             x: -100,
-    //         },
-    //         to: {
-    //             x: 100,
-    //         },
-    //     })
-    // }
+    const { Spring } = useAnimationLibs()
+    const [spring, api] = Spring.useSpring(() => ({
+        from: {
+            x: -100
+        }
+    }))
+
+    const handleClick = () => {
+        api.start({
+            from: {
+                x: -100,
+            },
+            to: {
+                x: 100,
+            },
+        })
+    }
 
     const {className} = props
 
