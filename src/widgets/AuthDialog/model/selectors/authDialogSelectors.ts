@@ -1,3 +1,3 @@
 import { StateSchema } from '@app/providers/storeProvider';
 
-export const getIsAuthDialogOpen = (state: StateSchema) => state.authDialog?.isLoading || false
+export const getIsAuthDialogLoading = (state: StateSchema) => state.authDialog?.isLoading || false

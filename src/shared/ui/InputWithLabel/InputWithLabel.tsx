@@ -9,12 +9,12 @@ interface InputWithLabelProps extends InputI {
 };
 
 export const InputWithLabel = (props: InputWithLabelProps) => {
-  const { className = '', label } = props;
+  const { className = '', label, ...args } = props;
 
   return (
-    <VStack gap='8' className={cn(className, cls.InputWithLabel)}>
+    <VStack gap='8' max className={cn(className, cls.InputWithLabel)}>
       <label className={cn(cls.Label)} htmlFor='123'>{label}</label>
-      <Input id='123' />
+      <Input id='123' {...args} />
     </VStack>
   );
 };

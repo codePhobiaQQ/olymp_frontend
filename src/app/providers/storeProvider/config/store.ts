@@ -4,9 +4,11 @@ import { StateSchema, ThunkExtraArg } from './StateSchema'
 import { createReducerManager } from './reducerManager'
 // import { rtkApi } from '@shared/api/rtkApi'
 import { $api } from '@shared/api/api'
+import { AppReducer } from './../model/slice/appSlice.ts';
 
 export function createReduxStore(initialState?: StateSchema, asyncReducers?: ReducersMapObject<StateSchema>) {
   const rootReducers: ReducersMapObject<StateSchema> = {
+    app: AppReducer,
     ...asyncReducers,
     // [rtkApi.reducerPath]: rtkApi.reducer,
   }

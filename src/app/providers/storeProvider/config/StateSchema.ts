@@ -8,12 +8,15 @@ import { NewsCategoriesSchema } from '@features/fetchNewsCategories/model/types/
 import { OlympsPageSchema } from '@pages/OlympsPage'
 import { OlympDetailsSchema } from '@pages/OlympDetailsPage'
 import { AuthDialogSchema } from '@widgets/AuthDialog';
+import { AppSchema } from './../model/types/appSchema.ts';
 
 export interface StateSchema {
+  app: AppSchema
+
+  // Асинхронные редюсеры
   // MainPage
   mainPage?: MainPageSchema
 
-  // Асинхронные редюсеры
   // --- Auth Dialog ---
   authDialog?: AuthDialogSchema
   // --- News ---

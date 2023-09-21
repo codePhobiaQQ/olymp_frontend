@@ -14,10 +14,9 @@ export const DialogWindow = (props: DialogWindowProps) => {
   const { className = '', children, closeHandler } = props;
 
   return (
-    <div onClick={closeHandler} className={cn(className, cls.DialogWindow)}>
-
+    <div  className={cn(className, cls.DialogWindow)}>
       {closeHandler && <VStack justify='center' align='center' className={cls.Close}>
-        <CancelSvg className={cn(cls.CloseIcon)} />
+        <CancelSvg onClick={closeHandler} className={cn(cls.CloseIcon)} />
       </VStack>}
 
       {children}

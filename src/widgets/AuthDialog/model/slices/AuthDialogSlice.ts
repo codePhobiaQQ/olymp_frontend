@@ -2,16 +2,17 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { AuthDialogSchema } from '../types/AuthDialogSchema';
 
 const initialState: AuthDialogSchema = {
-  isLoading: false
+  isLoading: false,
+  isOpen: false
 };
 
 export const AuthDialogSlice = createSlice({
   name: 'AuthDialog',
   initialState,
   reducers: {
-    openDialog: (state, action: PayloadAction<boolean>) => {
-        state.isLoading = action.payload
-    }
+    setIsLoading: (state, action: PayloadAction<boolean>) => {
+      state.isLoading = action.payload
+    },
   }
   // extraReducers: (builder) => {
   //     builder

@@ -2,6 +2,7 @@
   .Logo {
     width: min(calc(var(--index) * 6.5), 132px);
     height: min(calc(var(--index) * 6), 120px);
+
     rect, image {
       width: 100%;
       height: 100%;

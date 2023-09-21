@@ -1,0 +1,25 @@
+.Input {
+	width: 100%;
+	position: relative;
+	display: flex;
+	align-items: center;
+
+	input {
+		background-color: #fff;
+		border-radius: var(--px8);
+		padding: var(--px10) var(--px10) var(--px10) var(--px15);
+		font-size: var(--px20);
+		height: 100%;
+		width: 100%;
+		border: 1px solid rgba(0, 0, 0, 0.50);
+	}
+
+	.Eye {
+		position: absolute;
+		right: var(--px15);
+		width: var(--px20);
+		height: var(--px20);
+		stroke: #000;
+		cursor: pointer;
+	}
+}

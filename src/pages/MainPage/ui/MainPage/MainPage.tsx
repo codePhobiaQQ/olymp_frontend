@@ -32,8 +32,6 @@ const MainPageAsync = () => {
     const isLoading = useSelector(getIsLoading)
     const error = useSelector(getError)
 
-    console.log('animation loading', isAnimationLoading)
-
     useLayoutEffect(() => {
         dispatch(fetchMainPageData())
     }, [])

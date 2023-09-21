@@ -1,7 +1,7 @@
 import cn from 'classnames';
 import cls from './Dialog.module.scss';
-import { Dialog as HeadlessuiDialog, Transition } from '@headlessui/react';
-import { Fragment, ReactNode } from 'react';
+import { Dialog as HeadlessuiDialog } from '@headlessui/react';
+import { ReactNode } from 'react';
 
 export interface DialogProps {
   className?: string;
@@ -14,7 +14,6 @@ export const Dialog = (props: DialogProps) => {
   const { className = '', isOpen, closeHandler, children } = props;
 
   return (
-    <Transition appear show={isOpen} as={Fragment}>
       <HeadlessuiDialog
         className={cn(cls.Dialog, className)}
         open={isOpen}
@@ -24,6 +23,5 @@ export const Dialog = (props: DialogProps) => {
           {children}
         </HeadlessuiDialog.Panel>
       </HeadlessuiDialog>
-    </Transition>
   );
 };

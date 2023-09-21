@@ -8,6 +8,9 @@ import AppLink, { AppLinkTheme } from '@shared/ui/AppLink/AppLink';
 import { HStack } from '@shared/ui/Stack';
 import Button from '@shared/ui/Button/Button.tsx';
 import { AuthDialog } from '@widgets/AuthDialog';
+import { useCallback } from 'react';
+import { AppActions, getIsAuthDialogOpen } from '@app/providers/storeProvider';
+import { useDispatch, useSelector } from 'react-redux';
 
 export enum HeaderTheme {
   LIGHT = 'light',
@@ -20,6 +23,14 @@ interface HeaderI {
 }
 
 const Header = ({ className = '', theme = HeaderTheme.DARK }: HeaderI) => {
+  const dispatch = useDispatch()
+  const { setIsAuthDialogOpen } = AppActions
+  const isAuthDialogOpen = useSelector(getIsAuthDialogOpen)
+
+  const openAuthDialogHandler = useCallback(() => {
+    dispatch(setIsAuthDialogOpen(true))
+  }, [setIsAuthDialogOpen])
+
   return (
     <>
       <HStack max align='center' justify='between' className={cn(className, cls.Header, cls[theme])}>
@@ -33,13 +44,13 @@ const Header = ({ className = '', theme = HeaderTheme.DARK }: HeaderI) => {
           <MagnifierSvg className={cls.HeaderActionsWrapperIcon} />
           <Calendar className={cls.HeaderActionsWrapperIcon} />
 
-          <Button className={cn(cls.EnterBtn)} colorTheme='light' variant='outline_transparent'>
+          <Button onClick={openAuthDialogHandler} className={cn(cls.EnterBtn)} colorTheme='light' variant='outline_transparent'>
             ВХОД
           </Button>
         </HStack>
       </HStack>
 
-      <AuthDialog />
+      {isAuthDialogOpen && <AuthDialog />}
     </>
   );
 };

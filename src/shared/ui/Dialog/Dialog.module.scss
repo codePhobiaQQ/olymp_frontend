@@ -20,7 +20,7 @@
 
 .DialogWindow {
   background-color: #fff;
-  max-width: 80%;
+  max-width: 80vw;
   width: min(calc(var(--index) * 30), 600px);
   display: flex;
   flex-direction: column;
