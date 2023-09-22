@@ -47,7 +47,7 @@ const MainPageAsync = () => {
     }
 
     return (
-        <>
+        <AnimationProvider>
             <MainScreen/>
             <AboutScreen/>
             <PresentationScreen/>
@@ -59,7 +59,7 @@ const MainPageAsync = () => {
             {/*<OrganisatorsAndPartnersScreen/>*/}
             <SubscribeScreen/>
             <PhraseScreen/>
-        </>
+        </AnimationProvider>
     )
 }
 
