@@ -1,0 +1,16 @@
+.SwitcherBtn {
+  color: var(--accent-blue);
+  font-family: 'msb', sans-serif;
+  cursor: pointer;
+
+  //* Size *
+  &.s {
+    font-size: var(--px14);
+  }
+  &.m {
+    font-size: var(--px16);
+  }
+  &.l {
+    font-size: var(--px18);
+  }
+}

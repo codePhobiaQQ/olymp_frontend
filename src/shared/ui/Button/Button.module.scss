@@ -16,6 +16,11 @@
 		border-radius: 200px;
 	}
 
+	&.only_text {
+		background-color: transparent;
+		border: none;
+	}
+
 	&.outline_transparent_arrow,
 	&.default {
 		display: flex;
