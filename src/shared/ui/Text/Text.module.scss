@@ -1,6 +1,17 @@
 .Text {
 	line-height: 1.4em;
 
+	//TextAlign
+	&.alignLeft {
+		text-align: left;
+	}
+	&.alignCenter {
+		text-align: center;
+	}
+	&.alignRight {
+		text-align: right;
+	}
+
 	/*Font weight*/
 	&.regular {
 		font-family: 'mr', sans-serif;

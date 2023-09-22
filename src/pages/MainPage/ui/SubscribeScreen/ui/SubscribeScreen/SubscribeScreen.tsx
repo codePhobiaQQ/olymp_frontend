@@ -4,7 +4,7 @@ import cls from './SubscribeScreen.module.scss'
 import cn from 'classnames'
 import bg from '@shared/assets/images/subscribe/subscribeBg.jpg'
 import Title, { TitleTheme } from '@shared/ui/Title/Title'
-import Text, { TextTheme } from '@shared/ui/Text/Text'
+import Text from '@shared/ui/Text/Text'
 import SubscribeInputField from '../SubscribeInputField/SubscribeInputField'
 import { olympData } from '@shared/data/olympData'
 
@@ -68,7 +68,6 @@ const SubscribeScreen = ({ className = '' }: SubscribeScreenI) => {
 
             <Text
               className={cn(cls.UserAccess)}
-              theme={TextTheme.PARAGRAPH_THEME}
               text="Нажимая подписаться вы принимаете условия Пользовательского соглашения и Политики конфиденциальности "
             />
           </div>

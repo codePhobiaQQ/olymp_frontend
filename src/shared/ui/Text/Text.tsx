@@ -1,46 +1,55 @@
 import cls from './Text.module.scss'
 import cn from 'classnames'
-import { HTMLAttributes } from 'react'
+import {HTMLAttributes, ReactNode} from 'react'
 
-type fontWeightMode = 'REGULAR' | 'LIGHT' | 'SEMI_BOLD-bold'
-enum FontWeight {
-  REGULAR = 'regular',
-  LIGHT = 'light',
-  SEMI_BOLD = 'semi-bold',
-}
-
-export enum TextTheme {
-  PARAGRAPH_THEME = 'paragraph_theme',
-  SPAN_THEME = 'span_theme',
-}
+type alignType = 'left' | 'center' | 'right'
+type fontWeightMode = 'regular' | 'light' | 'semi_bold'
+type variantType = 'p' | 'span'
 
 interface TextI extends HTMLAttributes<HTMLParagraphElement | HTMLSpanElement> {
   className?: string
-  theme?: TextTheme
+  variant?: variantType
+  align?: alignType
   text?: string
   fontWeightMode?: fontWeightMode
+  children?: ReactNode
+}
+
+const fontWeightClsMapper: Record<fontWeightMode, string> = {
+  'regular': cls.regular,
+  'light': cls.light,
+  'semi_bold': cls.semiBold,
+}
+const alignClsMapper: Record<alignType, string> = {
+  'left': cls.alignLeft,
+  'center': cls.alignCenter,
+  'right': cls.alignRight,
 }
 
 const Text = (props: TextI) => {
   const {
     className = '',
-    theme = TextTheme.PARAGRAPH_THEME,
-    fontWeightMode = FontWeight.REGULAR,
+    variant = 'p',
+    fontWeightMode = 'regular',
+    align = 'left',
     text,
+    children,
     ...otherProps
   } = props
 
-  if (theme == TextTheme.PARAGRAPH_THEME)
+  if (variant === 'p')
     return (
-      <p className={cn(className, cls.Text, cls[theme], cls[fontWeightMode])} {...otherProps}>
-        {text}
+      <p
+        className={cn(className, cls.Text, cls[variant], alignClsMapper[align], fontWeightClsMapper[fontWeightMode])} {...otherProps}>
+        {children ? children : text}
       </p>
     )
 
-  if (theme == TextTheme.SPAN_THEME)
+  if (variant === 'span')
     return (
-      <span className={cn(className, cls.Text, cls[theme], cls[fontWeightMode])} {...otherProps}>
-        {text}
+      <span
+        className={cn(className, cls.Text, cls[variant], alignClsMapper[align], fontWeightClsMapper[fontWeightMode])} {...otherProps}>
+        {children ? children : text}
       </span>
     )
 }

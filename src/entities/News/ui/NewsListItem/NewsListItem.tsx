@@ -1,7 +1,7 @@
 import cn from 'classnames'
 import cls from './NewsListItem.module.scss'
 import { News, NewsCategory, NewsView } from '@entities/News'
-import Text, { TextTheme } from '@shared/ui/Text/Text'
+import Text from '@shared/ui/Text/Text'
 import { normalizeDate } from '@shared/lib/utils/normalizeDate/normalizeDate'
 import Title, { TitleTheme } from '@shared/ui/Title/Title'
 import { limitText } from '@shared/lib/utils/limitText/limitText'
@@ -45,8 +45,7 @@ export const NewsListItem = (props: NewsListItemProps) => {
       </div>
       <div className={cn(cls.Content)}>
         <Title theme={TitleTheme.H3} className={cls.Title} text={news.news_title} />
-        <Text className={cls.ContentText} text={limitText(news?.news_description, 150)}
-              theme={TextTheme.PARAGRAPH_THEME} />
+        <Text className={cls.ContentText} text={limitText(news?.news_description, 150)}/>
       </div>
     </div>
   )
