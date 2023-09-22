@@ -4,7 +4,7 @@ import cls from './Button.module.scss'
 import cn from 'classnames'
 
 type variantType = 'outline_transparent_arrow' | 'default' | 'outline_transparent'
-type colorTheme = 'dark' | 'light'
+type colorTheme = 'dark' | 'light' | 'blue_transparent' | 'blue_fill'
 
 interface ButtonI extends ButtonHTMLAttributes<HTMLButtonElement> {
   children?: ReactNode
@@ -21,6 +21,8 @@ const variantsClsMapper: Record<variantType, string> = {
 const colorThemeClsMapper: Record<colorTheme, string> = {
   light: cls.light,
   dark: cls.dark,
+  blue_transparent: cls.blueTransparent,
+  blue_fill: cls.blueFill,
 }
 
 const Button = (props: ButtonI) => {

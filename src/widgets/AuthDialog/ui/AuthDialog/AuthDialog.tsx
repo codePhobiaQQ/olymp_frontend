@@ -10,6 +10,7 @@ import Text from '@shared/ui/Text/Text.tsx';
 import { InputWithLabel } from '@shared/ui/InputWithLabel/InputWithLabel.tsx';
 import { useDispatch, useSelector } from 'react-redux';
 import { AppActions, getIsAuthDialogOpen } from '@app/providers/storeProvider';
+import Button from '@shared/ui/Button/Button.tsx';
 
 const reducers: ReducersList = {
   authDialog: AuthDialogReducer
@@ -26,18 +27,25 @@ export const AuthDialogAsync = () => {
   return (
     <Dialog isOpen={isOpen} closeHandler={closeHandler}>
       <DialogWindow closeHandler={closeHandler} className={cn(cls.AuthDialog)}>
-        <VStack align='center' max gap='60'>
+        <VStack align='center' max gap='48'>
           <Logo className={cn(cls.Logo)} />
-          <VStack align='center' max gap='24'>
-            <Text text='Вход в аккаунт' />
-            <InputWithLabel label={'E-mail'} />
-            <InputWithLabel type={'password'} label={'Пароль'} />
+
+          <VStack align='center' max gap='16'>
+            <Text className={cn(cls.DialogTitle)} text='Вход в аккаунт' />
+            <InputWithLabel placeholder='example@yandex.ru' label={'E-mail'} />
+            <InputWithLabel placeholder='test password' type={'password'} label={'Пароль'} extraLabelComponent={<ForgotPassword />} />
           </VStack>
+
+          <Button colorTheme='blue_fill' variant='default'>Войти</Button>
         </VStack>
       </DialogWindow>
     </Dialog>
   );
 };
+
+const ForgotPassword = () => {
+  return <Text className={cn(cls.ForgotPassword)} text='Забыли пароль ?' />
+}
 
 export const AuthDialog = () => {
   return (

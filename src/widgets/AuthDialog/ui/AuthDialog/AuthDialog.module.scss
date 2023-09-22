@@ -8,5 +8,17 @@
       height: 100%;
     }
   }
+
+  .DialogTitle {
+    font-size: var(--px24);
+    text-transform: uppercase;
+    font-family: 'msb', sans-serif;
+  }
+}
+
+.ForgotPassword {
+  color: var(--accent-blue);
+  font-family: 'msb', sans-serif;
+  cursor: pointer;
 }
 
