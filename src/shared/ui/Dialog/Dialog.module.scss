@@ -10,17 +10,11 @@
   align-items: center;
   justify-content: center;
 
-  .DialogOuterWrapper {
-    transition: all .5s ease-in-out;
-    width: 100%;
-    height: 100%;
+  .DialogInner {
     display: flex;
     justify-content: center;
     align-items: center;
-
-    .DialogInner {
-      display: inline-block;
-    }
+    display: inline-block;
   }
 }
 
@@ -44,11 +38,14 @@
     right: var(--px10);
     top: var(--px10);
     cursor: pointer;
+    padding: var(--px5);
+    width: var(--px15);
+    height: var(--px15);
 
     .CloseIcon {
-      padding: var(--px5);
-      width: var(--px15);
-      height: var(--px15);
+      width: 100%;
+      height: 100%;
+
       path {
         fill: #fff;
       }

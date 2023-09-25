@@ -9,4 +9,5 @@ export type tabType =
 export interface AuthDialogSchema {
   isLoading: boolean
   isOpen?: boolean
+  activeTab?: tabType
 }

@@ -1,8 +1,7 @@
 import cn from 'classnames';
 import cls from './Dialog.module.scss';
 import { Dialog as HeadlessuiDialog } from '@headlessui/react';
-import { forwardRef, ReactNode } from 'react';
-import { HStack, VStack } from '@shared/ui/Stack';
+import { ReactNode } from 'react';
 
 export interface DialogProps {
   className?: string;
@@ -11,7 +10,7 @@ export interface DialogProps {
   children?: ReactNode;
 }
 
-export const Dialog = forwardRef((props: DialogProps, ref) => {
+export const Dialog = (props: DialogProps) => {
   const { className = '', isOpen, closeHandler, children } = props;
 
   return (
@@ -20,12 +19,9 @@ export const Dialog = forwardRef((props: DialogProps, ref) => {
       open={isOpen}
       onClose={closeHandler}
     >
-      {/*max justify='center' align='center'*/}
-      <div ref={ref} className={cn(cls.DialogOuterWrapper)} >
         <HeadlessuiDialog.Panel className={cn(cls.DialogInner)}>
           {children}
         </HeadlessuiDialog.Panel>
-      </div>
     </HeadlessuiDialog>
   );
-});
+};

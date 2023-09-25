@@ -1,50 +1,53 @@
 import cn from 'classnames';
 import cls from './AuthDialog.module.scss';
 import {DynamicModuleLoader, ReducersList} from '@shared/lib/components/DynamicModuleLoader/DynamicModuleLoader.tsx';
-import {AuthDialogReducer} from './../../model/slices/AuthDialogSlice.ts';
+import {AuthDialogActions, AuthDialogReducer} from './../../model/slices/AuthDialogSlice.ts';
 import {Dialog} from '@shared/ui/Dialog/Dialog.tsx';
 import {DialogWindow} from '@shared/ui/Dialog/DialogWindow.tsx';
 import {useDispatch, useSelector} from 'react-redux';
 import {AppActions, getIsAuthDialogOpen} from '@app/providers/storeProvider';
-import {useFade} from '@shared/lib/animations/fade/useFade.ts';
-import {AnimationProvider} from '@shared/lib/components/AnimationProvider/AnimationProvider.tsx';
-// import {LoginTab} from "@widgets/AuthDialog/ui/tabs/LoginTab/LoginTab.tsx";
 import {ForgotPasswordTab} from "@widgets/AuthDialog/ui/tabs/ForgotPasswordTab/ForgotPasswordTab.tsx";
+import {getActiveAuthTab} from "@widgets/AuthDialog/model/selectors/authDialogSelectors.ts";
+import {tabType} from "@widgets/AuthDialog/model/types/AuthDialogSchema.ts";
+import {ReactNode, useCallback, useEffect} from "react";
+import {LoginTab} from "@widgets/AuthDialog/ui/tabs/LoginTab/LoginTab.tsx";
 
 const reducers: ReducersList = {
   authDialog: AuthDialogReducer
 };
 
-export const AuthDialogAsync = () => {
-  const dispatch = useDispatch();
-  const isOpen = useSelector(getIsAuthDialogOpen);
-
-  const openHandler = () => {
-    console.log('open');
-  };
-
-  const closeHandler = () => {
-    dispatch(AppActions.setIsAuthDialogOpen(false));
-    console.log('after close');
-  };
-  const {ref: animationRef} = useFade({isOpen, onCloseComplete: closeHandler, onOpenComplete: openHandler});
-
-  return (
-    <Dialog ref={animationRef} isOpen={isOpen} closeHandler={closeHandler}>
-      <DialogWindow closeHandler={closeHandler} className={cn(cls.AuthDialog)}>
-        {/*<LoginTab />*/}
-        <ForgotPasswordTab />
-      </DialogWindow>
-    </Dialog>
-  );
-};
+const tabsController: Record<tabType, ReactNode> = {
+  'login': <LoginTab/>,
+  'forgotPassword': <ForgotPasswordTab/>,
+  'registration_shared': <>registration_shared</>,
+  'registration_students': <>registration_students</>,
+  'registration_teachers': <>registration_teachers</>,
+  'registration_universities': <>registration_universities</>,
+}
 
 export const AuthDialog = () => {
+  const isOpen = useSelector(getIsAuthDialogOpen);
+  const {initDialog} = AuthDialogActions
+  const dispatch = useDispatch();
+  const activeTab = useSelector(getActiveAuthTab)
+
+  useEffect(() => {
+    dispatch(initDialog({}))
+  }, [isOpen])
+
+  const closeHandler = useCallback(() => {
+    dispatch(AppActions.setIsAuthDialogOpen(false));
+  }, [dispatch, AppActions.setIsAuthDialogOpen]);
+
   return (
     <DynamicModuleLoader removeAfterUnmount={true} reducers={reducers}>
-      <AnimationProvider>
-        <AuthDialogAsync/>
-      </AnimationProvider>
+      <Dialog isOpen={isOpen} closeHandler={closeHandler}>
+        <DialogWindow
+          closeHandler={closeHandler}
+          className={cn(cls.AuthDialog)}>
+          {tabsController[activeTab]}
+        </DialogWindow>
+      </Dialog>
     </DynamicModuleLoader>
   );
 };

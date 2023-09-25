@@ -27,12 +27,12 @@ const colorThemeClsMapper: Record<colorTheme, string> = {
 }
 
 const Button = (props: ButtonI) => {
-  const { variant = 'outline_transparent_arrow', children, className, colorTheme, ...otherProps } = props
-
+  const { variant = 'outline_transparent_arrow', children, className, onClick, colorTheme, ...otherProps } = props
   const hasArrow = variant === 'outline_transparent_arrow'
 
   return (
     <button
+      onClick={onClick}
       className={cn(className, cls.Button, variantsClsMapper[variant], colorTheme && colorThemeClsMapper[colorTheme])}
       {...otherProps}
     >

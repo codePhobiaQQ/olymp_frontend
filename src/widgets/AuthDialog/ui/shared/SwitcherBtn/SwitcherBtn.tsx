@@ -18,5 +18,6 @@ const sizeTypeClassMapper: Record<sizeType, string> = {
 
 export const SwitcherBtn = (props: SwitcherBtnProps) => {
   const { text = '', size = 'm', onClick } = props
+
   return <Button onClick={onClick} variant="only_text" className={cn(cls.SwitcherBtn, sizeTypeClassMapper[size])}>{text}</Button>;
 };
