@@ -36,7 +36,7 @@ export const PresentationScreen = (props: PresentationScreenProps) => {
         <VStack className={cn(cls.RightSide)}>
           <VStack gap="16" className={cn(cls.RightSideInner)}>
             <WpTextFormatter className={cn(cls.Content)} content={text1} />
-            <Button className={cn(cls.PresentationBtn)} variant="outline_transparent_arrow">
+            <Button className={cn(cls.PresentationBtn)} colorTheme='dark' variant="outline_transparent_arrow">
               {buttonText1}
             </Button>
           </VStack>
@@ -51,7 +51,7 @@ export const PresentationScreen = (props: PresentationScreenProps) => {
         <VStack className={cn(cls.RightSide)}>
           <VStack gap="16" className={cn(cls.RightSideInner)}>
             <WpTextFormatter className={cn(cls.Content)} content={text2} />
-            <Button className={cn(cls.PresentationBtn)} variant="outline_transparent_arrow">
+            <Button className={cn(cls.PresentationBtn)} colorTheme='dark' variant="outline_transparent_arrow">
               {buttonText1}
             </Button>
           </VStack>

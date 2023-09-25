@@ -53,6 +53,10 @@
 	&.dark {
 		color: var(--main-text-color);
 		border-color: var(--main-text-color);
+		&:hover {
+			background-color: var(--main-text-color);
+			color: var(--main-bg);
+		}
 	}
 
 	&.light {

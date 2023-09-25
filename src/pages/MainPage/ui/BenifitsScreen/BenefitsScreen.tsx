@@ -21,7 +21,7 @@ export const BenefitsScreen = (props: BenefitsScreenProps) => {
           content="Участвуя в олимпиадах, входящих
           в перечень, вы получаете шанс поступить в выбранное вами высшее учебное заведение без сдачи вступительных испытаний"
         />
-        <Button variant='outline_transparent_arrow'>Подробнее о льготах</Button>
+        <Button colorTheme='dark' variant='outline_transparent_arrow'>Подробнее о льготах</Button>
       </VStack>
 
       <VStack className={cn(cls.RightSide)}><AppImage className={cn(cls.BenefitsImage)} src={OlympImage} /></VStack>
