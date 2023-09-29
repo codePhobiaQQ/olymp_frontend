@@ -65,7 +65,7 @@ export const CardRouting = (props: RoutingCardI) => {
         <div className={cn(cls.CardRoutingContentWrapperInner)}>
           <Title theme={TitleTheme.H4} className={cn(cls.CardTitle, 'ttu')} text={data?.title} />
           <div className={cn(cls.DescriptionWrapper)}>
-            <Text className={cn(cls.Description)} text={data?.description} />
+            <Text size='26' className={cn(cls.Description)} text={data?.description} />
 
             <div className={cn(cls.ArrowWrapper)}>
               <ArrowSvg className={cn(cls.Arrow)} />

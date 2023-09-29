@@ -27,8 +27,8 @@ export const LoginTab = (props: LoginTabProps) => {
       <Button colorTheme='blue_fill' variant='default'>Войти</Button>
       <Text align='center'>
         Авторизовавшись на сайте, вы соглашаетесь
-        с <Text className={cn(cls.OfferSpan)} variant='span'>Пользовательским соглашением</Text> и <Text
-        className={cn(cls.OfferSpan)} variant='span'>Правилами портала</Text>
+        с <Text className={cn(cls.OfferSpan)} isParagraph={false}>Пользовательским соглашением</Text> и <Text
+        className={cn(cls.OfferSpan)} isParagraph={false}>Правилами портала</Text>
       </Text>
     </VStack>
   );

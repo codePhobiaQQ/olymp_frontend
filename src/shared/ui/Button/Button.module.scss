@@ -1,88 +1,127 @@
 .Button {
-	border: 1px solid #fff;
-	color: #fff;
-	cursor: pointer;
-	transition: var(--transition-all);
-	cursor: pointer;
-	border-radius: var(--px15);
+  border: 1px solid #fff;
+  color: #fff;
+  cursor: pointer;
+  transition: var(--transition-all);
+  cursor: pointer;
+  border-radius: var(--px15);
 
-	// Variant
-	&.outline_transparent {
-		background-color: transparent;
-		border: 1px solid;
-		padding: var(--px4) var(--px20);
-		font-family: 'mm', sans-serif;
-		font-size: var(--px20);
-		border-radius: 200px;
-	}
+  // Variant
+  &.outline_transparent {
+    background-color: transparent;
+    border: 1px solid;
+    padding: var(--px4) var(--px20);
+    font-family: 'mm', sans-serif;
+    font-size: var(--px20);
+    border-radius: 200px;
+  }
 
-	&.only_text {
-		background-color: transparent;
-		border: none;
-	}
+  &.only_text {
+    background-color: transparent;
+    border: none;
+  }
 
-	&.outline_transparent_arrow,
-	&.default {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		font-family: 'mr', sans-serif;
-		font-size: var(--px24);
-		padding: var(--px10) var(--px48);
-		border-radius: var(--px8);
-		border: 1px solid #000;
-		cursor: pointer;
-		transition: var(--transition-all);
-		svg {
-			width: var(--px15);
-			height: var(--px15);
-			margin-left: var(--px15);
-			transition: var(--transition-fill);
-		}
+  //&.outline_transparent_arrow,
 
-		&:hover {
-			//background: #000;
-			//color: #fff;
-			svg {
-				fill: #fff;
-			}
-		}
-	}
+  &.default {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'mr', sans-serif;
+    font-size: var(--px24);
+    padding: var(--px10) var(--px48);
+    border-radius: var(--px8);
+    border: 1px solid #000;
+    cursor: pointer;
+    transition: var(--transition-all);
 
-	// Color Theme
-	&.dark {
-		color: var(--main-text-color);
-		border-color: var(--main-text-color);
-		&:hover {
-			background-color: var(--main-text-color);
-			color: var(--main-bg);
-		}
-	}
+    svg {
+      width: var(--px15);
+      height: var(--px15);
+      margin-left: var(--px15);
+      transition: var(--transition-fill);
+    }
 
-	&.light {
-		color: var(--main-bg);
-		border-color: var(--main-bg);
-		&:hover {
-			background-color: var(--main-bg);
-			color: var(--main-text-color);
-		}
-	}
+    &:hover {
+      //background: #000;
+      //color: #fff;
+      svg {
+        fill: #fff;
+      }
+    }
+  }
 
-	&.blueTransparent {
-		color: var(--accent-blue);
-		border-color: var(--accent-blue);
-		&:hover {
-			background-color: var(--accent-blue);
-			color: #fff;
-		}
-	}
-	&.blueFill {
-		background-color: var(--accent-blue);
-		color: #fff;
-		border-color: var(--accent-blue);
-		//&:hover {
-		//	background-color: var(--main-bg);
-		//	color: var(--main-text-color);
-		//}
-	}
+  &.auth {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-family: 'mr', sans-serif;
+    font-size: var(--px16);
+    padding: var(--px8) var(--px18);
+    border-radius: var(--px16);
+    border: 1px solid #000;
+    cursor: pointer;
+    transition: var(--transition-all);
+
+    svg {
+      width: var(--px25);
+      height: var(--px25);
+      margin-right: var(--px15);
+      transition: var(--transition-fill);
+      fill: #000;
+    }
+
+    &:hover {
+      background: var(--accent-blue);
+      border-color: var(--accent-blue);
+      color: #fff;
+      svg {
+        fill: #fff;
+      }
+    }
+  }
+
+  // Color Theme
+  &.dark {
+    color: var(--main-text-color);
+    border-color: var(--main-text-color);
+
+    &:hover {
+      background-color: var(--main-text-color);
+      color: var(--main-bg);
+    }
+  }
+
+  &.light {
+    color: var(--main-bg);
+    border-color: var(--main-bg);
+
+    &:hover {
+      background-color: var(--main-bg);
+      color: var(--main-text-color);
+    }
+  }
+
+  &.blueTransparent {
+    color: var(--accent-blue);
+    border-color: var(--accent-blue);
+
+    &:hover {
+      background-color: var(--accent-blue);
+      color: #fff;
+    }
+  }
+
+  &.blueFill {
+    background-color: var(--accent-blue);
+    color: #fff;
+    border-color: var(--accent-blue);
+  }
+
+  &.grey_transparent {
+    background-color: transparent;
+    color: #000;
+    border: 1px solid #FFF;
+    box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.70);
+  }
 }

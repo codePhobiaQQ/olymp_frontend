@@ -1,57 +1,106 @@
-import cls from './Text.module.scss'
-import cn from 'classnames'
-import {HTMLAttributes, ReactNode} from 'react'
+import { ReactNode } from 'react';
+import cls from './Text.module.scss';
+import cn from 'classnames';
 
-type alignType = 'left' | 'center' | 'right'
-type fontWeightMode = 'regular' | 'light' | 'semi_bold'
-type variantType = 'p' | 'span'
+type colorThemeType = 'white' | 'dark';
+const colorClsMapper: Record<colorThemeType, string> = {
+  dark: cls.dark,
+  white: cls.white,
+};
 
-interface TextI extends HTMLAttributes<HTMLParagraphElement | HTMLSpanElement> {
-  className?: string
-  variant?: variantType
-  align?: alignType
-  text?: string
-  fontWeightMode?: fontWeightMode
-  children?: ReactNode
-}
-
-const fontWeightClsMapper: Record<fontWeightMode, string> = {
+type weightType = 'regular' | 'medium' | 'bold'
+const weightClsMapper: Record<weightType, string> = {
+  'bold': cls.bold,
+  'medium': cls.medium,
   'regular': cls.regular,
-  'light': cls.light,
-  'semi_bold': cls.semiBold,
-}
-const alignClsMapper: Record<alignType, string> = {
-  'left': cls.alignLeft,
-  'center': cls.alignCenter,
-  'right': cls.alignRight,
 }
 
-const Text = (props: TextI) => {
+type sizeType = '10' | '12' | '14' | '16' | '18' | '20' | '22' | '24' | '26';
+const sizeClsMapper: Record<sizeType, string> = {
+  '10': cls.px10,
+  '12': cls.px12,
+  '14': cls.px14,
+  '16': cls.px16,
+  '18': cls.px18,
+  '20': cls.px20,
+  '22': cls.px22,
+  '24': cls.px24,
+  '26': cls.px26,
+};
+
+type alignType = 'left' | 'center' | 'right';
+const alignClsMapper: Record<alignType, string> = {
+  left: cls.alignLeft,
+  center: cls.alignCenter,
+  right: cls.alignRight,
+};
+
+interface TextI {
+  className?: string;
+  text?: string;
+  children?: ReactNode;
+  isParagraph?: boolean;
+  color?: colorThemeType;
+  size?: sizeType;
+  dataAttr?: string;
+  weight?: weightType,
+  align?: alignType;
+  clickHandler?: () => void;
+  styling?: { [name: string]: string };
+}
+
+const Text = (data: TextI) => {
   const {
     className = '',
-    variant = 'p',
-    fontWeightMode = 'regular',
-    align = 'left',
     text,
+    isParagraph = false,
+    dataAttr = '',
+    color = 'dark',
+    weight = 'regular',
+    size = '16',
+    align = 'left',
     children,
-    ...otherProps
-  } = props
+    clickHandler = () => {},
+    styling = {},
+  } = data;
 
-  if (variant === 'p')
+  const classing = cn(
+    className,
+    cls.Text,
+    colorClsMapper[color],
+    sizeClsMapper[size],
+    alignClsMapper[align],
+    weightClsMapper[weight],
+    cls[color]
+  );
+
+  if (isParagraph) {
     return (
       <p
-        className={cn(className, cls.Text, cls[variant], alignClsMapper[align], fontWeightClsMapper[fontWeightMode])} {...otherProps}>
-        {children ? children : text}
+        onClick={clickHandler}
+        data-attr={dataAttr}
+        className={classing}
+        style={styling}
+      >
+        {text || children}
       </p>
-    )
+    );
+  }
 
-  if (variant === 'span')
+  if (!isParagraph) {
     return (
       <span
-        className={cn(className, cls.Text, cls[variant], alignClsMapper[align], fontWeightClsMapper[fontWeightMode])} {...otherProps}>
-        {children ? children : text}
+        onClick={clickHandler}
+        data-attr={dataAttr}
+        className={cn(classing, cls.span)}
+        style={styling}
+      >
+        {text || children}
       </span>
-    )
-}
+    );
+  }
 
-export default Text
+  return null;
+};
+
+export default Text;

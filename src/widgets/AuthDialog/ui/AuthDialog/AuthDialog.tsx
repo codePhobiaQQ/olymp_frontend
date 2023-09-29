@@ -11,6 +11,9 @@ import {getActiveAuthTab} from "@widgets/AuthDialog/model/selectors/authDialogSe
 import {tabType} from "@widgets/AuthDialog/model/types/AuthDialogSchema.ts";
 import {ReactNode, useCallback, useEffect} from "react";
 import {LoginTab} from "@widgets/AuthDialog/ui/tabs/LoginTab/LoginTab.tsx";
+import {
+  RegistrationShared
+} from '@widgets/AuthDialog/ui/tabs/RegistrationShared/RegistartionShared.tsx';
 
 const reducers: ReducersList = {
   authDialog: AuthDialogReducer
@@ -19,7 +22,7 @@ const reducers: ReducersList = {
 const tabsController: Record<tabType, ReactNode> = {
   'login': <LoginTab/>,
   'forgotPassword': <ForgotPasswordTab/>,
-  'registration_shared': <>registration_shared</>,
+  'registration_shared': <RegistrationShared />,
   'registration_students': <>registration_students</>,
   'registration_teachers': <>registration_teachers</>,
   'registration_universities': <>registration_universities</>,
@@ -32,6 +35,7 @@ export const AuthDialog = () => {
   const activeTab = useSelector(getActiveAuthTab)
 
   useEffect(() => {
+    if (!isOpen) return;
     dispatch(initDialog({}))
   }, [isOpen])
 

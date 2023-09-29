@@ -1,6 +1,6 @@
 import cn from 'classnames';
 import cls from './Dialog.module.scss';
-import { ReactNode} from 'react';
+import { ReactNode } from 'react';
 import { ReactComponent as CancelSvg } from '@shared/assets/svg/decor/cancel.svg';
 import { VStack } from '@shared/ui/Stack';
 
@@ -15,8 +15,8 @@ export const DialogWindow = (props: DialogWindowProps) => {
 
   return (
     <div className={cn(className, cls.DialogWindow)}>
-      {closeHandler && <VStack justify='center' align='center' className={cls.Close}>
-        <CancelSvg onClick={closeHandler} className={cn(cls.CloseIcon)} />
+      {closeHandler && <VStack onClick={closeHandler} justify='center' align='center' className={cls.Close}>
+        <CancelSvg className={cn(cls.CloseIcon)} />
       </VStack>}
 
       {children}

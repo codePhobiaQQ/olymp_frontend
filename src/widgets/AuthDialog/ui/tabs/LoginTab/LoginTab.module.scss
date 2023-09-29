@@ -1,24 +1,22 @@
 .LoginTab {
-  .Logo {
-    width: min(calc(var(--index) * 6.5), 132px);
-    height: min(calc(var(--index) * 6), 120px);
-
-    rect, image {
-      width: 100%;
-      height: 100%;
-    }
-  }
-
   .DialogTitle {
-    font-size: var(--px24);
     text-transform: uppercase;
     font-family: 'msb', sans-serif;
+  }
+
+  .Logo {
+    width: 132px;
+    height: 120px;
   }
 
   .OfferSpan {
     color: var(--accent-blue);
     text-decoration: underline;
     cursor: pointer;
-    font-size: var(--px14);
+  }
+
+  .RegBtn {
+    width: 90%;
   }
 }
+

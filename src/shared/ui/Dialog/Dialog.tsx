@@ -1,7 +1,8 @@
 import cn from 'classnames';
 import cls from './Dialog.module.scss';
-import { Dialog as HeadlessuiDialog } from '@headlessui/react';
+// import { Dialog as HeadlessuiDialog } from '@headlessui/react';
 import { ReactNode } from 'react';
+import { HStack } from '@shared/ui/Stack';
 
 export interface DialogProps {
   className?: string;
@@ -11,17 +12,21 @@ export interface DialogProps {
 }
 
 export const Dialog = (props: DialogProps) => {
-  const { className = '', isOpen, closeHandler, children } = props;
+  const { className = '', isOpen,
+    // closeHandler,
+    children } = props;
+
+  if (!isOpen) return null
 
   return (
-    <HeadlessuiDialog
+    <HStack
       className={cn(cls.Dialog, className)}
-      open={isOpen}
-      onClose={closeHandler}
+      // open={isOpen}
+      // onClose={closeHandler}
     >
-        <HeadlessuiDialog.Panel className={cn(cls.DialogInner)}>
+        <HStack className={cn(cls.DialogInner)}>
           {children}
-        </HeadlessuiDialog.Panel>
-    </HeadlessuiDialog>
+        </HStack>
+    </HStack>
   );
 };

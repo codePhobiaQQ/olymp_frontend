@@ -14,7 +14,6 @@ import {BannerScreen} from './../BannerScreen/BannerScreen'
 import {StagesScreen} from './../StagesScreen/StagesScreen'
 import {TableScreen} from './../TableScreen/TableScreen'
 import RoutingCardsScreen from './../RoutingCardsScreen/RoutingCardsScreen'
-// import OrganisatorsAndPartnersScreen from './../OrganisatorsAndPartnersScreen/OrganisatorsAndPartnersScreen.tsx'
 import PhraseScreen from './../../ui/PhraseScreen/PhraseScreen.tsx'
 import SubscribeScreen from './../../ui/SubscribeScreen/ui/SubscribeScreen/SubscribeScreen.tsx'
 import {BenefitsScreen} from './../../ui/BenifitsScreen/BenefitsScreen.tsx'
@@ -56,7 +55,6 @@ const MainPageAsync = () => {
             <StagesScreen/>
             <TableScreen/>
             <RoutingCardsScreen/>
-            {/*<OrganisatorsAndPartnersScreen/>*/}
             <SubscribeScreen/>
             <PhraseScreen/>
         </AnimationProvider>
