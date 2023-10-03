@@ -1,1 +1,1 @@
-export const __API__ = 'https://olymp.ivanskanavi.com/wp-json'
+export const __API__ = 'https://olymp.ivanskanavi.com/repo/wp-json'
