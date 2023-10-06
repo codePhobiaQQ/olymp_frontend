@@ -9,11 +9,30 @@ import { HStack, VStack } from '@shared/ui/Stack';
 import { Title } from '@shared/ui/SectionTitle/Title.tsx';
 import { gsap } from 'gsap';
 import { useEffect, useRef } from 'react';
+import Text from '@shared/ui/Text/Text.tsx';
+import { ReactComponent as ArrowSvg } from '@shared/assets/svg/decor/arrow.svg'
+
 // import {useAnimationLibs} from "@shared/lib/components/AnimationProvider/AnimationProvider.tsx";
 
 type AboutScreenProps = {
   className?: string
 }
+
+type LinkType = {
+  text: string
+}
+
+const links: LinkType[] = [
+  {
+    text: 'Этапы олимпиад'
+  },{
+    text: 'Расписание'
+  },{
+    text: 'Полезное'
+  },{
+    text: 'Организаторы'
+  },
+]
 
 export const AboutScreen = (props: AboutScreenProps) => {
   const { className } = props;
@@ -32,10 +51,17 @@ export const AboutScreen = (props: AboutScreenProps) => {
   return (
     <section ref={ref} id='AboutScreen'
              className={cn(className, cls.AboutScreen)}>
-      <VStack gap='48'>
-        <HStack max justify='center'>
+      <VStack gap='60'>
+        <HStack max justify='start'>
           <Title variant='h2'>{title}</Title>
         </HStack>
+
+        <VStack className={cn(cls.NavigationWrapper)} max gap='16'>
+          {links.map((link, index) => <HStack key={index}  className={cn(cls.NavigationItem)} justify='between' align='center'>
+            <Text className={cn(cls.LinkContent)} size='26'>{link.text}</Text>
+            <ArrowSvg className={cn(cls.Arrow)} />
+          </HStack>)}
+        </VStack>
 
         <HStack gap='32' max justify='between'>
           <WpTextFormatter className={cn(cls.AboutDescription)} content={description} />

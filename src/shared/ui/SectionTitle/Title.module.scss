@@ -1,9 +1,21 @@
 .Title {
+  position: relative;
+
+  &:after {
+    content: '';
+    height: 2px;
+    width: 100%;
+    background-color: #202020;
+    display: block;
+    min-width: 218px;
+  }
 
   &.H2 {
     text-transform: uppercase;
-    font-size: var(--px48);
+    font-size: var(--px28);
     line-height: 1.2em;
-    font-family: 'masb', sans-serif;
+    font-family: 'lb', sans-serif;
+    font-weight: 700;
+    white-space: nowrap;
   }
 }

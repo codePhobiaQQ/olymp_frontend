@@ -6,6 +6,29 @@
     font-size: var(--px24);
   }
 
+  .NavigationWrapper {
+    margin-left: var(--px40);
+
+    .NavigationItem {
+      width: var(--content-width);
+      padding-bottom: var(--px16);
+      border-bottom: 1px solid #535353;
+      cursor: pointer;
+
+      .LinkContent {
+        white-space: nowrap;
+        font-family: 'mm', sans-serif;
+        font-size: var(--px28);
+        color: #535353;
+      }
+      .Arrow {
+        width: var(--px16);
+        height: var(--px16);
+        fill: #535353;
+      }
+    }
+  }
+
   .Wave {
     position: absolute;
     right: 0;
