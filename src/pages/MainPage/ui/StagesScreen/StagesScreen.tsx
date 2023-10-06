@@ -33,7 +33,7 @@ export const StagesScreen = (props: StagesScreenProps) => {
             <Title text='Ознакомительный этап' className={cls.StageTitle} theme={TitleTheme.H4} />
             <Text className={cls.StageText} text='Возможность прохождения данного этапа предоставляется всем зарегистрированным на сайте школьникам.
 Ознакомительный этап предназначается для знакомства с системой проведения дистанционных этапов олимпиад на нашем сайте. Вам предоставляется возможность посмотреть в каком формате задаются вопросы и как корректно вводить ответы.' />
-            <Button colorTheme='dark' className={cls.Btn} variant='outline_transparent_arrow'>Выбрать олимпиаду</Button>
+            <Button colorTheme='blue_fill' className={cls.Btn} variant='outline_transparent_arrow'>Выбрать олимпиаду</Button>
           </div>
         </div>
 
@@ -47,7 +47,7 @@ export const StagesScreen = (props: StagesScreenProps) => {
             <Title text='Ознакомительный этап' className={cls.StageTitle} theme={TitleTheme.H4} />
             <Text className={cls.StageText} text='Возможность прохождения данного этапа предоставляется всем зарегистрированным на сайте школьникам.
 Ознакомительный этап предназначается для знакомства с системой проведения дистанционных этапов олимпиад на нашем сайте. Вам предоставляется возможность посмотреть в каком формате задаются вопросы и как корректно вводить ответы.' />
-            <Button colorTheme='dark' className={cls.Btn} variant='outline_transparent_arrow'>Выбрать олимпиаду</Button>
+            <Button colorTheme='blue_fill' className={cls.Btn} variant='outline_transparent_arrow'>Выбрать олимпиаду</Button>
           </div>
         </div>
 
@@ -60,7 +60,7 @@ export const StagesScreen = (props: StagesScreenProps) => {
             <Title text='Ознакомительный этап' className={cls.StageTitle} theme={TitleTheme.H4} />
             <Text className={cls.StageText} text='Возможность прохождения данного этапа предоставляется всем зарегистрированным на сайте школьникам.
 Ознакомительный этап предназначается для знакомства с системой проведения дистанционных этапов олимпиад на нашем сайте. Вам предоставляется возможность посмотреть в каком формате задаются вопросы и как корректно вводить ответы.' />
-            <Button colorTheme='dark' className={cls.Btn} variant='outline_transparent_arrow'>Выбрать олимпиаду</Button>
+            <Button colorTheme='blue_fill' className={cls.Btn} variant='outline_transparent_arrow'>Выбрать олимпиаду</Button>
           </div>
         </div>
       </div>

@@ -3,6 +3,7 @@ import { ReactComponent as Arrow } from '@shared/assets/images/svg/arrow.svg';
 import cls from './Button.module.scss';
 import cn from 'classnames';
 
+type sizeType = 's' | 'm' | 'l' | 'xl'
 type variantType = 'outline_transparent_arrow' | 'default' | 'outline_transparent' | 'only_text' |
   'auth'
 type colorTheme = 'dark' | 'light' | 'blue_transparent' | 'blue_fill' | 'grey_transparent'
@@ -12,8 +13,15 @@ interface ButtonI extends ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
   variant?: variantType;
   colorTheme?: colorTheme;
+  size?: sizeType;
 }
 
+const sizeClsMapper: Record<sizeType, string> = {
+  s: cls.s,
+  m: cls.m,
+  l: cls.l,
+  xl: cls.xl
+};
 const variantsClsMapper: Record<variantType, string> = {
   default: cls.default,
   auth: cls.auth,
@@ -30,13 +38,21 @@ const colorThemeClsMapper: Record<colorTheme, string> = {
 };
 
 const Button = (props: ButtonI) => {
-  const { variant = 'outline_transparent_arrow', children, className, onClick, colorTheme, ...otherProps } = props;
+  const {
+    variant = 'outline_transparent_arrow',
+    children,
+    className,
+    onClick,
+    colorTheme,
+    size = 'm',
+    ...otherProps
+  } = props;
   const hasArrow = variant === 'outline_transparent_arrow';
 
   return (
     <button
       onClick={onClick}
-      className={cn(className, cls.Button, variantsClsMapper[variant], colorTheme && colorThemeClsMapper[colorTheme])}
+      className={cn(className, cls.Button, variantsClsMapper[variant], sizeClsMapper[size], colorTheme && colorThemeClsMapper[colorTheme])}
       {...otherProps}
     >
       {children}
