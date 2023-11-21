@@ -12,6 +12,7 @@ import { NewsPage } from '@pages/NewsPage'
 import { HeaderTheme } from '@widgets/Header'
 import { NewsDetailsPage } from '@pages/NewsDetailsPage'
 import { OlympDetailsPage } from '@pages/OlympDetailsPage'
+import { OnlineStudy } from '@pages/OnlineStudy';
 
 // -------------------------
 // ------ Core routes ------
@@ -80,6 +81,7 @@ export const routeConfig: Omit<RoutesType, 'Component'> = {
   [AppRoutes.OnlineStudy]: {
     label: 'Онлайн обучение',
     path: routePath[AppRoutes.OnlineStudy],
+    element: <OnlineStudy />,
   },
   [AppRoutes.OlympSchedule]: {
     label: 'Онлайн обучение',
