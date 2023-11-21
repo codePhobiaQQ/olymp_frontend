@@ -5,8 +5,9 @@ import './var/theme/index.scss'
 //Global------------
 import './framework.css'
 import './global.sass'
-import './var/mixin.css'
 import './var/var.css'
+import './var/layouts/pageLayout.css'
+import './var/layouts/sections.css'
 
 //------------------
 //Inline classes----

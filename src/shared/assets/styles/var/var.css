@@ -75,6 +75,7 @@
 
 	/* ---- Sections padding ---- */
 	--sections-padding: var(--px40);
+	--sections-middle-padding: var(--px60);
 	--sections-big-padding: var(--px80);
 	--sections-inner-paddings: var(--px30);
 	--often-border-radius: var(--px18);
@@ -85,8 +86,49 @@
 
 /* -------- Adaptation ------ */
 
-@media screen and (max-width: 1919px) {
-}
-
-@media screen and (max-width: 968px) {
+@media screen and (max-width: 768px) {
+	:root {
+		--px2: min(calc(var(--index) * 0.14), 5px) !important;
+		--px3: min(calc(var(--index) * 0.21), 5px) !important;
+		--px4: min(calc(var(--index) * 0.29), 6px) !important;
+		--px5: min(calc(var(--index) * 0.36), 8px) !important;
+		--px6: min(calc(var(--index) * 0.43), 9px) !important;
+		--px7: min(calc(var(--index) * 0.49), 11px) !important;
+		--px8: min(calc(var(--index) * 0.57), 12px) !important;
+		--px9: min(calc(var(--index) * 0.64), 14px) !important;
+		--px10: min(calc(var(--index) * 0.75), 15px) !important;
+		--px11: min(calc(var(--index) * 0.78), 17px) !important;
+		--px12: min(calc(var(--index) * 0.9), 18px) !important;
+		--px13: min(calc(var(--index) * 0.93), 20px) !important;
+		--px14: min(calc(var(--index) * 1), 21px) !important;
+		--px15: min(calc(var(--index) * 1.07), 23px) !important;
+		--px16: min(calc(var(--index) * 1.14), 24px) !important;
+		--px17: min(calc(var(--index) * 1.2), 26px) !important;
+		--px18: min(calc(var(--index) * 1.29), 27px) !important;
+		--px19: min(calc(var(--index) * 1.35), 29px) !important;
+		--px20: min(calc(var(--index) * 1.42), 30px) !important;
+		--px21: min(calc(var(--index) * 1.5), 32px) !important;
+		--px22: min(calc(var(--index) * 1.64), 33px) !important;
+		--px24: min(calc(var(--index) * 1.71), 36px) !important;
+		--px25: min(calc(var(--index) * 1.78), 38px) !important;
+		--px26: min(calc(var(--index) * 1.86), 39px) !important;
+		--px27: min(calc(var(--index) * 1.93), 41px) !important;
+		--px28: min(calc(var(--index) * 2), 42px) !important;
+		--px29: min(calc(var(--index) * 2.1), 44px) !important;
+		--px30: min(calc(var(--index) * 2.13), 45px) !important;
+		--px32: min(calc(var(--index) * 2.28), 48px) !important;
+		--px35: min(calc(var(--index) * 2.55), 53px) !important;
+		--px38: min(calc(var(--index) * 2.7), 57px) !important;
+		--px40: min(calc(var(--index) * 2.85), 60px) !important;
+		--px48: min(calc(var(--index) * 3.6), 72px) !important;
+		--px50: min(calc(var(--index) * 3.75), 75px) !important;
+		--px60: min(calc(var(--index) * 4.35), 90px) !important;
+		--px64: min(calc(var(--index) * 4.57), 96px) !important;
+		--px73: min(calc(var(--index) * 5.21), 110px) !important;
+		--px80: min(calc(var(--index) * 5.7), 120px) !important;
+		--px100: min(calc(var(--index) * 7.35), 150px) !important;
+		--px120: min(calc(var(--index) * 8.56), 180px) !important;
+		--px150: min(calc(var(--index) * 10.71), 225px) !important;
+		--px180: min(calc(var(--index) * 12.86), 270px) !important;
+	}
 }
