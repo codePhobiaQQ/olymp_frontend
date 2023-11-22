@@ -1,11 +1,11 @@
-import { useState, useCallback } from 'react'
+import { useState } from 'react'
 import AppImage from '@shared/ui/AppImage/AppImage'
 import cls from './SubscribeScreen.module.scss'
 import cn from 'classnames'
 import bg from '@shared/assets/images/subscribe/subscribeBg.jpg'
-import Title, { TitleTheme } from '@shared/ui/Title/Title'
+import Title from '@shared/ui/Title/Title'
 import Text from '@shared/ui/Text/Text'
-import SubscribeInputField from '../SubscribeInputField/SubscribeInputField'
+// import SubscribeInputField from '../SubscribeInputField/SubscribeInputField'
 import { olympData } from '@shared/data/olympData'
 
 interface SubscribeScreenI {
@@ -20,15 +20,15 @@ const SubscribeScreen = ({ className = '' }: SubscribeScreenI) => {
     return () => setActiveOlympFilter(activeOlympFilter)
   }
 
-  const [email, setEmail] = useState<string>('')
+  // const [email, setEmail] = useState<string>('')
 
-  const changeHandler = useCallback(
-    (e: HTMLInputElement) => {
-      // @ts-ignore
-      setEmail(e.target.value)
-    },
-    [setEmail]
-  )
+  // const changeHandler = useCallback(
+  //   (e: HTMLInputElement) => {
+  //     // @ts-ignore
+  //     setEmail(e.target.value)
+  //   },
+  //   [setEmail]
+  // )
 
   return (
     <div className={cn(className, cls.SubscribeScreen)}>
@@ -41,7 +41,7 @@ const SubscribeScreen = ({ className = '' }: SubscribeScreenI) => {
           <div className={cn(cls.ContentInnner)}>
             <Title
               className={cn(cls.SectionTitle, 'ttu')}
-              theme={TitleTheme.H3}
+              tag='h3'
               text={'подпишитесь на рассылку о новостях и событиях портала v-olymp.ru'}
             />
 
@@ -64,7 +64,7 @@ const SubscribeScreen = ({ className = '' }: SubscribeScreenI) => {
               ))}
             </ul>
 
-            <SubscribeInputField value={email} onChange={changeHandler} />
+            {/*<SubscribeInputField value={email} onChange={changeHandler} />*/}
 
             <Text
               className={cn(cls.UserAccess)}

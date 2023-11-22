@@ -1,7 +1,7 @@
 import { RouteActionScreenAttributes } from '@shared/routes/routes'
 import { useNavigate } from 'react-router-dom'
 import AppLink, { AppLinkTheme } from '@shared/ui/AppLink/AppLink'
-import Title, { TitleTheme } from '@shared/ui/Title/Title'
+import Title from '@shared/ui/Title/Title'
 import cls from './Card.module.scss'
 import cn from 'classnames'
 import AppImage from '../AppImage/AppImage'
@@ -26,7 +26,7 @@ const MainScreenCard = (props: CardI) => {
 
   return (
     <div className={cn(className, cls.MainScreenCard, cls.Card, cls[sizeTheme])}>
-      <Title theme={TitleTheme.H4} className={cn(cls.CardTitle, 'ttu')} text={data?.title} />
+      <Title tag='h4' className={cn(cls.CardTitle, 'ttu')} text={data?.title} />
 
       <ul className={cn(cls.CardList)}>
         {/* @ts-ignore */}
@@ -63,7 +63,7 @@ export const CardRouting = (props: RoutingCardI) => {
       )}
       <div className={cn(cls.CardRoutingContentWrapper)}>
         <div className={cn(cls.CardRoutingContentWrapperInner)}>
-          <Title theme={TitleTheme.H4} className={cn(cls.CardTitle, 'ttu')} text={data?.title} />
+          <Title tag='h4' className={cn(cls.CardTitle, 'ttu')} text={data?.title} />
           <div className={cn(cls.DescriptionWrapper)}>
             <Text size='26' className={cn(cls.Description)} text={data?.description} />
 

@@ -1,6 +1,6 @@
 import cn from 'classnames'
 import cls from './MainScreen.module.scss'
-import Title, { TitleTheme } from '@shared/ui/Title/Title'
+import Title from '@shared/ui/Title/Title'
 import MainScreenCard, { CardSizeTheme } from '@shared/ui/Card/Card'
 import { ReactComponent as LogoSvg } from '@shared/assets/images/svg/olymp-main.svg'
 import { GradientBg } from '@shared/ui/GradientBg'
@@ -26,7 +26,7 @@ const MainScreen = ({ className = '' }: MainScreenI) => {
 
             <Title
               style={{ color: '#fff' }}
-              theme={TitleTheme.H3}
+              tag='h3'
               className={cn(cls.Title)}
               text={subTitle}
             />

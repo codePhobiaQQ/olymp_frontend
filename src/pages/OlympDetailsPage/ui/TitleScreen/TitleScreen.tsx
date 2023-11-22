@@ -1,6 +1,6 @@
 import cn from 'classnames'
 import cls from './TitleScreen.module.scss'
-import Title, { TitleTheme } from '@shared/ui/Title/Title.tsx'
+import Title from '@shared/ui/Title/Title.tsx'
 import Text from '@shared/ui/Text/Text.tsx'
 import { useSelector } from 'react-redux'
 import {
@@ -27,7 +27,7 @@ export const TitleScreen = (props: TitleScreenProps) => {
   return (
     <div className={cn(className, cls.TitleScreen)}>
       <div style={{ backgroundImage: `url(${image})` }} className={cn(cls.TitleScreenInner)}>
-        <Title className={cls.OlympName} theme={TitleTheme.H2} text={name} />
+        <Title className={cls.OlympName} tag='h2' text={name} />
         <Text text={`олимпиада ${levelToRim(Number(level))} уровня`} className={cls.OlympLevel} />
       </div>
     </div>

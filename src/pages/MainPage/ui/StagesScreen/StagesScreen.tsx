@@ -5,7 +5,7 @@ import Text from '@shared/ui/Text/Text'
 import Button from '@shared/ui/Button/Button'
 import {VStack} from "@shared/ui/Stack";
 import {Title as SectionTitle} from "@shared/ui/SectionTitle/Title.tsx";
-import Title, {TitleTheme} from "@shared/ui/Title/Title.tsx";
+import Title from "@shared/ui/Title/Title.tsx";
 
 type StagesScreenProps = {
   className?: string;
@@ -30,7 +30,7 @@ export const StagesScreen = (props: StagesScreenProps) => {
             <div className={cn(cls.Line)}></div>
           </div>
           <div className={cn(cls.StageContent)}>
-            <Title text='Ознакомительный этап' className={cls.StageTitle} theme={TitleTheme.H4} />
+            <Title text='Ознакомительный этап' className={cls.StageTitle} tag='h4' />
             <Text className={cls.StageText} text='Возможность прохождения данного этапа предоставляется всем зарегистрированным на сайте школьникам.
 Ознакомительный этап предназначается для знакомства с системой проведения дистанционных этапов олимпиад на нашем сайте. Вам предоставляется возможность посмотреть в каком формате задаются вопросы и как корректно вводить ответы.' />
             <Button colorTheme='blue_fill' className={cls.Btn} variant='outline_transparent_arrow'>Выбрать олимпиаду</Button>
@@ -44,7 +44,7 @@ export const StagesScreen = (props: StagesScreenProps) => {
           </div>
 
           <div className={cn(cls.StageContent)}>
-            <Title text='Ознакомительный этап' className={cls.StageTitle} theme={TitleTheme.H4} />
+            <Title text='Ознакомительный этап' className={cls.StageTitle} tag='h4' />
             <Text className={cls.StageText} text='Возможность прохождения данного этапа предоставляется всем зарегистрированным на сайте школьникам.
 Ознакомительный этап предназначается для знакомства с системой проведения дистанционных этапов олимпиад на нашем сайте. Вам предоставляется возможность посмотреть в каком формате задаются вопросы и как корректно вводить ответы.' />
             <Button colorTheme='blue_fill' className={cls.Btn} variant='outline_transparent_arrow'>Выбрать олимпиаду</Button>
@@ -57,7 +57,7 @@ export const StagesScreen = (props: StagesScreenProps) => {
             <div className={cn(cls.Line)}></div>
           </div>
           <div className={cn(cls.StageContent)}>
-            <Title text='Ознакомительный этап' className={cls.StageTitle} theme={TitleTheme.H4} />
+            <Title text='Ознакомительный этап' className={cls.StageTitle} tag='h4' />
             <Text className={cls.StageText} text='Возможность прохождения данного этапа предоставляется всем зарегистрированным на сайте школьникам.
 Ознакомительный этап предназначается для знакомства с системой проведения дистанционных этапов олимпиад на нашем сайте. Вам предоставляется возможность посмотреть в каком формате задаются вопросы и как корректно вводить ответы.' />
             <Button colorTheme='blue_fill' className={cls.Btn} variant='outline_transparent_arrow'>Выбрать олимпиаду</Button>

@@ -1,4 +1,4 @@
-import Title, { TitleTheme } from '@shared/ui/Title/Title'
+import Title from '@shared/ui/Title/Title'
 import cls from './TitleWithText.module.scss'
 import cn from 'classnames'
 import Text from '@shared/ui/Text/Text'
@@ -31,7 +31,7 @@ const TitleWithText = (props: TitleWithTextI) => {
     <div className={cn(className)}>
       <div className={cn(cls.TitleWithTextWrapperInner)}>
         <div className={cls.TitleWrapper}>
-          <Title className={cn(cls.Title, titleClassname)} theme={TitleTheme.H3} text={title} />
+          <Title className={cn(cls.Title, titleClassname)} tag='h3' text={title} />
           {author && <Text text={author} className={cn(cls['AuthorWrapper'], authorClassname)} />}
         </div>
 

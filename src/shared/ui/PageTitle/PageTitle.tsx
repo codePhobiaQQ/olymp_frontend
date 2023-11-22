@@ -1,4 +1,4 @@
-import Title, { TitleTheme } from '@shared/ui/Title/Title'
+import Title from '@shared/ui/Title/Title'
 import cls from './PageTitle.module.css'
 import cn from 'classnames'
 
@@ -10,7 +10,7 @@ interface PageTitleI {
 const PageTitle = (props: PageTitleI) => {
   const { className = '', text } = props
 
-  return <Title text={text ? text : 'Страница'} theme={TitleTheme.H2} className={cn(className, cls.PageTitle)} />
+  return <Title text={text ? text : 'Страница'} tag='h2' className={cn(className, cls.PageTitle)} />
 }
 
 export default PageTitle

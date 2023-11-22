@@ -1,0 +1,10 @@
+export type { colorType } from './color.ts';
+export { colorClsMapper } from './color.ts';
+export type { fontSizeType } from './fontSize.ts';
+export { fontSizeClsMapper } from './fontSize.ts';
+export type { fontWeightType } from './fontWeight.ts';
+export { fontWeightClsMapper } from './fontWeight.ts';
+export type { textAlignType } from './textAlign.ts';
+export { textAlignClsMapper } from './textAlign.ts';
+export type { fontFamilyType } from './fontFamily.ts';
+export { fontFamilyClsMapper } from './fontFamily.ts';

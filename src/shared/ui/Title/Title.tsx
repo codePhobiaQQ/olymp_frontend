@@ -1,99 +1,93 @@
-import {HTMLAttributes} from 'react'
-import cls from './Title.module.scss'
-import cn from 'classnames'
+import { HTMLAttributes } from 'react';
+import cls from './Title.module.scss';
+import cn from 'classnames';
 
-export enum TitleTheme {
-  H1 = 'h1',
-  H1_UPPERCASE = 'h1_uppercase',
-  H2 = 'h2',
-  TITLE_WITH_TEXT = 'title_with_text',
-  H3 = 'h3',
-  H4 = 'h4',
-  H4_THIN = 'h4_thin',
-  H5 = 'h5',
-  H6 = 'h6',
-}
+import {
+  colorClsMapper,
+  colorType, fontFamilyClsMapper, fontFamilyType, fontSizeClsMapper,
+  fontSizeType,
+} from '@shared/lib/hooks/componentsSettings';
+
+export type titleType = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
 
 interface TitleI extends HTMLAttributes<HTMLHeadingElement> {
-  className?: string
-  theme?: TitleTheme
-  text?: string
+  className?: string;
+  tag?: titleType;
+  fontSize?: fontSizeType;
+  fontFamily?: fontFamilyType;
+  color?: colorType;
+  isUnderline?: boolean
+  isUpperCase?: boolean
+  text?: string;
 }
 
 const Title = (props: TitleI) => {
-  const {className = '', theme = TitleTheme.H1, text, ...otherProps} = props
+  const {
+    className = '',
+    tag = 'h2', text,
+    color = 'default',
+    fontFamily = 'lb',
+    isUnderline = true,
+    isUpperCase = true,
+    fontSize = '28',
+    ...otherProps
+  } = props;
 
-  if (theme == TitleTheme.H1) {
+  const classes = cn(
+    cls.Title,
+    { [cls.underline]: isUnderline, [cls.uppercase]: isUpperCase },
+    className,
+    colorClsMapper[color],
+    fontFamilyClsMapper[fontFamily],
+    fontSizeClsMapper[fontSize]);
+
+  if (tag === 'h1') {
     return (
-      <h1 className={cn(className, cls.Title, cls[TitleTheme.H1])} {...otherProps}>
+      <h1 className={classes} {...otherProps}>
         {text}
       </h1>
-    )
+    );
   }
 
-  if (theme == TitleTheme.H1_UPPERCASE) {
+  if (tag == 'h2') {
     return (
-      <h1 className={cn(cls.Title, className, cls[TitleTheme.H1_UPPERCASE])} {...otherProps}>
-        {text}
-      </h1>
-    )
-  }
-
-  if (theme == TitleTheme.H2) {
-    return (
-      <h2 className={cn(cls.Title, className, cls[TitleTheme.H2])} {...otherProps}>
+      <h2 className={classes} {...otherProps}>
         {text}
       </h2>
-    )
+    );
   }
 
-  if (theme == TitleTheme.TITLE_WITH_TEXT) {
+  if (tag === 'h3') {
     return (
-      <h2 className={cn(cls.Title, className, cls[TitleTheme.TITLE_WITH_TEXT])} {...otherProps}>
-        {text}
-      </h2>
-    )
-  }
-
-  if (theme == TitleTheme.H3) {
-    return (
-      <h3 className={cn(cls.Title, className, cls[TitleTheme.H3])} {...otherProps}>
+      <h3 className={classes} {...otherProps}>
         {text}
       </h3>
-    )
+    );
   }
 
-  if (theme == TitleTheme.H4) {
+  if (tag === 'h4') {
     return (
-      <h4 className={cn(cls.Title, className, cls[TitleTheme.H4])} {...otherProps}>
+      <h4 className={classes} {...otherProps}>
         {text}
       </h4>
-    )
+    );
   }
 
-  if (theme == TitleTheme.H4_THIN) {
+  if (tag === 'h5') {
     return (
-      <h4 className={cn(cls.Title, className, cls[TitleTheme.H4_THIN])} {...otherProps}>
-        {text}
-      </h4>
-    )
-  }
-
-  if (theme == TitleTheme.H5) {
-    return (
-      <h5 className={cn(cls.Title, className, cls[TitleTheme.H5])} {...otherProps}>
+      <h5 className={classes} {...otherProps}>
         {text}
       </h5>
-    )
+    );
   }
 
-  if (theme == TitleTheme.H6) {
+  if (tag === 'h6') {
     return (
-      <h6 className={cn(cls.Title, className, cls[TitleTheme.H6])} {...otherProps}>
+      <h6 className={classes} {...otherProps}>
         {text}
       </h6>
-    )
+    );
   }
-}
+};
 
-export default Title
+export default Title;
