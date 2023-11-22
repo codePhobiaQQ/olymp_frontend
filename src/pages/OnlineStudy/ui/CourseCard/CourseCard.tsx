@@ -5,8 +5,8 @@ import Title from '@shared/ui/Title/Title.tsx';
 import { ReactComponent as ClockSvg } from '@shared/assets/svg/clock.svg';
 import Text from '@shared/ui/Text/Text.tsx';
 import AppLink from '@shared/ui/AppLink/AppLink.tsx';
-// import CardBg from '@shared/assets/images/decore/cardBg.jpg'
-// import AppImage from '@shared/ui/AppImage/AppImage.tsx';
+import CardBg from '@shared/assets/images/decore/cardBg.jpg'
+import AppImage from '@shared/ui/AppImage/AppImage.tsx';
 
 type bgThemeType = 'blue' | 'light'
 const bgThemeClsMapper: Record<bgThemeType, string> = {
@@ -29,7 +29,7 @@ export const CourseCard = (props: CourseCardProps) => {
 
   return (
     <AppLink className={cn(className, cls.CourseCard, bgThemeClsMapper[bgTheme])} theme='default' to={link} >
-      {/*<AppImage wrapperClassName={cn(cls.DecorBgImage)} src={CardBg} />*/}
+      <AppImage wrapperClassName={cn(cls.DecorBgImage)} src={CardBg} />
 
       <VStack className={cn(cls.ContentWrapper)} max gap='16' >
         <Title className={cn(cls.TitleCls)} isUpperCase={false} isUnderline={false} tag='h4' fontSize='28' fontFamily='mm' text={title}

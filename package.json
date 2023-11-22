@@ -34,6 +34,7 @@
   "devDependencies": {
     "@svgr/rollup": "^8.0.1",
     "@types/date-fns": "^2.6.0",
+    "@types/node": "^20.9.4",
     "@types/react": "^18.0.37",
     "@types/react-dom": "^18.0.11",
     "@types/react-redux": "^7.1.25",

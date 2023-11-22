@@ -58,7 +58,7 @@ export const AboutScreen = (props: AboutScreenProps) => {
 
         <VStack className={cn(cls.NavigationWrapper)} max gap='16'>
           {links.map((link, index) => <HStack key={index}  className={cn(cls.NavigationItem)} justify='between' align='center'>
-            <Text className={cn(cls.LinkContent)} fontSize='26'>{link.text}</Text>
+            <Text text={link.text} className={cn(cls.LinkContent)} fontSize='26' />
             <ArrowSvg className={cn(cls.Arrow)} />
           </HStack>)}
         </VStack>

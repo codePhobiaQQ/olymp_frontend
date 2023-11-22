@@ -2,6 +2,10 @@
   display: block;
   font-family: 'mr', sans-serif;
 
+  &:hover {
+    color: inherit;
+  }
+
   &.link_with_arrow {
     display: flex;
     align-items: center;

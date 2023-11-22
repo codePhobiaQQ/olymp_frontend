@@ -2,7 +2,7 @@ import { messengersData } from '@shared/data/messengersData'
 import cls from './Footer.module.scss'
 import cn from 'classnames'
 import AppImage from '@shared/ui/AppImage/AppImage'
-import AppLink, { AppLinkTheme } from '@shared/ui/AppLink/AppLink'
+import AppLink from '@shared/ui/AppLink/AppLink'
 import { ReactComponent as LogoFooter } from '@shared/assets/images/svg/logo-footer.svg'
 import Text from '@shared/ui/Text/Text'
 import { olympData } from '@shared/data/olympData'
@@ -31,13 +31,13 @@ const Footer = ({ className = '' }: FooterI) => {
 
             <div className={cls.ContactsLinks}>
               <AppLink
-                theme={AppLinkTheme.DEFAULT_LINK}
+                theme='default'
                 className={cls.ContactLink}
                 to={'mailto:support@v-olymp.ru'}
                 text="support@v-olymp.ru"
               />
               <AppLink
-                theme={AppLinkTheme.DEFAULT_LINK}
+                theme='default'
                 className={cls.ContactLink}
                 to={'tel:84959893789'}
                 text="8 (495) 989 37 89"
@@ -55,7 +55,7 @@ const Footer = ({ className = '' }: FooterI) => {
                   <AppLink
                     className={cls.FooterListItem}
                     text={olymp.name}
-                    theme={AppLinkTheme.DEFAULT_LINK}
+                    theme='default'
                     to={olymp.path}
                   />
                 </li>
@@ -73,7 +73,7 @@ const Footer = ({ className = '' }: FooterI) => {
                   <AppLink
                     className={cls.FooterListItem}
                     text={event.name}
-                    theme={AppLinkTheme.DEFAULT_LINK}
+                    theme='default'
                     to={event.path}
                   />
                 </li>

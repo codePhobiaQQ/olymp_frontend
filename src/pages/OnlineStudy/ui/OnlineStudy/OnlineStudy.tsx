@@ -16,7 +16,7 @@ export const OnlineStudy = memo((props: OnlineStudyProps) => {
         <div className={cn(className, cls.OnlineStudy)}>
            <OnlineStudyDescription />
             <OnlineStudyCourses title='технические курсы' courses={techCourses} />
-            <OnlineStudyCourses title='гуманитарные курсы курсы' courses={gumCourses} />
+            <OnlineStudyCourses title='гуманитарные курсы' courses={gumCourses} />
         </div>
     );
 });
