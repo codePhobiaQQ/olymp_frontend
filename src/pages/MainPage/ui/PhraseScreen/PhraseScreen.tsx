@@ -10,7 +10,7 @@ interface PhraseScreenI {
 const PhraseScreen = ({ className = '' }: PhraseScreenI) => {
   return (
     <HStack className={cn(className, cls.PhraseScreen)}>
-      <Text align='center' className={cn(cls.MotivationPhrase)} text="”   Всё ближайшее время  определит образование   ”" />
+      <Text textAlign='center' className={cn(cls.MotivationPhrase)} text="”   Всё ближайшее время  определит образование   ”" />
     </HStack>
   )
 }

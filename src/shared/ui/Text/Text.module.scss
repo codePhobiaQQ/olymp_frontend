@@ -1,71 +1,82 @@
 .Text {
   transition: var(--transition-color);
   display: block;
-  line-height: 1.2em;
+  line-height: 1.4em;
   word-break: break-word;
   color: var(--white);
 
-  &.span {
-    display: inline-block;
+  .marginAuto {
+    margin: auto;
   }
+}
 
-  /* Font Weight */
-  &.bold {
-    font-family: 'mb', sans-serif;
-  }
-  &.medium {
-    font-family: 'mm', sans-serif;
-  }
-  &.regular {
-    font-family: 'mr', sans-serif;
-  }
+/* Weight */
+.light {
+  font-family: 'pop-l', sans-serif;
+}
+.regular {
+  font-family: 'pop', sans-serif;
+}
+.medium {
+  font-family: 'pop-med', sans-serif;
+}
+.bold {
+  font-family: 'pop-bold', sans-serif;
+}
 
-  /* Align */
-  &.alignLeft {
-    text-align: left;
-  }
-  &.alignCenter {
-    text-align: center;
-  }
-  &.alignRight {
-    text-align: right;
-  }
+/* Align */
+.alignLeft {
+  text-align: left;
+}
+.alignCenter {
+  text-align: center;
+}
+.alignRight {
+  text-align: right;
+}
 
-  /* Color Theme */
-  &.white {
-    color: var(--white);
-  }
-  &.dark {
-    color: var(--accent3);
-  }
+/* Size */
+.px10 {
+  font-size: var(--px10);
+}
+.px12 {
+  font-size: var(--px12);
+}
+.px14 {
+  font-size: var(--px14);
+}
+.px16 {
+  font-size: var(--px16);
+}
+.px18 {
+  font-size: var(--px18);
+}
+.px20 {
+  font-size: var(--px20);
+}
+.px22 {
+  font-size: var(--px22);
+}
+.px24 {
+  font-size: var(--px24);
+}
+.px26 {
+  font-size: var(--px26);
+}
 
-  /* Size */
-  &.px10 {
-    font-size: var(--px10);
-  }
-  &.px12 {
-    font-size: var(--px12);
-  }
-  &.px14 {
-    font-size: var(--px14);
-  }
-  &.px16 {
-    font-size: var(--px16);
-  }
-  &.px18 {
-    font-size: var(--px18);
-  }
-  &.px20 {
-    font-size: var(--px20);
-  }
-  &.px22 {
-    font-size: var(--px22);
-  }
-  &.px24 {
-    font-size: var(--px24);
-  }
-  &.px26 {
-    font-size: var(--px26);
-  }
-
+/* Color Theme */
+.white {
+  color: var(--white);
+}
+.dark {
+  color: var(--accent3);
+}
+.red {
+  color: var(--red);
+}
+.grey {
+  color: rgba(255, 255, 255, 0.5);
+}
+.green {
+  color: var(--green);
 }

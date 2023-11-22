@@ -1,52 +1,30 @@
-import { ReactNode } from 'react';
-import cls from './Text.module.scss';
-import cn from 'classnames';
+import React, { CSSProperties, HTMLAttributes, ReactNode, useMemo } from 'react'
+import cls from './Text.module.scss'
+import cn from 'classnames'
+import { heightType, widthClsMapper, heightClsMapper, widthType } from '@shared/lib/utils/widthHeightClassesMappers'
+import {
+  colorClsMapper,
+  colorType, fontFamilyClsMapper, fontFamilyType,
+  fontSizeClsMapper,
+  fontSizeType, textAlignClsMapper,
+  textAlignType
+} from '@shared/lib/hooks/componentsSettings';
 
-type colorThemeType = 'white' | 'dark';
-const colorClsMapper: Record<colorThemeType, string> = {
-  dark: cls.dark,
-  white: cls.white,
-};
-
-type weightType = 'regular' | 'medium' | 'bold'
-const weightClsMapper: Record<weightType, string> = {
-  'bold': cls.bold,
-  'medium': cls.medium,
-  'regular': cls.regular,
-}
-
-type sizeType = '10' | '12' | '14' | '16' | '18' | '20' | '22' | '24' | '26';
-const sizeClsMapper: Record<sizeType, string> = {
-  '10': cls.px10,
-  '12': cls.px12,
-  '14': cls.px14,
-  '16': cls.px16,
-  '18': cls.px18,
-  '20': cls.px20,
-  '22': cls.px22,
-  '24': cls.px24,
-  '26': cls.px26,
-};
-
-type alignType = 'left' | 'center' | 'right';
-const alignClsMapper: Record<alignType, string> = {
-  left: cls.alignLeft,
-  center: cls.alignCenter,
-  right: cls.alignRight,
-};
-
-interface TextI {
-  className?: string;
-  text?: string;
-  children?: ReactNode;
-  isParagraph?: boolean;
-  color?: colorThemeType;
-  size?: sizeType;
-  dataAttr?: string;
-  weight?: weightType,
-  align?: alignType;
-  clickHandler?: () => void;
-  styling?: { [name: string]: string };
+export interface TextI extends HTMLAttributes<HTMLParagraphElement> {
+  className?: string
+  text?: string
+  children?: ReactNode
+  isParagraph?: boolean
+  color?: colorType
+  fontSize?: fontSizeType
+  dataAttr?: string
+  fontFamily?: fontFamilyType
+  textAlign?: textAlignType
+  marginAuto?: boolean
+  clickHandler?: () => void
+  styling?: CSSProperties
+  width?: widthType
+  height?: heightType
 }
 
 const Text = (data: TextI) => {
@@ -55,52 +33,89 @@ const Text = (data: TextI) => {
     text,
     isParagraph = false,
     dataAttr = '',
-    color = 'dark',
-    weight = 'regular',
-    size = '16',
-    align = 'left',
+    color = 'white',
+    fontSize = '20',
+    textAlign = 'left',
+    fontFamily = 'mr',
+    marginAuto = false,
     children,
     clickHandler = () => {},
     styling = {},
-  } = data;
+    width,
+    height,
+    ...otherProps
+  } = data
 
   const classing = cn(
     className,
     cls.Text,
     colorClsMapper[color],
-    sizeClsMapper[size],
-    alignClsMapper[align],
-    weightClsMapper[weight],
+    fontSizeClsMapper[fontSize],
+    textAlignClsMapper[textAlign],
+    fontFamilyClsMapper[fontFamily],
+    {
+      [cls.marginAuto]: marginAuto,
+      [heightClsMapper[height || 'all']]: height,
+      [widthClsMapper[width || 'all']]: width
+    },
     cls[color]
-  );
+  )
+
+  const textWithLinks = useMemo(() => {
+    if (children && typeof children != 'string') {
+      return children
+    } else if (children && typeof children == 'string') {
+      return detectAndWrapLinks(children)
+    } else if (text) {
+      return detectAndWrapLinks(text)
+    }
+  }, [text, children])
 
   if (isParagraph) {
     return (
-      <p
-        onClick={clickHandler}
-        data-attr={dataAttr}
-        className={classing}
-        style={styling}
-      >
-        {text || children}
+      <p onClick={clickHandler} data-attr={dataAttr} className={classing} style={styling} {...otherProps}>
+        {textWithLinks}
       </p>
-    );
+    )
   }
 
   if (!isParagraph) {
     return (
-      <span
-        onClick={clickHandler}
-        data-attr={dataAttr}
-        className={cn(classing, cls.span)}
-        style={styling}
-      >
-        {text || children}
+      <span onClick={clickHandler} data-attr={dataAttr} className={classing} style={styling} {...otherProps}>
+        {textWithLinks}
       </span>
-    );
+    )
   }
 
-  return null;
-};
+  return null
+}
 
-export default Text;
+export default Text
+
+const detectAndWrapLinks = (text: string) => {
+  const urlRegex = /(https?:\/\/[^\s]+)/g
+  const textArray = text?.split('\n')
+
+  return textArray?.map((line, lineIndex) => (
+    <React.Fragment key={lineIndex}>
+      {lineIndex > 0 && <br />}
+      {line.split(urlRegex).map((part, index) => {
+        if (part.match(urlRegex)) {
+          return (
+            <a
+              key={index}
+              style={{ display: 'inline', textDecoration: 'underline', color: '#487cdb' }}
+              href={part}
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              {part}
+            </a>
+          )
+        } else {
+          return part
+        }
+      })}
+    </React.Fragment>
+  ))
+}

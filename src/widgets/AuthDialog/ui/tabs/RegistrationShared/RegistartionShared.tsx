@@ -21,8 +21,8 @@ export const RegistrationShared = () => {
 
       <VStack align='center' max gap='24'>
         <VStack align='center' max gap='12'>
-          <Text weight='medium' align='center' size='26' className={cn(cls.DialogTitle)} text='Регистрация' />
-          <Text isParagraph size='16' weight='regular' align='center' className={cn(cls.DialogTitle)}
+          <Text weight='medium' textAlign='center' fontSize='26' className={cn(cls.DialogTitle)} text='Регистрация' />
+          <Text isParagraph fontSize='16' weight='regular' textAlign='center' className={cn(cls.DialogTitle)}
                 text='На нашем сайте существует несколько различных видов регистрации:' />
         </VStack>
 
@@ -41,7 +41,7 @@ export const RegistrationShared = () => {
           </Button>
         </VStack>
 
-        <Text align='center'>
+        <Text textAlign='center'>
           Есть аккаунт? <Text className={cn(cls.OfferSpan)} text='Войти' isParagraph={false} />
         </Text>
       </VStack>

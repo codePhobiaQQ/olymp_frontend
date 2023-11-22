@@ -72,8 +72,7 @@
 
 	/* ---- Sections padding ---- */
 	--sections-padding: var(--px40);
-	--sections-middle-padding: var(--px60);
-	--sections-big-padding: var(--px80);
+	--sections-middle-padding: var(--px80);
 	--sections-inner-paddings: var(--px30);
 	--often-border-radius: var(--px18);
 

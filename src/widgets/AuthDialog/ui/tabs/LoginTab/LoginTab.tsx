@@ -25,7 +25,7 @@ export const LoginTab = (props: LoginTabProps) => {
                                                                 text='Забыли пароль ?'/>}/>
       </VStack>
       <Button colorTheme='blue_fill' variant='default'>Войти</Button>
-      <Text align='center'>
+      <Text textAlign='center'>
         Авторизовавшись на сайте, вы соглашаетесь
         с <Text className={cn(cls.OfferSpan)} isParagraph={false}>Пользовательским соглашением</Text> и <Text
         className={cn(cls.OfferSpan)} isParagraph={false}>Правилами портала</Text>

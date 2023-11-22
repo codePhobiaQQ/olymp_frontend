@@ -10,7 +10,7 @@ export const Rules = (props: RulesProps) => {
   const { introText = 'Зарегистрировавшись, вы соглашаетесь' } = props;
 
   return (
-    <Text align='center'>
+    <Text textAlign='center'>
       {introText}
       с <Text className={cn(cls.OfferSpan)} isParagraph={false}>Пользовательским соглашением</Text> и <Text
       className={cn(cls.OfferSpan)} isParagraph={false}>Правилами портала</Text>
