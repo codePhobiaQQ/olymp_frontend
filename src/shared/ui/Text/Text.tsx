@@ -12,7 +12,7 @@ import {
 
 export interface TextI extends HTMLAttributes<HTMLParagraphElement> {
   className?: string
-  text?: string
+  text: string
   children?: ReactNode
   isParagraph?: boolean
   color?: colorType
@@ -33,7 +33,7 @@ const Text = (data: TextI) => {
     text,
     isParagraph = false,
     dataAttr = '',
-    color = 'white',
+    color = 'default',
     fontSize = '20',
     textAlign = 'left',
     fontFamily = 'mr',

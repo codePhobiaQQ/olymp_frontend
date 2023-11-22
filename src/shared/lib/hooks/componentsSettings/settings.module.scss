@@ -41,16 +41,16 @@
 
 /* Weight */
 //.light {
-//  font-family: 'pop-l', sans-serif !important;
+//  font-family: 'pop-l', sans-serif;
 //}
 //.regular {
-//  font-family: 'pop', sans-serif !important;
+//  font-family: 'pop', sans-serif;
 //}
 //.medium {
-//  font-family: 'pop-med', sans-serif !important;
+//  font-family: 'pop-med', sans-serif;
 //}
 //.bold {
-//  font-family: 'pop-bold', sans-serif !important;
+//  font-family: 'pop-bold', sans-serif;
 //}
 
 /* Align */
@@ -68,7 +68,7 @@
 
 /* Color Theme */
 .default {
-  color: var(--default);
+  color: var(--default-color);
 }
 
 .white {
@@ -80,7 +80,7 @@
 }
 
 .grey {
-  color: rgba(255, 255, 255, 0.5);
+  color: var(--grey);
 }
 
 .green {
@@ -90,25 +90,26 @@
 // Font Family
 
 .mth {
-  font-family: "mth", sans-serif !important
+  font-family: "mth", sans-serif
 }
 
 .mr {
-  font-family: "mr", sans-serif !important
+  font-family: "mr", sans-serif
 }
 
 .mm {
-  font-family: "mm", sans-serif !important
+  font-family: "mm", sans-serif
 }
 
 .mb {
-  font-family: "mb", sans-serif !important
+  font-family: "mb", sans-serif
 }
 
 .msb {
-  font-family: "msb", sans-serif !important
+  font-family: "msb", sans-serif
 }
 
 .lb {
-  font-family: "lb", sans-serif !important
+  font-family: "lb", sans-serif;
+  font-weight: bold;
 }

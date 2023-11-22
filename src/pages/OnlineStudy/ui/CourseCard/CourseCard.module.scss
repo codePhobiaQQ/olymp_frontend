@@ -1,0 +1,69 @@
+.CourseCard {
+  width: calc(50% - 8px);
+  //max-width: 700px;
+  padding: var(--px40);
+  border-radius: var(--px8);
+  box-sizing: border-box;
+  position: relative;
+
+  .ContentWrapper {
+    z-index: 2;
+  }
+
+  .DecorBgImage {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+
+  .DescriptionWrapper {
+    height: var(--px120);
+    z-index: 1;
+    overflow: auto;
+    opacity: 0;
+    width: 70%;
+    transition: var(--transition-opacity);
+    opacity: 0;
+  }
+
+  &:hover {
+    &.bgBlueTheme, &.bgLightTheme {
+      .DescriptionWrapper {
+        opacity: 1;
+      }
+    }
+  }
+
+  &.bgBlueTheme {
+    background: rgba(#081535, 0.7);
+    .TitleCls {
+      color: var(--white);
+    }
+    .DescriptionWrapper {
+      .DescriptionText {
+        color: var(--grey);
+      }
+    }
+    .ClockSvg {
+      fill: var(--grey);
+    }
+  }
+
+
+  &.bgLightTheme {
+    background: #A0A3B5;
+    .TitleCls {
+      color: var(--default);
+    }
+    .DescriptionWrapper {
+      .DescriptionText {
+        color: var(--default-color);
+      }
+    }
+    .ClockSvg {
+      fill: var(--grey);
+    }
+  }
+}

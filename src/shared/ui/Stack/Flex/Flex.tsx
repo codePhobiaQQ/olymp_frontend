@@ -2,7 +2,7 @@ import { DetailedHTMLProps, HTMLAttributes, ReactNode } from 'react';
 import cls from './Flex.module.scss';
 import cn from 'classnames';
 
-export type FlexJustify = 'start' | 'center' | 'end' | 'between'
+export type FlexJustify = 'start' | 'center' | 'end' | 'between' | 'around'
 export type FlexAlign = 'start' | 'center' | 'end'
 export type FlexDirection = 'row' | 'column'
 export type FlexWrap = 'nowrap' | 'wrap'
@@ -30,7 +30,8 @@ const justifyClasses: Record<FlexJustify, string> = {
   start: cls.justifyStart,
   center: cls.justifyCenter,
   end: cls.justifyEnd,
-  between: cls.justifyBetween
+  between: cls.justifyBetween,
+  around: cls.justifyAround
 };
 
 const alignClasses: Record<FlexAlign, string> = {

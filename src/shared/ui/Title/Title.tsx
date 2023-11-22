@@ -1,4 +1,4 @@
-import { HTMLAttributes } from 'react';
+import React, { HTMLAttributes } from 'react';
 import cls from './Title.module.scss';
 import cn from 'classnames';
 
@@ -18,13 +18,13 @@ interface TitleI extends HTMLAttributes<HTMLHeadingElement> {
   color?: colorType;
   isUnderline?: boolean
   isUpperCase?: boolean
-  text?: string;
+  text: string;
 }
 
 const Title = (props: TitleI) => {
-  const {
+  let {
     className = '',
-    tag = 'h2', text,
+    tag = 'h2',  text,
     color = 'default',
     fontFamily = 'lb',
     isUnderline = true,
@@ -32,6 +32,8 @@ const Title = (props: TitleI) => {
     fontSize = '28',
     ...otherProps
   } = props;
+
+  const textContent = detectAndWrapLinks(text)
 
   const classes = cn(
     cls.Title,
@@ -44,7 +46,7 @@ const Title = (props: TitleI) => {
   if (tag === 'h1') {
     return (
       <h1 className={classes} {...otherProps}>
-        {text}
+        {textContent}
       </h1>
     );
   }
@@ -52,7 +54,7 @@ const Title = (props: TitleI) => {
   if (tag == 'h2') {
     return (
       <h2 className={classes} {...otherProps}>
-        {text}
+        {textContent}
       </h2>
     );
   }
@@ -60,7 +62,7 @@ const Title = (props: TitleI) => {
   if (tag === 'h3') {
     return (
       <h3 className={classes} {...otherProps}>
-        {text}
+        {textContent}
       </h3>
     );
   }
@@ -68,7 +70,7 @@ const Title = (props: TitleI) => {
   if (tag === 'h4') {
     return (
       <h4 className={classes} {...otherProps}>
-        {text}
+        {textContent}
       </h4>
     );
   }
@@ -76,7 +78,7 @@ const Title = (props: TitleI) => {
   if (tag === 'h5') {
     return (
       <h5 className={classes} {...otherProps}>
-        {text}
+        {textContent}
       </h5>
     );
   }
@@ -84,10 +86,38 @@ const Title = (props: TitleI) => {
   if (tag === 'h6') {
     return (
       <h6 className={classes} {...otherProps}>
-        {text}
+        {textContent}
       </h6>
     );
   }
 };
+
+const detectAndWrapLinks = (text: string) => {
+  const urlRegex = /(https?:\/\/[^\s]+)/g
+  const textArray = text?.split('\n')
+
+  return textArray?.map((line, lineIndex) => (
+    <React.Fragment key={lineIndex}>
+      {lineIndex > 0 && <br />}
+      {line.split(urlRegex).map((part, index) => {
+        if (part.match(urlRegex)) {
+          return (
+            <a
+              key={index}
+              style={{ display: 'inline', textDecoration: 'underline', color: '#487cdb' }}
+              href={part}
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              {part}
+            </a>
+          )
+        } else {
+          return part
+        }
+      })}
+    </React.Fragment>
+  ))
+}
 
 export default Title;
