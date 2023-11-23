@@ -4,7 +4,10 @@ import cn from 'classnames';
 
 import {
   colorClsMapper,
-  colorType, fontFamilyClsMapper, fontFamilyType, fontSizeClsMapper,
+  colorType,
+  fontFamilyClsMapper,
+  fontFamilyType,
+  fontSizeClsMapper,
   fontSizeType,
 } from '@shared/lib/hooks/componentsSettings';
 

@@ -1,16 +1,16 @@
 import cn from 'classnames';
 import cls from './AboutScreen.module.scss';
-import WaveImage from '@shared/assets/images/decore/wave.png';
 import { useSelector } from 'react-redux';
-import { getAboutScreenDescription, getAboutScreenTitle } from '@pages/MainPage/model/selectors/mainPageSelectors';
+import { getAboutScreenDescription } from '@pages/MainPage/model/selectors/mainPageSelectors';
 import { WpTextFormatter } from '@shared/ui/WpTextFormatter/WpTextFormatter';
-import AppImage from '@shared/ui/AppImage/AppImage.tsx';
 import { HStack, VStack } from '@shared/ui/Stack';
-import { Title } from '@shared/ui/SectionTitle/Title.tsx';
-import { gsap } from 'gsap';
-import { useEffect, useRef } from 'react';
 import Text from '@shared/ui/Text/Text.tsx';
-import { ReactComponent as ArrowSvg } from '@shared/assets/svg/decor/arrow.svg'
+import { ReactComponent as ArrowSvg } from '@shared/assets/svg/decor/arrow.svg';
+import { SectionWrapper } from '@shared/layouts/SectionWrapper/SectionWrapper.tsx';
+import Title from '@shared/ui/Title/Title.tsx';
+import AppLink from '@shared/ui/AppLink/AppLink.tsx';
+import { SliderApp } from '@shared/ui/SliderApp/SliderApp.tsx';
+import SliderImg from '@shared/assets/images/aboutSlider/1.jpg'
 
 // import {useAnimationLibs} from "@shared/lib/components/AnimationProvider/AnimationProvider.tsx";
 
@@ -20,56 +20,87 @@ type AboutScreenProps = {
 
 type LinkType = {
   text: string
+  href: string
 }
 
 const links: LinkType[] = [
   {
-    text: 'Этапы олимпиад'
-  },{
-    text: 'Расписание'
-  },{
-    text: 'Полезное'
-  },{
-    text: 'Организаторы'
+    text: 'Льготы победителям',
+    href: '/1'
   },
-]
+  {
+    text: 'Этапы олимпиад',
+    href: '/2'
+  },
+  {
+    text: 'Расписание',
+    href: '/3'
+  },
+  {
+    text: 'Полезное',
+    href: '/4'
+  },
+  {
+    text: 'Организаторы',
+    href: '/5'
+  }
+];
 
 export const AboutScreen = (props: AboutScreenProps) => {
   const { className } = props;
-  const title = useSelector(getAboutScreenTitle);
+  // const title = useSelector(getAboutScreenTitle);
   const description = useSelector(getAboutScreenDescription);
 
-  const ref = useRef(null);
+  // const ref = useRef(null);
 
-  useEffect(() => {
-    let context = gsap.context(() => {
-      gsap.to(ref, { x: 100 });
-    });
-    return () => context.revert();
-  }, []);
+  // useEffect(() => {
+  //   let context = gsap.context(() => {
+  //     gsap.to(ref, { x: 100 });
+  //   });
+  //   return () => context.revert();
+  // }, []);
 
   return (
-    <section ref={ref} id='AboutScreen'
-             className={cn(className, cls.AboutScreen)}>
-      <VStack gap='60'>
-        <HStack max justify='start'>
-          <Title variant='h2'>{title}</Title>
-        </HStack>
+    <SectionWrapper
+      // ref={ref}
+      size='middle'
+      id='AboutScreen'
+      className={cn(className, cls.AboutScreen)}
+    >
+      <VStack max gap='60'>
+        <Title text='о нас' />
 
-        <VStack className={cn(cls.NavigationWrapper)} max gap='16'>
-          {links.map((link, index) => <HStack key={index}  className={cn(cls.NavigationItem)} justify='between' align='center'>
-            <Text text={link.text} className={cn(cls.LinkContent)} fontSize='26' />
-            <ArrowSvg className={cn(cls.Arrow)} />
-          </HStack>)}
-        </VStack>
+        <HStack max justify='between'>
+          <VStack className={cn(cls.NavigationWrapper)} max>
+            {links.map((link, index) =>
+              <AppLink
+                className={cn(cls.NavigationItem)}
+                key={link.href}
+                to={link.href}
+              >
+                <HStack
+                  key={index}
+                  justify='between'
+                  align='center'
+                >
+                  <Text text={link.text} className={cn(cls.LinkContent)} fontSize='26' />
+                  <ArrowSvg className={cn(cls.Arrow)} />
+                </HStack>
+              </AppLink>
+            )}
+          </VStack>
+
+          <SliderApp className={cn(cls.SliderAbout)} slides={[
+            SliderImg,
+            SliderImg,
+            SliderImg,
+          ]} />
+        </HStack>
 
         <HStack gap='32' max justify='between'>
           <WpTextFormatter className={cn(cls.AboutDescription)} content={description} />
-          <WpTextFormatter className={cn(cls.AboutDescription)} content={description} />
         </HStack>
       </VStack>
-
-      <AppImage className={cn(cls.Wave)} src={WaveImage} />
-    </section>
+    </SectionWrapper>
   );
 };

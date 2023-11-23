@@ -1,0 +1,141 @@
+.SliderWrapper {
+  overflow: hidden;
+  position: relative;
+  border-radius: var(--px10);
+  height: 100%;
+
+  .Slider {
+    position: relative;
+    height: 100%;
+
+    .SliderItem {
+      max-width: 100%;
+      object-fit: cover;
+    }
+
+    :global(.slick-dots) {
+      position: absolute;
+      bottom: -1px;
+      right: 0;
+      z-index: 10;
+      display: flex !important;
+      align-items: flex-end;
+      justify-content: center;
+      gap: var(--px15);
+      background-color: var(--white);
+      max-width: 45%;
+      clip-path: polygon(8% 0, 100% 0, 100% 100%, 0% 100%);
+      height: var(--px35);
+
+      li {
+        position: relative;
+        display: flex;
+        margin: 0;
+        height: var(--px16);
+        transition: width .3s ease;
+
+        &:global(.slick-active) {
+          width: var(--px40);
+          .Dot {
+            flex-grow: 1;
+            width: var(--px40);
+            background-color: var(--default-color);
+          }
+        }
+
+        .Dot {
+          transition: background-color .3s ease;
+          width: var(--px16);
+          height: var(--px16);
+          border-radius: 100px;
+          border: 1px solid var(--default-color);
+          margin: 0 !important;
+          margin-top: -3px !important;
+        }
+      }
+    }
+
+    :global(.slick-dots) button:before {
+      color: #fff;
+    }
+
+    :global(.slick-dots) li:global(.slick-active) button:before {
+      color: var(--white);
+    }
+
+    :global(.slick-arrow) {
+      position: absolute;
+      z-index: 10;
+      /* border: 1px solid #000; */
+      /* border-radius: 50%; */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    :global(.slick-arrow)::before {
+      color: #000;
+    }
+
+    :global(.slick-next) {
+      right: 2%;
+    }
+
+    :global(.slick-prev) {
+      left: 2%;
+    }
+  }
+
+  .Amount {
+    position: absolute;
+    top: var(--px5);
+    right: var(--px5);
+    background-color: var(--accent3);
+    border-radius: var(--px10);
+    padding: var(--px5) var(--px10);
+  }
+
+  .BtnWrapper {
+    display: flex;
+    align-items: center;
+
+    .Btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: var(--px30);
+      height: var(--px30);
+      border-radius: 50%;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(45deg, hsl(60, 100%, 60%), hsl(30, 100%, 60%), hsl(0, 100%, 60%), hsl(120, 100%, 60%), hsl(240, 100%, 60%), hsl(270, 100%, 60%), hsl(300, 100%, 60%));
+
+      .Arrow {
+        height: 80%;
+        path {
+          stroke: #000;
+          fill: #000
+        }
+      }
+
+      &.Prev {
+        left: 2%;
+      }
+
+      &.Next {
+        right: 2%;
+        .Arrow {
+          transform: scaleX(-1);
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+

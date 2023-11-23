@@ -1,7 +1,7 @@
 import cn from 'classnames';
 import cls from './SectionWrapper.module.scss';
-import { ReactNode } from 'react';
 import { VStack } from '@shared/ui/Stack';
+import { VStackProps } from '@shared/ui/Stack/VStack/VStack.tsx';
 
 type sectionSizeType = 'default' | 'middle'
 const sectionClsMapper: Record<sectionSizeType, string> = {
@@ -9,9 +9,7 @@ const sectionClsMapper: Record<sectionSizeType, string> = {
   'middle': cls.middle
 }
 
-type SectionWrapperProps = {
-  className?: string;
-  children?: ReactNode
+interface SectionWrapperProps extends VStackProps {
   size?: sectionSizeType
 };
 
