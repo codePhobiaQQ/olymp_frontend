@@ -1,6 +1,6 @@
 import cls from './settings.module.scss'
 
-export type fontSizeType = '10' | '12' | '14' | '16' | '18' | '20' | '22' | '24' | '26'| '28'
+export type fontSizeType = '10' | '12' | '14' | '16' | '18' | '20' | '22' | '24' | '26'| '28'| '36'
 
 export const fontSizeClsMapper: Record<fontSizeType, string> = {
   '10': cls.px10,
@@ -13,4 +13,5 @@ export const fontSizeClsMapper: Record<fontSizeType, string> = {
   '24': cls.px24,
   '26': cls.px26,
   '28': cls.px28,
+  '36': cls.px36,
 }

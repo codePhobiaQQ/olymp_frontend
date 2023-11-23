@@ -67,8 +67,12 @@ export const AboutScreen = (props: AboutScreenProps) => {
       id='AboutScreen'
       className={cn(className, cls.AboutScreen)}
     >
-      <VStack max gap='60'>
+      <VStack max gap='30'>
         <Title text='о нас' />
+
+        <HStack max justify='end'>
+          <Text fontFamily='msb' fontSize='36' text='© 2001-2023' />
+        </HStack>
 
         <HStack max justify='between'>
           <VStack className={cn(cls.NavigationWrapper)} max>
