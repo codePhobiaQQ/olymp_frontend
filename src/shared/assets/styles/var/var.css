@@ -76,8 +76,10 @@
 	--sections-inner-paddings: var(--px30);
 	--often-border-radius: var(--px18);
 
+	/* ---- Header ---- */
+	--header-width-padding: var(--px40);
+	--header-height-padding: var(--px10);
 	--ofter-right-side-width: 78%;
-	--header-padding: var(--px40);
 }
 
 /* -------- Adaptation ------ */
@@ -127,7 +129,8 @@
 		--px150: min(calc(var(--index) * 10.71), 225px) !important;
 		--px180: min(calc(var(--index) * 12.86), 270px) !important;
 
-		--header-padding: var(--px10);
+		--header-width-padding: var(--px10);
+
 		/* ---- Sections padding ---- */
 		--sections-padding: var(--px10);
 		--sections-middle-padding: var(--px20);

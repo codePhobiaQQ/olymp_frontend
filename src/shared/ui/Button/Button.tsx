@@ -52,7 +52,7 @@ const Button = (props: ButtonI) => {
   return (
     <button
       onClick={onClick}
-      className={cn(className, cls.Button, variantsClsMapper[variant], sizeClsMapper[size], colorTheme && colorThemeClsMapper[colorTheme])}
+      className={cn(cls.Button, variantsClsMapper[variant], sizeClsMapper[size], colorTheme && colorThemeClsMapper[colorTheme], className)}
       {...otherProps}
     >
       {children}

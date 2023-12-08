@@ -3,15 +3,14 @@
   color: #fff;
   cursor: pointer;
   transition: var(--transition-all);
-  cursor: pointer;
   border-radius: var(--px15);
+  font-size: var(--px20);
 
   // Variant
   &.outline_transparent {
     background-color: transparent;
     border: 1px solid;
     font-family: 'mm', sans-serif;
-    font-size: var(--px20);
     border-radius: 20px;
   }
 
@@ -28,14 +27,11 @@
     border: none;
   }
 
-  //&.outline_transparent_arrow,
-
-  &.default {
+  &.default, &.outline_transparent_arrow, {
     display: flex;
     align-items: center;
     justify-content: center;
     font-family: 'mr', sans-serif;
-    font-size: var(--px24);
     padding: var(--px10) var(--px48);
     border-radius: var(--px8);
     border: 1px solid #000;
@@ -56,6 +52,9 @@
         fill: #fff;
       }
     }
+  }
+  &.outline_transparent_arrow, {
+    background-color: transparent;
   }
 
   &.auth {
@@ -101,9 +100,17 @@
     color: var(--main-bg);
     border-color: var(--main-bg);
 
+    svg {
+      fill: var(--main-bg);
+    }
+
     &:hover {
       background-color: var(--main-bg);
       color: var(--main-text-color);
+
+      svg {
+        fill: var(--main-text-color);
+      }
     }
   }
 
@@ -163,5 +170,11 @@
   }
   &.xl {
     //font-size: var(--px16);
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .Button {
+    font-size: var(--px16);
   }
 }

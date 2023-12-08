@@ -8,10 +8,10 @@
 
   .SearchIcon {
     position: absolute;
-    height: 70%;
-    width: var(--px30);
+    height: var(--px25);
+    width: var(--px25);
     right: 0;
-    transform: translateX(-50%);
+    transform: translateX(-20%);
     fill: var(--header-bg);
     cursor: pointer;
     z-index: 2;

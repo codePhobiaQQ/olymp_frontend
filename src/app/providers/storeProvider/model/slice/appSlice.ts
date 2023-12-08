@@ -2,7 +2,8 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { AppSchema } from '@app/providers/storeProvider/model/types/appSchema.ts';
 
 const initialState: AppSchema = {
-  isAuthDialogOpen: false
+  isAuthDialogOpen: false,
+  isMenuOpen: false
 };
 
 export const AuthDialogSlice = createSlice({
@@ -11,6 +12,9 @@ export const AuthDialogSlice = createSlice({
   reducers: {
     setIsAuthDialogOpen: (state, action: PayloadAction<boolean>) => {
       state.isAuthDialogOpen = action.payload
+    },
+    setIsMenuOpen: (state, action: PayloadAction<boolean>) => {
+      state.isMenuOpen = action.payload
     }
   }
 });

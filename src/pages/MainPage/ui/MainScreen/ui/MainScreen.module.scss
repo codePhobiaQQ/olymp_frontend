@@ -1,79 +1,119 @@
-.Header {
-	position: absolute;
-	z-index: 3;
-	left: 0;
-}
-
 .MainScreen {
 	position: relative;
-	padding: 0 calc(var(--sections-inner-paddings) + var(--px15));
 	margin: 0 auto 0 auto;
 	box-sizing: border-box;
 	flex-grow: 1;
 	height: 100vh;
 	overflow: hidden;
+
+	.bg {
+		width: 100%;
+		height: 120%;
+		border-radius: var(--often-border-radius);
+		overflow: hidden;
+		position: absolute;
+		top: -10%;
+		left: 0;
+		z-index: 0;
+	}
+
+	.Content {
+		height: 100%;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		position: relative;
+		z-index: 1;
+	}
+
+	.TitleWrapper {
+		width: 100%;
+		margin-bottom: var(--px40);
+	}
+
+	.LogoTitle {
+		/* height: var(--px80); */
+		width: 85%;
+		fill: #fff;
+		display: block;
+		margin: auto;
+	}
+
+	.Title {
+		display: block;
+		max-width: 55%;
+		font-size: var(--px24);
+		text-transform: none;
+		font-family: 'mr', sans-serif !important;
+		line-height: 140%;
+		text-align: center;
+		&:after {
+			display: none !important;
+		}
+	}
+
+	.Card {
+		width: calc(33.3% - var(--px17) * 2 / 3);
+	}
+
+	.MoreBtn {
+		margin: var(--sections-padding) auto 0 auto;
+		color: #9f9f9f;
+		cursor: pointer;
+		display: flex;
+		align-items: center;
+
+		.MoreBtnIcon {
+			margin-left: var(--px22);
+			/* stroke: #9f9f9f; */
+			fill: #9f9f9f;
+			stroke: #9f9f9f;
+			width: var(--px40);
+			height: var(--px40);
+		}
+
+		.OlympsBtn {
+			display: none;
+		}
+	}
 }
 
-.bg {
-	width: 100%;
-	height: 120%;
-	border-radius: var(--often-border-radius);
-	overflow: hidden;
-	position: absolute;
-	top: -10%;
-	left: 0;
-	z-index: 0;
-}
 
-.Content {
-	height: 100%;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	position: relative;
-	z-index: 1;
-}
 
-.TitleWrapper {
-	width: 100%;
-	margin-bottom: var(--px40);
-}
+@media screen and (max-width: 1024px) {
+	.MainScreen {
+		padding-top: 0;
 
-.LogoTitle {
-	/* height: var(--px80); */
-	width: 85%;
-	fill: #fff;
-	display: block;
-	margin: auto;
-}
+		.Content {
+			gap: var(--px80);
+		}
 
-.Title {
-	display: block;
-	max-width: 55%;
-	font-size: var(--px24);
-	text-transform: none;
-	font-family: 'mr', sans-serif !important;
-	line-height: 140%;
-	text-align: center;
-}
+		.LogoTitle {
+			display: none;
+		}
 
-.Card {
-	width: calc(33.3% - var(--px17) * 2 / 3);
-}
+		.Title {
+			font-size: var(--px30);
+			text-align: left;
+			max-width: 600px;
+			text-transform: uppercase;
+			font-family: 'mm', sans-serif;
+			line-height: 1.5em;
+		}
 
-.MoreBtn {
-	margin: var(--sections-padding) auto 0 auto;
-	color: #9f9f9f;
-	cursor: pointer;
-	display: flex;
-	align-items: center;
+		.TitleWrapper {
+			align-items: flex-start;
+		}
 
-	.MoreBtnIcon {
-		margin-left: var(--px22);
-		/* stroke: #9f9f9f; */
-		fill: #9f9f9f;
-		stroke: #9f9f9f;
-		width: var(--px40);
-		height: var(--px40);
+		.MainScreenCards {
+			display: none;
+		}
+
+		.OlympsBtn {
+			display: block;
+			text-transform: uppercase;
+			margin: 0 auto;
+		}
 	}
 }

@@ -1,11 +1,10 @@
 .Header {
   width: 100%;
-  height: var(--px48);
+  height: var(--px64);
   box-sizing: border-box;
   background-color: var(--header-bg);
   color: var(--header-color);
-  padding: var(--px5) var(--header-paddign);
-
+  padding: var(--header-height-padding) var(--header-width-padding);
   z-index: 2;
   position: fixed;
   top: 0;
@@ -29,7 +28,7 @@
       cursor: pointer;
 
       &:hover {
-        background-color: var(--header-icons-bg);
+        //background-color: var(--header-icons-bg);
         //stroke: var(--inverted-header-color);
       }
     }
@@ -38,19 +37,25 @@
       color: #000;
     }
 
-    .EnterBtn {
-      font-size: var(--px16);
-      padding: var(--px5) var(--px30);
-    }
+
+  }
+  .EnterBtn {
+    font-size: var(--px16) !important;
+    padding: var(--px5) var(--px30);
+  }
+
+  .Hamburger {
+    display: none;
   }
 }
 
 @media screen and (max-width: 1024px) {
   .Header {
-    margin-right: var(--px10);
-
-    .TopNavigation {
-      display: none;
+    .Hamburger {
+      display: block;
+      width: var(--px30);
+      height: var(--px30);
+      cursor: pointer;
     }
   }
 }

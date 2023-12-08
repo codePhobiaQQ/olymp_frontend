@@ -12,20 +12,22 @@ import { useCallback, useState } from 'react';
 import { AppActions, getIsAuthDialogOpen } from '@app/providers/storeProvider';
 import { useDispatch, useSelector } from 'react-redux';
 import { SearchArea } from './../SearchArea/SearchArea.tsx';
+import { ReactComponent as HamburgerSvg } from '@shared/assets/svg/header/hamburger.svg'
 
-export enum HeaderTheme {
-  LIGHT = 'light',
-  DARK = 'dark',
+export type themeType = 'light' | 'dark'
+export const themeClsMapper: Record<themeType, string> = {
+  'light': cls.light,
+  'dark': cls.dark,
 }
 
 interface HeaderI {
   className?: string;
-  theme?: HeaderTheme;
+  theme?: themeType
 }
 
-const Header = ({ className = '', theme = HeaderTheme.DARK }: HeaderI) => {
+const Header = ({ className = '', theme = 'dark' }: HeaderI) => {
   const dispatch = useDispatch()
-  const { setIsAuthDialogOpen } = AppActions
+  const { setIsAuthDialogOpen, setIsMenuOpen } = AppActions
   const isAuthDialogOpen = useSelector(getIsAuthDialogOpen)
 
   const openAuthDialogHandler = useCallback(() => {
@@ -37,11 +39,16 @@ const Header = ({ className = '', theme = HeaderTheme.DARK }: HeaderI) => {
   const openSearchLine = () => {
     setIsSearchLineOpen(true)
   }
-  // ------------------------------------
+  // ----------------------------------------
+
+  // ----------- Open MenuHandler -----------
+  const openMenuHandler = () => {
+    dispatch(setIsMenuOpen(true))
+  }
 
   return (
     <>
-      <HStack max align='center' justify='between' className={cn(className, cls.Header, cls[theme])}>
+      <HStack max align='center' justify='between' className={cn(className, cls.Header, themeClsMapper[theme])}>
         <AppLink to='/'>
           <Logo className={cn(cls.LogoWrapper)} />
         </AppLink>
@@ -56,6 +63,8 @@ const Header = ({ className = '', theme = HeaderTheme.DARK }: HeaderI) => {
           <Button onClick={openAuthDialogHandler} className={cn(cls.EnterBtn)} colorTheme='light' variant='outline_transparent'>
             ВХОД
           </Button>
+
+          <HamburgerSvg onClick={openMenuHandler} className={cn(className, cls.Hamburger)} />
         </HStack>
 
         {/*Search Area*/}

@@ -6,6 +6,8 @@ import { ReactComponent as LogoSvg } from '@shared/assets/images/svg/olymp-main.
 import { GradientBg } from '@shared/ui/GradientBg'
 import { useGetMainScreenData } from '@pages/MainPage/ui/MainScreen/lib/hooks/useGetMainScreenData'
 import {HStack, VStack} from "@shared/ui/Stack";
+import { SectionWrapper } from '@shared/layouts/SectionWrapper/SectionWrapper.tsx';
+import Button from '@shared/ui/Button/Button.tsx';
 
 interface MainScreenI {
   className?: string
@@ -15,7 +17,7 @@ const MainScreen = ({ className = '' }: MainScreenI) => {
   const { subTitle, cardsData } = useGetMainScreenData()
 
   return (
-    <section className={cn(className, cls.MainScreen)}>
+    <SectionWrapper className={cn(className, cls.MainScreen)}>
       <div className={cls.bg}>
         <GradientBg />
       </div>
@@ -32,7 +34,7 @@ const MainScreen = ({ className = '' }: MainScreenI) => {
             />
         </VStack>
 
-        <HStack max justify='between'>
+        <HStack className={cn(cls.MainScreenCards)} max justify='between'>
           {cardsData.map((card, index) => (
             <MainScreenCard
               data={card}
@@ -42,8 +44,10 @@ const MainScreen = ({ className = '' }: MainScreenI) => {
             />
           ))}
         </HStack>
+
+        <Button colorTheme='light' variant='outline_transparent_arrow' className={cn(cls.OlympsBtn)}>олимпиады</Button>
       </VStack>
-    </section>
+    </SectionWrapper>
   )
 }
 

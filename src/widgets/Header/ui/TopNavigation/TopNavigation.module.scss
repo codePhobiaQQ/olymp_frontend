@@ -1,0 +1,119 @@
+.TopNavigationWrapper {
+  .TopNavigationWrapperInner {
+
+    .MenuCloser {
+      display: none;
+    }
+
+    .TopNavigation {
+      display: flex;
+      align-items: center;
+
+      li {
+        margin-right: var(--px50);
+        font-size: var(--px14);
+        position: relative;
+        font-family: 'mr', sans-serif;
+
+        &:before {
+          content: '';
+          display: block;
+          transform: scaleX(0) translateY(-4px);
+          transition: var(--transition-transform);
+          height: 1px;
+          background-color: #d9d9d9;
+        }
+
+        &:last-child {
+          margin-right: 0;
+        }
+
+        a {
+          color: var(--header-color);
+        }
+
+        &:hover:before {
+          transform: scaleX(1) translateY(calc(var(--px5) * -1));
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .TopNavigationWrapper {
+    position: fixed;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 10;
+    background-color: rgba(255, 255, 255, .5);
+    opacity: 0;
+    transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: none;
+
+    &.Open {
+      opacity: 1;
+      pointer-events: inherit;
+
+			.TopNavigationWrapperInner {
+				transform: translateX(0);
+			}
+    }
+
+    .TopNavigationWrapperInner {
+      position: absolute;
+      height: 100%;
+      width: 75%;
+      max-width: 700px;
+			transform: translateX(var(--px20));
+      padding: var(--px20);
+      padding-top: var(--px40);
+      right: 0;
+      top: 0;
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+      gap: var(--px15);
+      background-color: #000;
+      border-bottom-left-radius: var(--px20);
+      border-top-left-radius: var(--px20);
+
+      .MenuCloser {
+        position: absolute;
+        right: var(--px15);
+        top: var(--px15);
+        cursor: pointer;
+        display: flex;
+        fill: var(--white);
+				width: var(--px25);
+				height: var(--px25);
+        z-index: 2;
+      }
+
+      .TopNavigation {
+				flex-direction: column;
+				width: 100%;
+        gap: var(--px20);
+
+        li {
+					width: 100%;
+					margin: 0;
+          font-size: var(--px25);
+          border-bottom: 1px solid rgba(255, 255, 255, .5);
+          padding: var(--px5) 0;
+
+					&:before {
+						display: none;
+					}
+          a {
+						width: 100%;
+            text-align: left;
+          }
+        }
+      }
+    }
+  }
+}
+

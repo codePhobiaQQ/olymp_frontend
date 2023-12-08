@@ -7,4 +7,4 @@ export { StoreProvider, createReduxStore, ReduxStoreWithManager, StateSchema, St
 
 // App actions
 export { AppActions } from './model/slice/appSlice.ts'
-export { getIsAuthDialogOpen } from './model/selectors/appSelectors.ts'
+export { getIsAuthDialogOpen, getIsMenuOpen } from './model/selectors/appSelectors.ts'
