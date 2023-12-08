@@ -1,6 +1,6 @@
 import { RouteActionScreenAttributes } from '@shared/routes/routes'
 import { useNavigate } from 'react-router-dom'
-import AppLink, { AppLinkTheme } from '@shared/ui/AppLink/AppLink'
+import AppLink from '@shared/ui/AppLink/AppLink'
 import Title from '@shared/ui/Title/Title'
 import cls from './Card.module.scss'
 import cn from 'classnames'
@@ -32,7 +32,7 @@ const MainScreenCard = (props: CardI) => {
         {/* @ts-ignore */}
         {data?.links?.map((link, index) => (
           <li key={index + 'link' + link.path}>
-            <AppLink color='light' text={link.text} to={link.path} theme={AppLinkTheme.LINK_WITH_ARROW} />
+            <AppLink color='light' text={link.text} to={link.path} />
           </li>
         ))}
       </ul>

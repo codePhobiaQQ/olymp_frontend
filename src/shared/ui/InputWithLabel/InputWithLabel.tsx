@@ -1,10 +1,10 @@
 import cn from 'classnames';
 import cls from './InputWithLabel.module.scss';
-import Input, { InputI } from '@shared/ui/Input/Input.tsx';
+import Input, { InputProps } from '@shared/ui/Input/Input.tsx';
 import { HStack, VStack } from '@shared/ui/Stack';
 import {ReactNode, useId} from 'react';
 
-interface InputWithLabelProps extends InputI {
+interface InputWithLabelProps extends InputProps {
   className?: string;
   label: string
   extraLabelComponent?: ReactNode

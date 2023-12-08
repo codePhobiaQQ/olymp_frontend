@@ -4,7 +4,7 @@
   box-sizing: border-box;
   background-color: var(--header-bg);
   color: var(--header-color);
-  padding: 0 var(--header-paddign);
+  padding: var(--px5) var(--header-paddign);
 
   z-index: 2;
   position: fixed;
@@ -41,6 +41,16 @@
     .EnterBtn {
       font-size: var(--px16);
       padding: var(--px5) var(--px30);
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .Header {
+    margin-right: var(--px10);
+
+    .TopNavigation {
+      display: none;
     }
   }
 }

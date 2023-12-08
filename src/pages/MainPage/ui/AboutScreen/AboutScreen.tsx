@@ -51,18 +51,8 @@ export const AboutScreen = (props: AboutScreenProps) => {
   // const title = useSelector(getAboutScreenTitle);
   const description = useSelector(getAboutScreenDescription);
 
-  // const ref = useRef(null);
-
-  // useEffect(() => {
-  //   let context = gsap.context(() => {
-  //     gsap.to(ref, { x: 100 });
-  //   });
-  //   return () => context.revert();
-  // }, []);
-
   return (
     <SectionWrapper
-      // ref={ref}
       size='middle'
       id='AboutScreen'
       className={cn(className, cls.AboutScreen)}

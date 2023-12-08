@@ -12,7 +12,7 @@ interface SubscribeInputFieldI {
 const SubscribeInputField = ({ className = '', value, onChange }: SubscribeInputFieldI) => {
   return (
     <div className={cn(className, cls.SubscribeInputField)}>
-      <Input onChange={onChange} value={value} className={cn(cls.Input)} placeholder="Ваш E-mail" />
+      <Input onChangeCustom={onChange} value={value} className={cn(cls.Input)} placeholder="Ваш E-mail" />
       <Button variant={'default'} className={cn(cls.Btn)}>
         ПОДПИСАТЬСЯ
       </Button>

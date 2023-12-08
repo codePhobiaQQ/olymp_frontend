@@ -19,5 +19,3 @@ import './absolute/index.css'
 import './sizes/height.css'
 import './sizes/width.css'
 
-// ---- Components ----
-import './components/index.scss'
