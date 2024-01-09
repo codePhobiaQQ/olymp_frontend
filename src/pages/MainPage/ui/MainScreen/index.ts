@@ -1,3 +1,3 @@
-import MainScreen from './ui/MainScreen'
+import MainScreen from './ui/MainScreen/MainScreen.tsx'
 
 export { MainScreen }

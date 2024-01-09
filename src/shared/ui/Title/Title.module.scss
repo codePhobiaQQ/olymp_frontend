@@ -2,17 +2,17 @@
 	line-height: 1.2em;
 	position: relative;
 
-	&.underline {
-		&:after {
-			content: '';
-			position: absolute;
-			top: calc(100% + var(--px12));
-			display: block;
-			width: 352px;
-			height: 2px;
-			background-color: var(--default-color);
-		}
-	}
+	//&.underline {
+	//	&:after {
+	//		content: '';
+	//		position: absolute;
+	//		top: calc(100% + var(--px12));
+	//		display: block;
+	//		width: 352px;
+	//		height: 2px;
+	//		background-color: var(--default-color);
+	//	}
+	//}
 
 	&.uppercase {
 		text-transform: uppercase;

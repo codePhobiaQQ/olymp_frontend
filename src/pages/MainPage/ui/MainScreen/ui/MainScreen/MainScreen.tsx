@@ -1,10 +1,10 @@
 import cn from 'classnames';
 import cls from './MainScreen.module.scss';
-import Title from '@shared/ui/Title/Title';
-import MainScreenCard from '@shared/ui/Card/Card';
+import Title from '@shared/ui/Title/Title.tsx';
+import { MainScreenCard } from './../MainScreenCard/MainScreenCard';
 import { ReactComponent as LogoSvg } from '@shared/assets/images/svg/olymp-main.svg';
 import { GradientBg } from '@shared/ui/GradientBg';
-import { useGetMainScreenData } from '@pages/MainPage/ui/MainScreen/lib/hooks/useGetMainScreenData';
+import { useGetMainScreenData } from '@pages/MainPage/ui/MainScreen/lib/hooks/useGetMainScreenData.ts';
 import { HStack, VStack } from '@shared/ui/Stack';
 import Button from '@shared/ui/Button/Button.tsx';
 
@@ -17,20 +17,20 @@ const MainScreen = ({ className = '' }: MainScreenI) => {
 
   return (
     <VStack max justify='between' className={cn(className, cls.MainScreenWrapper)}>
-        <VStack className={cn(cls.Content)}>
-          <div className={cls.bg}>
-            <GradientBg />
-          </div>
+      <VStack className={cn(cls.Content)}>
+        <div className={cls.bg}>
+          <GradientBg />
+        </div>
 
-          <VStack gap='40' align='center' className={cn(cls.TitleWrapper)}>
-            <LogoSvg className={cn(cls.LogoTitle)} />
-            <Title
-              tag='h3'
-              className={cn(cls.Title)}
-              text={subTitle}
-            />
-          </VStack>
+        <VStack gap='40' align='center' className={cn(cls.TitleWrapper)}>
+          <LogoSvg className={cn(cls.LogoTitle)} />
+          <Title
+            tag='h3'
+            className={cn(cls.Title)}
+            text={subTitle}
+          />
         </VStack>
+      </VStack>
 
       <HStack max className={cn(cls.MainScreenCardsWrapper)}>
         <HStack className={cn(cls.MainScreenCards)} max justify='between'>
@@ -39,7 +39,6 @@ const MainScreen = ({ className = '' }: MainScreenI) => {
               data={card}
               key={index + 'title' + card.title}
               className={cls.Card}
-              sizeTheme='M'
             />
           ))}
         </HStack>

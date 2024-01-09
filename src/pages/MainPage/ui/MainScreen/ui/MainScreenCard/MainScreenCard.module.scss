@@ -1,0 +1,15 @@
+.MainScreenCard {
+  color: #fff;
+  box-sizing: border-box;
+  padding: calc(var(--sections-inner-paddings));
+  overflow: hidden;
+  position: relative;
+
+  .CardTitle {
+    font-size: var(--px18);
+    line-height: 120%;
+    font-family: 'mm', sans-serif;
+    height: var(--px73);
+    color: rgba(#111, .7);
+  }
+}

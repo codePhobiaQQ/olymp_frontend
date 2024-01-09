@@ -22,7 +22,7 @@ interface CardI {
   sizeTheme?: CardSizeTheme
 }
 
-const MainScreenCard = (props: CardI) => {
+export const MainScreenCard = (props: CardI) => {
   const { className = '', data, sizeTheme = 'M' } = props
 
   return (
@@ -76,5 +76,3 @@ export const CardRouting = (props: RoutingCardI) => {
     </div>
   )
 }
-
-export default MainScreenCard
