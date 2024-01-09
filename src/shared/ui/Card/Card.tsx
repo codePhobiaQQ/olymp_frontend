@@ -9,10 +9,11 @@ import Text from '@shared/ui/Text/Text'
 import { ReactComponent as ArrowSvg } from '@shared/assets/images/svg/arrow.svg'
 import { CardItem } from '@pages/MainPage/ui/MainScreen/model/data/data.ts'
 
-export enum CardSizeTheme {
-  S = 'S',
-  M = 'M',
-  X = 'X',
+export type CardSizeTheme = 'S' | 'M' | 'X'
+const cardSizeThemeClsMapper: Record<CardSizeTheme, string> = {
+  'S': cls.S,
+  'M': cls.M,
+  'X': cls.X,
 }
 
 interface CardI {
@@ -22,17 +23,16 @@ interface CardI {
 }
 
 const MainScreenCard = (props: CardI) => {
-  const { className = '', data, sizeTheme = CardSizeTheme.M } = props
+  const { className = '', data, sizeTheme = 'M' } = props
 
   return (
-    <div className={cn(className, cls.MainScreenCard, cls.Card, cls[sizeTheme])}>
+    <div className={cn(className, cls.MainScreenCard, cls.Card, cardSizeThemeClsMapper[sizeTheme])}>
       <Title tag='h4' className={cn(cls.CardTitle, 'ttu')} text={data?.title} />
 
       <ul className={cn(cls.CardList)}>
-        {/* @ts-ignore */}
         {data?.links?.map((link, index) => (
           <li key={index + 'link' + link.path}>
-            <AppLink color='light' text={link.text} to={link.path} />
+            <AppLink color='grey' textProps={{ text: link.text }}  to={link.path} />
           </li>
         ))}
       </ul>
@@ -48,7 +48,7 @@ interface RoutingCardI {
 
 export const CardRouting = (props: RoutingCardI) => {
   const navigate = useNavigate()
-  const { className = '', data, sizeTheme = CardSizeTheme.M } = props
+  const { className = '', data, sizeTheme = 'M' } = props
 
   const clickHandler = () => {
     navigate(data?.path || '/')

@@ -46,6 +46,7 @@
         font-family: 'mthi', sans-serif !important;
         line-height: 120%;
         text-align: center;
+        color: #fff;
 
         &:after {
           display: none !important;
@@ -61,6 +62,8 @@
     height: calc(100% - var(--main-screen-title-height));
     border-top-left-radius: var(--px20);
     border-top-right-radius: var(--px20);
+    box-sizing: border-box;
+    padding: 0 var(--sections-padding);
 
     .Card {
       width: calc(33.3% - var(--px17) * 2 / 3);

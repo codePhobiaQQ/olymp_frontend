@@ -1,7 +1,7 @@
 import cn from 'classnames';
 import cls from './MainScreen.module.scss';
 import Title from '@shared/ui/Title/Title';
-import MainScreenCard, { CardSizeTheme } from '@shared/ui/Card/Card';
+import MainScreenCard from '@shared/ui/Card/Card';
 import { ReactComponent as LogoSvg } from '@shared/assets/images/svg/olymp-main.svg';
 import { GradientBg } from '@shared/ui/GradientBg';
 import { useGetMainScreenData } from '@pages/MainPage/ui/MainScreen/lib/hooks/useGetMainScreenData';
@@ -25,7 +25,6 @@ const MainScreen = ({ className = '' }: MainScreenI) => {
           <VStack gap='40' align='center' className={cn(cls.TitleWrapper)}>
             <LogoSvg className={cn(cls.LogoTitle)} />
             <Title
-              style={{ color: '#fff' }}
               tag='h3'
               className={cn(cls.Title)}
               text={subTitle}
@@ -40,7 +39,7 @@ const MainScreen = ({ className = '' }: MainScreenI) => {
               data={card}
               key={index + 'title' + card.title}
               className={cls.Card}
-              sizeTheme={CardSizeTheme.M}
+              sizeTheme='M'
             />
           ))}
         </HStack>

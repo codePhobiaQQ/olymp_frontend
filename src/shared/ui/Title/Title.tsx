@@ -21,7 +21,7 @@ interface TitleI extends HTMLAttributes<HTMLHeadingElement> {
   color?: colorType;
   isUnderline?: boolean
   isUpperCase?: boolean
-  text: string;
+  text?: string;
 }
 
 const Title = (props: TitleI) => {
@@ -46,6 +46,10 @@ const Title = (props: TitleI) => {
     fontSizeClsMapper[fontSize],
     className
     );
+
+  if (!text) {
+    return null
+  }
 
   if (tag === 'h1') {
     return (
@@ -96,7 +100,9 @@ const Title = (props: TitleI) => {
   }
 };
 
-const detectAndWrapLinks = (text: string) => {
+const detectAndWrapLinks = (text?: string) => {
+  if (!text) return text;
+
   const urlRegex = /(https?:\/\/[^\s]+)/g
   const textArray = text?.split('\n')
 

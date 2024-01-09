@@ -12,7 +12,7 @@ import {
 
 export interface TextI extends HTMLAttributes<HTMLParagraphElement> {
   className?: string
-  text: string
+  text?: string
   children?: ReactNode
   isParagraph?: boolean
   color?: colorType
@@ -70,6 +70,10 @@ const Text = (data: TextI) => {
       return detectAndWrapLinks(text)
     }
   }, [text, children])
+
+  if (!text) {
+    return null
+  }
 
   if (isParagraph) {
     return (
