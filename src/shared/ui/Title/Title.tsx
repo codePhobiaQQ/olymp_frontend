@@ -41,14 +41,15 @@ const Title = (props: TitleI) => {
   const classes = cn(
     cls.Title,
     { [cls.underline]: isUnderline, [cls.uppercase]: isUpperCase },
-    className,
     colorClsMapper[color],
     fontFamilyClsMapper[fontFamily],
-    fontSizeClsMapper[fontSize]);
+    fontSizeClsMapper[fontSize],
+    className
+    );
 
   if (tag === 'h1') {
     return (
-      <h1 className={classes} {...otherProps}>
+      <h1 {...otherProps} className={classes}>
         {textContent}
       </h1>
     );
@@ -56,7 +57,7 @@ const Title = (props: TitleI) => {
 
   if (tag == 'h2') {
     return (
-      <h2 className={classes} {...otherProps}>
+      <h2 {...otherProps} className={classes}>
         {textContent}
       </h2>
     );
@@ -64,7 +65,7 @@ const Title = (props: TitleI) => {
 
   if (tag === 'h3') {
     return (
-      <h3 className={classes} {...otherProps}>
+      <h3 {...otherProps} className={classes}>
         {textContent}
       </h3>
     );
@@ -72,7 +73,7 @@ const Title = (props: TitleI) => {
 
   if (tag === 'h4') {
     return (
-      <h4 className={classes} {...otherProps}>
+      <h4 {...otherProps} className={classes}>
         {textContent}
       </h4>
     );
@@ -80,7 +81,7 @@ const Title = (props: TitleI) => {
 
   if (tag === 'h5') {
     return (
-      <h5 className={classes} {...otherProps}>
+      <h5 {...otherProps} className={classes}>
         {textContent}
       </h5>
     );
@@ -88,7 +89,7 @@ const Title = (props: TitleI) => {
 
   if (tag === 'h6') {
     return (
-      <h6 className={classes} {...otherProps}>
+      <h6 {...otherProps} className={classes}>
         {textContent}
       </h6>
     );

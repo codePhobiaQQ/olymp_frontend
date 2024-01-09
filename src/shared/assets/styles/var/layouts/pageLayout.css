@@ -1,3 +1,6 @@
 :root {
-  --header-height: var(--px48);
+  /* ---- Header ---- */
+  --header-width-padding: var(--px40);
+  --header-height-padding: var(--px10);
+  --header-height: var(--px64);
 }

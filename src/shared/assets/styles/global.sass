@@ -1,5 +1,5 @@
 @import "slick-carousel/slick/slick.css"
-@import "slick-carousel/slick/slick-theme.css"
+//@import "slick-carousel/slick/slick-theme.css"
 
 @font-face 
   font-family: "mth"
@@ -7,6 +7,9 @@
 @font-face 
   font-family: "mm"
   src: url("./../../../shared/assets/fonts/Montserrat-Medium.woff2") format("woff2")
+@font-face
+  font-family: "mr"
+  src: url("./../../../shared/assets/fonts/Montserrat-Regular.woff2") format("woff2")
 @font-face
   font-family: "mr"
   src: url("./../../../shared/assets/fonts/Montserrat-Regular.woff2") format("woff2")
@@ -20,6 +23,12 @@
   font-family: "msbi"
   src: url("./../../../shared/assets/fonts/MontserratAlternates-SemiBoldItalic.woff2") format("woff2")
 @font-face
+  font-family: "mi"
+  src: url("./../../../shared/assets/fonts/Montserrat-Italic.woff2") format("woff2")
+@font-face
+  font-family: "mthi"
+  src: url("./../../../shared/assets/fonts/Montserrat-ThinItalic.woff2") format("woff2")
+@font-face
   font-family: "lb"
   src: url("./../../../shared/assets/fonts/Lato-Bold.woff2") format("woff2")
 
@@ -30,6 +39,27 @@ body
   background: var(--main-bg)
   color: var(--main-text-color)
   position: relative
+
+
+/* Общие стили для полосы прокрутки */
+::-webkit-scrollbar
+  width: 6px  /* Ширина полосы прокрутки */
+  height: 2px
+
+/* Стили для трека (бара) полосы прокрутки */
+::-webkit-scrollbar-track
+  background: rgba(0, 0, 0, .2)  /* Цвет фона трека */
+  //background: transparent  /* Цвет фона трека */
+  border-radius: 4px
+
+/* Стили для ползунка (бегунка) полосы прокрутки */
+::-webkit-scrollbar-thumb
+  background: #888  /* Цвет ползунка */
+  border-radius: 4px  /* Закругленные углы ползунка */
+
+/* Индикатор наведения (ползунок при наведении курсора) */
+::-webkit-scrollbar-thumb:hover
+  background: #555  /* Цвет ползунка при наведении */
 
   
 .section

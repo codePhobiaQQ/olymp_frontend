@@ -11,17 +11,20 @@
 
       li {
         margin-right: var(--px50);
-        font-size: var(--px14);
+        font-size: var(--px16);
         position: relative;
-        font-family: 'mr', sans-serif;
+        font-family: 'mm', sans-serif;
+        text-transform: uppercase;
 
         &:before {
           content: '';
           display: block;
-          transform: scaleX(0) translateY(-4px);
+          transform: scaleX(0) translateY(-6px);
           transition: var(--transition-transform);
-          height: 1px;
-          background-color: #d9d9d9;
+          transform-origin:left center;
+          height: 2px;
+          background-color: #fff;
+          will-change: transform;
         }
 
         &:last-child {
@@ -33,7 +36,7 @@
         }
 
         &:hover:before {
-          transform: scaleX(1) translateY(calc(var(--px5) * -1));
+          transform: scaleX(1) translateY(-6px);
         }
       }
     }

@@ -1,6 +1,6 @@
 .Header {
   width: 100%;
-  height: var(--px64);
+  height: var(--header-height);
   box-sizing: border-box;
   background-color: var(--header-bg);
   color: var(--header-color);
@@ -16,7 +16,8 @@
 
   &.dark {
     .LogoWrapper {
-      height: var(--px50);
+      height: var(--px64);
+      width: var(--px64);
       fill: #fff;
     }
 
@@ -40,7 +41,7 @@
 
   }
   .EnterBtn {
-    font-size: var(--px16) !important;
+    font-size: var(--px18) !important;
     padding: var(--px5) var(--px30);
   }
 
