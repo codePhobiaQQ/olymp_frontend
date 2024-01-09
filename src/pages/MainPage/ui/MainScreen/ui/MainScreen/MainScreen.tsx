@@ -1,3 +1,4 @@
+import React from 'react'
 import cn from 'classnames';
 import cls from './MainScreen.module.scss';
 import Title from '@shared/ui/Title/Title.tsx';
@@ -35,11 +36,16 @@ const MainScreen = ({ className = '' }: MainScreenI) => {
       <HStack max className={cn(cls.MainScreenCardsWrapper)}>
         <HStack className={cn(cls.MainScreenCards)} max justify='between'>
           {cardsData.map((card, index) => (
-            <MainScreenCard
-              data={card}
-              key={index + 'title' + card.title}
-              className={cls.Card}
-            />
+            <React.Fragment key={index + 'title' + card.title} >
+              <MainScreenCard
+                data={card}
+                className={cls.Card}
+              />
+              {index + 1 !== cardsData.length && <VStack justify='center' className={cn(cls.Separator)}>
+                <div className={cn(cls.SeparatorTop, cls.SeparatorLine)}></div>
+                <div className={cn(cls.SeparatorBottom, cls.SeparatorLine)}></div>
+              </VStack>}
+            </React.Fragment>
           ))}
         </HStack>
       </HStack>

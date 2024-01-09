@@ -7,7 +7,6 @@
   height: calc(100vh - var(--header-height));
   box-sizing: border-box;
   overflow: hidden;
-  box-sizing: border-box;
   
   .Content {
     height: var(--main-screen-title-height);
@@ -63,14 +62,30 @@
     border-top-left-radius: var(--px20);
     border-top-right-radius: var(--px20);
     box-sizing: border-box;
-    padding: 0 var(--sections-padding);
+    padding: var(--px25) var(--sections-padding);
 
     .Card {
       width: calc(33.3% - var(--px17) * 2 / 3);
     }
 
     .MainScreenCards {
-      background-color: #fff;
+      height: 100%;
+
+      .Separator {
+        width: 1px;
+        gap: var(--px18);
+
+        .SeparatorLine {
+          width: 1px;
+          background-color: #111;
+        }
+        .SeparatorTop {
+          height: var(--main-screen-card-title-height);
+        }
+        .SeparatorBottom {
+          height: var(--main-screen-card-content-height);
+        }
+      }
     }
 
     .MoreBtn {

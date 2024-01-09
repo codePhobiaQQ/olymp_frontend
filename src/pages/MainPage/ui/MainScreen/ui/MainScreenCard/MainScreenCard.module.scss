@@ -1,3 +1,8 @@
+:root {
+  --main-screen-card-title-height: var(--px73);
+  --main-screen-card-content-height: calc(var(--index) * 6.5);
+}
+
 .MainScreenCard {
   color: #fff;
   box-sizing: border-box;
@@ -6,10 +11,27 @@
   position: relative;
 
   .CardTitle {
-    font-size: var(--px18);
+    font-size: var(--px16);
     line-height: 120%;
     font-family: 'mm', sans-serif;
-    height: var(--px73);
+    height: var(--main-screen-card-title-height);
     color: rgba(#111, .7);
+    position: relative;
+
+    &:before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      background-color: #111;
+      height: 1px;
+    }
+  }
+
+  .CardList {
+    width: 100%;
+    padding: var(--px12) 0;
+    box-sizing: border-box;
+    height: var(--main-screen-card-content-height);
   }
 }
