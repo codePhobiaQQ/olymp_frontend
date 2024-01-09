@@ -1,7 +1,7 @@
 import cn from 'classnames'
 import { SVGProps } from 'react'
 
-interface ArrowSvgI extends SVGProps<SVGSVGElement> {
+export interface ArrowSvgI extends SVGProps<SVGSVGElement> {
 	className?: string
 }
 

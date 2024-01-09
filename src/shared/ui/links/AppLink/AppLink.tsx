@@ -5,7 +5,7 @@ import {ReactNode} from "react";
 import { colorClsMapper, colorType } from '@shared/lib/hooks/componentsSettings';
 import Text, { TextI } from '@shared/ui/Text/Text.tsx';
 
-interface AppLinkI extends NavLinkProps {
+export interface AppLinkI extends NavLinkProps {
   className?: string
   children?: ReactNode
   color?: colorType

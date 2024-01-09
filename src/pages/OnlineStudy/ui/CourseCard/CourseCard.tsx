@@ -4,7 +4,7 @@ import { HStack, VStack } from '@shared/ui/Stack';
 import Title from '@shared/ui/Title/Title.tsx';
 import { ReactComponent as ClockSvg } from '@shared/assets/svg/clock.svg';
 import Text from '@shared/ui/Text/Text.tsx';
-import AppLink from '@shared/ui/AppLink/AppLink.tsx';
+import AppLink from '@shared/ui/links/AppLink/AppLink.tsx';
 // import CardBg from '@shared/assets/images/decore/cardBg.jpg'
 // import AppImage from '@shared/ui/AppImage/AppImage.tsx';
 

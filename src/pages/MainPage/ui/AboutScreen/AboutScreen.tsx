@@ -8,7 +8,7 @@ import Text from '@shared/ui/Text/Text.tsx';
 import { ReactComponent as ArrowSvg } from '@shared/assets/svg/decor/arrow.svg';
 import { SectionWrapper } from '@shared/layouts/SectionWrapper/SectionWrapper.tsx';
 import Title from '@shared/ui/Title/Title.tsx';
-import AppLink from '@shared/ui/AppLink/AppLink.tsx';
+import AppLink from '@shared/ui/links/AppLink/AppLink.tsx';
 import { SliderApp } from '@shared/ui/SliderApp/SliderApp.tsx';
 import SliderImg from '@shared/assets/images/aboutSlider/1.jpg'
 

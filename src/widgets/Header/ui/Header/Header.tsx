@@ -4,7 +4,7 @@ import TopNavigation from './../TopNavigation/TopNavigation';
 import { ReactComponent as MagnifierSvg } from '@shared/assets/svg/header/magnifier.svg';
 import { ReactComponent as Logo } from '@shared/assets/svg/header/logo.svg';
 import { ReactComponent as Calendar } from '@shared/assets/svg/header/calendar.svg';
-import AppLink from '@shared/ui/AppLink/AppLink';
+import AppLink from '@shared/ui/links/AppLink/AppLink';
 import { HStack } from '@shared/ui/Stack';
 import Button from '@shared/ui/Button/Button.tsx';
 import { AuthDialog } from '@widgets/AuthDialog';

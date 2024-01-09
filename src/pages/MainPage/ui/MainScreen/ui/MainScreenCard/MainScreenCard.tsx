@@ -1,9 +1,9 @@
-import AppLink from '@shared/ui/AppLink/AppLink'
 import Title from '@shared/ui/Title/Title'
 import cls from './MainScreenCard.module.scss'
 import cn from 'classnames'
 import { CardItem } from '@pages/MainPage/ui/MainScreen/model/data/data.ts'
 import { VStack } from '@shared/ui/Stack';
+import { ArrowLink } from '@shared/ui/links/ArrowLink/ArrowLink.tsx';
 
 
 interface CardI {
@@ -21,7 +21,7 @@ export const MainScreenCard = (props: CardI) => {
       <ul className={cn(cls.CardList)}>
         {data?.links?.map((link, index) => (
           <li key={index + 'link' + link.path}>
-            <AppLink color='grey' textProps={{ text: link.text }}  to={link.path} />
+            <ArrowLink textProps={{ text: link.text }} linkProps={{ to: link.path }} arrowProps={{ color: 'grey' }} />
           </li>
         ))}
       </ul>
