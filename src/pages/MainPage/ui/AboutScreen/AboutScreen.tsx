@@ -1,14 +1,15 @@
 import cn from 'classnames';
 import cls from './AboutScreen.module.scss';
-import { useSelector } from 'react-redux';
-import { getAboutScreenDescription } from '@pages/MainPage/model/selectors/mainPageSelectors';
-import { WpTextFormatter } from '@shared/ui/WpTextFormatter/WpTextFormatter';
+// import { useSelector } from 'react-redux';
+// import { getAboutScreenDescription } from '@pages/MainPage/model/selectors/mainPageSelectors';
+// import { WpTextFormatter } from '@shared/ui/WpTextFormatter/WpTextFormatter';
 import { HStack, VStack } from '@shared/ui/Stack';
 import { SectionWrapper } from '@shared/layouts/SectionWrapper/SectionWrapper.tsx';
 import { SliderApp } from '@shared/ui/SliderApp/SliderApp.tsx';
 import SliderImg from '@shared/assets/images/aboutSlider/1.jpg';
 import { SectionTitle } from '@shared/ui/titles';
 import { ArrowLink } from '@shared/ui/links/ArrowLink/ArrowLink.tsx';
+import Text from '@shared/ui/Text/Text.tsx';
 
 type AboutScreenProps = {
   className?: string
@@ -42,10 +43,13 @@ const links: LinkType[] = [
   }
 ];
 
+const leftText = 'Современное интернет пространство изобилует предложениями с бесплатными курсами, олимпиадами и конкурсами, не имеющими реальной ценности для абитуриентов при поступлении.'
+const rightText = 'Данную проблему выбора помогает решать портал  v-olymp.ru'
+
 export const AboutScreen = (props: AboutScreenProps) => {
   const { className } = props;
   // const title = useSelector(getAboutScreenTitle);
-  const description = useSelector(getAboutScreenDescription);
+  // const description = useSelector(getAboutScreenDescription);
 
   return (
     <SectionWrapper
@@ -69,11 +73,11 @@ export const AboutScreen = (props: AboutScreenProps) => {
             SliderImg,
             SliderImg
           ]} />
-
         </HStack>
 
-        <HStack gap='32' max justify='between'>
-          <WpTextFormatter className={cn(cls.AboutDescription)} content={description} />
+        <HStack max align='start' justify='between'>
+          <Text fontFamily='mm' fontSize='24' className={cn(cls.AboutDescription, cls.AboutDescriptionLeft)} text={leftText} />
+          <Text fontFamily='mm' fontSize='24' className={cn(cls.AboutDescription, cls.AboutDescriptionRight)} text={rightText} />
         </HStack>
       </VStack>
     </SectionWrapper>

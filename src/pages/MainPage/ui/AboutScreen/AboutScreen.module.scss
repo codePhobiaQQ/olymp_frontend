@@ -2,12 +2,12 @@
   //padding: min(calc(var(--index) * 6), 120px) var(--sections-middle-padding);
   position: relative;
 
-  .AboutDescription {
-    font-size: var(--px24);
-  }
+  //.AboutDescription {
+  //  font-size: var(--px24);
+  //}
 
   .NavigationWrapper {
-    width: 30%;
+    width: 36%;
     border-top: 1px solid var(--default-color);
 
     .NavigationItem {
@@ -21,17 +21,20 @@
       &:after {
         content: '';
         position: absolute;
-        transition: width .4s ease;
+        transition: transform 0.4s ease-in-out;
         bottom: 0;
         height: 2px;
         left: 0;
-        width: 0;
+        width: 100%;
+        transform: scaleX(0);
         background-color: #000;
+        transform-origin: center left;
+        will-change: transform;
       }
 
       &:hover {
         &:after {
-          width: 100%
+          transform: scaleX(1);
         }
       }
 
@@ -51,7 +54,18 @@
 
   .SliderAbout {
     //height: 100%;
-    height: 300px;
+    height: calc(var(--index) * 13);
     width: 46%;
+  }
+
+  .AboutDescription {
+    line-height: 1.4em;
+    width: 46%;
+    &.AboutDescriptionLeft {
+      //width: 46%;
+    }
+    &.AboutDescriptionRight {
+
+    }
   }
 }
