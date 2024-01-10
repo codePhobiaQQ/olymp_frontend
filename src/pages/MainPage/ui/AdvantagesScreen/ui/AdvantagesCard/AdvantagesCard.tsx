@@ -1,4 +1,4 @@
-import Title from '@shared/ui/Title/Title'
+import { Title } from '@shared/ui/titles'
 import { advantageData } from '../../model/data'
 import styles from './AdvantagesCard.module.css'
 import cn from 'classnames'

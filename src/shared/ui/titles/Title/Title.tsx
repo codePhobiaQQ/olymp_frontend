@@ -19,19 +19,19 @@ interface TitleI extends HTMLAttributes<HTMLHeadingElement> {
   fontSize?: fontSizeType;
   fontFamily?: fontFamilyType;
   color?: colorType;
-  isUnderline?: boolean
-  isUpperCase?: boolean
+  underline?: boolean
+  uppercase?: boolean
   text?: string;
 }
 
-const Title = (props: TitleI) => {
+export const Title = (props: TitleI) => {
   let {
     className = '',
     tag = 'h2',  text,
     color = 'default',
     fontFamily = 'lb',
-    isUnderline = true,
-    isUpperCase = true,
+    underline = false,
+    uppercase = false,
     fontSize = '28',
     ...otherProps
   } = props;
@@ -40,7 +40,7 @@ const Title = (props: TitleI) => {
 
   const classes = cn(
     cls.Title,
-    { [cls.underline]: isUnderline, [cls.uppercase]: isUpperCase },
+    { [cls.underline]: underline, [cls.uppercase]: uppercase },
     colorClsMapper[color],
     fontFamilyClsMapper[fontFamily],
     fontSizeClsMapper[fontSize],
@@ -129,5 +129,3 @@ const detectAndWrapLinks = (text?: string) => {
     </React.Fragment>
   ))
 }
-
-export default Title;

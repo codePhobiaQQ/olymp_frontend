@@ -15,6 +15,7 @@ export interface TextI extends HTMLAttributes<HTMLParagraphElement> {
   text?: string
   children?: ReactNode
   isParagraph?: boolean
+  isUppercase?: boolean
   color?: colorType
   fontSize?: fontSizeType
   dataAttr?: string
@@ -38,6 +39,7 @@ const Text = (data: TextI) => {
     textAlign = 'left',
     fontFamily = 'mr',
     marginAuto = false,
+    isUppercase = false,
     children,
     clickHandler = () => {},
     styling = {},
@@ -56,7 +58,8 @@ const Text = (data: TextI) => {
     {
       [cls.marginAuto]: marginAuto,
       [heightClsMapper[height || 'all']]: height,
-      [widthClsMapper[width || 'all']]: width
+      [widthClsMapper[width || 'all']]: width,
+      [cls.Uppercase]: isUppercase
     },
     cls[color]
   )

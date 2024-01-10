@@ -1,6 +1,6 @@
 import cn from 'classnames'
 import cls from './TitleScreen.module.scss'
-import Title from '@shared/ui/Title/Title.tsx'
+import Title from '@shared/ui/titles/Title/Title.tsx'
 import Text from '@shared/ui/Text/Text.tsx'
 import { useSelector } from 'react-redux'
 import {

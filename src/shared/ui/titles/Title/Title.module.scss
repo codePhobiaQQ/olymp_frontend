@@ -1,0 +1,21 @@
+.Title {
+	line-height: 1.2em;
+
+	&.underline {
+		position: relative;
+
+		&:after {
+			content: '';
+			height: 1px;
+			width: 100%;
+			position: absolute;
+			bottom: calc(-1 * var(--px4));
+			left: 0;
+			background-color: #202020;
+		}
+	}
+
+	&.uppercase {
+		text-transform: uppercase;
+	}
+}

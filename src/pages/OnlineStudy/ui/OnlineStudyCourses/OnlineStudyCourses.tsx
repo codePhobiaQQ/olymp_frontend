@@ -1,7 +1,7 @@
 import cn from 'classnames';
 import cls from './OnlineStudyCourses.module.scss';
 import { SectionWrapper } from '@shared/layouts/SectionWrapper/SectionWrapper.tsx';
-import Title from '@shared/ui/Title/Title.tsx';
+import { Title } from '@shared/ui/titles'
 import { HStack, VStack } from '@shared/ui/Stack';
 import { CourseCard, CourseCardProps } from './../CourseCard/CourseCard.tsx';
 import { useCallback } from 'react';
@@ -22,7 +22,7 @@ export const OnlineStudyCourses = (props: OnlineStudyTechCoursesProps) => {
   return (
     <SectionWrapper size='default' className={cn(className, cls.OnlineStudyTechCourses)}>
       <VStack gap='40' max align='center'>
-        <Title fontFamily='lb' text={title} isUnderline={false} fontSize='24' />
+        <Title fontFamily='lb' text={title} underline={false} fontSize='24' />
         <HStack wrap='wrap' max gap='16'>
           {renderTechCourses()}
         </HStack>

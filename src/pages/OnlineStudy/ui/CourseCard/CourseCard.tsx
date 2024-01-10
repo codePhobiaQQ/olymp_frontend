@@ -1,7 +1,7 @@
 import cn from 'classnames';
 import cls from './CourseCard.module.scss';
 import { HStack, VStack } from '@shared/ui/Stack';
-import Title from '@shared/ui/Title/Title.tsx';
+import { Title } from '@shared/ui/titles'
 import { ReactComponent as ClockSvg } from '@shared/assets/svg/clock.svg';
 import Text from '@shared/ui/Text/Text.tsx';
 import AppLink from '@shared/ui/links/AppLink/AppLink.tsx';

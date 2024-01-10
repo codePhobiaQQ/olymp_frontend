@@ -1,13 +1,12 @@
 import React from 'react'
 import cn from 'classnames';
 import cls from './MainScreen.module.scss';
-import Title from '@shared/ui/Title/Title.tsx';
+import { Title } from '@shared/ui/titles'
 import { MainScreenCard } from './../MainScreenCard/MainScreenCard';
 import { ReactComponent as LogoSvg } from '@shared/assets/images/svg/olymp-main.svg';
 import { GradientBg } from '@shared/ui/GradientBg';
 import { useGetMainScreenData } from '@pages/MainPage/ui/MainScreen/lib/hooks/useGetMainScreenData.ts';
 import { HStack, VStack } from '@shared/ui/Stack';
-import Button from '@shared/ui/Button/Button.tsx';
 
 interface MainScreenI {
   className?: string;
@@ -41,7 +40,8 @@ const MainScreen = ({ className = '' }: MainScreenI) => {
                 data={card}
                 className={cls.Card}
               />
-              {index + 1 !== cardsData.length && <VStack justify='center' className={cn(cls.Separator)}>
+
+              {index + 1 !== cardsData.length && <VStack className={cn(cls.Separator)}>
                 <div className={cn(cls.SeparatorTop, cls.SeparatorLine)}></div>
                 <div className={cn(cls.SeparatorBottom, cls.SeparatorLine)}></div>
               </VStack>}
@@ -49,8 +49,6 @@ const MainScreen = ({ className = '' }: MainScreenI) => {
           ))}
         </HStack>
       </HStack>
-
-      <Button colorTheme='light' variant='outline_transparent_arrow' className={cn(cls.OlympsBtn)}>олимпиады</Button>
     </VStack>
   );
 };

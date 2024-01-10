@@ -3,7 +3,7 @@ import cls from './NewsListItem.module.scss'
 import { News, NewsCategory, NewsView } from '@entities/News'
 import Text from '@shared/ui/Text/Text'
 import { normalizeDate } from '@shared/lib/utils/normalizeDate/normalizeDate'
-import Title from '@shared/ui/Title/Title'
+import { Title } from '@shared/ui/titles'
 import { limitText } from '@shared/lib/utils/limitText/limitText'
 import AppImage from '@shared/ui/AppImage/AppImage'
 

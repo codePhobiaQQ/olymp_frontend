@@ -1,7 +1,7 @@
 import cn from 'classnames';
 import cls from './OnlineStudyDescription.module.scss';
 import { SectionWrapper } from '@shared/layouts/SectionWrapper/SectionWrapper.tsx';
-import Title from '@shared/ui/Title/Title.tsx';
+import { Title } from '@shared/ui/titles'
 import { HStack, VStack } from '@shared/ui/Stack';
 import Text from '@shared/ui/Text/Text.tsx';
 

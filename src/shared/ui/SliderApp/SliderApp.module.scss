@@ -16,8 +16,8 @@
     :global(.slick-dots) {
       position: absolute;
       bottom: -1px;
-      right: 0;
-      z-index: 10;
+      right: -0.5px;
+      z-index: 1;
       display: flex !important;
       align-items: flex-end;
       justify-content: center;
@@ -26,6 +26,8 @@
       max-width: 45%;
       clip-path: polygon(8% 0, 100% 0, 100% 100%, 0% 100%);
       height: var(--px35);
+      box-sizing: border-box;
+      padding: var(--px27) 0 0 var(--px27);
 
       li {
         position: relative;

@@ -4,7 +4,11 @@
   line-height: 1.4em;
   word-break: break-word;
 
-  .marginAuto {
+  &.marginAuto {
     margin: auto;
+  }
+
+  &.Uppercase {
+    text-transform: uppercase;
   }
 }

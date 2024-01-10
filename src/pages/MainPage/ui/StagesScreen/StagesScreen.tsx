@@ -5,7 +5,7 @@ import Text from '@shared/ui/Text/Text'
 import Button from '@shared/ui/Button/Button'
 import {VStack} from "@shared/ui/Stack";
 import {Title as SectionTitle} from "@shared/ui/SectionTitle/Title.tsx";
-import Title from "@shared/ui/Title/Title.tsx";
+import { Title } from "@shared/ui/titles";
 
 type StagesScreenProps = {
   className?: string;

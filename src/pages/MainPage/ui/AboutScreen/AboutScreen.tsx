@@ -4,15 +4,11 @@ import { useSelector } from 'react-redux';
 import { getAboutScreenDescription } from '@pages/MainPage/model/selectors/mainPageSelectors';
 import { WpTextFormatter } from '@shared/ui/WpTextFormatter/WpTextFormatter';
 import { HStack, VStack } from '@shared/ui/Stack';
-import Text from '@shared/ui/Text/Text.tsx';
-import { ReactComponent as ArrowSvg } from '@shared/assets/svg/decor/arrow.svg';
 import { SectionWrapper } from '@shared/layouts/SectionWrapper/SectionWrapper.tsx';
-import Title from '@shared/ui/Title/Title.tsx';
-import AppLink from '@shared/ui/links/AppLink/AppLink.tsx';
 import { SliderApp } from '@shared/ui/SliderApp/SliderApp.tsx';
-import SliderImg from '@shared/assets/images/aboutSlider/1.jpg'
-
-// import {useAnimationLibs} from "@shared/lib/components/AnimationProvider/AnimationProvider.tsx";
+import SliderImg from '@shared/assets/images/aboutSlider/1.jpg';
+import { SectionTitle } from '@shared/ui/titles';
+import { ArrowLink } from '@shared/ui/links/ArrowLink/ArrowLink.tsx';
 
 type AboutScreenProps = {
   className?: string
@@ -57,38 +53,23 @@ export const AboutScreen = (props: AboutScreenProps) => {
       id='AboutScreen'
       className={cn(className, cls.AboutScreen)}
     >
-      <VStack max gap='30'>
-        <Title text='о нас' />
-
-        <HStack max justify='end'>
-          <Text fontFamily='msb' fontSize='36' text='© 2001-2023' />
-        </HStack>
+      <VStack max gap='60'>
+        <SectionTitle text='о нас' />
 
         <HStack max justify='between'>
           <VStack className={cn(cls.NavigationWrapper)} max>
-            {links.map((link, index) =>
-              <AppLink
-                className={cn(cls.NavigationItem)}
-                key={link.href}
-                to={link.href}
-              >
-                <HStack
-                  key={index}
-                  justify='between'
-                  align='center'
-                >
-                  <Text text={link.text} className={cn(cls.LinkContent)} fontSize='26' />
-                  <ArrowSvg className={cn(cls.Arrow)} />
-                </HStack>
-              </AppLink>
+            {links.map((link) =>
+              <ArrowLink key={link.href} className={cn(cls.NavigationItem)} linkProps={{ to: link.href }}
+                         textProps={{ text: link.text, fontSize: '24', fontFamily: 'mm' }} />
             )}
           </VStack>
 
           <SliderApp className={cn(cls.SliderAbout)} slides={[
             SliderImg,
             SliderImg,
-            SliderImg,
+            SliderImg
           ]} />
+
         </HStack>
 
         <HStack gap='32' max justify='between'>

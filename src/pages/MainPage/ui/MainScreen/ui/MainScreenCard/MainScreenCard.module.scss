@@ -6,18 +6,21 @@
 .MainScreenCard {
   color: #fff;
   box-sizing: border-box;
-  padding: calc(var(--sections-inner-paddings));
+  //padding: calc(var(--sections-inner-paddings));
   overflow: hidden;
   position: relative;
 
-  .CardTitle {
-    font-size: var(--px16);
-    line-height: 120%;
-    font-family: 'mm', sans-serif;
-    height: var(--main-screen-card-title-height);
-    color: rgba(#111, .7);
+  .CardTitleWrapper {
     position: relative;
-
+    .CardTitle {
+      font-size: var(--px18);
+      line-height: 120%;
+      font-family: 'mm', sans-serif;
+      height: var(--main-screen-card-title-height);
+      color: rgba(#111, .7);
+      position: relative;
+      width: 80%;
+    }
     &:before {
       content: '';
       position: absolute;
@@ -32,7 +35,6 @@
     width: 100%;
     padding: var(--px12) 0;
     box-sizing: border-box;
-    height: var(--main-screen-card-content-height);
     display: flex;
     flex-direction: column;
     gap: var(--px16);

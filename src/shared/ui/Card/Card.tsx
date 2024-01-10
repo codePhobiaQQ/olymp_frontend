@@ -1,7 +1,7 @@
 import { RouteActionScreenAttributes } from '@shared/routes/routes'
 import { useNavigate } from 'react-router-dom'
 import AppLink from '@shared/ui/links/AppLink/AppLink'
-import Title from '@shared/ui/Title/Title'
+import { Title } from '@shared/ui/titles'
 import cls from './Card.module.scss'
 import cn from 'classnames'
 import AppImage from '../AppImage/AppImage'

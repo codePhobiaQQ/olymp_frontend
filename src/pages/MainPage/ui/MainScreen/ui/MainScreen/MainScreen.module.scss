@@ -1,5 +1,5 @@
 :root {
-  --main-screen-title-height: 45%;
+  --main-screen-title-section: 45%;
 }
 
 .MainScreenWrapper {
@@ -9,7 +9,7 @@
   overflow: hidden;
   
   .Content {
-    height: var(--main-screen-title-height);
+    height: var(--main-screen-title-section);
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -58,53 +58,33 @@
     position: relative;
     z-index: 2;
     background-color: #fff;
-    height: calc(100% - var(--main-screen-title-height));
+    height: calc(100% - var(--main-screen-title-section));
     border-top-left-radius: var(--px20);
     border-top-right-radius: var(--px20);
     box-sizing: border-box;
-    padding: var(--px25) var(--sections-padding);
+    padding: var(--px25) var(--sections-middle-padding);
 
     .Card {
-      width: calc(33.3% - var(--px17) * 2 / 3);
+      width: 30%;
     }
 
     .MainScreenCards {
-      height: 100%;
-
       .Separator {
+        height: 100%;
         width: 1px;
-        gap: var(--px18);
+        justify-content: space-between;
+        gap: var(--px20);
 
         .SeparatorLine {
           width: 1px;
           background-color: #111;
         }
         .SeparatorTop {
-          height: var(--main-screen-card-title-height);
+          height: calc(var(--main-screen-card-title-height));
         }
         .SeparatorBottom {
-          height: var(--main-screen-card-content-height);
+          height: calc(var(--main-screen-card-content-height));
         }
-      }
-    }
-
-    .MoreBtn {
-      margin: var(--sections-padding) auto 0 auto;
-      color: #9f9f9f;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-
-      .MoreBtnIcon {
-        margin-left: var(--px22);
-        fill: #9f9f9f;
-        stroke: #9f9f9f;
-        width: var(--px40);
-        height: var(--px40);
-      }
-
-      .OlympsBtn {
-        display: none;
       }
     }
   }
