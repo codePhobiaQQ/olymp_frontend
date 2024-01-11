@@ -9,15 +9,22 @@ const sectionClsMapper: Record<sectionSizeType, string> = {
   'middle': cls.middle
 }
 
+type colorThemeType = 'white' | 'dark'
+const colorThemeClsMapper: Record<colorThemeType, string> = {
+  'white': cls.white,
+  'dark': cls.dark
+}
+
 interface SectionWrapperProps extends VStackProps {
   size?: sectionSizeType
+  colorTheme?: colorThemeType
 };
 
 export const SectionWrapper = (props: SectionWrapperProps) => {
-  const { className = '', size = 'default', children } = props;
+  const { className = '', colorTheme = 'white', size = 'default', children } = props;
 
   return (
-    <VStack className={cn(className, cls.SectionWrapper, sectionClsMapper[size])}>
+    <VStack className={cn(className, cls.SectionWrapper, sectionClsMapper[size], colorThemeClsMapper[colorTheme])}>
       {children}
     </VStack>
   );

@@ -12,14 +12,13 @@ export const TableScreen = (props: TableScreenProps) => {
   const { className } = props;
 
   return (
-    <SectionWrapper>
+    <SectionWrapper colorTheme='dark'>
       <VStack gap='64' max className={cn(className, cls.TableScreen)}>
-        <SectionTitle text='расписание олимпиад' />
+        <SectionTitle className={cn(cls.Title)} text='расписание олимпиад' />
 
         <VStack max className={cn(cls.Table)}>
           <HStack max className={cn(cls.TableRow, cls.TableRowHeader)}>
             <div className={cn(cls.TableRowLeft, cls.TableRowSide)}>
-
             </div>
             <div className={cn(cls.TableRowMiddle, cls.TableRowSide)}>
               Отборочный этап

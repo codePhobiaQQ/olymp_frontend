@@ -1,4 +1,10 @@
 .TableScreen {
+  .Title {
+    color: #fff;
+    &:after {
+      background-color: rgba(#fff, .8);
+    }
+  }
 
   .Table {
     div {
@@ -7,15 +13,13 @@
 
     .TableRow {
       padding: var(--px35) 0;
-      border-bottom: 1px solid #C9C9C9;
+      border-bottom: 1px solid #828282;
+      font-size: var(--px24);
 
       &.TableRowHeader {
-        background-color: #D9D9D9;
-        color: rgba(#000, 0.8);
-        font-family: 'mr', sans-serif;
-        font-style: italic;
-        border-bottom-left-radius: var(--px8);
-        border-bottom-right-radius: var(--px8);
+        font-family: 'msb', sans-serif !important;
+        border-bottom: 1px solid #fff;
+        color: #fff;
       }
 
       .TableRowSide {
@@ -23,6 +27,7 @@
         font-family: 'mm', sans-serif;
         font-size: var(--px20);
         line-height: 130%;
+        color: rgba(#fff, .9);
       }
 
       .TableRowLeft {

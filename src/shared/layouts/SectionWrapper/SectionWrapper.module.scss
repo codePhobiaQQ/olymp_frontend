@@ -1,6 +1,15 @@
 .SectionWrapper {
   padding: var(--section-top-padding-often) 0;
 
+  // Color Theme
+  &.white {
+
+  }
+  &.dark {
+    background-color: #000;
+  }
+
+  // Padding Theme
   &.default {
     padding-right: var(--sections-padding);
     padding-left: var(--sections-padding);
