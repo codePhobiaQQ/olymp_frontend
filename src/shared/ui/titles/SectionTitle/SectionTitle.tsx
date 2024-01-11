@@ -8,6 +8,6 @@ export const SectionTitle = (props: SectionTitleProps) => {
   const { text } = props;
 
   return (
-    <Title uppercase underline fontSize='24' fontFamily='msb' text={text} />
+    <Title uppercase underline tag='h2' fontSize='24' fontFamily='msb' text={text} />
   );
 };

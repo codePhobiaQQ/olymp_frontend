@@ -4,7 +4,10 @@ import './reset.css'
 //Theme
 import './var/theme/index.scss'
 
-//Global------------
+//Components
+ import './components/components.scss'
+
+// Global------------
 import './framework.css'
 import './global.sass'
 import './var/var.css'

@@ -3,62 +3,25 @@
   justify-content: space-between;
   padding: var(--px60) var(--sections-big-padding) var(--px60) var(--sections-big-padding);
 
-  .LeftSide {
-    width: 45%;
-    .SectionTitle {
-      width: min-content;
-      line-height: 1.2em;
+
+  .Stage {
+    width: calc(100% / 3);
+
+    .StageTitle {
+      font-family: 'msb', sans-serif;
+      font-size: var(--px24);
+      text-transform: uppercase;
     }
 
-    .Circles {
-      width: 80%;
+    .StageText {
+      font-family: 'mr', sans-serif;
+      line-height: 1.4em;
+      font-size: var(--px16);
     }
-  }
 
-  .RightSide {
-    width: var(--content-width);
-    .Stage {
-      display: flex;
-
-      .StageDecore {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        .StageNumber {
-          font-size: var(--px38);
-          font-family: 'msb', sans-serif;
-          position: relative;
-          color: #4A4747;
-          white-space: nowrap;
-        }
-        .Line {
-          width: 4px;
-          background-color: #4A4747;
-          height: calc(100% - var(--px10));
-        }
-      }
-
-      .StageContent {
-        margin-left: var(--px50);
-
-        .StageTitle {
-          font-family: 'msb', sans-serif;
-          font-size: var(--px24);
-          text-transform: uppercase;
-          margin-bottom: var(--px20);
-        }
-
-        .StageText {
-          font-family: 'mr', sans-serif;
-          line-height: 1.4em;
-          font-size: var(--px18);
-        }
-
-        .Btn {
-          margin-top: var(--px32);
-          margin-bottom: var(--px40);
-        }
-      }
+    .Btn {
+      margin-top: var(--px20);
     }
   }
+
 }

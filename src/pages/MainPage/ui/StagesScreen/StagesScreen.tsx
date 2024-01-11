@@ -1,69 +1,48 @@
-import cn from 'classnames'
-import cls from './StagesScreen.module.scss'
-import { ReactComponent as Circles } from '@shared/assets/images/svg/circles.svg'
-import Text from '@shared/ui/Text/Text'
-import Button from '@shared/ui/Button/Button'
-import {VStack} from "@shared/ui/Stack";
-import {Title as SectionTitle} from "@shared/ui/SectionTitle/Title.tsx";
-import { Title } from "@shared/ui/titles";
+import cn from 'classnames';
+import cls from './StagesScreen.module.scss';
+import Text from '@shared/ui/Text/Text';
+import Button from '@shared/ui/Button/Button';
+import { SectionTitle } from '@shared/ui/titles';
+import { Title } from '@shared/ui/titles';
+import { SectionWrapper } from '@shared/layouts';
+import { HStack, VStack } from '@shared/ui/Stack';
 
 type StagesScreenProps = {
   className?: string;
 };
 
 export const StagesScreen = (props: StagesScreenProps) => {
-  const { className } = props
+  const { className } = props;
 
   return (
-    <div className={cn(className, cls.StagesScreen)}>
+    <SectionWrapper className={cn(className, cls.StagesScreen)}>
+      <VStack max gap='60'>
+        <SectionTitle text='Этапы олимпиад' />
 
-      <VStack justify='between' className={cn(cls.LeftSide)}>
-        <SectionTitle className={cn(cls.SectionTitle)} variant='h2'>Этапы олимпиад</SectionTitle>
-        <Circles className={cn(cls.Circles)} />
-        <div></div>
+        <HStack align='start' gap='40' max justify='between'>
+
+          <VStack gap='24' className={cn(cls.Stage, 'WithDecorLineComponent')}>
+            <Title text='Ознакомительный этап' className={cls.StageTitle} tag='h3' />
+            <Text className={cls.StageText} text='Возможность прохождения данного этапа предоставляется всем зарегистрированным на сайте школьникам.
+Ознакомительный этап предназначается для знакомства с системой проведения дистанционных этапов олимпиад на нашем сайте. Вам предоставляется возможность посмотреть в каком формате задаются вопросы и как корректно вводить ответы.' />
+          </VStack>
+
+
+          <VStack gap='24' className={cn(cls.Stage, 'WithDecorLineComponent')}>
+            <Title text='Отборочный (дистанционный) этап' className={cls.StageTitle} tag='h3' />
+            <Text className={cls.StageText} text='Для обеспечения возможности участия школьникам из всех регионов отборочный этап Олимпиады проводится в заочной форме на нашем сайте.
+Даты начала и окончания Отборочного этапа нужной олимпиады Вы можете узнать из Расписания олимпиад. ' />
+          </VStack>
+
+          <VStack gap='24' className={cn(cls.Stage, 'WithDecorLineComponent')}>
+            <Title text='Заключительный этап' className={cls.StageTitle} tag='h4' />
+            <Text className={cls.StageText} text='Дату проведения заключительного этапа нужной олимпиады Вы можете узнать из Расписания олимпиад.
+Для того, чтобы стать призёром или победителем этого этапа, необходимо либо стать призёром Отборочного этапа, либо быть призёром аналогичной олимпиады прошлого года.' />
+          </VStack>
+        </HStack>
+
+        <Button textProps={{ text: 'Выбрать олимпиаду'}} />
       </VStack>
-
-      <div className={cn(cls.RightSide)}>
-        <div className={cn(cls.Stage)}>
-          <div className={cn(cls.StageDecore)}>
-            <Text className={cls.StageNumber} text={'01'} />
-            <div className={cn(cls.Line)}></div>
-          </div>
-          <div className={cn(cls.StageContent)}>
-            <Title text='Ознакомительный этап' className={cls.StageTitle} tag='h4' />
-            <Text className={cls.StageText} text='Возможность прохождения данного этапа предоставляется всем зарегистрированным на сайте школьникам.
-Ознакомительный этап предназначается для знакомства с системой проведения дистанционных этапов олимпиад на нашем сайте. Вам предоставляется возможность посмотреть в каком формате задаются вопросы и как корректно вводить ответы.' />
-            <Button colorTheme='blue_fill' className={cls.Btn} variant='outline_transparent_arrow'>Выбрать олимпиаду</Button>
-          </div>
-        </div>
-
-        <div className={cn(cls.Stage)}>
-          <div className={cn(cls.StageDecore)}>
-            <Text className={cls.StageNumber} text={'01'} />
-            <div className={cn(cls.Line)}></div>
-          </div>
-
-          <div className={cn(cls.StageContent)}>
-            <Title text='Ознакомительный этап' className={cls.StageTitle} tag='h4' />
-            <Text className={cls.StageText} text='Возможность прохождения данного этапа предоставляется всем зарегистрированным на сайте школьникам.
-Ознакомительный этап предназначается для знакомства с системой проведения дистанционных этапов олимпиад на нашем сайте. Вам предоставляется возможность посмотреть в каком формате задаются вопросы и как корректно вводить ответы.' />
-            <Button colorTheme='blue_fill' className={cls.Btn} variant='outline_transparent_arrow'>Выбрать олимпиаду</Button>
-          </div>
-        </div>
-
-        <div className={cn(cls.Stage)}>
-          <div className={cn(cls.StageDecore)}>
-            <Text className={cls.StageNumber} text={'01'} />
-            <div className={cn(cls.Line)}></div>
-          </div>
-          <div className={cn(cls.StageContent)}>
-            <Title text='Ознакомительный этап' className={cls.StageTitle} tag='h4' />
-            <Text className={cls.StageText} text='Возможность прохождения данного этапа предоставляется всем зарегистрированным на сайте школьникам.
-Ознакомительный этап предназначается для знакомства с системой проведения дистанционных этапов олимпиад на нашем сайте. Вам предоставляется возможность посмотреть в каком формате задаются вопросы и как корректно вводить ответы.' />
-            <Button colorTheme='blue_fill' className={cls.Btn} variant='outline_transparent_arrow'>Выбрать олимпиаду</Button>
-          </div>
-        </div>
-      </div>
-    </div>
-  )
-}
+    </SectionWrapper>
+  );
+};

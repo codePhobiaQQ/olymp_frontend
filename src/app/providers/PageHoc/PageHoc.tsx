@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import PageLayout from '@shared/layouts/PageLayout/PageLayout.tsx';
+import { PageLayout } from '@shared/layouts';
 
 type PageHocProps = {
   children?: ReactNode

@@ -3,7 +3,7 @@ import cn from 'classnames'
 import { routesActionScreen } from '@shared/routes/routes'
 import { useMemo } from 'react'
 import CardsLayout from "@shared/layouts/CardsLayout/CardsLayout";
-import {CardRouting} from "@shared/ui/Card/Card.tsx";
+import {CardRouting} from "@shared/ui/cards/Card/Card.tsx";
 
 interface RoutingCardsScreenI {
   className?: string

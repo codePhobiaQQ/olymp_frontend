@@ -8,7 +8,7 @@ interface PageHocI {
   children?: ReactNode
 }
 
-const PageLayout = ({ children }: PageHocI) => {
+export const PageLayout = ({ children }: PageHocI) => {
   return (
     <div className={cn(cls.PageLayout)}>
       <Header theme='dark' />
@@ -17,5 +17,3 @@ const PageLayout = ({ children }: PageHocI) => {
     </div>
   )
 }
-
-export default PageLayout

@@ -12,7 +12,7 @@ import {
 
 export interface TextI extends HTMLAttributes<HTMLParagraphElement> {
   className?: string
-  text?: string
+  text?: string | number
   children?: ReactNode
   isParagraph?: boolean
   isUppercase?: boolean
@@ -70,7 +70,7 @@ const Text = (data: TextI) => {
     } else if (children && typeof children == 'string') {
       return detectAndWrapLinks(children)
     } else if (text) {
-      return detectAndWrapLinks(text)
+      return detectAndWrapLinks(text.toString())
     }
   }, [text, children])
 

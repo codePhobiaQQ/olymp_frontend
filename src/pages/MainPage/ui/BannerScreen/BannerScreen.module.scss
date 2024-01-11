@@ -1,5 +1,5 @@
 .BannerScreen {
-  padding: var(--px60) 0;
+  padding: min(calc(var(--index) * 7.5), 150px) 0;
 
   .BannerWrapper {
     border-top: 1px solid #101010;

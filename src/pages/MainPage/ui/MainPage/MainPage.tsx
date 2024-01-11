@@ -16,7 +16,6 @@ import {TableScreen} from './../TableScreen/TableScreen'
 import RoutingCardsScreen from './../RoutingCardsScreen/RoutingCardsScreen'
 import PhraseScreen from './../../ui/PhraseScreen/PhraseScreen.tsx'
 import SubscribeScreen from './../../ui/SubscribeScreen/ui/SubscribeScreen/SubscribeScreen.tsx'
-import {BenefitsScreen} from './../../ui/BenifitsScreen/BenefitsScreen.tsx'
 import {AnimationProvider, useAnimationLibs} from "@shared/lib/components/AnimationProvider/AnimationProvider.tsx";
 import {VStack} from "@shared/ui/Stack";
 import cn from "classnames";
@@ -50,7 +49,6 @@ const MainPageAsync = () => {
             <MainScreen/>
             <AboutScreen/>
             <PresentationScreen/>
-            <BenefitsScreen/>
             <BannerScreen/>
             <StagesScreen/>
             <TableScreen/>

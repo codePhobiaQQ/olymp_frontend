@@ -2,7 +2,7 @@ import cn from 'classnames'
 import cls from './OlympList.module.scss'
 import { useSelector } from 'react-redux'
 import { getOlympsList, getIsLoading, getError } from './../../model/selectors/olympsPageSelectors.ts'
-import { CardRouting } from '@shared/ui/Card/Card.tsx'
+import { CardRouting } from '@shared/ui/cards/Card/Card.tsx'
 import Text from '@shared/ui/Text/Text.tsx'
 
 type OlympListProps = {

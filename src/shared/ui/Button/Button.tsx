@@ -2,13 +2,15 @@ import { ButtonHTMLAttributes, ReactNode, memo } from 'react';
 import { ReactComponent as Arrow } from '@shared/assets/images/svg/arrow.svg';
 import cls from './Button.module.scss';
 import cn from 'classnames';
+import Text, { TextI } from '@shared/ui/Text/Text.tsx';
 
 type sizeType = 's' | 'm' | 'l' | 'xl'
-type variantType = 'outline_transparent_arrow' | 'default' | 'outline_transparent' | 'only_text' |
+type variantType =  'default' | 'outline_transparent_arrow' | 'outline_transparent' | 'only_text' |
   'auth'
 type colorTheme = 'dark' | 'light' | 'blue_transparent' | 'blue_fill' | 'grey_transparent'
 
 interface ButtonI extends ButtonHTMLAttributes<HTMLButtonElement> {
+  textProps?: TextI
   children?: ReactNode;
   className?: string;
   variant?: variantType;
@@ -40,6 +42,7 @@ const colorThemeClsMapper: Record<colorTheme, string> = {
 const Button = (props: ButtonI) => {
   const {
     variant = 'outline_transparent_arrow',
+    textProps,
     children,
     className,
     onClick,
@@ -49,13 +52,20 @@ const Button = (props: ButtonI) => {
   } = props;
   const hasArrow = variant === 'outline_transparent_arrow';
 
+  let content
+  if (children) {
+    content = children
+  } else if (textProps) {
+    content = <Text {...textProps} />
+  }
+
   return (
     <button
       onClick={onClick}
       className={cn(cls.Button, variantsClsMapper[variant], sizeClsMapper[size], colorTheme && colorThemeClsMapper[colorTheme], className)}
       {...otherProps}
     >
-      {children}
+      {content}
       {hasArrow && <Arrow />}
     </button>
   );

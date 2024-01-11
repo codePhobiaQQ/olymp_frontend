@@ -2,6 +2,8 @@ import { advantagesData } from '../../model/data'
 import AdvantagesCard from '../AdvantagesCard/AdvantagesCard'
 import styles from './AdvantagesScreen.module.css'
 import cn from 'classnames'
+import { HStack } from '@shared/ui/Stack';
+import { SectionWrapper } from '@shared/layouts';
 
 interface AdvantagesScreenI {
 	className?: string
@@ -9,13 +11,13 @@ interface AdvantagesScreenI {
 
 const AdvantagesScreen = ({ className = '' }: AdvantagesScreenI) => {
 	return (
-		<div className={cn(className, styles.AdvantagesScreen)}>
-			<div className={cn(styles.AdvantagesWrapper)}>
+		<SectionWrapper className={cn(className, styles.AdvantagesScreen)}>
+			<HStack max justify='between' className={cn(styles.AdvantagesWrapper)}>
 				{advantagesData.map((advantageItem, index) => (
 					<AdvantagesCard key={index + advantageItem.text} data={advantageItem} />
 				))}
-			</div>
-		</div>
+			</HStack>
+		</SectionWrapper>
 	)
 }
 
