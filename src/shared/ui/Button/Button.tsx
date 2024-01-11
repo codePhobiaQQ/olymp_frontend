@@ -46,17 +46,18 @@ const Button = (props: ButtonI) => {
     children,
     className,
     onClick,
-    colorTheme,
+    colorTheme= 'dark',
     size = 'm',
     ...otherProps
   } = props;
+
   const hasArrow = variant === 'outline_transparent_arrow';
 
   let content
   if (children) {
     content = children
   } else if (textProps) {
-    content = <Text {...textProps} />
+    content = <Text {...textProps} className={cn(cls.Text, textProps.className)} />
   }
 
   return (
