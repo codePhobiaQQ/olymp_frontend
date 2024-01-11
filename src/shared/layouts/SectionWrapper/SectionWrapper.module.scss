@@ -1,5 +1,5 @@
 .SectionWrapper {
-  padding-top: var(--section-top-padding-often);
+  padding: var(--section-top-padding-often) 0;
 
   &.default {
     padding-right: var(--sections-padding);

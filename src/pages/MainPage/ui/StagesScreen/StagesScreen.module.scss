@@ -1,8 +1,6 @@
 .StagesScreen {
   display: flex;
   justify-content: space-between;
-  padding: var(--px60) var(--sections-big-padding) var(--px60) var(--sections-big-padding);
-
 
   .Stage {
     width: calc(100% / 3);
