@@ -1,6 +1,6 @@
 import { Route, Routes } from 'react-router-dom'
 import { RouteAttributes, routes } from './core/routes'
-import './styles'
+import './index.css'
 
 const renderRoutes = (route: RouteAttributes) => {
 	return <Route key={route.path} path={route.path} element={route.element} />

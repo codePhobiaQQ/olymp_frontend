@@ -1,8 +1,0 @@
-.AdvantagesScreen {
-	padding: var(--sections-inner-paddings);
-}
-
-.AdvantagesWrapper {
-	display: flex;
-	justify-content: space-between;
-}

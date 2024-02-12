@@ -1,5 +1,5 @@
 import actionCard1 from './../components/shared/assets/images/actions/actionCard1.jpg'
-import { MainPageTMP } from '@/components/pages'
+import { MainPage } from '@components/pages/MainPage';
 
 // -------------------------
 // ------ Core routes ------
@@ -23,7 +23,7 @@ export const routes: RoutesType = {
 	[RoutePages.Main]: {
 		label: 'Главная',
 		path: '/',
-		element: MainPageTMP(),
+		element: MainPage(),
 	},
 	[RoutePages.News]: {
 		label: 'Новости',
