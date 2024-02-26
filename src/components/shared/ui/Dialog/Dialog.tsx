@@ -33,11 +33,11 @@ export const Dialog = (props: DialogProps) => {
 
   return (
     <>
-      <Button type='primary' onClick={showModal}>
+      <Button type="primary" onClick={showModal}>
         Open Modal with async logic
       </Button>
       <Modal
-        title='Title'
+        title="Title"
         open={open}
         onOk={handleOk}
         confirmLoading={confirmLoading}
