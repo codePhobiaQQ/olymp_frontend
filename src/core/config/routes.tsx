@@ -12,6 +12,21 @@ export const routes = [
     navLabel: 'Олимпиады',
     element: <OlympPage />,
   },
+  {
+    path: '/olymp123',
+    navLabel: 'Олимпиады',
+    element: <OlympPage />,
+  },
+  {
+    path: '/olymp345',
+    navLabel: 'Олимпиады',
+    element: <OlympPage />,
+  },
+  {
+    path: '/olymp245',
+    navLabel: 'Олимпиады',
+    element: <OlympPage />,
+  },
 ]
 
 export const renderNavigationLinks = (): { to: string, navLabel: string }[] => {

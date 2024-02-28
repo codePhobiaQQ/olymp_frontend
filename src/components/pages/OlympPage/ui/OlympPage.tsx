@@ -5,7 +5,7 @@ type Props = {};
 const OlympPage = (props: Props) => {
   return (
     <>
-      olymp
+      olymp page
     </>
   )
 }

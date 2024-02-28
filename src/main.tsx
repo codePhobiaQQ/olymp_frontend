@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom/client'
 import App from './App.tsx'
 import {
   createBrowserRouter,
-  RouterProvider,
 } from 'react-router-dom'
 import { BrowserRouter } from 'react-router-dom'
+import { ErrorBoundary } from '@components/features/providers'
 
 const router = createBrowserRouter([
   {
@@ -16,8 +16,10 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-    <BrowserRouter basename='/'>
-      <App />
-    </BrowserRouter>
+    <ErrorBoundary>
+      <BrowserRouter future={{ v7_startTransition: true }} basename='/'>
+        <App />
+      </BrowserRouter>
+    </ErrorBoundary>
   </React.StrictMode>,
 )

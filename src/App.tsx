@@ -6,6 +6,10 @@ import { Route, Routes } from 'react-router-dom'
 import { PageHoc } from '@shared/hoc'
 import { routes } from '@core/config/routes'
 
+const RoutesItems = routes.map(route => {
+  return <Route key={route.path} path={route.path} element={route.element} />
+})
+
 function App() {
   return (
     <ConfigProvider
@@ -16,9 +20,7 @@ function App() {
     >
       <PageHoc>
         <Routes>
-          {routes.map(route => {
-            return <Route key={route.path} path={route.path} element={route.element} />
-          })}
+          {RoutesItems}
         </Routes>
       </PageHoc>
     </ConfigProvider>
