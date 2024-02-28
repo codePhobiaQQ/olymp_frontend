@@ -6,6 +6,7 @@ import cn from 'classnames'
 
 interface DialogProps extends ModalProps {
   children?: ReactNode
+  buttonComponent?: (data: any) => ReactNode
   handleOkProps?: {
     action: (...data: any) => any
     isAsync?: boolean
@@ -13,12 +14,10 @@ interface DialogProps extends ModalProps {
 }
 
 export const Dialog = (props: DialogProps) => {
-  const { children, className, handleOkProps, ...otherProps } = props
-
+  const { children, className, buttonComponent, handleOkProps, ...otherProps } = props
 
   const [open, setOpen] = useState<boolean>(false)
   const [confirmLoading, setConfirmLoading] = useState<boolean>(false)
-
   const [modalText, setModalText] = useState('Content of the modal')
 
   const showModal = () => {
@@ -27,10 +26,8 @@ export const Dialog = (props: DialogProps) => {
 
   const handleOk = async (data) => {
     if (!handleOkProps) return
-
     setModalText('The modal will be closed after two seconds')
     setConfirmLoading(true)
-
     if (handleOkProps?.isAsync) {
       await handleOkProps.action?.(data)
         ?.then(res => {
@@ -47,11 +44,22 @@ export const Dialog = (props: DialogProps) => {
     setOpen(false)
   }
 
+  // -----------------------------------
+  // ------- Button to Open Modal ------
+  // -----------------------------------
+  let button
+  if (buttonComponent) {
+    button = buttonComponent({ onClick: showModal })
+  } else {
+    button = <Button type='primary' onClick={showModal}>
+      Open Modal with async logic
+    </Button>
+  }
+  // -----------------------------------
+
   return (
     <>
-      <Button type='primary' onClick={showModal}>
-        Open Modal with async logic
-      </Button>
+      {button}
 
       <Modal
         open={open}

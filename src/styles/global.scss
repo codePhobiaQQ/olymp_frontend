@@ -1,8 +1,25 @@
 body {
   background-color: #fff;
   color: var(--default-text-color);
+  height: 400vh;
 }
 
 * {
   box-sizing: border-box;
+}
+
+.container-custom {
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  .container-inner {
+    max-width: 1160px;
+    width: 95%;
+  }
+}
+
+.pointer {
+  cursor: pointer;
 }

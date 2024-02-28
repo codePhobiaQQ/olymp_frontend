@@ -1,1 +1,1 @@
-export { LoginDialog } from './ui/LoginDialog/LoginDialog'
+export { Auth } from './ui/Auth'

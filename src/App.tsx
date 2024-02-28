@@ -1,21 +1,26 @@
 import './styles/index.scss'
 import { ConfigProvider } from 'antd'
 import { componentsConfig } from '@core/config/antd/componentsConfig.ts'
-import { ReactComponent as MySuperCustomIconComponent } from '@assets/svg/logo/logo.svg'
+import { tokenConfig } from '@core/config/antd/tokenConfig'
+import { Route, Routes } from 'react-router-dom'
+import { PageHoc } from '@shared/hoc'
+import { routes } from '@core/config/routes'
 
 function App() {
   return (
     <ConfigProvider
       theme={{
-        token: {
-          colorTextPlaceholder: 'rgba(0, 0, 0, .5)',
-        },
+        token: tokenConfig,
         components: componentsConfig,
       }}
     >
-      <>
-        <MySuperCustomIconComponent />
-      </>
+      <PageHoc>
+        <Routes>
+          {routes.map(route => {
+            return <Route key={route.path} path={route.path} element={route.element} />
+          })}
+        </Routes>
+      </PageHoc>
     </ConfigProvider>
   )
 }
