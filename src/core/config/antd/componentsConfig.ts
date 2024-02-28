@@ -1,9 +1,8 @@
-export const antdComponentsConfig = {
+export const componentsConfig = {
   Typography: {
     colorText: 'var(--default-text-color)',
     lineHeight: 1.4,
     contentFontSize: 20,
-    // fontFamily: '',
   },
   Button: {
     ghost: false,
@@ -22,5 +21,16 @@ export const antdComponentsConfig = {
     // ------
     controlHeight: 20,
     inputFontSize: 15,
+  },
+  Modal: {
+    modalFooter: {
+      textAlign: 'center',
+    },
+  },
+  Flex: {
+    gap: {
+      small: 8,
+      middle: 24,
+    },
   },
 }

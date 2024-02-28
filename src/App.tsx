@@ -1,8 +1,7 @@
-import { ConfigProvider } from 'antd'
 import './styles/index.scss'
-import { Dialog } from '@shared/ui/Dialog/Dialog'
-import { Input } from '@shared/ui/Input/Input'
-import { antdComponentsConfig } from '@/core/config/AntdComponentsConfig.ts'
+import { ConfigProvider } from 'antd'
+import { componentsConfig } from '@core/config/antd/componentsConfig.ts'
+import { ReactComponent as MySuperCustomIconComponent } from '@assets/svg/logo/logo.svg'
 
 function App() {
   return (
@@ -11,13 +10,12 @@ function App() {
         token: {
           colorTextPlaceholder: 'rgba(0, 0, 0, .5)',
         },
-        components: antdComponentsConfig,
+        components: componentsConfig,
       }}
     >
-      <Dialog>
-        <Input />
-        <Input />
-      </Dialog>
+      <>
+        <MySuperCustomIconComponent />
+      </>
     </ConfigProvider>
   )
 }
