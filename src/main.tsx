@@ -6,6 +6,7 @@ import {
 } from 'react-router-dom'
 import { BrowserRouter } from 'react-router-dom'
 import { ErrorBoundary } from '@components/features/providers'
+import { StoreProvider } from '@/store'
 
 const router = createBrowserRouter([
   {
@@ -16,10 +17,12 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-    <ErrorBoundary>
-      <BrowserRouter future={{ v7_startTransition: true }} basename='/'>
-        <App />
-      </BrowserRouter>
-    </ErrorBoundary>
+    <StoreProvider>
+      <ErrorBoundary>
+        <BrowserRouter future={{ v7_startTransition: true }} basename='/'>
+          <App />
+        </BrowserRouter>
+      </ErrorBoundary>
+    </StoreProvider>
   </React.StrictMode>,
 )

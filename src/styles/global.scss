@@ -1,6 +1,28 @@
+@font-face {
+  font-family: 'monsterat';
+  src: url('./../assets/fonts/Montserrat-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'monsterat-sb';
+  src: url('./../assets/fonts/Montserrat-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'monsterat-sb';
+  src: url('./../assets/fonts/Montserrat-SemiBoldItalic.woff2') format('woff2');
+  font-weight: 600;
+  font-style: italic;
+}
+
 
 body {
   background-color: #fff;
+  font-family: 'monsterat';
   color: var(--default-text-color);
   height: 400vh;
 }
