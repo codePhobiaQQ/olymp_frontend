@@ -1,12 +1,12 @@
 import * as React from 'react'
-import { MainScreen } from './MainScreen/MainScreen'
+import { OlympsScreen } from './OlympsScreen/OlympsScreen'
 
 type Props = {};
 
 const MainPage = (props: Props) => {
   return (
     <>
-      <MainScreen />
+      <OlympsScreen />
     </>
   )
 }
