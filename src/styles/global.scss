@@ -24,11 +24,16 @@
   font-style: italic;
 }
 
+html {
+  overflow-x: hidden !important;
+}
+
 body {
   background-color: #fff;
   font-family: 'monsterat';
   color: var(--default-text-color);
   height: 400vh;
+  overflow-x: hidden !important;
 }
 
 * {

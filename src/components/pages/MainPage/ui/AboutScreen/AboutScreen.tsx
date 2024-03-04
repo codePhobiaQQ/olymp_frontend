@@ -8,7 +8,7 @@ export const AboutScreen = (props: Props) => {
     <section className='pt-12 pb-6'>
       <Container>
         <ScreenTitle text='О нас' />
-        <div className='w-2/3 ml-auto mt-12'>
+        <div className='w-full md:w-2/3 ml-auto mt-12'>
           <p className='mb-5 text-xl'>Современное интернет пространство изобилует предложениями
             с бесплатными курсами, олимпиадами и конкурсами, не имеющими реальной ценности для абитуриентов при
             поступлении. </p>
