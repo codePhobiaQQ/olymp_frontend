@@ -2,5 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+// Components
+@import "components/navbar.css";
+// ----------
+
 @import './colorMode/index';
 @import './global.scss';

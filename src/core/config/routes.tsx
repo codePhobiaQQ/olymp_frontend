@@ -14,17 +14,22 @@ export const routes = [
   },
   {
     path: '/olymp123',
-    navLabel: 'Олимпиады',
+    navLabel: 'Новости',
     element: <OlympPage />,
   },
   {
     path: '/olymp345',
-    navLabel: 'Олимпиады',
+    navLabel: 'Прогресс',
     element: <OlympPage />,
   },
   {
     path: '/olymp245',
-    navLabel: 'Олимпиады',
+    navLabel: 'Архив задач',
+    element: <OlympPage />,
+  },
+  {
+    path: '/olymp-hello',
+    navLabel: 'Онлайн-курсы',
     element: <OlympPage />,
   },
 ]
