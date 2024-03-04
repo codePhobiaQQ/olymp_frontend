@@ -11,8 +11,8 @@ export const Card = (props: Props) => {
 
   return (
     <div className={cn(cls.Card, 'flex', 'flex-col', 'min-w-80', 'justify-between', 'flex-1')}>
-      <h4>{title}</h4>
-      <p>
+      <h4 className='min-w-min'>{title}</h4>
+      <p className='max-w-60 text-xs'>
         {description}
       </p>
       <div className={cn(cls['shine'])}></div>

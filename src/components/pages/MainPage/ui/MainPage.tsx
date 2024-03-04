@@ -1,12 +1,12 @@
 import * as React from 'react'
 import { OlympsScreen } from './OlympsScreen/OlympsScreen'
+import { AboutScreen } from '@components/pages/MainPage/ui/AboutScreen/AboutScreen'
 
-type Props = {};
-
-const MainPage = (props: Props) => {
+const MainPage = () => {
   return (
     <>
       <OlympsScreen />
+      <AboutScreen />
     </>
   )
 }

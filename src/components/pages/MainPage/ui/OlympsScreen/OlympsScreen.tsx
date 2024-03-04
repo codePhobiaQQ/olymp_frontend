@@ -10,7 +10,7 @@ export const OlympsScreen = () => {
       <CardsLayout className='pt-10 pb-10'>
         {olympsList.map(olymp => {
           return (
-            <Card key={olymp.id} title={olymp.name} description={olymp.name} />
+            <Card key={olymp.id} title={olymp.name} description={olymp.description} />
           )
         })}
       </CardsLayout>
